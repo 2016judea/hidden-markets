@@ -19,3 +19,9 @@ src/generated/
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# SQLite WAL sidecars — binary churn, and they were getting committed.
+prisma/*.db-shm
+prisma/*.db-wal
+*.db-shm
+*.db-wal
