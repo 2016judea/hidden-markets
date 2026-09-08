@@ -498,26 +498,31 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     buyerPersona:
       "Facilities or critical-infrastructure manager at a data center, or a project manager at an electrical contractor, waiting on transformers and switchgear.",
     hypothesis:
-      "Lead times on transformers and switchgear have stretched into years, projects are held up by a single piece of gear, and buyers will pay materially over list for available or used equipment.",
+      "Lead times on transformers and switchgear have stretched into years, projects are held up by a single piece of gear, and buyers will pay materially over list for available or used equipment. Measured 2026-09-07: a reconditioned 2500 kVA padmount resells for about $25k and ships in two weeks, against 80-120 weeks for new — and the same unit's scrap value is low four figures.",
     likelyProblem:
       "A project is fully funded and cannot energise because a transformer is 80 weeks out.",
     offer:
-      "We are researching what people actually do when the transformer is two years out. We want to hear the workarounds.",
+      "We are researching what people actually do when the transformer is two years out. We want to hear the workarounds. We can also sometimes see, from public demolition and electrical permits, where a working unit is about to come out of service.",
     targetTitles: ["Facilities Manager", "Critical Facilities Manager", "Project Manager", "Director of Engineering", "Procurement Manager", "Electrical Superintendent"],
     targetOrgTypes: ["Data center operator", "Colocation provider", "Electrical contractor", "Industrial facility", "Utility"],
     targetGeography: "United States",
     exclusionCriteria: ["Equipment manufacturers and their distributors", "Residential electrical contractors"],
     qualificationCriteria: ["Buys medium-voltage or large distribution equipment", "A named engineering or procurement contact", "Evidence of active projects"],
     researchStrategy:
-      "Data center industry directories, state and municipal electrical permit records (which name the contractor and the scope), utility interconnection queues, and construction trade press project announcements.",
+      "Data center industry directories, state and municipal electrical permit records (which name the contractor and the scope), utility interconnection queues, and construction trade press project announcements.\n\nCROSS-REFERENCE: ~/Desktop/scrapwatch is this market approached from the SUPPLY side — it watches demolition permits, commercial electrical replacement permits and WARN plant closings to find where a working transformer is about to become scrap, and its named buyers are refurbishers with yards (Maddox, Sunbelt Solomon, T&R Electric). This experiment is the demand side of the same trade. If both find signal, the business is the join, not either half. Note scrapwatch's own measured limit: 25 commercial/multifamily wrecking permits in Minneapolis in a trailing year, and Saint Paul reads zero, which is a data gap rather than a fact — the metro count is small and it only becomes a business repeated city by city.",
     successCriteria: [
       "At least 6 of 25 confirm a lead-time-driven delay",
       "At least 4 name specific equipment and a quoted lead time",
       "At least 2 ask whether we can find available gear",
     ],
     safetyNotes:
-      "Medium- and high-voltage equipment is life-safety critical and must meet its application's ratings, testing and utility acceptance. Never represent a used unit's condition, rating or suitability. Any real transaction needs the buyer's engineer of record and independent testing — and that is not something this research can substitute for.",
-    monetizationPaths: ["Equipment sourcing fee", "Used and surplus brokerage", "Lead-time intelligence subscription"],
+      "Medium- and high-voltage equipment is life-safety critical and must meet its application's ratings, testing and utility acceptance. Never represent a used unit's condition, rating or suitability. Any real transaction needs the buyer's engineer of record and independent testing — and that is not something this research can substitute for. Pre-1980 units may contain PCB-contaminated oil, which carries TSCA disposal and handling obligations; never advise on it and never imply a unit is clean.",
+    monetizationPaths: [
+      "Equipment sourcing fee",
+      "Used and surplus brokerage",
+      "Lead-time intelligence subscription",
+      "Joining this demand side to scrapwatch's supply side — the only path here that neither half has alone",
+    ],
   },
   {
     slug: "historic-preservation-materials",

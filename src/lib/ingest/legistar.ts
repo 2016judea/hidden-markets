@@ -19,15 +19,15 @@ import { enqueue } from "../jobs/queue";
  *     records across pumps, treatment process, switchgear, motors, generators,
  *     valves and pipe. Free, versus about $0.48 per discovery call.
  *   - As an OBSOLESCENCE signal it is thin, and this matters. Only 26 of 1,128
- *     records cite obsolescence at all, they touch just 7 of the 18 agencies,
- *     and 11 of the 26 are software end-of-life (SharePoint, election
- *     management) rather than the physical equipment this experiment is about.
- *     Only 3 are motor/drive.
+ *     records cite obsolescence at all, and roughly half of those are software
+ *     end-of-life (SharePoint, election management, records management) rather
+ *     than the physical equipment this experiment is about.
  *
- * So we import every agency and attach evidence where it exists, ranking
- * obsolescence filings first and physical equipment above software. We do not
- * pretend an agency has the problem because it once bought a sole-source
- * radio — the researcher and the qualifier still have to earn that.
+ * So: every agency is imported, but only PHYSICAL records become evidence, and
+ * a candidate whose file contains no physical obsolescence says so in its own
+ * relevanceReason. We do not pretend an agency has the problem because it once
+ * renewed a software licence — the researcher and the qualifier still have to
+ * earn that.
  */
 
 export type LegistarRecord = {
@@ -64,11 +64,24 @@ export function isObsolescenceSignal(r: LegistarRecord): boolean {
 }
 
 /**
- * The equipment classes this experiment is actually about. Software and
- * service contracts get sole-sourced constantly and say nothing about whether
- * a plant can find a pump part — including them would flood the evidence with
- * the wrong kind of obsolescence.
+ * The thesis is PHYSICAL obsolete infrastructure — a board, a drive, an
+ * impeller, a controller. Not software.
+ *
+ * `equipment_class` alone cannot express that, because the upstream extraction
+ * emits one bucket called "SCADA/controls/software" holding 386 records that
+ * mix the two: "BOARD FLIR VIP3D.1s Video Detection Processor" and "MODULE PIM
+ * CARD SDLC INTERFACE" sit beside "Self-checkout kiosk software module
+ * subscription". An industrial control board IS the canonical case in this
+ * experiment; a library kiosk licence is not, and no class filter separates
+ * them. So we read the part text.
  */
+const SOFTWARE_MARKERS =
+  /\b(software|licen[cs]e|licensing|subscription|saas|cloud|hosting|hosted|records management|professional services|maintenance and support|implementation services|training|portal|website|web app|mobile app|data migration|annual support|user seats?)\b/i;
+
+const HARDWARE_MARKERS =
+  /\b(board|card|module|rack|chassis|panel|encoder|decoder|processor|cpu|drive|vfd|plc|rtu|hmi|controller|actuator|relay|contactor|breaker|switchgear|transformer|starter|motor|pump|impeller|bearing|gearbox|seal|valve|gate|pipe|fitting|blower|compressor|generator|sensor|transmitter|probe|analyzer|meter|power supply|assembly|housing|rotor|stator|shaft|coupling|bushing|membrane|centrifuge|screen|clarifier|aerator|mixer)\b/i;
+
+/** Classes that are physical by definition, whatever the part text says. */
 const PHYSICAL_CLASSES = [
   "pump",
   "motor/drive",
@@ -79,19 +92,29 @@ const PHYSICAL_CLASSES = [
   "HVAC",
   "treatment process (membrane/centrifuge/UV/chemical feed)",
   "instrumentation/calibration",
-  "other equipment",
 ];
 
+/**
+ * True when this record is about a physical thing that can wear out and need a
+ * replacement part. Software is excluded first, because "software module" and
+ * "control module" both contain "module" and only one of them is our problem.
+ */
 export function isPhysicalInfrastructure(r: LegistarRecord): boolean {
-  return PHYSICAL_CLASSES.includes(r.equipment_class ?? "");
+  const text = `${r.part ?? ""} ${r.manufacturer ?? ""} ${r.model ?? ""}`;
+  if (SOFTWARE_MARKERS.test(text)) return false;
+  if (r.equipment_class === "service/maintenance contract") return false;
+  if (PHYSICAL_CLASSES.includes(r.equipment_class ?? "")) return true;
+  return HARDWARE_MARKERS.test(text);
 }
 
-/** Obsolescence first, then physical equipment, then everything else. */
+/**
+ * Physical is a gate, not a preference: a software end-of-life filing never
+ * becomes evidence for this experiment, however loudly it says "obsolete".
+ * Within the physical records, obsolescence ranks first.
+ */
 function evidenceRank(r: LegistarRecord): number {
-  if (isObsolescenceSignal(r) && isPhysicalInfrastructure(r)) return 0;
-  if (isObsolescenceSignal(r)) return 1;
-  if (isPhysicalInfrastructure(r)) return 2;
-  return 3;
+  if (!isPhysicalInfrastructure(r)) return 99;
+  return isObsolescenceSignal(r) ? 0 : 1;
 }
 
 export function readRecords(filePath: string): LegistarRecord[] {
@@ -134,8 +157,10 @@ export async function importLegistarRecords(args: {
   const result: ImportResult = { agencies: byAgency.size, created: 0, skipped: 0, evidence: 0, obsolescenceRecords: 0 };
 
   for (const [agency, rows] of byAgency) {
-    const obsolete = rows.filter(isObsolescenceSignal);
     const physical = rows.filter(isPhysicalInfrastructure);
+    // Obsolescence counted over PHYSICAL records only — a SharePoint
+    // end-of-support notice is not evidence that a plant cannot find a pump part.
+    const obsolete = physical.filter(isObsolescenceSignal);
     result.obsolescenceRecords += obsolete.length;
     if (args.requireObsolescence === true && obsolete.length === 0) {
       result.skipped++;
@@ -162,7 +187,7 @@ export async function importLegistarRecords(args: {
     // verbatim and link the filing, so a reviewer can read the council packet.
     const ranked = [...rows].sort((a, b) => evidenceRank(a) - evidenceRank(b));
     const evidence = ranked
-      .filter((r) => evidenceRank(r) <= 2)
+      .filter((r) => evidenceRank(r) <= 1)
       .slice(0, 6)
       .map((r) => ({
       claim: [
