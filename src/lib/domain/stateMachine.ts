@@ -33,9 +33,12 @@ const PROSPECT: Record<ProspectStatus, ProspectStatus[]> = {
   // would discard the distinction the classifier just made.
   CONTACTED: ["FOLLOWED_UP", "REPLIED", "ENGAGED", "TRANSACTION", "BOUNCED", "UNSUBSCRIBED", "NOT_INTERESTED", "DO_NOT_CONTACT"],
   FOLLOWED_UP: ["FOLLOWED_UP", "REPLIED", "ENGAGED", "TRANSACTION", "BOUNCED", "UNSUBSCRIBED", "NOT_INTERESTED", "DO_NOT_CONTACT"],
-  REPLIED: ["ENGAGED", "NOT_INTERESTED", "TRANSACTION", "UNSUBSCRIBED", "DO_NOT_CONTACT"],
-  ENGAGED: ["TRANSACTION", "NOT_INTERESTED", "REPLIED", "DO_NOT_CONTACT"],
-  TRANSACTION: ["ENGAGED", "NOT_INTERESTED", "DO_NOT_CONTACT"],
+  // BOUNCED is reachable from every live state: an address that worked in
+  // March can hard-bounce in September because the person left. Blocking it
+  // would leave a dead address in the funnel with a healthy-looking status.
+  REPLIED: ["ENGAGED", "NOT_INTERESTED", "TRANSACTION", "UNSUBSCRIBED", "BOUNCED", "DO_NOT_CONTACT"],
+  ENGAGED: ["TRANSACTION", "NOT_INTERESTED", "REPLIED", "BOUNCED", "DO_NOT_CONTACT"],
+  TRANSACTION: ["ENGAGED", "NOT_INTERESTED", "BOUNCED", "DO_NOT_CONTACT"],
   // Terminal by design. Reaching any of these means we stop, and the only way
   // back is an operator explicitly clearing the suppression.
   NOT_INTERESTED: ["DO_NOT_CONTACT"],

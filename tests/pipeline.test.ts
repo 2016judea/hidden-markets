@@ -359,6 +359,72 @@ describe("the whole loop", () => {
     expect(memo.stageRecommendation).toBe("HOLD");
   });
 
+  it("routes a bounce by the recipient the DSN names, not by its sender", async () => {
+    // The failure that lost two real bounces: a DSN comes from mailer-daemon
+    // with no In-Reply-To and belongs to no thread, so every matcher missed it
+    // and it was dropped without a trace.
+    const source = await prisma.prospect.findFirstOrThrow({ where: { experimentId } });
+    const prospect = await prisma.prospect.create({
+      data: {
+        experimentId,
+        organizationId: source.organizationId,
+        organizationName: "Bounce Test Utility",
+        contactName: "Gone Away",
+        email: "gone@bouncetest.example.gov",
+        status: "CONTACTED",
+        firstContactedAt: new Date(),
+      },
+    });
+    const thread = await prisma.emailThread.create({
+      data: { experimentId, prospectId: prospect.id, subject: "obsolete pump parts" },
+    });
+    await prisma.emailMessage.create({
+      data: {
+        threadId: thread.id,
+        direction: "OUTBOUND",
+        fromAddress: "aidan@brickandmortar.dev",
+        toAddress: prospect.email,
+        subject: "obsolete pump parts",
+        bodyText: "…",
+        rfcMessageId: "<sent-to-gone@brickandmortar.dev>",
+        sentAt: new Date(),
+      },
+    });
+
+    fs.writeFileSync(
+      path.join(INBOX, "bounce.json"),
+      JSON.stringify({
+        providerMessageId: "bounce-1",
+        rfcMessageId: "<bounce-1@mail.zoho.com>",
+        from: "mailer-daemon@mail.zoho.com",
+        to: "aidan@brickandmortar.dev",
+        subject: "Undelivered Mail Returned to Sender",
+        bodyText:
+          "This message was created automatically by mail delivery software. A message that you sent could not be delivered to one or more of its recipients. This is a permanent error. " +
+          `Final-Recipient: rfc822; ${prospect.email}\nERROR CODE :550 - blocked`,
+        receivedAt: new Date().toISOString(),
+      }),
+    );
+
+    await enqueue({ kind: "SYNC_INBOX", idempotencyKey: `sync-bounce-${Date.now()}` });
+    await drain(20);
+
+    const after = await prisma.prospect.findUniqueOrThrow({ where: { id: prospect.id } });
+    expect(after.status).toBe("BOUNCED");
+
+    const suppressed = await prisma.suppression.findFirst({
+      where: { kind: "EMAIL", value: prospect.email },
+    });
+    expect(suppressed?.reason).toBe("BOUNCE");
+
+    // A bounced address is never chased.
+    expect(
+      await prisma.jobRun.count({
+        where: { kind: "DRAFT_OUTREACH", status: "PENDING", idempotencyKey: { contains: prospect.id } },
+      }),
+    ).toBe(0);
+  });
+
   it("will not cold-email a second person at a company already approached", async () => {
     const contacted = await prisma.prospect.findFirstOrThrow({ where: { experimentId } });
     const second = await prisma.prospect.create({

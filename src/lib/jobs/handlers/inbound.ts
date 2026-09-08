@@ -34,6 +34,7 @@ export async function syncInbox(): Promise<unknown> {
 
   const messages = await provider.fetchRecentMessages({ since, limit: 100 });
   let created = 0;
+  const unmatched: string[] = [];
 
   for (const m of messages) {
     if (m.fromAddress === provider.fromAddress.toLowerCase()) continue;
@@ -50,7 +51,10 @@ export async function syncInbox(): Promise<unknown> {
     if (seen) continue;
 
     const thread = await matchThread(m);
-    if (!thread) continue; // not ours — the mailbox is a real mailbox
+    if (!thread) {
+      unmatched.push(`${m.fromAddress} — ${m.subject.slice(0, 60)}`);
+      continue; // not ours — the mailbox is a real mailbox
+    }
 
     const stored = await prisma.emailMessage.create({
       data: {
@@ -88,7 +92,18 @@ export async function syncInbox(): Promise<unknown> {
     created++;
   }
 
-  return { fetched: messages.length, created };
+  // Silence was how two bounces went missing: fetched 7, created 0, and nothing
+  // anywhere said which 7 or why none stuck. This mailbox carries plenty of mail
+  // that is genuinely not ours, so unmatched is normal — but it must be legible.
+  if (unmatched.length > 0) {
+    await logActivity({
+      kind: "SYSTEM",
+      message: `Inbox sync ignored ${unmatched.length} message(s) that matched no experiment thread.`,
+      detail: { unmatched: unmatched.slice(0, 20) },
+    });
+  }
+
+  return { fetched: messages.length, created, ignored: unmatched.length };
 }
 
 /**
@@ -102,7 +117,22 @@ async function matchThread(m: {
   references?: string;
   providerThreadId?: string;
   fromAddress: string;
+  isBounce?: boolean;
+  bouncedAddress?: string;
 }) {
+  // A bounce is from mailer-daemon, carries no In-Reply-To, and is not in any
+  // thread — so every branch below misses it and the whole bounce-handling path
+  // was unreachable in production. Two real bounces (550 blocked, 550 user
+  // unknown) were fetched and silently dropped. The recipient the DSN names is
+  // the only usable key, and it is the one the body actually gives us.
+  if (m.isBounce && m.bouncedAddress) {
+    const bounced = await prisma.prospect.findFirst({
+      where: { email: { equals: m.bouncedAddress } },
+      include: { threads: { orderBy: { lastMessageAt: "desc" }, take: 1 } },
+    });
+    if (bounced?.threads[0]) return bounced.threads[0];
+  }
+
   const refIds = [m.inReplyTo, ...(m.references ?? "").split(/\s+/)].filter(Boolean) as string[];
   if (refIds.length) {
     const parent = await prisma.emailMessage.findFirst({
@@ -144,10 +174,18 @@ export async function processInbound(payload: Record<string, unknown>): Promise<
 
   if (message.isBounce) {
     const address = String(payload.bouncedAddress ?? "") || prospect?.email;
+    // Suppression comes first and unconditionally. Whatever else fails below,
+    // this address must never be written to again — that is the one guarantee a
+    // bounce has to deliver.
     if (address) await suppress({ kind: "EMAIL", value: address, reason: "BOUNCE", note: message.subject });
     if (prospect) {
-      assertProspectTransition(prospect.status as ProspectStatus, "BOUNCED");
-      await prisma.prospect.update({ where: { id: prospect.id }, data: { status: "BOUNCED" } });
+      try {
+        assertProspectTransition(prospect.status as ProspectStatus, "BOUNCED");
+        await prisma.prospect.update({ where: { id: prospect.id }, data: { status: "BOUNCED" } });
+      } catch {
+        // An already-terminal prospect is fine to leave as it is; the address is
+        // suppressed either way, which is what actually protects them.
+      }
       await cancelFollowups(prospect.id, "address bounced");
       await recordOutcomeForProspect(prospect, "bounced");
       // The organization may still be worth reaching; the person is not.
