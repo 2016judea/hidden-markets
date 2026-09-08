@@ -615,6 +615,8 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     // Narrow on purpose. "scrap metal dealer" would list hundreds of yards
     // with no resale side, and every one of them costs a $0.12 research call to
     // reject. The qualifier is cheap; the researcher upstream of it is not.
-    directoryQueries: ["used electrical equipment", "electrical surplus", "transformer supplier"],
+    // Used/surplus side only. "transformer supplier" returned new-equipment distributors
+    // (Viking, Crescent) in batch 1, which the exclusion criteria then pay to reject.
+    directoryQueries: ["used electrical equipment", "surplus electrical equipment", "used transformers", "electrical equipment buyers", "transformer rebuild"],
   },
 ];
