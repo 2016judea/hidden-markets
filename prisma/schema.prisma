@@ -1,0 +1,705 @@
+// Hidden Market Validation Engine — schema.
+//
+// Two deliberate constraints, both load-bearing:
+//   1. SQLite has no enums and no arrays. Every such field is a String whose
+//      legal values live in src/lib/domain/constants.ts and are enforced by Zod
+//      at every write. The database is the store; the type system is the guard.
+//   2. Every AI-derived value on every model is nullable and is accompanied by
+//      the AITaskRun that produced it. A field with no run behind it was typed
+//      by a human, and we must always be able to tell the difference.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────────────────── EXPERIMENTS ────
+
+model MarketExperiment {
+  id        String @id @default(cuid())
+  slug      String @unique
+  name      String
+
+  // The bet, in one sentence, falsifiable.
+  hypothesis     String
+  buyerPersona   String
+  likelyProblem  String
+  offer          String
+
+  // JSON string[] — see constants.ts for shape.
+  targetTitles       String @default("[]")
+  targetOrgTypes     String @default("[]")
+  exclusionCriteria  String @default("[]")
+  targetGeography    String @default("United States")
+  researchStrategy   String @default("")
+  qualificationCriteria String @default("[]")
+  successCriteria    String @default("[]")
+  safetyNotes        String @default("")
+  monetizationPaths  String @default("[]")
+
+  stage      String @default("SCOUT")     // SCOUT | VALIDATE | COMMERCIALIZE | COMMIT
+  status     String @default("DRAFT")     // DRAFT | ACTIVE | PAUSED | TERMINATED
+  trustLevel String @default("REVIEW_ALL") // REVIEW_ALL | TRUSTED_FOLLOWUPS | HIGH_AUTOMATION
+
+  // How many QUALIFIED, not-yet-contacted candidates the pipeline keeps on hand.
+  prospectTarget      Int @default(25)
+  contactedTarget     Int @default(25)
+  minQualificationScore Int @default(60)
+
+  // Set when the operator approved an AI-generated experiment definition.
+  generatedByRunId String?
+  approvedAt       DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  candidates    ProspectCandidate[]
+  prospects     Prospect[]
+  threads       EmailThread[]
+  painSignals   PainSignal[]
+  memos         MarketMemo[]
+  outbox        OutboxDraft[]
+  replyReviews  ReplyReview[]
+  opportunities TransactionOpportunity[]
+  targetingStats TargetingStat[]
+  activity      ActivityEvent[]
+  aiRuns        AITaskRun[]
+  jobs          JobRun[]
+
+  @@index([status, stage])
+}
+
+// ────────────────────────────────────────────────────────── ORGANIZATIONS ────
+
+model Organization {
+  id        String  @id @default(cuid())
+  name      String
+  domain    String? // normalized apex domain — the dedupe key that actually works
+  website   String?
+  orgType   String? // WATER_UTILITY | MUNICIPALITY | SKI_RESORT | ...
+  city      String?
+  state     String?
+  country   String  @default("US")
+  sizeBucket String? // MICRO | SMALL | MID | LARGE — coarse on purpose
+  yearFounded Int?
+  researchSummary String?
+
+  suppressed       Boolean @default(false)
+  suppressedReason String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  candidates ProspectCandidate[]
+  prospects  Prospect[]
+  evidence   EvidenceItem[]
+
+  @@unique([domain])
+  @@index([orgType, state])
+}
+
+// ─────────────────────────────────────────────────────────── PROSPECTING ────
+
+/// Staging layer. Nothing is contacted from here; promotion to Prospect is a
+/// deterministic transition in application code, never a model's decision.
+model ProspectCandidate {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+
+  organizationName String
+  website     String?
+  contactName String?
+  title       String?
+  email       String?
+  phone       String?
+  city        String?
+  state       String?
+  country     String  @default("US")
+  orgType     String?
+
+  sourceUrls        String @default("[]") // JSON string[]
+  researchNotes     String?
+  relevanceReason   String?
+  likelyProblemFit  String?
+  personalizationFacts String @default("[]") // JSON PersonalizationFact[]
+
+  qualificationScore Int?
+  scoreBreakdown     String?  // JSON — every component and its weight, never opaque
+  confidenceScore    Float?
+  emailConfidence    String?  // VERIFIED | INFERRED | GUESSED | UNKNOWN
+  emailInferenceNote String?
+
+  status       String @default("DISCOVERED")
+  // DISCOVERED | RESEARCHING | RESEARCHED | QUALIFYING | QUALIFIED | REJECTED
+  // | READY_FOR_OUTREACH | PROMOTED
+  rejectionReason String?
+  rejectedBy      String? // AI | HUMAN
+
+  // Referral provenance — a referral is the only honest form of warm intro.
+  referredByProspectId String?
+  referralContext      String?
+
+  dedupeKey String? // lower(email) or lower(org|name) — enforced unique per experiment
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  evidence EvidenceItem[]
+  prospect Prospect?
+  aiRuns   AITaskRun[]
+
+  @@unique([experimentId, dedupeKey])
+  @@index([experimentId, status])
+}
+
+model Prospect {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+
+  candidateId String? @unique
+  candidate   ProspectCandidate? @relation(fields: [candidateId], references: [id])
+
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+
+  organizationName String
+  contactName String?
+  title       String?
+  email       String
+  phone       String?
+  city        String?
+  state       String?
+  orgType     String?
+
+  qualificationScore Int?
+  scoreBreakdown     String?
+  personalizationFacts String @default("[]")
+
+  status String @default("READY")
+  // READY | CONTACTED | FOLLOWED_UP | REPLIED | ENGAGED | NOT_INTERESTED
+  // | BOUNCED | UNSUBSCRIBED | DO_NOT_CONTACT | TRANSACTION
+
+  // Observed features, frozen at contact time so targeting stats can never be
+  // recomputed against a value that drifted after the email went out.
+  featureSnapshot String @default("{}")
+
+  firstContactedAt DateTime?
+  lastContactedAt  DateTime?
+  repliedAt        DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  threads       EmailThread[]
+  outbox        OutboxDraft[]
+  painSignals   PainSignal[]
+  opportunities TransactionOpportunity[]
+  aiRuns        AITaskRun[]
+  referrals     ProspectReferral[] @relation("ReferralSource")
+  referredBy    ProspectReferral[] @relation("ReferralTarget")
+
+  @@unique([experimentId, email])
+  @@index([experimentId, status])
+}
+
+model ProspectReferral {
+  id String @id @default(cuid())
+  sourceProspectId String
+  source Prospect @relation("ReferralSource", fields: [sourceProspectId], references: [id], onDelete: Cascade)
+  targetProspectId String?
+  target Prospect? @relation("ReferralTarget", fields: [targetProspectId], references: [id])
+  targetCandidateId String?
+  referredName  String?
+  referredTitle String?
+  referredEmail String?
+  quotedText    String  // their words, verbatim — this is what makes the intro honest
+  emailMessageId String?
+  createdAt DateTime @default(now())
+}
+
+// ───────────────────────────────────────────────────────────────── EMAIL ────
+
+model EmailThread {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  prospectId   String?
+  prospect     Prospect? @relation(fields: [prospectId], references: [id])
+
+  providerThreadId String?
+  subject     String
+  lastMessageAt DateTime?
+  status      String @default("OPEN") // OPEN | AWAITING_REPLY | CLOSED
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages EmailMessage[]
+  reviews  ReplyReview[]
+
+  @@index([experimentId, status])
+  @@index([providerThreadId])
+}
+
+model EmailMessage {
+  id       String @id @default(cuid())
+  threadId String
+  thread   EmailThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+
+  direction String // OUTBOUND | INBOUND
+  fromAddress String
+  toAddress   String
+  ccAddress   String?
+  subject     String
+  bodyText    String
+  bodyHtml    String?
+
+  // RFC 5322 identity — preserved verbatim so replies actually thread in a
+  // client we do not control.
+  providerMessageId String?
+  rfcMessageId      String?
+  inReplyTo         String?
+  references        String?
+  providerFolderId  String?
+
+  sentAt     DateTime?
+  receivedAt DateTime?
+
+  isBounce       Boolean @default(false)
+  isAutoReply    Boolean @default(false)
+  autoReplyUntil DateTime?
+
+  createdAt DateTime @default(now())
+
+  outboxDraft  OutboxDraft?
+  replyReview  ReplyReview?
+  painSignals  PainSignal[]
+  aiRuns       AITaskRun[]
+
+  @@index([threadId, sentAt])
+  @@index([rfcMessageId])
+}
+
+/// The first of the two hard stops. A message cannot be sent from anywhere in
+/// this codebase except by transitioning a row here to SENT, and that
+/// transition requires an approvedBy. The gate is structural, not a prompt.
+model OutboxDraft {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  prospectId   String
+  prospect     Prospect @relation(fields: [prospectId], references: [id], onDelete: Cascade)
+  threadId     String?
+
+  kind          String @default("INITIAL") // INITIAL | FOLLOWUP | REFERRAL_INTRO | REPLY
+  sequenceIndex Int    @default(0)
+
+  subject String
+  body    String
+
+  // What the model wrote, kept beside what the human sends. The delta is the
+  // training signal; overwriting the draft would destroy it.
+  aiSubject String?
+  aiBody    String?
+  altSubject String?
+  altBody    String?
+
+  rationale            String?
+  hypothesisTested     String?
+  personalizationUsed  String @default("[]")
+  evidenceRefs         String @default("[]")
+  confidence           Float?
+  riskLevel            String @default("NORMAL") // LOW | NORMAL | HIGH
+
+  status String @default("PENDING_REVIEW")
+  // PENDING_REVIEW | APPROVED | SENDING | SENT | SKIPPED | REJECTED | FAILED | CANCELLED
+
+  scheduledFor DateTime?
+  approvedAt   DateTime?
+  approvedBy   String?
+  editedByHuman Boolean @default(false)
+  sentAt       DateTime?
+  sendError    String?
+
+  emailMessageId String? @unique
+  emailMessage   EmailMessage? @relation(fields: [emailMessageId], references: [id])
+
+  generatedByRunId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, scheduledFor])
+  @@index([experimentId, status])
+}
+
+/// The second hard stop. Same rule: no reply leaves without a row here moving
+/// to SENT under a human's name.
+model ReplyReview {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  threadId     String
+  thread       EmailThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  inboundMessageId String @unique
+  inboundMessage   EmailMessage @relation(fields: [inboundMessageId], references: [id], onDelete: Cascade)
+
+  classifications String @default("[]") // JSON string[] — multiple labels may apply
+  interpretation  String?
+  extraction      String @default("{}") // JSON, every value carries its own confidence
+  confidence      Float?
+
+  draftSubject String?
+  draftBody    String?
+  aiDraftBody  String?
+  draftRationale String?
+
+  status String @default("PENDING_REVIEW")
+  // PENDING_REVIEW | APPROVED | SENDING | SENT | NO_RESPONSE | ESCALATED | DISMISSED | FAILED
+
+  approvedAt DateTime?
+  approvedBy String?
+  editedByHuman Boolean @default(false)
+  sentAt     DateTime?
+  sendError  String?
+  sentMessageId String?
+
+  generatedByRunId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([experimentId, status])
+}
+
+// ───────────────────────────────────────────────────────── PAIN + SIGNAL ────
+
+model PainSignal {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  prospectId   String?
+  prospect     Prospect? @relation(fields: [prospectId], references: [id])
+  emailMessageId String?
+  emailMessage   EmailMessage? @relation(fields: [emailMessageId], references: [id])
+
+  category      String
+  summary       String
+  verbatim      String? // their words. Never ours.
+
+  requestedItem String?
+  manufacturer  String?
+  model         String?
+  partNumber    String?
+  quantity      String?
+  currentSupplier String?
+  currentPrice    String?
+  estimatedSpend  String?
+  deadline        String?
+  urgency         String?  // LOW | MEDIUM | HIGH | CRITICAL
+  frequency       String?  // ONE_OFF | OCCASIONAL | RECURRING | CONSTANT
+  durationSoFar   String?
+  currentWorkaround String?
+  dissatisfaction   String?
+  commercialSignal  String?
+  fieldConfidence   String @default("{}") // JSON: per-field confidence, not one number
+
+  confidence Float?
+  status String @default("NEEDS_REVIEW")
+  // AUTO_CONFIRMED | NEEDS_REVIEW | CONFIRMED | REJECTED
+
+  confirmedAt DateTime?
+  confirmedBy String?
+
+  generatedByRunId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clusterMemberships PainClusterMember[]
+  opportunities      TransactionOpportunity[]
+
+  @@index([experimentId, status])
+  @@index([category])
+}
+
+/// Clusters may span experiments. That is the entire point — the winning
+/// opportunity is more likely to be a problem shape than a buyer list.
+model PainCluster {
+  id    String @id @default(cuid())
+  label String
+  description String?
+  crossMarket Boolean @default(false)
+  experimentIds String @default("[]")
+  industries    String @default("[]")
+  estimatedValue String?
+  rationale     String?
+  signalCount   Int @default(0)
+  generatedByRunId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  members PainClusterMember[]
+}
+
+model PainClusterMember {
+  id String @id @default(cuid())
+  clusterId String
+  cluster   PainCluster @relation(fields: [clusterId], references: [id], onDelete: Cascade)
+  painSignalId String
+  painSignal   PainSignal @relation(fields: [painSignalId], references: [id], onDelete: Cascade)
+  @@unique([clusterId, painSignalId])
+}
+
+model TransactionOpportunity {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  prospectId   String?
+  prospect     Prospect? @relation(fields: [prospectId], references: [id])
+  painSignalId String?
+  painSignal   PainSignal? @relation(fields: [painSignalId], references: [id])
+
+  trigger   String  // the phrase that fired it, verbatim
+  kind      String  // PRICE_REQUEST | SOURCING_REQUEST | DEADLINE | PURCHASE_INTENT | SURPLUS_OFFER
+  summary   String
+  estimatedValue String?
+  urgency   String?
+  status    String @default("OPEN") // OPEN | IN_PROGRESS | WON | LOST | DECLINED
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([experimentId, status])
+}
+
+// ───────────────────────────────────────────────── PROVENANCE + AUDITING ────
+
+/// One row per material claim. If a claim on a candidate has no EvidenceItem,
+/// it is an assertion, and the UI says so.
+model EvidenceItem {
+  id String @id @default(cuid())
+  candidateId String?
+  candidate   ProspectCandidate? @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  claim       String
+  sourceUrl   String?
+  sourceTitle String?
+  quote       String?
+  retrievedAt DateTime @default(now())
+  confidence  Float?
+  kind        String @default("FACT") // FACT | PERSONALIZATION | CONTACT | PROBLEM_SIGNAL
+  aiTaskRunId String?
+
+  createdAt DateTime @default(now())
+
+  @@index([candidateId])
+}
+
+/// The observability layer. Every cognitive function writes exactly one of
+/// these, whether it succeeds or fails.
+model AITaskRun {
+  id       String @id @default(cuid())
+  taskType String
+  // DISCOVER_ORGANIZATIONS | RESEARCH_ORGANIZATION | IDENTIFY_DECISION_MAKERS
+  // | FIND_CONTACT | QUALIFY_PROSPECT | DRAFT_OUTREACH | CLASSIFY_REPLY
+  // | EXTRACT_PAIN_SIGNAL | DRAFT_REPLY | ANALYZE_EXPERIMENT | CLUSTER_PAIN
+  // | GENERATE_EXPERIMENT
+
+  experimentId String?
+  experiment   MarketExperiment? @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  prospectId   String?
+  prospect     Prospect? @relation(fields: [prospectId], references: [id], onDelete: Cascade)
+  candidateId  String?
+  candidate    ProspectCandidate? @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  emailMessageId String?
+  emailMessage   EmailMessage? @relation(fields: [emailMessageId], references: [id], onDelete: Cascade)
+
+  inputJson  String
+  outputJson String?
+
+  modelProvider String
+  modelName     String
+  promptVersion String
+
+  confidence Float?
+  status     String @default("RUNNING") // RUNNING | SUCCEEDED | FAILED | INVALID_OUTPUT
+  error      String?
+  retryCount Int    @default(0)
+
+  inputTokens  Int?
+  outputTokens Int?
+  costUsd      Float?
+  webSearches  Int @default(0)
+
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  durationMs  Int?
+
+  @@index([taskType, status])
+  @@index([experimentId, startedAt])
+}
+
+/// The delta between what the model proposed and what the human did. Kept
+/// forever; not used for fine-tuning, used for reading.
+model HumanCorrection {
+  id         String @id @default(cuid())
+  entityType String // OUTBOX_DRAFT | REPLY_REVIEW | PAIN_SIGNAL | CANDIDATE | CLASSIFICATION
+  entityId   String
+  field      String
+  aiValue    String?
+  humanValue String?
+  reason     String?
+  aiTaskRunId String?
+  experimentId String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, field])
+}
+
+model ActivityEvent {
+  id           String @id @default(cuid())
+  experimentId String?
+  experiment   MarketExperiment? @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  kind    String  // DISCOVERY | REJECTION | QUALIFICATION | SEND | REPLY | SIGNAL | TARGETING | CLUSTER | ERROR | SYSTEM
+  message String
+  detail  String? // JSON
+  actor   String  @default("SYSTEM") // SYSTEM | AI | HUMAN
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ────────────────────────────────────────────────────────── ORCHESTRATION ────
+
+/// The queue. Deliberately a table and not a library: the whole point of this
+/// architecture is that the next step is chosen by application code, and a row
+/// you can read in a SQL client is the most inspectable form of that.
+model JobRun {
+  id      String @id @default(cuid())
+  kind    String
+  payload String @default("{}")
+  experimentId String?
+  experiment   MarketExperiment? @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+
+  status String @default("PENDING") // PENDING | RUNNING | SUCCEEDED | FAILED | CANCELLED
+  runAfter    DateTime @default(now())
+  attempts    Int      @default(0)
+  maxAttempts Int      @default(3)
+  lockedAt    DateTime?
+  lockedBy    String?
+  startedAt   DateTime?
+  completedAt DateTime?
+  error       String?
+  result      String?
+
+  // Set on jobs that must not be enqueued twice while one is outstanding.
+  idempotencyKey String? @unique
+
+  createdAt DateTime @default(now())
+
+  @@index([status, runAfter])
+}
+
+/// Observed, not inferred. Every number here is a count of things that
+/// actually happened, so the UI can show WHY targeting moved.
+model TargetingStat {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+
+  feature      String // TITLE | ORG_TYPE | STATE | SIZE_BUCKET | HAS_PROBLEM_EVIDENCE
+  value        String
+  contacted    Int @default(0)
+  replied      Int @default(0)
+  qualifiedPain Int @default(0)
+  commercial   Int @default(0)
+  negative     Int @default(0)
+  bounced      Int @default(0)
+  updatedAt    DateTime @updatedAt
+
+  @@unique([experimentId, feature, value])
+}
+
+model MarketMemo {
+  id           String @id @default(cuid())
+  experimentId String
+  experiment   MarketExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+
+  learning        String
+  strongestEvidence String @default("[]")
+  weakestAssumptions String @default("[]")
+  emergingBuyerProfile String?
+  commonProblems  String @default("[]")
+  commercialEvidence String @default("[]")
+  surprises       String @default("[]")
+  recommendedNext String?
+  stageRecommendation String? // HOLD | PROMOTE | TERMINATE
+  stageRationale  String?
+
+  evidenceCounts String @default("{}")
+  generatedByRunId String?
+  createdAt DateTime @default(now())
+
+  @@index([experimentId, createdAt])
+}
+
+/// Addresses and domains we must never contact again. Checked immediately
+/// before send, not only at draft time — a bounce can land in between.
+model Suppression {
+  id        String @id @default(cuid())
+  kind      String // EMAIL | DOMAIN
+  value     String
+  reason    String // BOUNCE | UNSUBSCRIBE | MANUAL | COMPLAINT
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@unique([kind, value])
+}
+
+// ───────────────────────────────────────────────────────── MARKET GRAPH ────
+
+/// Relational now, graph-shaped on purpose. Nodes are deduped by (type, key);
+/// edges are typed and directional. No graph database until a query needs one.
+model GraphNode {
+  id    String @id @default(cuid())
+  type  String // BUYER_TYPE | PROBLEM | PRODUCT | MANUFACTURER | SUPPLIER | GEOGRAPHY | REGULATION | PAIN_SIGNAL | TRANSACTION | EXPERIMENT
+  key   String // normalized
+  label String
+  meta  String @default("{}")
+  weight Int   @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  outgoing GraphEdge[] @relation("FromNode")
+  incoming GraphEdge[] @relation("ToNode")
+
+  @@unique([type, key])
+}
+
+model GraphEdge {
+  id     String @id @default(cuid())
+  fromId String
+  from   GraphNode @relation("FromNode", fields: [fromId], references: [id], onDelete: Cascade)
+  toId   String
+  to     GraphNode @relation("ToNode", fields: [toId], references: [id], onDelete: Cascade)
+  type   String // EXPERIENCES | MAKES | SUPPLIES | LOCATED_IN | GOVERNED_BY | EVIDENCED_BY | SPANS
+  weight Int    @default(1)
+  meta   String @default("{}")
+  createdAt DateTime @default(now())
+
+  @@unique([fromId, toId, type])
+  @@index([type])
+}
