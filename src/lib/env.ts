@@ -24,9 +24,14 @@ const schema = z.object({
 
   GOOGLE_PLACES_API_KEY: z.string().optional(),
   GEMINI_API_KEY: z.string().optional(),
-  GEMINI_MODEL: z.string().default("gemini-3.7-flash"),
-  /** Who does the web-searching tasks. "anthropic" keeps everything on one vendor. */
-  RESEARCH_PROVIDER: z.enum(["gemini", "anthropic"]).default("anthropic"),
+  GEMINI_MODEL: z.string().default("gemini-3.5-flash"),
+  /**
+   * Who does the web-searching tasks. Defaults to gemini on the measurement in
+   * src/lib/llm/index.ts — 0.40x the cost, 3.8x the speed, better addresses.
+   * Falls back to Anthropic automatically when GEMINI_API_KEY is unset, so this
+   * default cannot break an install that has not got a key.
+   */
+  RESEARCH_PROVIDER: z.enum(["gemini", "anthropic"]).default("gemini"),
 
   OPERATOR_NAME: z.string().default("Aidan Jude"),
   WORKER_ENABLED: z.string().default("true"),

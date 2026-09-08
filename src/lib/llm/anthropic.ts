@@ -34,12 +34,22 @@ const WEB_SEARCH_TOOL_TYPE = "web_search_20260209";
 const CACHE_READ_MULTIPLIER = 0.1;
 const CACHE_WRITE_MULTIPLIER = 1.25;
 
+/**
+ * Server-side web search is billed per use, on top of the tokens the results
+ * cost to read. Leaving it out understated every research task measured before
+ * 2026-09-08 — a 24-search discovery call was reported at $0.48 when it was
+ * nearer $0.72, and half the bill was invisible. On a search-heavy task this
+ * term dominates, which is precisely why enumeration moved to a directory.
+ */
+const SEARCH_COST_PER_USE = 0.01;
+
 function costOf(
   model: string,
   inputTokens: number,
   outputTokens: number,
   cacheReadTokens = 0,
   cacheWriteTokens = 0,
+  webSearches = 0,
 ): number | null {
   const p = PRICING[model];
   if (!p) return null;
@@ -47,7 +57,7 @@ function costOf(
     inputTokens * p.input +
     cacheReadTokens * p.input * CACHE_READ_MULTIPLIER +
     cacheWriteTokens * p.input * CACHE_WRITE_MULTIPLIER;
-  return (input + outputTokens * p.output) / 1_000_000;
+  return (input + outputTokens * p.output) / 1_000_000 + webSearches * SEARCH_COST_PER_USE;
 }
 
 /**
@@ -244,7 +254,7 @@ export class AnthropicProvider implements LLMProvider {
         webSearches,
         cacheReadTokens,
         cacheWriteTokens,
-        costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens),
+        costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens, webSearches),
       },
       modelProvider: this.name,
       modelName: model,

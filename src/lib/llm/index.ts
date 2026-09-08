@@ -9,13 +9,26 @@ import type { AITaskType } from "../domain/constants";
  * Which provider does which job.
  *
  * The split is lookup versus judgement, and it comes from measurement rather
- * than preference. On 2026-09-07 the four tasks that search the web cost $0.12
- * to $0.41 a call while qualification, which searches nothing, cost $0.01 — the
- * money is in reading pages, not in thinking. Gemini Flash grounds against
- * Google at roughly a tenth of the token price, which is the right trade for
- * "find this person's published address" and the wrong one for "decide whether
- * to email a stranger", so the drafting, classification, extraction and
- * analysis tasks stay where the reasoning is best.
+ * than preference. The tasks that search the web dominate the bill; the one
+ * that searches nothing costs a cent.
+ *
+ * Measured 2026-09-08, identifyDecisionMakers over three funeral homes each,
+ * with search billed on BOTH sides (it had been missing from the Anthropic
+ * figures, which understated them by about half):
+ *
+ *              cost/run   time    searches   verified addresses
+ *   gemini      $0.091     39s       16              2
+ *   anthropic   $0.229    148s       41              0
+ *
+ * Gemini at 0.40x the cost and 3.8x the speed, and it was the one that found
+ * usable addresses. The cause is over-searching: Anthropic ran 41 queries to
+ * Gemini's 16 for the same six named people, and at $0.01 a query that is 60%
+ * of its bill spent on no better an answer.
+ *
+ * Judgement stays on Anthropic — drafting a cold email, classifying a reply,
+ * deciding whether a market is worth another month. Those barely search, so
+ * they barely cost anything, and there is no reason to trade reasoning for a
+ * saving that is not there.
  *
  * DISCOVER_ORGANIZATIONS is on the list but rarely runs now: enumeration goes
  * through the directory provider first and only falls back to a model for

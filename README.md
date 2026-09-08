@@ -111,11 +111,32 @@ a permanent refresh token, then set `ZOHO_CLIENT_ID`, `ZOHO_CLIENT_SECRET`,
 
 ### Cost
 
-Measured 2026-09-07 on `claude-opus-5` with server-side web search:
-**~$0.48 per discovery call** (14 searches, 76K input tokens) and ~$0.47 per
-decision-maker hunt. A 25-contact scout stage is roughly $30-50. The research
-functions are where the money goes; `LLM_MODEL` sets the default and a per-task
-override is a one-line change in `runAITask`.
+Every expensive task is a web-searching task. The one that searches nothing
+costs a cent. Measured on `identifyDecisionMakers` over three funeral homes per
+provider, 2026-09-08, with search billed on both sides:
+
+| | cost/run | time | searches | verified addresses found |
+|---|---|---|---|---|
+| Gemini 3.5 Flash | **$0.091** | 39s | 16 | **2** |
+| Claude Sonnet 5 | $0.229 | 148s | 41 | 0 |
+
+So research routes to Gemini and judgement stays on Anthropic
+(`RESEARCH_PROVIDER`, and it falls back automatically without a Gemini key).
+Anthropic was running 41 searches to Gemini's 16 for the same six people, and at
+$0.01 a search that was 60% of its bill.
+
+Two corrections worth knowing, because both were wrong here before they were
+measured:
+
+- **Search was missing from the Anthropic cost entirely** until 2026-09-08.
+  Anything reported before then is understated by roughly half — a 24-search
+  discovery call logged $0.48 and actually cost nearer $0.72.
+- **Gemini's search is dearer than Anthropic's** — $14/1,000 queries against
+  $10/1,000. It wins on tokens and on restraint, not on search price. Its first
+  5,000 queries each month are free, which at ~5 queries a call covers about a
+  thousand research calls before any of this matters.
+
+Enumeration does not go through a model at all — see below.
 
 ## Seeded prospect sources
 

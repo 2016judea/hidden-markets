@@ -10,17 +10,44 @@ import {
 } from "./provider";
 import { toJsonSchema } from "./anthropic";
 
-/** $ per 1M tokens. Update when Google's pricing page changes. */
+/**
+ * $ per 1M tokens, read off ai.google.dev/gemini-api/docs/pricing 2026-09-08.
+ * An unlisted model costs `null`, which reads as "unknown" on the run rather
+ * than as a confident wrong number.
+ */
 const PRICING: Record<string, { input: number; output: number }> = {
-  "gemini-3.7-flash": { input: 0.3, output: 2.5 },
-  "gemini-3.5-flash-lite": { input: 0.1, output: 0.4 },
-  "gemini-3.1-pro-preview": { input: 1.25, output: 10 },
+  "gemini-3.5-flash": { input: 1.5, output: 9 },
+  "gemini-3.5-flash-lite": { input: 0.3, output: 2.5 },
 };
 
-function costOf(model: string, inputTokens: number, outputTokens: number): number | null {
+/**
+ * Grounding is billed per SEARCH QUERY, not per request, and one request can
+ * issue several. At $14/1,000 it is dearer than Anthropic's $10/1,000 — so on
+ * a search-heavy task Gemini is only cheaper on the token half, and only
+ * decisively so on Flash-Lite. Counting it here is the difference between
+ * knowing that and assuming the opposite.
+ */
+const SEARCH_COST_PER_QUERY = 0.014;
+
+/**
+ * The first 5,000 search queries each month are free across all Gemini 3.x
+ * models. That is the real reason to route research here at this stage: at
+ * roughly nine queries a research call it covers about 550 calls a month, which
+ * is more than a scout stage needs. This process cannot see the monthly total,
+ * so the recorded cost is the pessimistic one — every query billed.
+ */
+function costOf(
+  model: string,
+  inputTokens: number,
+  outputTokens: number,
+  searchQueries = 0,
+): number | null {
   const p = PRICING[model];
   if (!p) return null;
-  return (inputTokens * p.input + outputTokens * p.output) / 1_000_000;
+  return (
+    (inputTokens * p.input + outputTokens * p.output) / 1_000_000 +
+    searchQueries * SEARCH_COST_PER_QUERY
+  );
 }
 
 /**
@@ -44,7 +71,7 @@ export class GeminiProvider implements LLMProvider {
   readonly defaultModel: string;
   private client: GoogleGenAI;
 
-  constructor(apiKey: string, defaultModel = "gemini-3.7-flash") {
+  constructor(apiKey: string, defaultModel = "gemini-3.5-flash") {
     if (!apiKey) throw new Error("GeminiProvider needs GEMINI_API_KEY.");
     this.client = new GoogleGenAI({ apiKey });
     this.defaultModel = defaultModel;
@@ -114,7 +141,12 @@ export class GeminiProvider implements LLMProvider {
     return {
       value: parsed.data,
       citations: dedupe(citations),
-      usage: { inputTokens, outputTokens, webSearches, costUsd: costOf(model, inputTokens, outputTokens) },
+      usage: {
+        inputTokens,
+        outputTokens,
+        webSearches,
+        costUsd: costOf(model, inputTokens, outputTokens, webSearches),
+      },
       modelProvider: this.name,
       modelName: model,
       raw,
