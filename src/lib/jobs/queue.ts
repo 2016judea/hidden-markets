@@ -39,17 +39,34 @@ export async function enqueue(args: {
     if (existing && ["PENDING", "RUNNING"].includes(existing.status)) return existing.id;
     if (existing) await prisma.jobRun.delete({ where: { id: existing.id } });
   }
-  const job = await prisma.jobRun.create({
-    data: {
-      kind: args.kind,
-      payload: j(args.payload ?? {}),
-      experimentId: args.experimentId ?? null,
-      runAfter: args.runAfter ?? new Date(),
-      maxAttempts: args.maxAttempts ?? 3,
-      idempotencyKey: args.idempotencyKey ?? null,
-    },
-  });
-  return job.id;
+
+  const data = {
+    kind: args.kind,
+    payload: j(args.payload ?? {}),
+    experimentId: args.experimentId ?? null,
+    runAfter: args.runAfter ?? new Date(),
+    maxAttempts: args.maxAttempts ?? 3,
+    idempotencyKey: args.idempotencyKey ?? null,
+  };
+
+  try {
+    const job = await prisma.jobRun.create({ data });
+    return job.id;
+  } catch (err) {
+    // The check above is not atomic. With four lanes, two can both find no
+    // existing row and both try to create it; the loser gets a unique-constraint
+    // violation, which then propagates up and kills the whole tick. Losing the
+    // race is the correct outcome — the job exists — so treat it as a success
+    // and hand back whoever won.
+    if ((err as { code?: string }).code === "P2002" && args.idempotencyKey) {
+      const winner = await prisma.jobRun.findUnique({
+        where: { idempotencyKey: args.idempotencyKey },
+        select: { id: true },
+      });
+      if (winner) return winner.id;
+    }
+    throw err;
+  }
 }
 
 /**
