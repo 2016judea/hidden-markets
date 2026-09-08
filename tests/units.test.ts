@@ -14,6 +14,7 @@ import { mayAutoApprove } from "@/lib/jobs/handlers/outbound";
 import { featuresOf, titleBucket } from "@/lib/domain/targeting";
 import { draftOutboundEmail } from "@/lib/ai/prompts/draftOutboundEmail";
 import { qualifyProspect } from "@/lib/ai/prompts/qualifyProspect";
+import { prescreenCandidate } from "@/lib/ai/prompts/prescreenCandidate";
 import { identifyDecisionMakers } from "@/lib/ai/prompts/identifyDecisionMakers";
 import { extractPainSignals } from "@/lib/ai/prompts/extractPainSignals";
 import { analyzeExperiment } from "@/lib/ai/prompts/analyzeExperiment";
@@ -142,6 +143,27 @@ describe("qualification scale", () => {
 
   it("lets an honest all-zero scoring through — that is a verdict, not a bug", () => {
     expect(qualifyProspect.validate!(parts(0) as never, {} as never)).toEqual([]);
+  });
+});
+
+describe("the cheap gate", () => {
+  it("refuses a DROP the model is not sure about", () => {
+    // A drop is permanent and nothing reviews it, so an unsure drop silently
+    // loses a real buyer. A wrong keep costs twenty-four cents.
+    const problems = prescreenCandidate.validate!(
+      { verdict: "DROP", reason: "probably the wrong sector", confidence: 0.5 },
+      {} as never,
+    );
+    expect(problems.join(" ")).toContain("needs 0.7 or better");
+  });
+
+  it("allows a confident DROP and any KEEP", () => {
+    expect(
+      prescreenCandidate.validate!({ verdict: "DROP", reason: "a consumer toy retailer", confidence: 0.95 }, {} as never),
+    ).toEqual([]);
+    expect(
+      prescreenCandidate.validate!({ verdict: "KEEP", reason: "cannot tell from the listing", confidence: 0.2 }, {} as never),
+    ).toEqual([]);
   });
 });
 

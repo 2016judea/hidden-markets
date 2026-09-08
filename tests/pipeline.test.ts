@@ -19,6 +19,11 @@ const INBOX = path.join(process.cwd(), ".mailbox", "inbox");
  * the two human gates actually gating.
  */
 const llm = new MockLLMProvider()
+  .on("emit_prescreen", () => ({
+    verdict: "KEEP",
+    reason: "A municipal wastewater facility, which is exactly the target type.",
+    confidence: 0.9,
+  }))
   .on("emit_organizations", () => ({
     organizations: [
       {

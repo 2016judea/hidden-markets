@@ -14,6 +14,11 @@ export const discoverOrganizations = (
   ctx: TaskContext = {},
 ): Promise<TaskResult<P.DiscoverOutput>> => runAITask(P.discoverOrganizations, input, ctx);
 
+export const prescreenCandidate = (
+  input: P.PrescreenInput,
+  ctx: TaskContext = {},
+): Promise<TaskResult<P.PrescreenOutput>> => runAITask(P.prescreenCandidate, input, ctx);
+
 export const researchOrganization = (
   input: P.ResearchInput,
   ctx: TaskContext = {},

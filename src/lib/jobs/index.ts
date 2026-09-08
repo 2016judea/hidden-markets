@@ -1,5 +1,5 @@
 import { registerHandler } from "./queue";
-import { discoverCandidates, draftOutreach, maintainPipeline, qualifyCandidate, researchCandidate } from "./handlers/prospecting";
+import { discoverCandidates, draftOutreach, maintainPipeline, prescreenCandidateJob, qualifyCandidate, researchCandidate } from "./handlers/prospecting";
 import { sendApprovedOutbox, sendApprovedReplies } from "./handlers/outbound";
 import { processInbound, syncInbox } from "./handlers/inbound";
 import { analyzeExperiment, clusterPain } from "./handlers/analysis";
@@ -16,6 +16,7 @@ export function registerHandlers(): void {
   registered = true;
   registerHandler("MAINTAIN_PIPELINE", maintainPipeline);
   registerHandler("DISCOVER_CANDIDATES", discoverCandidates);
+  registerHandler("PRESCREEN_CANDIDATE", prescreenCandidateJob);
   registerHandler("RESEARCH_CANDIDATE", researchCandidate);
   registerHandler("QUALIFY_CANDIDATE", qualifyCandidate);
   registerHandler("DRAFT_OUTREACH", draftOutreach);

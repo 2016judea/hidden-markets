@@ -5,6 +5,7 @@ import { logActivity } from "../domain/activity";
 export type JobKind =
   | "MAINTAIN_PIPELINE"
   | "DISCOVER_CANDIDATES"
+  | "PRESCREEN_CANDIDATE"
   | "RESEARCH_CANDIDATE"
   | "QUALIFY_CANDIDATE"
   | "DRAFT_OUTREACH"
@@ -70,6 +71,9 @@ const PRIORITY_KINDS: JobKind[] = [
   "QUALIFY_CANDIDATE",
   "DRAFT_OUTREACH",
   "MAINTAIN_PIPELINE",
+  // A cent, no search, and it stops a $0.24 research call — the cheapest
+  // thing in the queue belongs near the front of it.
+  "PRESCREEN_CANDIDATE",
 ];
 
 /**

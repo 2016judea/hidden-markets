@@ -1,5 +1,6 @@
 export * from "./shared";
 export * from "./discoverOrganizations";
+export * from "./prescreenCandidate";
 export * from "./researchOrganization";
 export * from "./identifyDecisionMakers";
 export * from "./extractVerifiedContactInfo";

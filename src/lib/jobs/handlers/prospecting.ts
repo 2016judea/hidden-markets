@@ -60,9 +60,16 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
   const budget = Math.max(0, stageCapEarly - contactedSoFar - uncontactedSoFar);
 
   // 1. Move anything already in the pipeline to its next stage.
-  const [discovered, researched, qualified, undrafted] = await Promise.all([
+  const [unscreened, discovered, researched, qualified, undrafted] = await Promise.all([
+    // The cheap gate first, and generously — it costs a cent and its whole
+    // purpose is to stop the expensive step, so there is no reason to ration it.
     prisma.prospectCandidate.findMany({
-      where: { experimentId, status: "DISCOVERED" },
+      where: { experimentId, status: "DISCOVERED", prescreenVerdict: null },
+      select: { id: true },
+      take: 60,
+    }),
+    prisma.prospectCandidate.findMany({
+      where: { experimentId, status: "DISCOVERED", prescreenVerdict: "KEEP" },
       select: { id: true },
       // Over-research a little so rejections do not starve the funnel, but
       // never research an unbounded backlog.
@@ -85,6 +92,14 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
     }),
   ]);
 
+  for (const c of unscreened) {
+    await enqueue({
+      kind: "PRESCREEN_CANDIDATE",
+      payload: { candidateId: c.id },
+      experimentId,
+      idempotencyKey: `prescreen:${c.id}`,
+    });
+  }
   for (const c of discovered) {
     await enqueue({
       kind: "RESEARCH_CANDIDATE",
@@ -288,6 +303,49 @@ export async function discoverCandidates(payload: Record<string, unknown>): Prom
 
   await nudge(experimentId);
   return { created, skipped, exhausted: output.exhausted };
+}
+
+export async function prescreenCandidateJob(payload: Record<string, unknown>): Promise<unknown> {
+  const candidateId = String(payload.candidateId);
+  const candidate = await prisma.prospectCandidate.findUniqueOrThrow({
+    where: { id: candidateId },
+    include: { experiment: true },
+  });
+  if (candidate.status !== "DISCOVERED" || candidate.prescreenVerdict) {
+    return { skipped: candidate.prescreenVerdict ?? candidate.status };
+  }
+
+  const { output, runId } = await ai.prescreenCandidate(
+    {
+      brief: toBrief(candidate.experiment),
+      organizationName: candidate.organizationName,
+      orgType: candidate.orgType,
+      city: candidate.city,
+      state: candidate.state,
+      website: candidate.website,
+      listedAs: candidate.relevanceReason,
+    },
+    { experimentId: candidate.experimentId, candidateId },
+  );
+
+  await prisma.prospectCandidate.update({
+    where: { id: candidateId },
+    data: { prescreenVerdict: output.verdict, prescreenReason: output.reason },
+  });
+
+  if (output.verdict === "DROP") {
+    await reject(
+      candidateId,
+      `Dropped before research: ${output.reason}`,
+      "AI",
+      candidate.experimentId,
+      candidate.organizationName,
+      "DISCOVERED",
+    );
+  }
+
+  await nudge(candidate.experimentId);
+  return { verdict: output.verdict, runId };
 }
 
 export async function researchCandidate(payload: Record<string, unknown>): Promise<unknown> {

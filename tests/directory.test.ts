@@ -97,6 +97,8 @@ describe("directory discovery", () => {
 
     expect(await prisma.aITaskRun.count()).toBe(0);
     expect(directory.calls).toBe(1);
+    // Nothing is screened yet — the cheap gate has not run.
+    expect(candidates.every((c) => c.prescreenVerdict === null)).toBe(true);
   });
 
   it("keeps the rest of a paid page and drains it before buying another", async () => {

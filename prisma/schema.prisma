@@ -140,6 +140,10 @@ model ProspectCandidate {
   likelyProblemFit  String?
   personalizationFacts String @default("[]") // JSON PersonalizationFact[]
 
+  /** The cheap gate's verdict, set before any research is paid for. */
+  prescreenVerdict String?
+  prescreenReason  String?
+
   qualificationScore Int?
   scoreBreakdown     String?  // JSON — every component and its weight, never opaque
   confidenceScore    Float?
@@ -188,6 +192,10 @@ model Prospect {
   city        String?
   state       String?
   orgType     String?
+
+  /** The cheap gate's verdict, set before any research is paid for. */
+  prescreenVerdict String?
+  prescreenReason  String?
 
   qualificationScore Int?
   scoreBreakdown     String?
