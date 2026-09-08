@@ -677,6 +677,47 @@ export async function draftOutreach(payload: Record<string, unknown>): Promise<u
   });
   if (duplicate) return { skipped: "draft already exists" };
 
+  // ONE COLD EMAIL PER ORGANIZATION.
+  //
+  // Deduplication is keyed on the address, which is right for "is this the same
+  // person" and useless for "have we already approached this company". H&H
+  // Buying & Selling collected two prospect rows — sales@ contacted by hand on
+  // 2026-09-07, and Purchasing@ drafted the next day by this pipeline. Both
+  // would have gone out from the same person, two days apart, each apparently
+  // unaware of the other. To a two-person firm that reads as a mailing list,
+  // and the reply is the entire product here.
+  //
+  // A follow-up or a referral intro is exempt: the first is the same thread, and
+  // the second was explicitly invited by someone inside the company.
+  if (kind === "INITIAL") {
+    const orgMatch = prospect.organizationId
+      ? { organizationId: prospect.organizationId }
+      : { organizationName: prospect.organizationName };
+    const alreadyApproached = await prisma.prospect.findFirst({
+      where: {
+        ...orgMatch,
+        id: { not: prospectId },
+        firstContactedAt: { not: null },
+      },
+      select: { email: true, contactName: true, firstContactedAt: true },
+    });
+    if (alreadyApproached) {
+      await prisma.prospect.update({
+        where: { id: prospectId },
+        data: { status: "DO_NOT_CONTACT" },
+      });
+      await logActivity({
+        experimentId: prospect.experimentId,
+        kind: "REJECTION",
+        message:
+          `Did not draft to ${prospect.email} — ${prospect.organizationName} was already approached at ` +
+          `${alreadyApproached.email} on ${alreadyApproached.firstContactedAt?.toISOString().slice(0, 10)}. ` +
+          `One cold email per organization.`,
+      });
+      return { skipped: "organization already approached", at: alreadyApproached.email };
+    }
+  }
+
   const referralRow = prospect.referredBy[0] ?? null;
   const referralSource = referralRow
     ? await prisma.prospect.findUnique({ where: { id: referralRow.sourceProspectId } })

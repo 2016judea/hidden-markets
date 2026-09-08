@@ -354,6 +354,33 @@ describe("the whole loop", () => {
     expect(memo.stageRecommendation).toBe("HOLD");
   });
 
+  it("will not cold-email a second person at a company already approached", async () => {
+    const contacted = await prisma.prospect.findFirstOrThrow({ where: { experimentId } });
+    const second = await prisma.prospect.create({
+      data: {
+        experimentId,
+        organizationId: contacted.organizationId,
+        organizationName: contacted.organizationName,
+        contactName: "Someone Else",
+        title: "Purchasing",
+        email: "purchasing@mesawater.example.gov",
+        status: "READY",
+      },
+    });
+
+    await enqueue({
+      kind: "DRAFT_OUTREACH",
+      payload: { prospectId: second.id, kind: "INITIAL", sequenceIndex: 0 },
+      experimentId,
+      idempotencyKey: `draft-dupe:${second.id}`,
+    });
+    await drain(10);
+
+    expect(await prisma.outboxDraft.count({ where: { prospectId: second.id } })).toBe(0);
+    const after = await prisma.prospect.findUniqueOrThrow({ where: { id: second.id } });
+    expect(after.status).toBe("DO_NOT_CONTACT");
+  });
+
   it("hands a candidate back instead of stranding it when research fails", async () => {
     // The failure that cost sixty-one candidates: RESEARCHING is set, the call
     // throws, the retry sees a non-DISCOVERED candidate, returns "skipped", and
