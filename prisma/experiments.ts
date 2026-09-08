@@ -33,6 +33,11 @@ export type SeedExperiment = {
    * discovery falls back to the model or to an imported public list.
    */
   directoryQueries: string[];
+  /**
+   * Metros to sweep, "City, ST". Optional — omitted means the default national
+   * list in src/lib/domain/metros.ts. Set it when a hypothesis is regional.
+   */
+  directoryLocations?: string[];
 };
 
 export const SEED_EXPERIMENTS: SeedExperiment[] = [

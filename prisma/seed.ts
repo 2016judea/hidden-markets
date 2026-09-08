@@ -25,6 +25,7 @@ async function main() {
       safetyNotes: e.safetyNotes,
       monetizationPaths: j(e.monetizationPaths),
       directoryQueries: j(e.directoryQueries),
+      directoryLocations: j(e.directoryLocations ?? []),
     };
 
     const existing = await prisma.marketExperiment.findUnique({ where: { slug: e.slug } });
