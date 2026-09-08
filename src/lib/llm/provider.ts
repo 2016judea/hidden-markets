@@ -11,6 +11,9 @@ export type LLMUsage = {
   inputTokens: number;
   outputTokens: number;
   webSearches: number;
+  /** Prefix served from cache — billed at a fraction of the input rate. */
+  cacheReadTokens?: number;
+  cacheWriteTokens?: number;
   costUsd: number | null;
 };
 

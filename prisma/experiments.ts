@@ -26,6 +26,13 @@ export type SeedExperiment = {
   successCriteria: string[];
   safetyNotes: string;
   monetizationPaths: string[];
+  /**
+   * Search phrases for the directory sweep, which enumerates for a tenth of a
+   * cent per organization instead of seven. Empty means this buyer is not a
+   * listed local business — a municipal utility, a permitted facility — and
+   * discovery falls back to the model or to an imported public list.
+   */
+  directoryQueries: string[];
 };
 
 export const SEED_EXPERIMENTS: SeedExperiment[] = [
@@ -62,6 +69,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Grief-adjacent. Never use urgency language, never reference a specific decedent or service, and never contact a family. Written contact with the business only. Several states regulate funeral-industry solicitation — check state rules before any paid engagement.",
     monetizationPaths: ["Rush print brokerage", "Overflow production matching", "Template/asset licensing"],
+    directoryQueries: ["funeral home", "funeral director"],
   },
   {
     slug: "cemeteries-burial-record-digitization",
@@ -93,6 +101,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Burial records contain personal data about the deceased and plot owners. Never request or store records in this research phase. Some states regulate cemetery record retention — a digitisation engagement would need to meet the state's retention rule, not replace it.",
     monetizationPaths: ["Scanning and indexing service", "Record-search fulfilment", "Plot-map reconstruction"],
+    directoryQueries: ["cemetery"],
   },
   {
     slug: "marinas-slip-waitlist",
@@ -120,6 +129,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Waitlist data is personal data about boat owners. Municipal marinas may be subject to public-records law both ways — what they send us could itself be a public record.",
     monetizationPaths: ["Waitlist administration service", "Slip-turnover software", "Seasonal audit engagement"],
+    directoryQueries: ["marina", "yacht club"],
   },
   {
     slug: "museums-collection-metadata",
@@ -147,6 +157,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Some collections carry cultural sensitivity and repatriation obligations (NAGPRA in the US). Never propose publishing or reprocessing culturally sensitive material. Object location data is a security matter and must never be requested.",
     monetizationPaths: ["Metadata remediation projects", "Grant-funded digitisation", "Controlled-vocabulary reconciliation"],
+    directoryQueries: ["museum", "historical society"],
   },
   {
     slug: "commercial-laundries-linen-loss",
@@ -174,6 +185,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Healthcare linen touches infection-control regulation (and in some states, licensure). Never advise on hygienic processing. Loss figures are commercially sensitive — treat them as confidential to this research.",
     monetizationPaths: ["Reconciliation service", "RFID/tracking integration brokerage", "Loss audit engagement"],
+    directoryQueries: ["commercial laundry", "linen service"],
   },
   {
     slug: "mushroom-farms-substrate",
@@ -204,6 +216,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Strictly culinary and commercial species. Any reply touching psilocybin ends the thread immediately and the prospect is marked do-not-contact. Substrate for food production may fall under FSMA — never make a food-safety claim.",
     monetizationPaths: ["Substrate brokerage", "Group buying", "Supplier introductions"],
+    directoryQueries: ["mushroom farm"],
   },
   {
     slug: "universities-equipment-surplus",
@@ -231,6 +244,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Lab equipment may carry chemical, biological or radiological contamination history, and some instruments (lasers, radiation sources, certain centrifuge rotors) carry disposal and licensing rules. Never represent decontamination status. Export-controlled instruments exist — a transaction would need ITAR/EAR screening.",
     monetizationPaths: ["Surplus-to-lab matching", "Consignment brokerage", "Equipment sourcing fee"],
+    directoryQueries: ["university"],
   },
   {
     slug: "meat-processors-byproduct",
@@ -257,6 +271,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Heavily regulated: FSIS inspection, state rendering rules, and BSE-related specified-risk-material restrictions determine what may legally move and where. Never advise on what may be diverted from rendering. Any real transaction needs a regulatory review first, not after.",
     monetizationPaths: ["Byproduct buyer matching", "Rendering contract renegotiation", "Brokerage on diverted streams"],
+    directoryQueries: ["meat processing plant", "slaughterhouse"],
   },
   {
     slug: "luxury-hotels-lost-property",
@@ -284,6 +299,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Guest privacy is absolute. Never request guest names, room numbers, dates or any identifying detail. Some jurisdictions have statutory lost-property holding periods — never advise on disposition timing.",
     monetizationPaths: ["Sourcing service", "Concierge partnership", "Per-item finder fee"],
+    directoryQueries: ["luxury hotel", "boutique hotel"],
   },
   {
     slug: "municipal-obsolete-parts",
@@ -323,6 +339,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Public agencies buy under procurement law: above a threshold they must competitively bid, and a sole-source purchase needs a written justification. Never suggest a way around that. Drinking-water components may need NSF/ANSI 61 certification — never represent a part as potable-water rated. Municipal email is often a public record.",
     monetizationPaths: ["Sourcing fee per part", "Surplus and secondary market brokerage", "Obsolescence audit engagement"],
+    directoryQueries: [],
   },
   {
     slug: "laboratories-replacement-parts",
@@ -350,6 +367,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Clinical labs are regulated under CLIA and instruments may be FDA-cleared as devices; a non-OEM part can invalidate clearance or accreditation. Never represent a part as validated, equivalent or compliant. This is research into the problem, not a parts business, until that question is answered properly.",
     monetizationPaths: ["Parts sourcing", "Refurbished instrument brokerage", "End-of-life planning engagement"],
+    directoryQueries: ["environmental testing laboratory", "analytical laboratory"],
   },
   {
     slug: "auction-houses-lot-identification",
@@ -380,6 +398,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Ivory, firearms, Native American cultural items (NAGPRA), and antiquities carry hard legal restrictions on sale and transport. Never offer to identify or value in a way that could facilitate an illegal sale. We are not appraisers and must never present an opinion as an appraisal.",
     monetizationPaths: ["Per-lot identification", "Catalogue enrichment", "Specialist referral network"],
+    directoryQueries: ["auction house", "estate auction"],
   },
   {
     slug: "ski-resorts-lift-components",
@@ -407,6 +426,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Passenger ropeways are life-safety systems regulated by state tramway boards and ANSI B77. A non-conforming part on a lift is a safety and legal matter. Never represent a part as suitable, conforming or safe — every sourced component would need the resort's own engineer and the state board to sign it off.",
     monetizationPaths: ["Parts sourcing", "Decommissioned-lift salvage brokerage", "Cross-resort spares network"],
+    directoryQueries: ["ski resort"],
   },
   {
     slug: "airports-gse-parts",
@@ -437,6 +457,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "STRICT BOUNDARY: ground support equipment only. Anything that touches an aircraft — any part with a part number in an aircraft's maintenance program — is FAA-regulated (14 CFR Part 21/43/145), requires traceability and airworthiness approval, and is entirely out of scope. If a reply drifts toward aircraft parts, escalate to the operator immediately and do not answer it.",
     monetizationPaths: ["GSE parts sourcing", "Fleet retirement and salvage brokerage", "Cross-airport spares matching"],
+    directoryQueries: ["fixed base operator", "airport"],
   },
   {
     slug: "breweries-byproduct-buyers",
@@ -464,6 +485,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Spent grain fed to animals is regulated feed — the FDA's FSMA animal food rules apply, with a specific exemption pathway for breweries. Never advise on feed safety or claim a stream is feed-grade. Alcohol businesses are TTB-licensed; nothing here touches product.",
     monetizationPaths: ["Byproduct buyer matching", "Backup hauler network", "Higher-value stream brokerage"],
+    directoryQueries: ["brewery"],
   },
   {
     slug: "dental-labs-overflow-capacity",
@@ -491,6 +513,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Dental devices are FDA-regulated and labs must be registered; work is done on a dentist's prescription. Case data may include patient identifiers, so never request a case file, an impression scan or anything with a patient name. Any matching arrangement would need each lab's own registration and the prescribing dentist's consent.",
     monetizationPaths: ["Overflow matching marketplace", "Capacity brokerage fee", "Peak-season partnerships"],
+    directoryQueries: ["dental laboratory"],
   },
   {
     slug: "data-centers-switchgear",
@@ -523,6 +546,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
       "Lead-time intelligence subscription",
       "Joining this demand side to scrapwatch's supply side — the only path here that neither half has alone",
     ],
+    directoryQueries: ["data center", "electrical contractor"],
   },
   {
     slug: "historic-preservation-materials",
@@ -550,6 +574,7 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
     safetyNotes:
       "Historic materials frequently contain lead paint and asbestos, and salvaged architectural elements are sometimes stolen — provenance matters legally as well as ethically. Never represent a material as hazard-free, and never source an item without a traceable chain of custody. Work on listed properties is governed by the Secretary of the Interior's Standards and local commission approval.",
     monetizationPaths: ["Materials sourcing fee", "Salvage network brokerage", "Custom reproduction matching"],
+    directoryQueries: ["restoration contractor", "historic preservation"],
   },
   {
     slug: "used-electrical-gear-supply",
@@ -582,5 +607,9 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
       "Repeating the feed city by city, which is the only path to real scale",
       "Joining this supply side to data-centers-switchgear's demand side — the only path neither half has alone",
     ],
+    // Narrow on purpose. "scrap metal dealer" would list hundreds of yards
+    // with no resale side, and every one of them costs a $0.12 research call to
+    // reject. The qualifier is cheap; the researcher upstream of it is not.
+    directoryQueries: ["used electrical equipment", "electrical surplus", "transformer supplier"],
   },
 ];

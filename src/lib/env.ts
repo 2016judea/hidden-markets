@@ -22,6 +22,12 @@ const schema = z.object({
   ZOHO_API_BASE: z.string().default("https://mail.zoho.com/api"),
   ZOHO_ACCOUNTS_BASE: z.string().default("https://accounts.zoho.com"),
 
+  GOOGLE_PLACES_API_KEY: z.string().optional(),
+  GEMINI_API_KEY: z.string().optional(),
+  GEMINI_MODEL: z.string().default("gemini-3.7-flash"),
+  /** Who does the web-searching tasks. "anthropic" keeps everything on one vendor. */
+  RESEARCH_PROVIDER: z.enum(["gemini", "anthropic"]).default("anthropic"),
+
   OPERATOR_NAME: z.string().default("Aidan Jude"),
   WORKER_ENABLED: z.string().default("true"),
 });

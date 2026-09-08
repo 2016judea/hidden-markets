@@ -38,6 +38,14 @@ model MarketExperiment {
   targetGeography    String @default("United States")
   researchStrategy   String @default("")
   qualificationCriteria String @default("[]")
+
+  // Enumeration is a directory lookup, not a judgement, so it should not cost
+  // a model call. These drive Google Places: the phrases to search and the
+  // metros to search them in. Empty queries mean this buyer type is not a
+  // local business (a municipal utility, a university) and discovery falls
+  // back to the model. Empty locations mean "use the default metro list".
+  directoryQueries   String @default("[]")
+  directoryLocations String @default("[]")
   successCriteria    String @default("[]")
   safetyNotes        String @default("")
   monetizationPaths  String @default("[]")
@@ -541,6 +549,8 @@ model AITaskRun {
 
   inputTokens  Int?
   outputTokens Int?
+  cacheReadTokens  Int?
+  cacheWriteTokens Int?
   costUsd      Float?
   webSearches  Int @default(0)
 
@@ -631,6 +641,29 @@ model TargetingStat {
   updatedAt    DateTime @updatedAt
 
   @@unique([experimentId, feature, value])
+}
+
+/**
+ * One row per term x location already swept, so a rerun does not re-buy a page
+ * of results it has seen and the pipeline knows where to look next.
+ */
+model DirectorySweep {
+  id           String @id @default(cuid())
+  experimentId String
+  term         String
+  location     String
+  provider     String
+  found        Int    @default(0)
+  created      Int    @default(0)
+  costUsd      Float  @default(0)
+  /** Records from this page we paid for but have not turned into candidates
+   *  yet. Drained before the next page is bought, so a batch cap of 8 against
+   *  a 60-result page does not throw away 52 listings we already own. */
+  leftover     String @default("[]")
+  createdAt    DateTime @default(now())
+
+  @@unique([experimentId, term, location])
+  @@index([experimentId])
 }
 
 model MarketMemo {

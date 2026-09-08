@@ -33,7 +33,7 @@ export class MockLLMProvider implements LLMProvider {
     return {
       value,
       citations: [],
-      usage: { inputTokens: 0, outputTokens: 0, webSearches: 0, costUsd: 0 },
+      usage: { inputTokens: 0, outputTokens: 0, webSearches: 0, cacheReadTokens: 0, cacheWriteTokens: 0, costUsd: 0 },
       modelProvider: this.name,
       modelName: this.defaultModel,
     };

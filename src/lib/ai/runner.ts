@@ -1,5 +1,5 @@
 import { prisma, j } from "../db";
-import { getLLM, InvalidModelOutput, type Citation } from "../llm";
+import { getLLMFor, InvalidModelOutput, type Citation } from "../llm";
 import type { PromptModule } from "./types";
 
 export type TaskContext = {
@@ -40,7 +40,7 @@ export async function runAITask<I, O>(
   input: I,
   context: TaskContext = {},
 ): Promise<TaskResult<O>> {
-  const llm = getLLM();
+  const llm = getLLMFor(module.taskType);
   const startedAt = new Date();
 
   const run = await prisma.aITaskRun.create({
@@ -103,6 +103,8 @@ export async function runAITask<I, O>(
           retryCount: attempt,
           inputTokens: result.usage.inputTokens,
           outputTokens: result.usage.outputTokens,
+          cacheReadTokens: result.usage.cacheReadTokens ?? 0,
+          cacheWriteTokens: result.usage.cacheWriteTokens ?? 0,
           costUsd: result.usage.costUsd,
           webSearches: result.usage.webSearches,
           modelName: result.modelName,

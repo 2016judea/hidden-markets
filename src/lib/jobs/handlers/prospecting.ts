@@ -11,6 +11,8 @@ import { isSuppressed } from "../../domain/suppression";
 import { THRESHOLDS, STAGE_TARGETS, type ExperimentStage } from "../../domain/constants";
 import { enqueue } from "../queue";
 import { env } from "../../env";
+import { getDirectory, type DirectoryRecord } from "../../directory";
+import { DEFAULT_METROS } from "../../domain/metros";
 
 /**
  * How many organizations one discovery call may look for.
@@ -46,12 +48,25 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
   const exp = await prisma.marketExperiment.findUnique({ where: { id: experimentId } });
   if (!exp || exp.status !== "ACTIVE") return { skipped: `status=${exp?.status ?? "missing"}` };
 
+  // How much of this stage's contact budget is still unspent. Everything below
+  // is capped by it, because research is the expensive step: 18 imported
+  // candidates against a 25-contact stage with 20 already contacted must not
+  // become 18 research calls. Discovery is cheap now; the model is not.
+  const [contactedSoFar, uncontactedSoFar] = await Promise.all([
+    prisma.prospect.count({ where: { experimentId, firstContactedAt: { not: null } } }),
+    prisma.prospect.count({ where: { experimentId, firstContactedAt: null } }),
+  ]);
+  const stageCapEarly = STAGE_TARGETS[exp.stage as ExperimentStage] ?? exp.contactedTarget;
+  const budget = Math.max(0, stageCapEarly - contactedSoFar - uncontactedSoFar);
+
   // 1. Move anything already in the pipeline to its next stage.
   const [discovered, researched, qualified, undrafted] = await Promise.all([
     prisma.prospectCandidate.findMany({
       where: { experimentId, status: "DISCOVERED" },
       select: { id: true },
-      take: 25,
+      // Over-research a little so rejections do not starve the funnel, but
+      // never research an unbounded backlog.
+      take: Math.min(25, budget + 5),
     }),
     prisma.prospectCandidate.findMany({
       where: { experimentId, status: "RESEARCHED" },
@@ -103,18 +118,12 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
   // The stage cap is the brake that stops a running experiment from quietly
   // becoming a bigger one. Contacts already spent count against it, so an
   // experiment cannot exceed its stage's contact budget by topping up.
-  const stageCap = STAGE_TARGETS[exp.stage as ExperimentStage] ?? exp.contactedTarget;
-  const [contacted, inFlight] = await Promise.all([
-    prisma.prospect.count({ where: { experimentId, firstContactedAt: { not: null } } }),
-    prisma.prospectCandidate.count({
-      where: { experimentId, status: { in: ["DISCOVERED", "RESEARCHING", "RESEARCHED", "QUALIFYING", "QUALIFIED"] } },
-    }),
-  ]);
-  const uncontacted = await prisma.prospect.count({
-    where: { experimentId, firstContactedAt: null },
+  const stageCap = stageCapEarly;
+  const contacted = contactedSoFar;
+  const inFlight = await prisma.prospectCandidate.count({
+    where: { experimentId, status: { in: ["DISCOVERED", "RESEARCHING", "RESEARCHED", "QUALIFYING", "QUALIFIED"] } },
   });
-
-  const available = inFlight + uncontacted;
+  const available = inFlight + uncontactedSoFar;
   const roomInStage = Math.max(0, stageCap - contacted - available);
   const deficit = Math.min(Math.max(0, exp.prospectTarget - available), roomInStage);
 
@@ -128,13 +137,27 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
     });
   }
 
-  return { contacted, available, deficit, stageCap, promoted: qualified.length };
+  return { contacted, available, deficit, stageCap, budget, promoted: qualified.length };
 }
 
 export async function discoverCandidates(payload: Record<string, unknown>): Promise<unknown> {
   const experimentId = String(payload.experimentId);
   const count = Math.min(Number(payload.count ?? DISCOVERY_BATCH), DISCOVERY_BATCH);
   const exp = await prisma.marketExperiment.findUniqueOrThrow({ where: { id: experimentId } });
+
+  // Enumeration first, if this buyer type is something a directory can list.
+  // It costs about a tenth of a cent per organization against seven cents from
+  // the model, and it returns a website and a phone number the model does not
+  // reliably find. The model still does every judgement downstream.
+  const terms = parseJson<string[]>(exp.directoryQueries, []);
+  if (terms.length > 0 && getDirectory()) {
+    const swept = await sweepDirectory(exp, terms, count);
+    if (swept.created > 0 || swept.exhausted) {
+      await nudge(experimentId);
+      return swept;
+    }
+    // Nothing usable came back — fall through to the model rather than stall.
+  }
 
   const known = await prisma.prospectCandidate.findMany({
     where: { experimentId },
@@ -688,6 +711,163 @@ export async function draftOutreach(payload: Record<string, unknown>): Promise<u
   });
 
   return { drafted: true, riskLevel };
+}
+
+/**
+ * One term x location page, turned into candidates. Picks the next unswept pair
+ * so repeated runs walk outward through the metro list instead of re-buying the
+ * same first page.
+ */
+async function sweepDirectory(
+  exp: { id: string; targetGeography: string; directoryLocations: string; name: string },
+  terms: string[],
+  wanted: number,
+): Promise<{ source: string; created: number; skipped: number; costUsd: number; exhausted: boolean }> {
+  const directory = getDirectory()!;
+  const locations = (() => {
+    const named = parseJson<string[]>(exp.directoryLocations, []);
+    return named.length > 0 ? named : DEFAULT_METROS;
+  })();
+
+  const done = await prisma.directorySweep.findMany({
+    where: { experimentId: exp.id },
+    select: { term: true, location: true },
+  });
+  const seen = new Set(done.map((d) => `${d.term}|${d.location}`));
+
+  // A page already bought comes first. A 60-result page against a batch of 8
+  // otherwise means paying for the same 52 listings again on the next run.
+  const pending = await prisma.directorySweep.findFirst({
+    where: { experimentId: exp.id, NOT: { leftover: "[]" } },
+    orderBy: { createdAt: "asc" },
+  });
+
+  let next: { term: string; location: string };
+  let result: { records: DirectoryRecord[]; calls: number; costUsd: number };
+  let fromLeftover = false;
+
+  if (pending) {
+    next = { term: pending.term, location: pending.location };
+    result = { records: parseJson<DirectoryRecord[]>(pending.leftover, []), calls: 0, costUsd: 0 };
+    fromLeftover = true;
+  } else {
+    const pick = (() => {
+      for (const location of locations) {
+        for (const term of terms) {
+          if (!seen.has(`${term}|${location}`)) return { term, location };
+        }
+      }
+      return null;
+    })();
+    if (!pick) {
+      return { source: directory.name, created: 0, skipped: 0, costUsd: 0, exhausted: true };
+    }
+    next = pick;
+    result = await directory.search({ term: pick.term, location: pick.location, limit: 60 });
+  }
+
+  const known = await prisma.prospectCandidate.findMany({
+    where: { experimentId: exp.id },
+    select: { organizationName: true },
+  });
+  const knownNames = new Set(known.map((k) => normalizeOrgName(k.organizationName)));
+
+  let created = 0;
+  let skipped = 0;
+  const unused: DirectoryRecord[] = [];
+
+  for (const record of result.records) {
+    if (created >= wanted) {
+      unused.push(record);
+      continue;
+    }
+    const norm = normalizeOrgName(record.name);
+    if (!record.name || knownNames.has(norm)) {
+      skipped++;
+      continue;
+    }
+    knownNames.add(norm);
+
+    const domain = normalizeDomain(record.website);
+    const organization = domain
+      ? await prisma.organization.upsert({
+          where: { domain },
+          create: {
+            name: record.name, domain, website: record.website,
+            orgType: record.primaryType, city: record.city, state: record.state,
+          },
+          update: {},
+        })
+      : await prisma.organization.create({
+          data: {
+            name: record.name, website: record.website,
+            orgType: record.primaryType, city: record.city, state: record.state,
+          },
+        });
+    if (organization.suppressed) {
+      skipped++;
+      continue;
+    }
+
+    const dedupeKey = candidateDedupeKey({ organizationName: record.name });
+    if (
+      await prisma.prospectCandidate.findUnique({
+        where: { experimentId_dedupeKey: { experimentId: exp.id, dedupeKey } },
+      })
+    ) {
+      skipped++;
+      continue;
+    }
+
+    await prisma.prospectCandidate.create({
+      data: {
+        experimentId: exp.id,
+        organizationId: organization.id,
+        organizationName: record.name,
+        website: record.website,
+        phone: record.phone,
+        city: record.city,
+        state: record.state,
+        orgType: record.primaryType,
+        dedupeKey,
+        status: "DISCOVERED",
+        // Deliberately flat. A directory says this business exists and what it
+        // is called; it says nothing about whether the hypothesis holds here,
+        // and researchOrganization has not run yet. Claiming more would put an
+        // unearned reason in front of the reviewer.
+        relevanceReason: `Listed as "${next.term}" in ${next.location}.`,
+        sourceUrls: j([record.sourceUrl].filter(Boolean)),
+      },
+    });
+    created++;
+  }
+
+  if (fromLeftover && pending) {
+    await prisma.directorySweep.update({
+      where: { id: pending.id },
+      data: { created: { increment: created }, leftover: j(unused) },
+    });
+  } else {
+    await prisma.directorySweep.create({
+      data: {
+        experimentId: exp.id, term: next.term, location: next.location,
+        provider: directory.name, found: result.records.length, created,
+        costUsd: result.costUsd, leftover: j(unused),
+      },
+    });
+  }
+
+  await logActivity({
+    experimentId: exp.id,
+    kind: "DISCOVERY",
+    message:
+      `Found ${created} new "${next.term}" in ${next.location} from ${directory.name} ` +
+      `(${result.records.length} ${fromLeftover ? "held over" : "listed"}, ${skipped} already known, ${unused.length} kept for next time)` +
+      `${fromLeftover ? " at no further cost." : ` for $${result.costUsd.toFixed(3)}.`}`,
+    detail: { term: next.term, location: next.location, calls: result.calls, fromLeftover },
+  });
+
+  return { source: directory.name, created, skipped, costUsd: result.costUsd, exhausted: false };
 }
 
 async function reject(

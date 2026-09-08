@@ -25,10 +25,29 @@ const PRICING: Record<string, { input: number; output: number }> = {
  */
 const WEB_SEARCH_TOOL_TYPE = "web_search_20260209";
 
-function costOf(model: string, inputTokens: number, outputTokens: number): number | null {
+/**
+ * Cache reads bill at ~10% of the input rate and cache writes at ~125%, so a
+ * prefix reused across a batch of candidates pays for itself on the second
+ * call. Reported separately on the run so the saving is visible rather than
+ * assumed.
+ */
+const CACHE_READ_MULTIPLIER = 0.1;
+const CACHE_WRITE_MULTIPLIER = 1.25;
+
+function costOf(
+  model: string,
+  inputTokens: number,
+  outputTokens: number,
+  cacheReadTokens = 0,
+  cacheWriteTokens = 0,
+): number | null {
   const p = PRICING[model];
   if (!p) return null;
-  return (inputTokens * p.input + outputTokens * p.output) / 1_000_000;
+  const input =
+    inputTokens * p.input +
+    cacheReadTokens * p.input * CACHE_READ_MULTIPLIER +
+    cacheWriteTokens * p.input * CACHE_WRITE_MULTIPLIER;
+  return (input + outputTokens * p.output) / 1_000_000;
 }
 
 /**
@@ -125,6 +144,8 @@ export class AnthropicProvider implements LLMProvider {
     const citations: Citation[] = [];
     let inputTokens = 0;
     let outputTokens = 0;
+    let cacheReadTokens = 0;
+    let cacheWriteTokens = 0;
     let webSearches = 0;
     let toolInput: unknown = null;
 
@@ -136,7 +157,13 @@ export class AnthropicProvider implements LLMProvider {
       const stream = await this.client.messages.stream({
         model,
         max_tokens: req.maxTokens ?? 16000,
-        system: req.system,
+        // The system prompt is byte-identical for every candidate in an
+        // experiment and is re-sent on every call. Caching covers the whole
+        // prefix — tools render before system — so the tool schema rides along
+        // free. Cache reads are ~10% of input price; the volatile per-candidate
+        // text lives in `messages`, after the breakpoint, so it never
+        // invalidates the cached prefix.
+        system: [{ type: "text", text: req.system, cache_control: { type: "ephemeral" } }],
         messages,
         tools,
         tool_choice: forceEmit
@@ -148,6 +175,8 @@ export class AnthropicProvider implements LLMProvider {
 
       inputTokens += response.usage.input_tokens ?? 0;
       outputTokens += response.usage.output_tokens ?? 0;
+      cacheReadTokens += response.usage.cache_read_input_tokens ?? 0;
+      cacheWriteTokens += response.usage.cache_creation_input_tokens ?? 0;
 
       for (const block of response.content) {
         if (block.type === "tool_use" && block.name === req.resultName) {
@@ -209,7 +238,14 @@ export class AnthropicProvider implements LLMProvider {
     return {
       value: parsed.data,
       citations: dedupeCitations(citations),
-      usage: { inputTokens, outputTokens, webSearches, costUsd: costOf(model, inputTokens, outputTokens) },
+      usage: {
+        inputTokens,
+        outputTokens,
+        webSearches,
+        cacheReadTokens,
+        cacheWriteTokens,
+        costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens),
+      },
       modelProvider: this.name,
       modelName: model,
       raw: toolInput,
@@ -237,7 +273,7 @@ export class AnthropicProvider implements LLMProvider {
     return {
       value: text,
       citations: [],
-      usage: { inputTokens, outputTokens, webSearches: 0, costUsd: costOf(model, inputTokens, outputTokens) },
+      usage: { inputTokens, outputTokens, webSearches: 0, cacheReadTokens: 0, cacheWriteTokens: 0, costUsd: costOf(model, inputTokens, outputTokens) },
       modelProvider: this.name,
       modelName: model,
     };
