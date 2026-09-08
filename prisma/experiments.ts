@@ -551,4 +551,36 @@ export const SEED_EXPERIMENTS: SeedExperiment[] = [
       "Historic materials frequently contain lead paint and asbestos, and salvaged architectural elements are sometimes stolen — provenance matters legally as well as ethically. Never represent a material as hazard-free, and never source an item without a traceable chain of custody. Work on listed properties is governed by the Secretary of the Interior's Standards and local commission approval.",
     monetizationPaths: ["Materials sourcing fee", "Salvage network brokerage", "Custom reproduction matching"],
   },
+  {
+    slug: "used-electrical-gear-supply",
+    name: "Used transformers and switchgear — the supply side: refurbishers, dealers and scrap",
+    buyerPersona:
+      "The person who buys used electrical gear before a scrap yard gets it: surplus buying at a refurbisher with a yard (Maddox, Sunbelt Solomon, T&R Electric), purchasing at a regional used-equipment dealer (H&H Buying & Selling, Minneapolis), or the resale side of a scrap yard.",
+    hypothesis:
+      "Their scarce input is not buyers, it is seller leads: knowing which building is about to shed a working $20k-$500k unit that someone else sees as metal weight. They already pay for this — the 'who buys transformers near Minneapolis' sites are programmatic SEO run by two-person brokers — so a free, specific heads-up read off the permit desk (address, contractor, date, still standing) will get a reply, and a reply is the signal.",
+    likelyProblem:
+      "A commercial building comes down and the transformer leaves as steel because nobody who would have paid five times scrap knew the wrecking permit had been issued.",
+    offer:
+      "The heads-up itself, free and specific: the commercial buildings in Minneapolis and Saint Paul with a wrecking permit or a top-decile electrical permit, newest first, with the contractor named. The only ask is whether it was useful. Nothing is pitched.",
+    targetTitles: ["Director of Surplus Buying", "Purchasing Manager", "Buyer", "Owner", "Investment Recovery", "Sales Manager"],
+    targetOrgTypes: ["Transformer refurbisher", "Used electrical equipment dealer", "Electrical surplus broker", "Scrap yard with a resale side", "Demolition contractor"],
+    targetGeography: "Upper Midwest first (Minnesota, Wisconsin, Iowa, the Dakotas); national refurbishers second",
+    exclusionCriteria: ["Data center operators and electrical contractors waiting on gear — that is the demand side, experiment data-centers-switchgear", "Equipment manufacturers and their authorised distributors"],
+    qualificationCriteria: ["Publishes a 'we buy' or 'surplus wanted' page", "A reachable purchasing mailbox or named buyer, verified off their own site", "Buys the class of gear a commercial teardown yields (padmount, dry-type, switchgear, bus duct)"],
+    researchStrategy:
+      "STARTED 2026-09-07. The supply signal is built and live: brickandmortar.dev/datasets/teardowns (free, CC BY 4.0, 560 rows: 207 commercial teardowns, 353 top-decile Saint Paul electrical permits, refreshed daily at 06:30 by bricks/scripts/refresh_permits.sh) and scrapwatch.vercel.app (github.com/2016judea/scrapwatch, private), a free daily email alert on new rows by city and kind. Buyer list so far, each verified off the company's own site, never an aggregator: H&H Buying & Selling (3236 California St NE, Minneapolis, sales@handh.net); T&R Electric Supply (Colman SD, since 1961, sales@trelectric.com, has a Surplus Wanted page); Maddox Industrial Transformer (sales@maddox.com, pays 'up to 5x scrap'); Sunbelt Solomon (form and phone only). Two heads-ups sent 2026-09-07 (H&H, T&R) by Aidan via Zoho, outside this pipeline; chase 2026-09-21. Next: Maddox if either replies; the programmatic SEO buyers (thecircuitbreakersource, electricalequipmentbuyers, surplusequipmentbuyer — Southern California, gmail inboxes) as a second tranche because they are already paying Google for exactly this lead. Measured limits: 27 commercial/multifamily wrecking permits in Minneapolis in the trailing year; Saint Paul's permit feed stopped publishing 2025-06-30 (a feed gap, not a fact); a reconditioned 2500 kVA padmount resells for about $25k in two weeks against 80-120 weeks new, scrap is low four figures. Real money per unit, small count per metro; a business only if repeated city by city. This is the SUPPLY half of data-centers-switchgear; if both halves find signal the business is the join.",
+    successCriteria: [
+      "At least 2 of 5 contacted say the heads-up was useful",
+      "At least 1 asks for the next one, or signs up at scrapwatch.vercel.app with a non-test address",
+      "At least 1 names what should be on the row that is not there yet",
+    ],
+    safetyNotes:
+      "A permit says who is taking a building apart and when; it never says what equipment is inside, and every heads-up says so. Never represent a unit's condition, rating or PCB status; pre-1980 oil-filled units may be PCB-contaminated (40 CFR 761) and that is the buyer's test, not ours. Contractor mailing addresses come from the public permit record and are used only to name the firm.",
+    monetizationPaths: [
+      "Alert subscription — the record stays free, the notification is what is paid for",
+      "Per-lead fee to refurbishers, paid on a unit actually recovered",
+      "Repeating the feed city by city, which is the only path to real scale",
+      "Joining this supply side to data-centers-switchgear's demand side — the only path neither half has alone",
+    ],
+  },
 ];
