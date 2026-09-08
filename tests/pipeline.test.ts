@@ -354,8 +354,41 @@ describe("the whole loop", () => {
     expect(memo.stageRecommendation).toBe("HOLD");
   });
 
+  it("hands a candidate back instead of stranding it when research fails", async () => {
+    // The failure that cost sixty-one candidates: RESEARCHING is set, the call
+    // throws, the retry sees a non-DISCOVERED candidate, returns "skipped", and
+    // the job is marked SUCCEEDED over a candidate nothing will ever touch.
+    const candidate = await prisma.prospectCandidate.create({
+      data: {
+        experimentId,
+        organizationName: "Stranding Test Water District",
+        dedupeKey: "org:stranding test water district|unknown",
+        status: "DISCOVERED",
+      },
+    });
+
+    const failing = new MockLLMProvider(); // no handlers -> every call throws
+    setLLM(failing);
+    await enqueue({
+      kind: "RESEARCH_CANDIDATE",
+      payload: { candidateId: candidate.id },
+      experimentId,
+      idempotencyKey: `research-fail:${candidate.id}`,
+    });
+    await drain(10);
+    setLLM(llm);
+
+    const after = await prisma.prospectCandidate.findUniqueOrThrow({ where: { id: candidate.id } });
+    expect(after.status).toBe("DISCOVERED");
+
+    const job = await prisma.jobRun.findFirstOrThrow({
+      where: { idempotencyKey: `research-fail:${candidate.id}` },
+    });
+    expect(job.status).not.toBe("SUCCEEDED");
+  });
+
   it("logged an auditable run for every judgement it made", async () => {
-    const runs = await prisma.aITaskRun.findMany({ where: { experimentId } });
+    const runs = await prisma.aITaskRun.findMany({ where: { experimentId, status: "SUCCEEDED" } });
     const types = new Set(runs.map((r) => r.taskType));
     for (const t of [
       "DISCOVER_ORGANIZATIONS",

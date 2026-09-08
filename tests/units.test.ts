@@ -13,6 +13,7 @@ import { computeQualificationScore } from "@/lib/ai/prompts/qualifyProspect";
 import { mayAutoApprove } from "@/lib/jobs/handlers/outbound";
 import { featuresOf, titleBucket } from "@/lib/domain/targeting";
 import { draftOutboundEmail } from "@/lib/ai/prompts/draftOutboundEmail";
+import { qualifyProspect } from "@/lib/ai/prompts/qualifyProspect";
 import { identifyDecisionMakers } from "@/lib/ai/prompts/identifyDecisionMakers";
 import { extractPainSignals } from "@/lib/ai/prompts/extractPainSignals";
 import { analyzeExperiment } from "@/lib/ai/prompts/analyzeExperiment";
@@ -110,6 +111,37 @@ describe("qualification scoring", () => {
     const { breakdown } = computeQualificationScore(parts, "VERIFIED");
     const components = (breakdown as { components: Record<string, unknown> }).components;
     expect(Object.keys(components)).toHaveLength(5);
+  });
+});
+
+describe("qualification scale", () => {
+  const parts = (v: number) => ({
+    buyerFit: { score: v, reason: "a defensible sentence" },
+    problemLikelihood: { score: v, reason: "a defensible sentence" },
+    contactAuthority: { score: v, reason: "a defensible sentence" },
+    organizationFit: { score: v, reason: "a defensible sentence" },
+    evidenceQuality: { score: v, reason: "a defensible sentence" },
+    verdict: "QUALIFIED" as const,
+    verdictReason: "reason enough",
+    personalizationFacts: [],
+    confidence: 0.8,
+  });
+
+  it("rejects a fraction outright — the schema, not the prose, is the guard", () => {
+    // 0.75 sat inside min(0).max(100) and was read as 0.75 out of 100. That one
+    // permissive range cost 113 candidates.
+    expect(qualifyProspect.schema.safeParse(parts(0.75)).success).toBe(false);
+    expect(qualifyProspect.schema.safeParse(parts(75)).success).toBe(true);
+  });
+
+  it("names the scale mistake rather than failing generically", () => {
+    const problems = qualifyProspect.validate!(parts(0.75) as never, {} as never);
+    expect(problems.join(" ")).toContain("between 0 and 1");
+    expect(problems.join(" ")).toContain("75, not 0.75");
+  });
+
+  it("lets an honest all-zero scoring through — that is a verdict, not a bug", () => {
+    expect(qualifyProspect.validate!(parts(0) as never, {} as never)).toEqual([]);
   });
 });
 

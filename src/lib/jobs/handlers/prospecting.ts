@@ -292,15 +292,32 @@ export async function discoverCandidates(payload: Record<string, unknown>): Prom
 
 export async function researchCandidate(payload: Record<string, unknown>): Promise<unknown> {
   const candidateId = String(payload.candidateId);
-  const candidate = await prisma.prospectCandidate.findUniqueOrThrow({
-    where: { id: candidateId },
-    include: { experiment: true },
-  });
+  const candidate = await loadCandidateForResearch(candidateId);
   if (candidate.status !== "DISCOVERED") return { skipped: candidate.status };
 
   assertCandidateTransition("DISCOVERED", "RESEARCHING");
   await prisma.prospectCandidate.update({ where: { id: candidateId }, data: { status: "RESEARCHING" } });
 
+  // RESEARCHING is a claim, not a resting place. If anything below throws, the
+  // job retries, sees a candidate that is no longer DISCOVERED, returns
+  // "skipped" — and the job is then marked SUCCEEDED over a candidate stranded
+  // forever. Sixty-one were stranded exactly this way. Roll the claim back so
+  // the retry has something to do.
+  try {
+    return await researchCandidateInner(candidateId, candidate);
+  } catch (err) {
+    await prisma.prospectCandidate.updateMany({
+      where: { id: candidateId, status: "RESEARCHING" },
+      data: { status: "DISCOVERED" },
+    });
+    throw err;
+  }
+}
+
+async function researchCandidateInner(
+  candidateId: string,
+  candidate: Awaited<ReturnType<typeof loadCandidateForResearch>>,
+): Promise<unknown> {
   const brief = toBrief(candidate.experiment);
   const ctx = { experimentId: candidate.experimentId, candidateId };
 
@@ -470,6 +487,14 @@ export async function researchCandidate(payload: Record<string, unknown>): Promi
   return { contactFound: Boolean(email), emailConfidence };
 }
 
+/** Shared so the wrapper above and the inner body agree on the shape. */
+async function loadCandidateForResearch(candidateId: string) {
+  return prisma.prospectCandidate.findUniqueOrThrow({
+    where: { id: candidateId },
+    include: { experiment: true },
+  });
+}
+
 export async function qualifyCandidate(payload: Record<string, unknown>): Promise<unknown> {
   const candidateId = String(payload.candidateId);
   const candidate = await prisma.prospectCandidate.findUniqueOrThrow({
@@ -480,6 +505,24 @@ export async function qualifyCandidate(payload: Record<string, unknown>): Promis
 
   assertCandidateTransition("RESEARCHED", "QUALIFYING");
   await prisma.prospectCandidate.update({ where: { id: candidateId }, data: { status: "QUALIFYING" } });
+
+  // Same rollback as research: QUALIFYING is a claim held only while a call is
+  // in flight.
+  try {
+    return await qualifyCandidateInner(candidateId, candidate);
+  } catch (err) {
+    await prisma.prospectCandidate.updateMany({
+      where: { id: candidateId, status: "QUALIFYING" },
+      data: { status: "RESEARCHED" },
+    });
+    throw err;
+  }
+}
+
+async function qualifyCandidateInner(
+  candidateId: string,
+  candidate: Awaited<ReturnType<typeof loadCandidateForQualify>>,
+): Promise<unknown> {
 
   const { output, runId } = await ai.qualifyProspect(
     {
@@ -868,6 +911,33 @@ async function sweepDirectory(
   });
 
   return { source: directory.name, created, skipped, costUsd: result.costUsd, exhausted: false };
+}
+
+async function loadCandidateForQualify(candidateId: string) {
+  return prisma.prospectCandidate.findUniqueOrThrow({
+    where: { id: candidateId },
+    include: { experiment: true, evidence: true },
+  });
+}
+
+/**
+ * Anything stranded in a transient state with no job outstanding goes back one
+ * step. The rollbacks above stop new strandings; this clears the ones a crashed
+ * or killed worker leaves behind, which no rollback can catch.
+ */
+export async function reapStrandedCandidates(olderThanMs = 20 * 60_000): Promise<number> {
+  const cutoff = new Date(Date.now() - olderThanMs);
+  const [researching, qualifying] = await Promise.all([
+    prisma.prospectCandidate.updateMany({
+      where: { status: "RESEARCHING", updatedAt: { lt: cutoff } },
+      data: { status: "DISCOVERED" },
+    }),
+    prisma.prospectCandidate.updateMany({
+      where: { status: "QUALIFYING", updatedAt: { lt: cutoff } },
+      data: { status: "RESEARCHED" },
+    }),
+  ]);
+  return researching.count + qualifying.count;
 }
 
 async function reject(

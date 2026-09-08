@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { prisma } from "./db";
 import { JOB_CONCURRENCY, drain, enqueue, registerHandlers, reclaimStale } from "./jobs";
+import { reapStrandedCandidates } from "./jobs/handlers/prospecting";
 import { logActivity } from "./domain/activity";
 
 /**
@@ -24,6 +25,8 @@ let stopping = false;
 async function tick(): Promise<void> {
   const now = Date.now();
   await reclaimStale();
+  const reaped = await reapStrandedCandidates();
+  if (reaped > 0) console.log(`reaped ${reaped} candidate(s) stranded in a transient state`);
 
   if (now - lastInbox > INBOX_EVERY_MS) {
     lastInbox = now;

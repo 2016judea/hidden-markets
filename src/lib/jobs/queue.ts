@@ -100,6 +100,10 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
         completedAt: new Date(),
         attempts: { increment: 1 },
         result: result === undefined ? null : j(result),
+        // A job that failed twice and then succeeded was keeping the old error
+        // text, so SUCCEEDED rows read as broken and sent a peer session
+        // hunting a bug that had already retried away.
+        error: null,
       },
     });
   } catch (err) {

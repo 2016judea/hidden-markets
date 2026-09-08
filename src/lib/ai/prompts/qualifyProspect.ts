@@ -26,7 +26,16 @@ export type QualifyInput = {
  * brief rules out.
  */
 const ComponentSchema = z.object({
-  score: z.number().min(0).max(100),
+  /**
+   * INTEGER, deliberately. `z.number().min(0).max(100)` accepted 0.75 as a
+   * valid score and the arithmetic then read it as 0.75 out of 100. Every
+   * component came back on a 0-1 scale, weighted subtotals landed at 1, and 113
+   * candidates were rejected over about seventeen hours — including one with a
+   * verified address and a co-owner who personally handles arrangements. The
+   * units were never stated, only implied by a range that happened to contain
+   * both scales. An int fails validation instead, and the retry says why.
+   */
+  score: z.number().int().min(0).max(100),
   reason: z.string().min(5),
 });
 
@@ -103,10 +112,20 @@ export const qualifyProspect: PromptModule<QualifyInput, QualifyOutput> = {
   maxTokens: 6000,
   system: `${HOUSE_RULES}
 
-Score one candidate on five dimensions. Each score needs a one-sentence reason
-that a person could disagree with. Do not return an overall score — the
-application computes it from your components, so that anyone can see which part
-of the judgement carried the weight.
+Score one candidate on five dimensions.
+
+EVERY SCORE IS A WHOLE NUMBER FROM 0 TO 100. Not a fraction, not a proportion,
+not a 0-to-1 confidence. Write 75, never 0.75. The anchors:
+
+  0    disqualifying
+  25   weak
+  50   plausible but unproven
+  75   good, with evidence behind it
+  100  as strong as this dimension gets
+
+Each score needs a one-sentence reason a person could disagree with. Do not
+return an overall score — the application computes it from your components, so
+anyone can see which part of the judgement carried the weight.
 
 The dimensions:
 - buyerFit: does this organization type buy the kind of thing we are testing?
@@ -144,6 +163,26 @@ this reader. A fact you can't source is worse than no fact.`,
     ]
       .filter(Boolean)
       .join("\n"),
-  validate: (out) => personalizationProblems(out.personalizationFacts),
+  validate: (out) => {
+    const problems = personalizationProblems(out.personalizationFacts);
+    const scores = [
+      out.buyerFit.score,
+      out.problemLikelihood.score,
+      out.contactAuthority.score,
+      out.contactAuthority.score,
+      out.organizationFit.score,
+      out.evidenceQuality.score,
+    ];
+    // Belt and braces behind the int schema: if every score lands in 0-1 while
+    // at least one is non-zero, this is the 0-1 scale again and the numbers are
+    // meaningless rather than merely low. Say so explicitly — a bare schema
+    // failure does not tell the model which mistake it made.
+    if (scores.every((v) => v <= 1) && scores.some((v) => v > 0)) {
+      problems.push(
+        "Every score is between 0 and 1. These are 0-100 whole numbers: a good candidate is 75, not 0.75. Rescore on the stated scale.",
+      );
+    }
+    return problems;
+  },
   confidence: (out) => out.confidence,
 };

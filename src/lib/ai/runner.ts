@@ -122,10 +122,17 @@ export async function runAITask<I, O>(
         where: { id: run.id },
         data: { retryCount: attempt + 1, error: String((err as Error).message ?? err).slice(0, 2000) },
       });
-      // A schema failure is worth one more try. Anything else — a 401, a
-      // network drop — will not be fixed by asking the model again.
-      if (!invalid) break;
-      complaints = ["Your output did not match the required schema."];
+      // A schema failure is worth another try with the problem quoted back. So
+      // is a transient network failure — "fetch failed" and "terminated" were
+      // the two commonest errors in the first production run, and neither says
+      // anything about the request. A 401 or a 400 will never improve.
+      const message = String((err as Error)?.message ?? err);
+      const transient = /fetch failed|terminated|ECONNRESET|ETIMEDOUT|socket hang up|network|502|503|504|overloaded|rate.?limit/i.test(
+        message,
+      );
+      if (!invalid && !transient) break;
+      complaints = invalid ? ["Your output did not match the required schema."] : [];
+      if (transient) await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
     }
   }
 
