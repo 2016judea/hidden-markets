@@ -52,6 +52,27 @@ export async function enqueue(args: {
 }
 
 /**
+ * Jobs that finish the work already paid for, and are claimed ahead of jobs
+ * that start new work.
+ *
+ * Strict FIFO starved the pipeline: research calls run 40-100 seconds, so with
+ * four lanes and thirty-eight research jobs queued, fifty-nine QUALIFY jobs —
+ * each about a second and a cent, and the step that actually produces something
+ * a human can review — waited roughly ten minutes behind them. Draining
+ * downstream first also means a rejection frees stage budget sooner, so the
+ * expensive upstream work is better targeted when it does run.
+ */
+const PRIORITY_KINDS: JobKind[] = [
+  "SEND_APPROVED_OUTBOX",
+  "SEND_APPROVED_REPLIES",
+  "PROCESS_INBOUND",
+  "SYNC_INBOX",
+  "QUALIFY_CANDIDATE",
+  "DRAFT_OUTREACH",
+  "MAINTAIN_PIPELINE",
+];
+
+/**
  * Claim exactly one job. The updateMany-guarded-by-status pattern is the
  * cheapest correct lock SQLite offers: two lanes race for the same row, one
  * updates a row that is still PENDING, the other updates zero rows and looks
@@ -60,11 +81,17 @@ export async function enqueue(args: {
  */
 async function claim(workerId: string): Promise<{ id: string; kind: JobKind; payload: string } | null> {
   for (let attempt = 0; attempt < 20; attempt++) {
-    const candidate = await prisma.jobRun.findFirst({
-      where: { status: "PENDING", runAfter: { lte: new Date() } },
-      orderBy: [{ runAfter: "asc" }, { createdAt: "asc" }],
-      select: { id: true, kind: true, payload: true },
-    });
+    const ready = { status: "PENDING", runAfter: { lte: new Date() } } as const;
+    const order = [{ runAfter: "asc" }, { createdAt: "asc" }] as const;
+    const select = { id: true, kind: true, payload: true } as const;
+
+    const candidate =
+      (await prisma.jobRun.findFirst({
+        where: { ...ready, kind: { in: PRIORITY_KINDS } },
+        orderBy: [...order],
+        select,
+      })) ??
+      (await prisma.jobRun.findFirst({ where: ready, orderBy: [...order], select }));
     if (!candidate) return null;
 
     const claimed = await prisma.jobRun.updateMany({
