@@ -53,23 +53,27 @@ export async function enqueue(args: {
 
 /**
  * Claim exactly one job. The updateMany-guarded-by-status pattern is the
- * cheapest correct lock SQLite offers: two workers race, one updates a row that
- * is still PENDING, the other updates zero rows and moves on.
+ * cheapest correct lock SQLite offers: two lanes race for the same row, one
+ * updates a row that is still PENDING, the other updates zero rows and looks
+ * again. Bounded rather than recursive — under contention an unbounded retry
+ * is a stack, not a queue.
  */
 async function claim(workerId: string): Promise<{ id: string; kind: JobKind; payload: string } | null> {
-  const candidate = await prisma.jobRun.findFirst({
-    where: { status: "PENDING", runAfter: { lte: new Date() } },
-    orderBy: [{ runAfter: "asc" }, { createdAt: "asc" }],
-    select: { id: true, kind: true, payload: true },
-  });
-  if (!candidate) return null;
+  for (let attempt = 0; attempt < 20; attempt++) {
+    const candidate = await prisma.jobRun.findFirst({
+      where: { status: "PENDING", runAfter: { lte: new Date() } },
+      orderBy: [{ runAfter: "asc" }, { createdAt: "asc" }],
+      select: { id: true, kind: true, payload: true },
+    });
+    if (!candidate) return null;
 
-  const claimed = await prisma.jobRun.updateMany({
-    where: { id: candidate.id, status: "PENDING" },
-    data: { status: "RUNNING", lockedAt: new Date(), lockedBy: workerId, startedAt: new Date() },
-  });
-  if (claimed.count === 0) return claim(workerId);
-  return candidate as { id: string; kind: JobKind; payload: string };
+    const claimed = await prisma.jobRun.updateMany({
+      where: { id: candidate.id, status: "PENDING" },
+      data: { status: "RUNNING", lockedAt: new Date(), lockedBy: workerId, startedAt: new Date() },
+    });
+    if (claimed.count > 0) return candidate as { id: string; kind: JobKind; payload: string };
+  }
+  return null;
 }
 
 const BACKOFF_MS = [30_000, 5 * 60_000, 30 * 60_000];
@@ -130,11 +134,40 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
   return true;
 }
 
-/** Drain the queue. Returns how many jobs ran. */
-export async function drain(max = 200, workerId: string = randomUUID()): Promise<number> {
-  let n = 0;
-  while (n < max && (await runOne(workerId))) n++;
-  return n;
+/**
+ * How many jobs may be in flight at once.
+ *
+ * The work is almost entirely waiting on the model — research calls measured
+ * 76-142 seconds each — so a serial drain spends nearly all of its time idle:
+ * six candidates through three calls each is half an hour of doing one thing at
+ * a time. Lanes are safe because the claim above is atomic; what bounds this is
+ * not correctness but the API rate limit and SQLite write contention, which is
+ * why it is a small number and configurable rather than unbounded.
+ */
+export const JOB_CONCURRENCY = Number(process.env.JOB_CONCURRENCY ?? 4);
+
+/** Drain the queue across parallel lanes. Returns how many jobs ran. */
+export async function drain(
+  max = 200,
+  workerId: string = randomUUID(),
+  concurrency: number = JOB_CONCURRENCY,
+): Promise<number> {
+  let ran = 0;
+
+  // Each lane exits on its own the first time it finds nothing to claim, so an
+  // empty queue costs one extra query per lane rather than a spin.
+  const lane = async (laneId: string): Promise<void> => {
+    while (ran < max) {
+      const didWork = await runOne(laneId);
+      if (!didWork) return;
+      ran++;
+    }
+  };
+
+  await Promise.all(
+    Array.from({ length: Math.max(1, concurrency) }, (_, i) => lane(`${workerId}#${i}`)),
+  );
+  return ran;
 }
 
 export async function queueDepth(): Promise<{ pending: number; running: number; failed: number }> {

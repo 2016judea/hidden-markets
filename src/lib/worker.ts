@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { prisma } from "./db";
-import { drain, enqueue, registerHandlers, reclaimStale } from "./jobs";
+import { JOB_CONCURRENCY, drain, enqueue, registerHandlers, reclaimStale } from "./jobs";
 import { logActivity } from "./domain/activity";
 
 /**
@@ -56,13 +56,28 @@ async function tick(): Promise<void> {
     await enqueue({ kind: "CLUSTER_PAIN", idempotencyKey: "cluster-pain" });
   }
 
-  const ran = await drain(50, WORKER_ID);
+  const ran = await drain(50, WORKER_ID, JOB_CONCURRENCY);
   if (ran > 0) console.log(`[${new Date().toISOString()}] ${WORKER_ID} ran ${ran} job(s)`);
 }
 
 async function main(): Promise<void> {
   registerHandlers();
-  console.log(`${WORKER_ID} started. Tick ${TICK_MS}ms.`);
+
+  // Parallel lanes mean concurrent writers. WAL lets readers and one writer
+  // proceed together, and busy_timeout makes a contending write wait rather
+  // than fail outright with SQLITE_BUSY.
+  // journal_mode returns a row ("wal"), so it must go through queryRaw;
+  // executeRaw refuses any statement that produces results on SQLite.
+  const [mode] = await prisma.$queryRawUnsafe<Array<{ journal_mode: string }>>(
+    "PRAGMA journal_mode=WAL",
+  );
+  // busy_timeout returns its value too, so it is also a query, not an execute.
+  await prisma.$queryRawUnsafe("PRAGMA busy_timeout=10000");
+  if (mode?.journal_mode?.toLowerCase() !== "wal") {
+    console.warn(`journal_mode is ${mode?.journal_mode}, not wal — expect write contention across lanes`);
+  }
+
+  console.log(`${WORKER_ID} started. Tick ${TICK_MS}ms, ${JOB_CONCURRENCY} lanes.`);
   await logActivity({ kind: "SYSTEM", message: `Worker ${WORKER_ID} started.` });
 
   for (const sig of ["SIGINT", "SIGTERM"] as const) {

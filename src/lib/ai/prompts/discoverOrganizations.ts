@@ -37,7 +37,13 @@ export const discoverOrganizations: PromptModule<DiscoverInput, DiscoverOutput> 
   resultName: "emit_organizations",
   resultDescription: "Return the organizations you found and could verify exist.",
   schema: DiscoverOutputSchema,
-  webSearch: { maxUses: 8 },
+  // Sized against DISCOVERY_BATCH (8 organizations), with room for a directory
+  // page plus a verification query each. Measured 2026-09-07: a cap of 8 on a
+  // 25-organization request was exhausted after two successful queries, and the
+  // model then spent seven minutes retrying "Server tool use limit exceeded"
+  // before returning six thinly-researched names. The cap must exceed what the
+  // ask plausibly needs, or the call degrades into an expensive retry loop.
+  webSearch: { maxUses: 20 },
   effort: "medium",
   maxTokens: 16000,
   system: `${HOUSE_RULES}

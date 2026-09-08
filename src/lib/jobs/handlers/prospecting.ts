@@ -13,6 +13,19 @@ import { enqueue } from "../queue";
 import { env } from "../../env";
 
 /**
+ * How many organizations one discovery call may look for.
+ *
+ * Small on purpose. A call returns nothing until it is completely finished, so
+ * batch size is latency to the FIRST reviewable draft, not just throughput:
+ * asking for 25 ran 6.5 minutes with an empty Outbox the whole time, while a
+ * 3-result call settled in 124 seconds. Eight keeps a call near two minutes and
+ * lets research, qualification and drafting start on batch one while batch two
+ * is still searching. maintainPipeline re-runs after each batch, so the target
+ * is still reached — it just arrives in pieces the operator can work through.
+ */
+const DISCOVERY_BATCH = 8;
+
+/**
  * Ask the scheduler to re-evaluate. Handlers call this when they have changed
  * something, rather than enqueuing whatever they think comes next — the shape
  * of the pipeline stays in maintainPipeline, and a stage change is picked up
@@ -108,7 +121,7 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
   if (deficit > 0) {
     await enqueue({
       kind: "DISCOVER_CANDIDATES",
-      payload: { experimentId, count: Math.min(deficit + 5, 25) },
+      payload: { experimentId, count: Math.min(deficit, DISCOVERY_BATCH) },
       experimentId,
       // Discovery is expensive and slow; one outstanding run per experiment.
       idempotencyKey: `discover:${experimentId}`,
@@ -120,7 +133,7 @@ export async function maintainPipeline(payload: Record<string, unknown>): Promis
 
 export async function discoverCandidates(payload: Record<string, unknown>): Promise<unknown> {
   const experimentId = String(payload.experimentId);
-  const count = Number(payload.count ?? 15);
+  const count = Math.min(Number(payload.count ?? DISCOVERY_BATCH), DISCOVERY_BATCH);
   const exp = await prisma.marketExperiment.findUniqueOrThrow({ where: { id: experimentId } });
 
   const known = await prisma.prospectCandidate.findMany({
@@ -228,6 +241,18 @@ export async function discoverCandidates(payload: Record<string, unknown>): Prom
     message: `Found ${created} new organizations matching target criteria${skipped ? ` (${skipped} were already known)` : ""}.`,
     detail: { searchNotes: output.searchNotes, exhausted: output.exhausted, runId },
   });
+
+  // The model reports its own degraded runs in searchNotes, but nobody reads a
+  // JSON detail blob. A run that could not actually search produced names, not
+  // research, and the operator needs to know that before trusting the batch.
+  if (/tool use limit|limit exceeded|could not (search|complete)|search access|cut off/i.test(output.searchNotes)) {
+    await logActivity({
+      experimentId,
+      kind: "ERROR",
+      actor: "AI",
+      message: `Discovery ran degraded — it reported a search limit and could not complete its research strategy. Treat these ${created} organizations as unverified. Its words: "${output.searchNotes.slice(0, 220)}"`,
+    });
+  }
 
   if (output.exhausted && created === 0) {
     await logActivity({

@@ -87,7 +87,16 @@ export class AnthropicProvider implements LLMProvider {
   private client: Anthropic;
 
   constructor(apiKey: string, defaultModel = env.LLM_MODEL) {
-    this.client = new Anthropic({ apiKey });
+    // An unbounded call inside a background worker is a bug: it holds the job
+    // lock and leaves an AITaskRun stuck in RUNNING with no error to read.
+    // Research calls with web search legitimately run minutes (measured: 124s
+    // for three organizations, 8+ for twenty-five), so the ceiling is generous
+    // — but it is a ceiling, and a call that hits it fails, logs, and retries.
+    this.client = new Anthropic({
+      apiKey,
+      timeout: Number(process.env.LLM_TIMEOUT_MS ?? 6 * 60_000),
+      maxRetries: 1,
+    });
     this.defaultModel = defaultModel;
   }
 
