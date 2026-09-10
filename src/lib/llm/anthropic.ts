@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 import {
   InvalidModelOutput,
+  attachSpend,
   type Citation,
   type LLMProvider,
   type LLMResult,
@@ -159,107 +160,123 @@ export class AnthropicProvider implements LLMProvider {
     let webSearches = 0;
     let toolInput: unknown = null;
 
-    // Two turns at most. Turn one lets the model search if it needs to; if it
-    // finished researching without emitting, turn two forces the emit tool.
-    // A third turn would mean the schema is wrong, not that the model is slow.
-    for (let turn = 0; turn < 2 && toolInput === null; turn++) {
-      const forceEmit = turn === 1 || !req.webSearch;
-      const stream = await this.client.messages.stream({
-        model,
-        max_tokens: req.maxTokens ?? 16000,
-        // The system prompt is byte-identical for every candidate in an
-        // experiment and is re-sent on every call. Caching covers the whole
-        // prefix — tools render before system — so the tool schema rides along
-        // free. Cache reads are ~10% of input price; the volatile per-candidate
-        // text lives in `messages`, after the breakpoint, so it never
-        // invalidates the cached prefix.
-        system: [{ type: "text", text: req.system, cache_control: { type: "ephemeral" } }],
-        messages,
-        tools,
-        tool_choice: forceEmit
-          ? { type: "tool", name: req.resultName }
-          : { type: "auto" },
-        output_config: { effort: req.effort ?? "medium" },
-      });
-      const response = await stream.finalMessage();
+    // A failed call is not a free call: server-side web search is billed per
+    // use the moment it runs, so whatever accrued before a throw is carried on
+    // the throw and lands on the audit row instead of reading as free.
+    const usage = () => ({
+      inputTokens,
+      outputTokens,
+      webSearches,
+      cacheReadTokens,
+      cacheWriteTokens,
+      costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens, webSearches),
+    });
 
-      inputTokens += response.usage.input_tokens ?? 0;
-      outputTokens += response.usage.output_tokens ?? 0;
-      cacheReadTokens += response.usage.cache_read_input_tokens ?? 0;
-      cacheWriteTokens += response.usage.cache_creation_input_tokens ?? 0;
+    try {
+      // Two turns at most. Turn one lets the model search if it needs to; if it
+      // finished researching without emitting, turn two forces the emit tool.
+      // A third turn would mean the schema is wrong, not that the model is slow.
+      for (let turn = 0; turn < 2 && toolInput === null; turn++) {
+        const forceEmit = turn === 1 || !req.webSearch;
+        const stream = await this.client.messages.stream({
+          model,
+          max_tokens: req.maxTokens ?? 16000,
+          // The system prompt is byte-identical for every candidate in an
+          // experiment and is re-sent on every call. Caching covers the whole
+          // prefix — tools render before system — so the tool schema rides along
+          // free. Cache reads are ~10% of input price; the volatile per-candidate
+          // text lives in `messages`, after the breakpoint, so it never
+          // invalidates the cached prefix.
+          system: [{ type: "text", text: req.system, cache_control: { type: "ephemeral" } }],
+          messages,
+          tools,
+          tool_choice: forceEmit
+            ? { type: "tool", name: req.resultName }
+            : { type: "auto" },
+          output_config: { effort: req.effort ?? "medium" },
+        });
+        const response = await stream.finalMessage();
 
-      for (const block of response.content) {
-        if (block.type === "tool_use" && block.name === req.resultName) {
-          toolInput = block.input;
-        }
-        if ((block as { type: string }).type === "server_tool_use") webSearches += 1;
-        if ((block as { type: string }).type === "web_search_tool_result") {
-          const content = (block as { content?: unknown }).content;
-          // A server-tool ERROR comes back as an object, a success as a list.
-          // Indexing without this check is the classic silent failure.
-          if (Array.isArray(content)) {
-            for (const r of content as Array<Record<string, string>>) {
-              if (r.url) {
+        inputTokens += response.usage.input_tokens ?? 0;
+        outputTokens += response.usage.output_tokens ?? 0;
+        cacheReadTokens += response.usage.cache_read_input_tokens ?? 0;
+        cacheWriteTokens += response.usage.cache_creation_input_tokens ?? 0;
+
+        for (const block of response.content) {
+          if (block.type === "tool_use" && block.name === req.resultName) {
+            toolInput = block.input;
+          }
+          if ((block as { type: string }).type === "server_tool_use") webSearches += 1;
+          if ((block as { type: string }).type === "web_search_tool_result") {
+            const content = (block as { content?: unknown }).content;
+            // A server-tool ERROR comes back as an object, a success as a list.
+            // Indexing without this check is the classic silent failure.
+            if (Array.isArray(content)) {
+              for (const r of content as Array<Record<string, string>>) {
+                if (r.url) {
+                  citations.push({
+                    url: r.url,
+                    title: r.title,
+                    retrievedAt: new Date().toISOString(),
+                  });
+                }
+              }
+            }
+          }
+          if (block.type === "text") {
+            const blockCitations = (block.citations ?? []) as unknown as Array<Record<string, string>>;
+            for (const c of blockCitations) {
+              if (c.url) {
                 citations.push({
-                  url: r.url,
-                  title: r.title,
+                  url: c.url,
+                  title: c.title,
+                  quote: c.cited_text,
                   retrievedAt: new Date().toISOString(),
                 });
               }
             }
           }
         }
-        if (block.type === "text") {
-          const blockCitations = (block.citations ?? []) as unknown as Array<Record<string, string>>;
-          for (const c of blockCitations) {
-            if (c.url) {
-              citations.push({
-                url: c.url,
-                title: c.title,
-                quote: c.cited_text,
-                retrievedAt: new Date().toISOString(),
-              });
-            }
-          }
+
+        if (toolInput === null) {
+          messages.push({ role: "assistant", content: response.content });
+          messages.push({
+            role: "user",
+            content: `Now call ${req.resultName} with everything you established. Do not search again.`,
+          });
         }
       }
 
       if (toolInput === null) {
-        messages.push({ role: "assistant", content: response.content });
-        messages.push({
-          role: "user",
-          content: `Now call ${req.resultName} with everything you established. Do not search again.`,
-        });
+        throw new InvalidModelOutput(`${req.resultName}: model never called the result tool`, null);
       }
-    }
 
-    if (toolInput === null) {
-      throw new InvalidModelOutput(`${req.resultName}: model never called the result tool`, null);
-    }
+      const parsed = req.schema.safeParse(toolInput);
+      if (!parsed.success) {
+        throw new InvalidModelOutput(
+          `${req.resultName}: output failed schema validation`,
+          { issues: parsed.error.issues, received: toolInput },
+        );
+      }
 
-    const parsed = req.schema.safeParse(toolInput);
-    if (!parsed.success) {
-      throw new InvalidModelOutput(
-        `${req.resultName}: output failed schema validation`,
-        { issues: parsed.error.issues, received: toolInput },
-      );
+      return {
+        value: parsed.data,
+        citations: dedupeCitations(citations),
+        usage: {
+          inputTokens,
+          outputTokens,
+          webSearches,
+          cacheReadTokens,
+          cacheWriteTokens,
+          costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens, webSearches),
+        },
+        modelProvider: this.name,
+        modelName: model,
+        raw: toolInput,
+      };
+    } catch (err) {
+      throw attachSpend(err, { usage: usage() });
     }
-
-    return {
-      value: parsed.data,
-      citations: dedupeCitations(citations),
-      usage: {
-        inputTokens,
-        outputTokens,
-        webSearches,
-        cacheReadTokens,
-        cacheWriteTokens,
-        costUsd: costOf(model, inputTokens, outputTokens, cacheReadTokens, cacheWriteTokens, webSearches),
-      },
-      modelProvider: this.name,
-      modelName: model,
-      raw: toolInput,
-    };
   }
 
   async generateText(req: TextRequest): Promise<LLMResult<string>> {

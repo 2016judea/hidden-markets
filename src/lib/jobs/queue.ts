@@ -25,6 +25,22 @@ export function registerHandler(kind: JobKind, handler: JobHandler): void {
   handlers.set(kind, handler);
 }
 
+/**
+ * Jobs whose whole point is to run again next tick — the heartbeat. None of
+ * them searches, all of them are cheap, and the pipeline stops without them, so
+ * a dead letter never blocks one of these. Everything else is per-entity work
+ * that spends money, and there a dead letter is a decision.
+ */
+const RECURRING_KINDS: JobKind[] = [
+  "MAINTAIN_PIPELINE",
+  "SYNC_INBOX",
+  "SEND_APPROVED_OUTBOX",
+  "SEND_APPROVED_REPLIES",
+  "SCHEDULE_FOLLOWUPS",
+  "ANALYZE_EXPERIMENT",
+  "CLUSTER_PAIN",
+];
+
 export async function enqueue(args: {
   kind: JobKind;
   payload?: Record<string, unknown>;
@@ -37,6 +53,23 @@ export async function enqueue(args: {
   if (args.idempotencyKey) {
     const existing = await prisma.jobRun.findUnique({ where: { idempotencyKey: args.idempotencyKey } });
     if (existing && ["PENDING", "RUNNING"].includes(existing.status)) return existing.id;
+
+    // A dead letter stays dead.
+    //
+    // This delete is what made every attempt budget in this file cosmetic.
+    // MAINTAIN_PIPELINE re-enqueues each candidate that is still DISCOVERED,
+    // and a research job that fails rolls its candidate back to DISCOVERED —
+    // so the FAILED row was deleted a minute later and the same work started
+    // again with attempts back at zero. Between 2026-09-07 and 2026-09-10 that
+    // researched 432 organizations 1,313 times, one of them forty times, at
+    // roughly six billed Google searches each: about half of a $131.80 bill,
+    // with not one FAILED job row left behind to show it.
+    //
+    // So a failed per-entity job keeps its key. The row stays, with the bound
+    // it hit written on it, and `retryDeadLetter` is how a human says try
+    // again. The heartbeat kinds above are exempt: they are meant to re-run.
+    if (existing?.status === "FAILED" && !RECURRING_KINDS.includes(args.kind)) return null;
+
     if (existing) await prisma.jobRun.delete({ where: { id: existing.id } });
   }
 
@@ -141,7 +174,11 @@ const BACKOFF_MS = [30_000, 5 * 60_000, 30 * 60_000];
 const TRANSIENT = /connection error|fetch failed|socket hang up|ECONNRESET|ETIMEDOUT|EAI_AGAIN|network|terminated|timeout|429|rate.?limit|50[0234]|overloaded|service unavailable/i;
 
 export function isTransient(err: unknown): boolean {
-  const e = err as { message?: string; status?: number; code?: string };
+  const e = err as { message?: string; status?: number; code?: string; permanent?: boolean };
+  // An error that says it will never improve is believed over the text match.
+  // A spend cap whose message carries a number like 6502 in it would otherwise
+  // trip the 5xx pattern and be retried past the cap.
+  if (e?.permanent === true) return false;
   if (typeof e?.status === "number" && (e.status === 429 || e.status >= 500)) return true;
   return TRANSIENT.test(`${e?.message ?? ""} ${e?.code ?? ""}`);
 }
@@ -149,6 +186,49 @@ export function isTransient(err: unknown): boolean {
 /** How long to wait after the nth transient failure, capped so it keeps trying. */
 function transientBackoffMs(attempts: number): number {
   return Math.min(60_000 * 2 ** Math.min(attempts, 4), 15 * 60_000);
+}
+
+/**
+ * ...but a blip that never ends is a bill.
+ *
+ * The rule above was written with no ceiling on it: a transient failure did not
+ * spend an attempt, and `exhausted` was hard-coded to false whenever the error
+ * was transient, so a job whose error was ALWAYS transient retried forever with
+ * the backoff pinned at fifteen minutes. Between 2026-09-07 and 2026-09-10, 429
+ * organizations produced 1,333 RESEARCH_ORGANIZATION runs — single orgs
+ * re-researched up to forty times — and every attempt re-ran Google grounding
+ * at roughly six billed searches, about $0.08. Half of a $131.80 Google bill
+ * bought nothing.
+ *
+ * So a blip still costs a delay rather than an attempt, and the intent survives:
+ * a real reply is not thrown away over three bad seconds of network. But the
+ * delays are counted, and they run out. Eight of them spans about seventy-five
+ * minutes of backoff, which is a long outage; past that, or past a day since the
+ * job was created, the job dead-letters like any other exhausted job and says
+ * which bound it hit.
+ */
+export const MAX_TRANSIENT_FAILURES = Number(process.env.JOB_MAX_TRANSIENT_FAILURES ?? 8);
+export const JOB_DEADLINE_MS = Number(process.env.JOB_DEADLINE_HOURS ?? 24) * 3_600_000;
+
+/**
+ * Whether this failure is the last one. Pure, so the bounds are testable
+ * without a database and without waiting a day.
+ */
+export function deadLetterReason(f: {
+  transient: boolean;
+  attempts: number;
+  maxAttempts: number;
+  transientFailures: number;
+  ageMs: number;
+}): string | null {
+  if (!f.transient && f.attempts >= f.maxAttempts) return `${f.attempts} attempts`;
+  if (f.transientFailures >= MAX_TRANSIENT_FAILURES) {
+    return `${f.transientFailures} transient failures, ceiling ${MAX_TRANSIENT_FAILURES}`;
+  }
+  if (f.ageMs >= JOB_DEADLINE_MS) {
+    return `open ${(f.ageMs / 3_600_000).toFixed(1)}h, past the ${(JOB_DEADLINE_MS / 3_600_000).toFixed(0)}h deadline`;
+  }
+  return null;
 }
 
 export async function runOne(workerId: string = randomUUID()): Promise<boolean> {
@@ -184,11 +264,40 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
     const message = String((err as Error)?.message ?? err).slice(0, 2000);
     const transient = isTransient(err);
 
-    // A transient failure costs a delay, not an attempt.
+    // Not a failure at all: a spend cap refused before any request was made, so
+    // nothing was tried and nothing was billed. Wait, and keep the budgets
+    // intact — a cap set slightly too low must pause the pipeline, never
+    // dead-letter it.
+    const deferral = err as { deferrable?: boolean; retryAfterMs?: number };
+    if (deferral?.deferrable === true) {
+      await prisma.jobRun.update({
+        where: { id: job.id },
+        data: {
+          status: "PENDING",
+          error: message,
+          lockedAt: null,
+          lockedBy: null,
+          completedAt: null,
+          runAfter: new Date(Date.now() + (deferral.retryAfterMs ?? 6 * 3_600_000)),
+        },
+      });
+      return true;
+    }
+
+    // A transient failure costs a delay, not an attempt — but the delays are
+    // counted, and they run out.
     const attempts = transient ? (row?.attempts ?? 0) : (row?.attempts ?? 0) + 1;
-    const exhausted = !transient && attempts >= (row?.maxAttempts ?? 3);
+    const transientFailures = (row?.transientFailures ?? 0) + (transient ? 1 : 0);
+    const reason = deadLetterReason({
+      transient,
+      attempts,
+      maxAttempts: row?.maxAttempts ?? 3,
+      transientFailures,
+      ageMs: Date.now() - (row?.createdAt?.getTime() ?? Date.now()),
+    });
+    const exhausted = reason !== null;
     const waitMs = transient
-      ? transientBackoffMs((row?.transientFailures ?? 0) + 1)
+      ? transientBackoffMs(transientFailures)
       : (BACKOFF_MS[attempts - 1] ?? BACKOFF_MS.at(-1)!);
 
     await prisma.jobRun.update({
@@ -196,8 +305,10 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
       data: {
         status: exhausted ? "FAILED" : "PENDING",
         attempts,
-        transientFailures: transient ? { increment: 1 } : undefined,
-        error: message,
+        transientFailures,
+        // The bound that stopped it, on the row, because "fetch failed" for the
+        // fortieth time reads exactly like "fetch failed" for the first.
+        error: exhausted ? `${message} [gave up: ${reason}]`.slice(0, 2000) : message,
         lockedAt: null,
         lockedBy: null,
         completedAt: exhausted ? new Date() : null,
@@ -209,7 +320,7 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
       await logActivity({
         experimentId: row?.experimentId ?? null,
         kind: "ERROR",
-        message: `${job.kind} failed after ${attempts} attempts: ${message.slice(0, 200)}`,
+        message: `${job.kind} gave up (${reason}): ${message.slice(0, 200)}`,
       });
     }
   }
@@ -250,6 +361,16 @@ export async function drain(
     Array.from({ length: Math.max(1, concurrency) }, (_, i) => lane(`${workerId}#${i}`)),
   );
   return ran;
+}
+
+/**
+ * Clear a dead letter so its work may be attempted again. Deliberate, by hand
+ * or by an action — which is the point: the thing that used to do this
+ * automatically, every minute, is what spent the money.
+ */
+export async function retryDeadLetter(idempotencyKey: string): Promise<boolean> {
+  const res = await prisma.jobRun.deleteMany({ where: { idempotencyKey, status: "FAILED" } });
+  return res.count > 0;
 }
 
 export async function queueDepth(): Promise<{ pending: number; running: number; failed: number }> {

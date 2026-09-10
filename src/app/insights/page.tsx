@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { parseJson } from "@/lib/db";
 import { insights } from "@/lib/queries";
+import { SEARCH_MONTHLY_CAP } from "@/lib/llm/search-budget";
 import { Tag, Empty, Stat } from "@/components/bits";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +11,13 @@ export default async function InsightsPage() {
 
   const totalCost = d.runStats.reduce((s, r) => s + (r._sum.costUsd ?? 0), 0);
   const totalRuns = d.runStats.reduce((s, r) => s + r._count._all, 0);
-  const failed = d.runStats.filter((r) => r.status !== "SUCCEEDED").reduce((s, r) => s + r._count._all, 0);
+  const bad = d.runStats.filter((r) => r.status !== "SUCCEEDED");
+  const failed = bad.reduce((s, r) => s + r._count._all, 0);
+  // The money the failures spent. A failed grounded call is not a free one —
+  // Google bills the search the moment it runs — and this number reading zero
+  // is how $46 of a $131.80 bill stayed invisible for three days.
+  const wasted = bad.reduce((s, r) => s + (r._sum.costUsd ?? 0), 0);
+  const searches = d.runStats.reduce((s, r) => s + (r._sum.webSearches ?? 0), 0);
 
   return (
     <div className="space-y-8">
@@ -174,18 +181,28 @@ export default async function InsightsPage() {
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           What the machine cost
         </h2>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Stat label="AI operations" value={totalRuns} />
           <Stat label="Failed or invalid" value={failed} tone={failed ? "warn" : "muted"} />
           <Stat label="Spend" value={`$${totalCost.toFixed(2)}`} />
+          <Stat
+            label="Spent on failures"
+            value={`$${wasted.toFixed(2)}`}
+            tone={wasted > 0.5 ? "warn" : "muted"}
+          />
         </div>
-        <div className="mt-3 overflow-hidden rounded-lg border">
+        <p className="mt-2 text-xs text-muted-foreground">
+          {searches.toLocaleString()} billed search queries, cap {SEARCH_MONTHLY_CAP.toLocaleString()} a month.
+        </p>
+        {/* Five columns do not fit a phone: scroll the table, not the page. */}
+        <div className="mt-3 overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead className="bg-muted/50 text-left text-xs uppercase tracking-wide text-muted-foreground">
               <tr>
                 <th className="px-3 py-2">Task</th>
                 <th className="px-3 py-2">Status</th>
                 <th className="px-3 py-2 text-right">Runs</th>
+                <th className="px-3 py-2 text-right">Searches</th>
                 <th className="px-3 py-2 text-right">Cost</th>
               </tr>
             </thead>
@@ -199,6 +216,9 @@ export default async function InsightsPage() {
                       <Tag tone={r.status === "SUCCEEDED" ? "LOW" : "HIGH"}>{r.status.toLowerCase()}</Tag>
                     </td>
                     <td className="px-3 py-1.5 text-right tabular-nums">{r._count._all}</td>
+                    <td className="px-3 py-1.5 text-right tabular-nums">
+                      {r._sum.webSearches ? r._sum.webSearches.toLocaleString() : "—"}
+                    </td>
                     <td className="px-3 py-1.5 text-right tabular-nums">
                       {r._sum.costUsd ? `$${r._sum.costUsd.toFixed(3)}` : "—"}
                     </td>

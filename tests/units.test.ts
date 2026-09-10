@@ -11,7 +11,8 @@ import { detectAutoReply, detectBounce, extractBouncedAddress } from "@/lib/emai
 import { extractAddress, guessReturnDate, htmlToText } from "@/lib/email/zoho";
 import { computeQualificationScore } from "@/lib/ai/prompts/qualifyProspect";
 import { mayAutoApprove } from "@/lib/jobs/handlers/outbound";
-import { isTransient } from "@/lib/jobs/queue";
+import { MAX_TRANSIENT_FAILURES, deadLetterReason, isTransient } from "@/lib/jobs/queue";
+import { SearchBudgetExceeded } from "@/lib/llm/search-budget";
 import { featuresOf, titleBucket } from "@/lib/domain/targeting";
 import { draftOutboundEmail } from "@/lib/ai/prompts/draftOutboundEmail";
 import { qualifyProspect } from "@/lib/ai/prompts/qualifyProspect";
@@ -373,5 +374,51 @@ describe("prompt validators", () => {
       previousMemoLearning: null,
     });
     expect(problems.length).toBe(2);
+  });
+});
+
+describe("cost safety", () => {
+  const failure = (over: Partial<Parameters<typeof deadLetterReason>[0]> = {}) =>
+    deadLetterReason({ transient: true, attempts: 0, maxAttempts: 3, transientFailures: 1, ageMs: 0, ...over });
+
+  it("keeps retrying a blip, and stops retrying an outage", () => {
+    // The intent that must survive: a real reply is not discarded over three
+    // bad seconds of network.
+    expect(failure()).toBeNull();
+    expect(failure({ transientFailures: MAX_TRANSIENT_FAILURES - 1 })).toBeNull();
+    // The bound that was missing: 429 organizations became 1,333 research runs
+    // because a job whose error was always transient never exhausted.
+    expect(failure({ transientFailures: MAX_TRANSIENT_FAILURES })).toMatch(/transient failures/);
+  });
+
+  it("dead-letters a job that has been open a day whatever its error", () => {
+    expect(failure({ ageMs: 25 * 3_600_000 })).toMatch(/deadline/);
+    expect(failure({ ageMs: 23 * 3_600_000 })).toBeNull();
+  });
+
+  it("still fails a hard error on the attempt budget", () => {
+    expect(failure({ transient: false, attempts: 2, transientFailures: 0 })).toBeNull();
+    expect(failure({ transient: false, attempts: 3, transientFailures: 0 })).toMatch(/3 attempts/);
+  });
+
+  it("never retries a spend cap, even when its numbers look like a 502", () => {
+    // The message carries a count, and "6502 billed search queries" matches the
+    // 5xx pattern in the retry classifier. The permanent flag has to win, or the
+    // cap gets backed off and tried again — which is not a cap.
+    const err = new SearchBudgetExceeded(6502, 6000);
+    expect(/502/.test(err.message)).toBe(true);
+    expect(isTransient(err)).toBe(false);
+  });
+
+  it("treats a spend cap as a pause, not a broken job", () => {
+    // Refusing costs nothing, so it must not spend an attempt: a cap set a
+    // little low would otherwise dead-letter every candidate in the pipeline.
+    const err = new SearchBudgetExceeded(6001, 6000);
+    expect(err.deferrable).toBe(true);
+    expect(err.retryAfterMs).toBeGreaterThan(0);
+  });
+
+  it("still calls a genuine network blip transient", () => {
+    expect(isTransient(new Error("fetch failed"))).toBe(true);
   });
 });

@@ -200,7 +200,9 @@ export async function insights() {
     prisma.aITaskRun.groupBy({
       by: ["taskType", "status"],
       _count: { _all: true },
-      _sum: { costUsd: true },
+      // Searches, not just dollars: grounding is billed per query and it is the
+      // unit a leak shows up in first.
+      _sum: { costUsd: true, webSearches: true },
     }),
   ]);
 
