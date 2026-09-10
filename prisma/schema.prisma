@@ -616,6 +616,8 @@ model JobRun {
   runAfter    DateTime @default(now())
   attempts    Int      @default(0)
   maxAttempts Int      @default(3)
+  /** Blips, counted separately — they set the backoff, never the attempt budget. */
+  transientFailures Int @default(0)
   lockedAt    DateTime?
   lockedBy    String?
   startedAt   DateTime?

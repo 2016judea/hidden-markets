@@ -11,6 +11,7 @@ import { detectAutoReply, detectBounce, extractBouncedAddress } from "@/lib/emai
 import { extractAddress, guessReturnDate, htmlToText } from "@/lib/email/zoho";
 import { computeQualificationScore } from "@/lib/ai/prompts/qualifyProspect";
 import { mayAutoApprove } from "@/lib/jobs/handlers/outbound";
+import { isTransient } from "@/lib/jobs/queue";
 import { featuresOf, titleBucket } from "@/lib/domain/targeting";
 import { draftOutboundEmail } from "@/lib/ai/prompts/draftOutboundEmail";
 import { qualifyProspect } from "@/lib/ai/prompts/qualifyProspect";
@@ -143,6 +144,23 @@ describe("qualification scale", () => {
 
   it("lets an honest all-zero scoring through — that is a verdict, not a bug", () => {
     expect(qualifyProspect.validate!(parts(0) as never, {} as never)).toEqual([]);
+  });
+});
+
+describe("transient vs real failure", () => {
+  it("treats a network blip as transient", () => {
+    // The three that cost a real reply from a municipal Chief of Operations.
+    for (const m of ["Connection error.", "fetch failed", "terminated", "socket hang up", "ETIMEDOUT"]) {
+      expect(isTransient(new Error(m))).toBe(true);
+    }
+    expect(isTransient({ status: 429, message: "Too Many Requests" })).toBe(true);
+    expect(isTransient({ status: 503, message: "overloaded" })).toBe(true);
+  });
+
+  it("treats a wrong request as real, so it still fails fast", () => {
+    expect(isTransient(new Error("output failed schema validation"))).toBe(false);
+    expect(isTransient({ status: 400, message: "tools.1.custom: maxItems is not supported" })).toBe(false);
+    expect(isTransient(new Error("no record was found for a query"))).toBe(false);
   });
 });
 

@@ -87,6 +87,9 @@ export async function syncInbox(): Promise<unknown> {
       kind: "PROCESS_INBOUND",
       payload: { emailMessageId: stored.id, bouncedAddress: m.bouncedAddress ?? null },
       experimentId: thread.experimentId,
+      // A reply is the product. Losing one to a bad afternoon is not acceptable,
+      // so this job keeps its head down and keeps trying.
+      maxAttempts: 12,
       idempotencyKey: `inbound:${stored.id}`,
     });
     created++;

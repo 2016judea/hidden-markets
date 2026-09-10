@@ -126,6 +126,31 @@ async function claim(workerId: string): Promise<{ id: string; kind: JobKind; pay
 
 const BACKOFF_MS = [30_000, 5 * 60_000, 30 * 60_000];
 
+/**
+ * A blip is not a verdict.
+ *
+ * A real reply from a municipal Chief of Operations — the exact evidence the
+ * experiment exists to find — was permanently discarded because three
+ * consecutive "Connection error" responses from the model API burned the whole
+ * retry budget. The work was never wrong; the network was briefly down.
+ *
+ * So transient failures back off and keep trying instead of spending an
+ * attempt. Anything that would fail identically on the tenth try — a bad
+ * schema, a 400, a missing row — still fails fast on the third.
+ */
+const TRANSIENT = /connection error|fetch failed|socket hang up|ECONNRESET|ETIMEDOUT|EAI_AGAIN|network|terminated|timeout|429|rate.?limit|50[0234]|overloaded|service unavailable/i;
+
+export function isTransient(err: unknown): boolean {
+  const e = err as { message?: string; status?: number; code?: string };
+  if (typeof e?.status === "number" && (e.status === 429 || e.status >= 500)) return true;
+  return TRANSIENT.test(`${e?.message ?? ""} ${e?.code ?? ""}`);
+}
+
+/** How long to wait after the nth transient failure, capped so it keeps trying. */
+function transientBackoffMs(attempts: number): number {
+  return Math.min(60_000 * 2 ** Math.min(attempts, 4), 15 * 60_000);
+}
+
 export async function runOne(workerId: string = randomUUID()): Promise<boolean> {
   const job = await claim(workerId);
   if (!job) return false;
@@ -156,22 +181,27 @@ export async function runOne(workerId: string = randomUUID()): Promise<boolean> 
     });
   } catch (err) {
     const row = await prisma.jobRun.findUnique({ where: { id: job.id } });
-    const attempts = (row?.attempts ?? 0) + 1;
-    const exhausted = attempts >= (row?.maxAttempts ?? 3);
     const message = String((err as Error)?.message ?? err).slice(0, 2000);
+    const transient = isTransient(err);
+
+    // A transient failure costs a delay, not an attempt.
+    const attempts = transient ? (row?.attempts ?? 0) : (row?.attempts ?? 0) + 1;
+    const exhausted = !transient && attempts >= (row?.maxAttempts ?? 3);
+    const waitMs = transient
+      ? transientBackoffMs((row?.transientFailures ?? 0) + 1)
+      : (BACKOFF_MS[attempts - 1] ?? BACKOFF_MS.at(-1)!);
 
     await prisma.jobRun.update({
       where: { id: job.id },
       data: {
         status: exhausted ? "FAILED" : "PENDING",
         attempts,
+        transientFailures: transient ? { increment: 1 } : undefined,
         error: message,
         lockedAt: null,
         lockedBy: null,
         completedAt: exhausted ? new Date() : null,
-        runAfter: exhausted
-          ? undefined
-          : new Date(Date.now() + (BACKOFF_MS[attempts - 1] ?? BACKOFF_MS.at(-1)!)),
+        runAfter: exhausted ? undefined : new Date(Date.now() + waitMs),
       },
     });
 
