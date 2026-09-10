@@ -137,7 +137,7 @@ export class AnthropicProvider implements LLMProvider {
       name: req.resultName,
       description: req.resultDescription,
       input_schema: inputSchema as Anthropic.Tool["input_schema"],
-      strict: true,
+      strict: req.strict !== false,
     };
 
     const tools: Anthropic.ToolUnion[] = [emitTool];

@@ -80,6 +80,7 @@ export async function runAITask<I, O>(
         webSearch: module.webSearch,
         effort: module.effort,
         maxTokens: module.maxTokens,
+        strict: module.strict,
       });
 
       complaints = module.validate?.(result.value, input) ?? [];

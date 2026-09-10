@@ -61,6 +61,10 @@ export const extractPainSignals: PromptModule<ExtractInput, ExtractOutput> = {
   schema: ExtractOutputSchema,
   effort: "low",
   maxTokens: 8000,
+  // Four signals x fourteen confidence-wrapped fields compiles to a grammar
+  // Anthropic rejects outright. Zod still validates every field, so the only
+  // thing lost is a guarantee we already had by another route.
+  strict: false,
   system: `${HOUSE_RULES}
 
 Turn one reply into structured records. You are a transcriber with judgement,

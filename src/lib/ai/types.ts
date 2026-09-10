@@ -20,6 +20,8 @@ export type PromptModule<I, O> = {
   webSearch?: { maxUses: number };
   effort?: Effort;
   maxTokens?: number;
+  /** See StructuredRequest.strict — set false when the schema is large. */
+  strict?: boolean;
   /**
    * Deterministic checks run AFTER schema validation. Returning a non-empty
    * array fails the run — the model gets one retry with the problems quoted

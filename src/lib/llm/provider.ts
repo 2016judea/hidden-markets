@@ -40,6 +40,14 @@ export type StructuredRequest<T> = {
   effort?: Effort;
   maxTokens?: number;
   model?: string;
+  /**
+   * Ask the API to guarantee schema-valid arguments. Default true, but it
+   * compiles a grammar from the schema and a large one is rejected outright:
+   * "The compiled grammar is too large". Turning it off costs nothing real —
+   * Zod still validates every response and a violation gets the same retry —
+   * so a module with a big schema simply opts out.
+   */
+  strict?: boolean;
 };
 
 export type TextRequest = {
