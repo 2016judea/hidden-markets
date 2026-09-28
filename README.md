@@ -99,7 +99,7 @@ emailed. Drop a file in `.mailbox/inbox/` to simulate a reply.
 
 ### Connecting the mailbox
 
-`aidan@brickandmortar.dev`, Zoho account `5671348000000008002` (verified live
+The sending mailbox is a Zoho Mail account (verified live
 2026-09-07). The app talks to the **Zoho Mail REST API directly**, not the Zoho
 MCP connector — that endpoint is OAuth-gated per Claude Code session, and a
 worker that must run at 3am cannot hold a session's token.
