@@ -1,0 +1,339 @@
+<title>On the Block</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f4ef; --panel:#fdfdfb; --ink:#141513; --ink2:#55574f; --ink3:#8a8c82; --line:#e1e0d7; --line2:#ccccc2;
+  --acc:#2a78d6; --acc-soft:#dce9f9; --grain:#eb6834; --grain-soft:#fbe3d8; --taker:#1baf7a; --taker-soft:#d6f1e6;
+  --warn:#eda100; --grid:#ecebe4; --sel:#141513; --chip:#ecebe4;
+  --serif:'Archivo',system-ui,sans-serif; --sans:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme:dark;
+  --bg:#151614; --panel:#1d1e1b; --ink:#f1f0ea; --ink2:#b9b8ae; --ink3:#83857a; --line:#2c2d29; --line2:#3b3c37;
+  --acc:#3987e5; --acc-soft:#1c2d44; --grain:#d95926; --grain-soft:#3a2118; --taker:#199e70; --taker-soft:#15332a;
+  --warn:#c98500; --grid:#262724; --sel:#f1f0ea; --chip:#262724; } }
+:root[data-theme="dark"]{ color-scheme:dark;
+  --bg:#151614; --panel:#1d1e1b; --ink:#f1f0ea; --ink2:#b9b8ae; --ink3:#83857a; --line:#2c2d29; --line2:#3b3c37;
+  --acc:#3987e5; --acc-soft:#1c2d44; --grain:#d95926; --grain-soft:#3a2118; --taker:#199e70; --taker-soft:#15332a;
+  --warn:#c98500; --grid:#262724; --sel:#f1f0ea; --chip:#262724; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.45;padding-inline:16px;padding-block:18px 48px;max-width:1360px;margin:0 auto}
+h1,h2,h3{margin:0;font-family:var(--serif);text-wrap:balance}
+h1{font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:15px;font-weight:700;letter-spacing:.01em}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.lede{color:var(--ink2);max-width:66ch;margin-top:8px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:end;justify-content:space-between;margin-bottom:18px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--panel);color:var(--ink2);padding:7px 12px;border-radius:6px;cursor:pointer;font:500 13px var(--sans)}
+.tab[aria-selected="true"]{background:var(--sel);color:var(--bg);border-color:var(--sel)}
+.tab:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.slicers{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:14px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.slicers label{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--ink3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.slicers select,.slicers input[type=search]{font:13px var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:5px;padding:5px 8px;min-width:120px}
+.slicers input[type=range]{width:120px;accent-color:var(--acc)}
+.slicers .val{color:var(--ink);font-size:12px}
+.reset{margin-left:auto;border:1px solid var(--line2);background:transparent;color:var(--ink2);border-radius:5px;padding:6px 10px;cursor:pointer;font:500 12px var(--sans)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kpi .v{font-family:var(--mono);font-size:26px;font-weight:500;line-height:1.1;margin-top:4px}
+.kpi .s{color:var(--ink3);font-size:12px;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+.panel .hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.panel .hd p{margin:0;color:var(--ink3);font-size:12px}
+.span6{grid-column:span 6}.span4{grid-column:span 4}.span8{grid-column:span 8}.span12{grid-column:span 12}
+@media (max-width:900px){.span6,.span4,.span8{grid-column:span 12}}
+.bars{display:grid;gap:5px}
+.bar{display:grid;grid-template-columns:minmax(150px,1.7fr) 3fr 52px;gap:10px;align-items:center;cursor:pointer;border-radius:4px;padding:2px 4px}
+.bar:hover{background:var(--chip)}
+.bar.on{background:var(--acc-soft)}
+.bar .lbl{font-size:12.5px;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .trk{height:12px;background:var(--grid);border-radius:2px;position:relative;overflow:hidden}
+.bar .fill{position:absolute;inset:0 auto 0 0;background:var(--acc);border-radius:0 3px 3px 0}
+.bar .fill.grain{background:var(--grain)}.bar .fill.taker{background:var(--taker)}
+.bar .n{font-family:var(--mono);font-size:12px;text-align:right;color:var(--ink)}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--ink3)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+canvas{width:100%;height:auto;display:block;border-radius:6px;background:var(--bg)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:12px var(--sans);padding:6px 9px;border-radius:5px;max-width:280px;z-index:20;display:none;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.tip b{font-weight:600}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:820px}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);cursor:pointer;user-select:none;background:var(--panel);position:sticky;top:0}
+th.sorted{color:var(--ink)}
+td.r,th.r{text-align:right}
+tr:hover td{background:var(--chip)}
+.pill{display:inline-block;font:500 11px var(--mono);padding:2px 7px;border-radius:99px;background:var(--acc-soft);color:var(--ink)}
+.pill.grain{background:var(--grain-soft)}
+.pill.b{background:var(--taker-soft)}
+.more{margin-top:8px;border:1px solid var(--line2);background:transparent;color:var(--ink2);border-radius:5px;padding:6px 12px;cursor:pointer;font:500 12px var(--sans)}
+.eq{font-family:var(--mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.term{border-left:3px solid var(--line2);padding:2px 0 2px 10px;font-size:12.5px;color:var(--ink2)}
+.term b{display:block;color:var(--ink);font-family:var(--mono);font-size:12px;margin-bottom:2px}
+.view{display:none}.view.on{display:block}
+.note{font-size:12px;color:var(--ink3);margin-top:10px;max-width:80ch}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:6px}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+.step .k{font-family:var(--mono);font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.step .v{font-family:var(--mono);font-size:18px;margin-top:3px}
+.step .s{font-size:12px;color:var(--ink2);margin-top:3px}
+@media (prefers-reduced-motion:no-preference){.bar .fill{transition:width .25s ease}}
+</style>
+
+<header>
+  <div>
+    <div class="eyebrow">Brick &amp; Mortar · arbitrage model · run 2026-09-30</div>
+    <h1>On the Block</h1>
+    <p class="lede">A pair is one business that throws a material away and one neighbour within 400 m that could use it. Value is what the neighbour stops buying. Filter down to a corridor, click a bar to cross-filter, and read the pairs by name.</p>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" aria-selected="true" data-view="overview">Overview</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="map">Map</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="pairs">Pairs</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="model">The equation</button>
+  </nav>
+</header>
+
+<div class="slicers" id="slicers">
+  <label>Material<select id="f-mat"><option value="">All</option></select></label>
+  <label>Taker kind<select id="f-taker"><option value="">All</option></select></label>
+  <label>City<select id="f-city"><option value="">All</option></select></label>
+  <label>Corridor<select id="f-corr"><option value="">All</option></select></label>
+  <label>Within <span class="val" id="f-dist-v">400 m</span><input type="range" id="f-dist" min="25" max="400" step="25" value="400"></label>
+  <label>Priced<select id="f-priced"><option value="">All</option><option value="1">Priced only</option><option value="0">Unpriced only</option></select></label>
+  <label>Search<input type="search" id="f-q" placeholder="name or address"></label>
+  <button class="reset" id="reset">Reset filters</button>
+</div>
+
+<div class="kpis" id="kpis"></div>
+
+<section class="view on" id="view-overview">
+  <div class="grid">
+    <div class="panel span6">
+      <div class="hd"><h2>Pairs by material and taker</h2><p>click to filter</p></div>
+      <div class="bars" id="c-taker"></div>
+      <div class="legend"><span><i style="background:var(--acc)"></i>Spent coffee grounds</span><span><i style="background:var(--grain)"></i>Brewer's spent grain (unpriced: taproom output is a placeholder)</span></div>
+    </div>
+    <div class="panel span6">
+      <div class="hd"><h2>How far is the walk</h2><p>pairs by distance, 50 m bins</p></div>
+      <svg id="c-hist" viewBox="0 0 560 190" width="100%" role="img" aria-label="Histogram of pair distances"></svg>
+      <div class="note" id="hist-note"></div>
+    </div>
+    <div class="panel span6">
+      <div class="hd"><h2>Corridors with the most pairs</h2><p>click to filter</p></div>
+      <div class="bars" id="c-corr"></div>
+    </div>
+    <div class="panel span6">
+      <div class="hd"><h2>Takers with the most neighbours feeding them</h2><p>one door, many cafés · click to search it</p></div>
+      <div class="bars" id="c-takers"></div>
+    </div>
+    <div class="panel span6">
+      <div class="hd"><h2>Discarders with the most takers nearby</h2><p>one door, several places to walk to · click to search it</p></div>
+      <div class="bars" id="c-disc"></div>
+    </div>
+    <div class="panel span6">
+      <div class="hd"><h2>Independent or chain</h2><p>who is on each side of the pair</p></div>
+      <div class="bars" id="c-indep"></div>
+      <div class="note">Independence is the places listing's own flag. A chain café still throws grounds away; the introduction is just harder to make.</div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-map">
+  <div class="grid">
+    <div class="panel span8">
+      <div class="hd"><h2>Where the pairs are</h2><p>coordinates only, no basemap · drag to pan, wheel to zoom, hover a dot</p></div>
+      <canvas id="map" width="1200" height="800"></canvas>
+      <div class="legend"><span><i style="background:var(--acc)"></i>discards grounds</span><span><i style="background:var(--grain)"></i>discards spent grain</span><span><i style="background:var(--taker)"></i>can use it</span><span><i style="background:var(--ink3);height:2px;vertical-align:3px"></i>a pair</span></div>
+    </div>
+    <div class="panel span4">
+      <div class="hd"><h2>Cities</h2><p>pairs by the discarder's city · click to filter</p></div>
+      <div class="bars" id="c-city"></div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-pairs">
+  <div class="panel span12">
+    <div class="hd"><h2>Every pair</h2><p id="tbl-count"></p></div>
+    <div class="tblwrap"><table id="tbl"><thead><tr>
+      <th data-k="a_name">Discards</th><th data-k="a_cat">Category</th><th data-k="b_name">Can use it</th><th data-k="b_cat">Category</th><th data-k="material">Material</th><th data-k="m" class="r">Metres</th><th data-k="lb" class="r">lb / yr</th><th data-k="usd" class="r">Avoided $ / yr</th><th data-k="urgency" class="r">Urgency</th><th data-k="corridor">Corridor</th><th data-k="a_city">City</th>
+    </tr></thead><tbody></tbody></table></div>
+    <button class="more" id="more">Show more</button>
+  </div>
+</section>
+
+<section class="view" id="view-model">
+  <div class="grid">
+    <div class="panel span12">
+      <div class="hd"><h2>How a pair is priced</h2><p>one café, one florist</p></div>
+      <div class="strip" id="strip"></div>
+      <div class="note">The café's volume is a benchmark (GroCycle: 5 to 10 lb bags a day). The price is what a garden shop pays for finished compost at Dakota Prairie Composting in Shakopee, $30 a cubic yard bulk, about 3 cents a pound; bagged is 24 cents. Proximity is 1.0 within 100 m, 0.8 within 250 m, 0.6 to 400 m. Urgency 4 means the material spoils in three days: the café has to move it every day whether or not anyone asks.</div>
+    </div>
+    <div class="panel span12">
+      <div class="hd"><h2>The metro equation, for contrast</h2><p>what the same model says when the actor is a broker clearing the whole metro</p></div>
+      <div class="eq">score = value term × obscurity × urgency × access ÷ competition &nbsp;·&nbsp; value term: $10k → 1, $1M → 3, $100M → 5, 1.0 when unpriced</div>
+      <div class="terms">
+        <div class="term"><b>value</b>best of resale, collection or substitute price × volume across every business on side A. Substitute was added 2026-09-30; before it a stream nobody resells was $0.</div>
+        <div class="term"><b>obscurity</b>still typed by hand, 1 to 5. The one term nothing derives yet.</div>
+        <div class="term"><b>urgency</b>nearest of four clocks: a rule date, dated events on side A, the material spoiling, a disposal fee. The last two were added today.</div>
+        <div class="term"><b>access</b>strongest asset we hold for the material, else the business listing at 4. A typed 3 used to hand regulated streams a second bonus.</div>
+        <div class="term"><b>competition</b>counted incumbents, +1 for a firm over 50 years old, +1 for a national player, neutral 3 when nobody is enumerated.</div>
+      </div>
+      <div class="tblwrap" style="margin-top:12px"><table id="ops"><thead><tr><th>Score</th><th>Opportunity</th><th>Material</th><th>Kind</th><th class="r">Side A</th><th class="r">$ / yr</th><th class="r">obsc</th><th class="r">urg</th><th class="r">acc</th><th class="r">comp</th><th>Urgency basis</th></tr></thead><tbody></tbody></table></div>
+      <div class="note">Coffee grounds sat at 2.0 on 9/28 with urgency 1 and no value. Distance is still not a term in this equation, which is why the block view exists.</div>
+    </div>
+  </div>
+</section>
+
+<div class="tip" id="tip"></div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const P = D.pairs;
+const MAT = {coffee_grounds:'Spent coffee grounds', spent_grain:"Brewer's spent grain"};
+const $ = s => document.querySelector(s);
+const fmt = n => n==null ? '' : n.toLocaleString('en-US');
+const usd = n => n==null ? 'unpriced' : '$'+Math.round(n).toLocaleString('en-US');
+const F = {mat:'', taker:'', city:'', corr:'', dist:400, priced:'', q:''};
+
+// slicer options
+function opts(sel, vals){ const s=$(sel); vals.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o);}); }
+opts('#f-mat', Object.keys(MAT).map(k=>k)); [...$('#f-mat').options].forEach(o=>{ if(MAT[o.value]) o.textContent=MAT[o.value]; });
+opts('#f-taker', [...new Set(P.map(p=>p.taker_kind))].sort());
+opts('#f-city', [...new Set(P.map(p=>p.a_city).filter(Boolean))].sort());
+opts('#f-corr', [...new Set(P.map(p=>p.corridor).filter(Boolean))].sort());
+try{ const s=JSON.parse(localStorage.getItem('otb-filters')||'null'); if(s) Object.assign(F,s); }catch(e){}
+function syncControls(){ $('#f-mat').value=F.mat; $('#f-taker').value=F.taker; $('#f-city').value=F.city; $('#f-corr').value=F.corr; $('#f-dist').value=F.dist; $('#f-dist-v').textContent=F.dist+' m'; $('#f-priced').value=F.priced; $('#f-q').value=F.q; }
+function save(){ try{ localStorage.setItem('otb-filters', JSON.stringify(F)); }catch(e){} }
+['mat','taker','city','corr','priced'].forEach(k=>$('#f-'+k).addEventListener('change',e=>{F[k]=e.target.value;render();}));
+$('#f-dist').addEventListener('input',e=>{F.dist=+e.target.value;$('#f-dist-v').textContent=F.dist+' m';render();});
+$('#f-q').addEventListener('input',e=>{F.q=e.target.value.trim().toLowerCase();render();});
+$('#reset').addEventListener('click',()=>{Object.assign(F,{mat:'',taker:'',city:'',corr:'',dist:400,priced:'',q:''});syncControls();render();});
+
+function filtered(){
+  return P.filter(p => (!F.mat||p.material===F.mat) && (!F.taker||p.taker_kind===F.taker) && (!F.city||p.a_city===F.city)
+    && (!F.corr||p.corridor===F.corr) && p.m<=F.dist && (F.priced===''||(F.priced==='1')===(p.usd!=null))
+    && (!F.q||[p.a_name,p.b_name,p.a_addr,p.b_addr,p.a_city,p.b_city,p.corridor].join(' ').toLowerCase().includes(F.q)));
+}
+function median(a){ if(!a.length) return null; const s=[...a].sort((x,y)=>x-y); const m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; }
+
+function kpis(R){
+  const usdSum = R.reduce((s,p)=>s+(p.usd||0),0), priced=R.filter(p=>p.usd!=null).length;
+  const cards=[
+    ['pairs', fmt(R.length), `of ${fmt(P.length)} in the metro`],
+    ['discarders', fmt(new Set(R.map(p=>p.a_name+p.a_addr)).size), `of ${fmt(D.meta.side_a_coffee)} coffee-serving places`],
+    ['takers', fmt(new Set(R.map(p=>p.b_name+p.b_addr)).size), 'florists, nurseries, landscapers, bakeries, farms'],
+    ['avoided $ / yr', priced?usd(usdSum):'unpriced', `${fmt(priced)} priced pairs, summed`],
+    ['median walk', R.length?fmt(Math.round(median(R.map(p=>p.m))))+' m':'—', 'between the two doors'],
+    ['closest', R.length?fmt(Math.round(Math.min(...R.map(p=>p.m))))+' m':'—', R.length?(()=>{const p=R.reduce((a,b)=>a.m<b.m?a:b);return `${p.a_name} → ${p.b_name}`;})():''],
+  ];
+  $('#kpis').innerHTML = cards.map(([k,v,s])=>`<div class="kpi"><div class="eyebrow">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join('');
+}
+
+function bars(el, rows, opt={}){
+  const max = Math.max(1,...rows.map(r=>r.n));
+  el.innerHTML = rows.map(r=>`<div class="bar${r.on?' on':''}" data-v="${r.key??r.label}" title="${r.label}"><span class="lbl">${r.label}</span><span class="trk"><span class="fill ${r.cls||''}" style="width:${(100*r.n/max).toFixed(1)}%"></span></span><span class="n">${opt.fmt?opt.fmt(r):fmt(r.n)}</span></div>`).join('') || '<div class="note">Nothing matches these filters.</div>';
+  if(opt.onclick) el.querySelectorAll('.bar').forEach(b=>b.addEventListener('click',()=>opt.onclick(b.dataset.v)));
+}
+function groupCount(R, key, lim){ const m=new Map(); R.forEach(p=>{const k=key(p); if(k==null) return; m.set(k,(m.get(k)||0)+1);}); return [...m].sort((a,b)=>b[1]-a[1]).slice(0,lim).map(([label,n])=>({label,n})); }
+
+function hist(R){
+  const bins = Array.from({length:8},(_,i)=>({lo:i*50,hi:(i+1)*50,n:0,usd:0}));
+  R.forEach(p=>{const b=bins[Math.min(7,Math.floor(p.m/50))]; b.n++; b.usd+=p.usd||0;});
+  const W=560,H=200,L=36,B=40,T=12,Rr=10, w=(W-L-Rr)/8, max=Math.max(1,...bins.map(b=>b.n));
+  let s=''; const ticks=[0,Math.round(max/2),max];
+  ticks.forEach(t=>{const y=T+(H-T-B)*(1-t/max); s+=`<line x1="${L}" x2="${W-Rr}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${L-6}" y="${y+4}" text-anchor="end">${t}</text>`;});
+  bins.forEach((b,i)=>{const h=(H-T-B)*b.n/max, x=L+i*w+2, y=H-B-h;
+    s+=`<rect x="${x}" y="${y}" width="${w-4}" height="${h}" rx="3" fill="var(--acc)" data-i="${i}"><title>${b.lo}–${b.hi} m: ${b.n} pairs, ${usd(b.usd)}/yr</title></rect>`;
+    if(b.n) s+=`<text x="${x+(w-4)/2}" y="${y-4}" text-anchor="middle" style="fill:var(--ink2)">${b.n}</text>`;
+    s+=`<text x="${x+(w-4)/2}" y="${H-B+14}" text-anchor="middle">${b.lo}–${b.hi}</text>`;});
+  s+=`<text x="${L+(W-L-Rr)/2}" y="${H-4}" text-anchor="middle">metres between the two doors</text>`;
+  $('#c-hist').innerHTML=s;
+  const u100=R.filter(p=>p.m<=100).length;
+  $('#hist-note').textContent = R.length ? `${fmt(u100)} of ${fmt(R.length)} pairs are within 100 m, a minute's walk. The 400 m cutoff is about five minutes.` : '';
+}
+
+function strip(){
+  const p = P.find(x=>x.material==='coffee_grounds' && x.usd!=null) || P[0];
+  const ex = P.find(x=>x.a_name==='Black Bean Coffee') || p;
+  $('#strip').innerHTML = [
+    ['discards', ex.a_name, ex.a_cat.replace(/_/g,' ')+', '+ex.a_city],
+    ['lb / yr', fmt(ex.lb), '7.5 lb/day × 365, benchmark'],
+    ['× price', '$'+ex.price_usd.toFixed(2)+'/lb', 'compost, bulk, Shakopee'],
+    ['= avoided', usd(ex.usd)+'/yr', 'what '+ex.b_name+' stops buying'],
+    ['× proximity', ex.proximity.toFixed(1), fmt(ex.m)+' m to '+ex.b_name],
+    ['= score', ex.score.toFixed(0), 'urgency '+ex.urgency+', spoils in 3 days'],
+  ].map(([k,v,s])=>`<div class="step"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join('');
+}
+function opsTable(){
+  $('#ops tbody').innerHTML = D.opportunities.map(o=>`<tr><td class="num">${(o.score||0).toFixed(1)}</td><td>${o.label}${o.also?` <span class="pill">+ ${o.also.split(';').length} merged</span>`:''}</td><td>${o.material}</td><td>${o.asymmetry}</td><td class="r num">${fmt(o.n_side_a)}</td><td class="r num">${o.priced?usd(o.annual_value_usd):'unpriced'}</td><td class="r num">${o.obscurity??''}</td><td class="r num">${o.urgency}</td><td class="r num">${o.access}</td><td class="r num">${o.competition}</td><td style="white-space:normal;max-width:360px;color:var(--ink2)">${o.urgency_basis}</td></tr>`).join('');
+}
+
+// table
+let sortK='m', sortAsc=true, shown=60;
+document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k; if(sortK===k) sortAsc=!sortAsc; else {sortK=k; sortAsc=!['m','lb','usd','urgency'].includes(k);} shown=60; render();}));
+$('#more').addEventListener('click',()=>{shown+=100;render();});
+function table(R){
+  const rows=[...R].sort((a,b)=>{const x=a[sortK],y=b[sortK]; const c=(x==null)-(y==null)||(typeof x==='number'?x-y:String(x).localeCompare(String(y))); return sortAsc?c:-c;});
+  document.querySelectorAll('#tbl th').forEach(th=>th.classList.toggle('sorted',th.dataset.k===sortK));
+  $('#tbl tbody').innerHTML = rows.slice(0,shown).map(p=>`<tr><td><b>${p.a_name}</b><div style="color:var(--ink3);font-size:11px">${p.a_addr||''}</div></td><td>${p.a_cat.replace(/_/g,' ')}</td><td><b>${p.b_name}</b><div style="color:var(--ink3);font-size:11px">${p.b_addr||''}</div></td><td>${p.b_cat.replace(/_/g,' ')}</td><td><span class="pill ${p.material==='spent_grain'?'grain':''}">${MAT[p.material]}</span></td><td class="r num">${fmt(p.m)}</td><td class="r num">${fmt(p.lb)}</td><td class="r num">${usd(p.usd)}</td><td class="r num">${p.urgency}</td><td>${p.corridor||'<span style="color:var(--ink3)">—</span>'}</td><td>${p.a_city||''}</td></tr>`).join('');
+  $('#tbl-count').textContent = `${fmt(Math.min(shown,rows.length))} of ${fmt(rows.length)} shown · sorted by ${sortK} ${sortAsc?'↑':'↓'}`;
+  $('#more').hidden = shown>=rows.length;
+}
+
+// map
+const cv=$('#map'), ctx=cv.getContext('2d'); let view=null, hover=null;
+function bounds(R){ const xs=[],ys=[]; R.forEach(p=>{xs.push(p.a_lon,p.b_lon);ys.push(p.a_lat,p.b_lat);}); if(!xs.length) return null; return {x0:Math.min(...xs),x1:Math.max(...xs),y0:Math.min(...ys),y1:Math.max(...ys)}; }
+function fitView(R){ const b=bounds(R); if(!b) return; const pad=0.02; const w=Math.max(b.x1-b.x0,0.05)+pad*2, h=Math.max(b.y1-b.y0,0.04)+pad*2; const cosl=Math.cos(44.95*Math.PI/180);
+  const sx=cv.width/(w*cosl), sy=cv.height/h; const s=Math.min(sx,sy); view={s, cosl, cx:(b.x0+b.x1)/2, cy:(b.y0+b.y1)/2}; }
+function proj(lon,lat){ return [cv.width/2+(lon-view.cx)*view.cosl*view.s, cv.height/2-(lat-view.cy)*view.s]; }
+let pts=[];
+function drawMap(R){
+  if(!view) fitView(R); ctx.clearRect(0,0,cv.width,cv.height);
+  const css=getComputedStyle(document.documentElement); const c=k=>css.getPropertyValue(k).trim();
+  ctx.fillStyle=c('--bg'); ctx.fillRect(0,0,cv.width,cv.height);
+  if(!view) return;
+  ctx.lineWidth=1; ctx.strokeStyle=c('--line2'); pts=[];
+  R.forEach(p=>{const [ax,ay]=proj(p.a_lon,p.a_lat),[bx,by]=proj(p.b_lon,p.b_lat); ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();});
+  const seen=new Set();
+  R.forEach(p=>{ [[p.a_lon,p.a_lat,p.material==='spent_grain'?c('--grain'):c('--acc'),p.a_name,p.a_cat,p.a_city,'discards '+MAT[p.material].toLowerCase()],[p.b_lon,p.b_lat,c('--taker'),p.b_name,p.b_cat,p.b_city,'can use it']].forEach(([lon,lat,col,name,cat,city,role])=>{
+    const k=name+lon+lat; if(seen.has(k)) return; seen.add(k); const [x,y]=proj(lon,lat); pts.push({x,y,name,cat,city,role});
+    ctx.beginPath(); ctx.arc(x,y,hover&&hover.name===name?7:4.5,0,7); ctx.fillStyle=col; ctx.fill(); ctx.lineWidth=1.5; ctx.strokeStyle=c('--panel'); ctx.stroke(); }); });
+  ctx.fillStyle=c('--ink3'); ctx.font='13px IBM Plex Mono, monospace'; ctx.fillText(`${R.length} pairs · ${pts.length} places · drag to pan, wheel to zoom`, 14, cv.height-14);
+}
+let drag=null;
+cv.addEventListener('mousedown',e=>{drag={x:e.clientX,y:e.clientY,cx:view.cx,cy:view.cy};});
+window.addEventListener('mouseup',()=>drag=null);
+cv.addEventListener('mousemove',e=>{ const r=cv.getBoundingClientRect(), k=cv.width/r.width; const mx=(e.clientX-r.left)*k, my=(e.clientY-r.top)*k;
+  if(drag){ view.cx=drag.cx-(e.clientX-drag.x)*k/(view.cosl*view.s); view.cy=drag.cy+(e.clientY-drag.y)*k/view.s; drawMap(cur); return; }
+  let best=null,bd=14*14; pts.forEach(p=>{const d=(p.x-mx)**2+(p.y-my)**2; if(d<bd){bd=d;best=p;}});
+  const t=$('#tip'); if(best){ if(!hover||hover.name!==best.name){hover=best;drawMap(cur);} t.style.display='block'; t.style.left=(e.clientX+12)+'px'; t.style.top=(e.clientY+12)+'px'; t.innerHTML=`<b>${best.name}</b><br>${best.cat.replace(/_/g,' ')} · ${best.city||''}<br><span style="opacity:.8">${best.role}</span>`; }
+  else { t.style.display='none'; if(hover){hover=null;drawMap(cur);} } });
+cv.addEventListener('mouseleave',()=>{$('#tip').style.display='none';hover=null;});
+cv.addEventListener('wheel',e=>{e.preventDefault(); const f=e.deltaY<0?1.2:1/1.2; view.s*=f; drawMap(cur);},{passive:false});
+cv.addEventListener('dblclick',()=>{view=null;drawMap(cur);});
+
+// tabs
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t)); document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='view-'+t.dataset.view)); if(t.dataset.view==='map') drawMap(cur); try{localStorage.setItem('otb-tab',t.dataset.view);}catch(e){} }));
+try{ const tb=localStorage.getItem('otb-tab'); if(tb) document.querySelector(`.tab[data-view="${tb}"]`)?.click(); }catch(e){}
+const toggle=(k,v)=>{F[k]=F[k]===v?'':v; syncControls(); render();};
+
+let cur=[];
+function render(){
+  save(); const R=filtered(); cur=R; kpis(R);
+  bars($('#c-taker'), (()=>{const m=new Map(); R.forEach(p=>{const k=(p.material==='spent_grain'?'spent grain':'grounds')+' → '+p.taker_kind.toLowerCase(); const e=m.get(k)||{label:k,n:0,usd:0,taker:p.taker_kind,cls:p.material==='spent_grain'?'grain':''}; e.n++; e.usd+=p.usd||0; m.set(k,e);}); return [...m.values()].sort((a,b)=>b.n-a.n).map(e=>({...e,key:e.taker,on:F.taker===e.taker}));})(), {onclick:v=>toggle('taker',v), fmt:r=>fmt(r.n)});
+  hist(R);
+  bars($('#c-corr'), groupCount(R,p=>p.corridor,12).map(r=>({...r,on:F.corr===r.label})), {onclick:v=>toggle('corr',v)});
+  bars($('#c-takers'), groupCount(R,p=>p.b_name+' · '+(p.b_addr||p.b_city||''),12).map(r=>({...r,cls:'taker'})), {onclick:v=>{F.q=v.split(' · ')[0].toLowerCase(); syncControls(); render();}});
+  bars($('#c-disc'), groupCount(R,p=>p.a_name+' · '+(p.a_addr||p.a_city||''),12), {onclick:v=>{F.q=v.split(' · ')[0].toLowerCase(); syncControls(); render();}});
+  bars($('#c-indep'), [['independent café → independent taker',p=>p.a_indep&&p.b_indep],['chain café → independent taker',p=>!p.a_indep&&p.b_indep],['independent café → chain taker',p=>p.a_indep&&!p.b_indep],['chain → chain',p=>!p.a_indep&&!p.b_indep]].map(([label,f])=>({label,n:R.filter(f).length})));
+  bars($('#c-city'), groupCount(R,p=>p.a_city,14).map(r=>({...r,on:F.city===r.label})), {onclick:v=>toggle('city',v)});
+  table(R); if($('#view-map').classList.contains('on')) drawMap(R);
+}
+syncControls(); strip(); opsTable(); render();
+</script>
