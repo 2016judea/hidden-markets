@@ -198,3 +198,13 @@ no multi-user. The market graph is relational (`GraphNode`/`GraphEdge`), which
 is enough to answer "which problems span two buyer types" without a graph
 database, and the schema is shaped so one could be introduced if a query ever
 needs it.
+
+
+## The arbitrage model (`arbitrage/`, shelved 2026-09-30)
+
+A separate, older line of the same thinking: the DuckDB data model behind the Hidden-Market
+Arbitrage post, loaded over everything Brick & Mortar holds on Minneapolis–Saint Paul businesses,
+with a scorer (value × obscurity × urgency × access ÷ competition) and, from the last session,
+block-level pairs: a business that throws a material away and a neighbour within 400 m that could
+use it. Python, reads its inputs from the bricks repo. See `arbitrage/README.md` for status, layout
+and how to run it. Shelved the day it was combined here; nothing in it is scheduled or deployed.
