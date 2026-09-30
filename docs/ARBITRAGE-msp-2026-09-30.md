@@ -126,7 +126,7 @@ Same equation with the value term held at 1.0. These rank what to price next, no
 
 | score | opportunity | asymmetry | origin | side A | annual value | obscurity / urgency / access / competition |
 |---|---|---|---|---|---|---|
-| 21.3 | PCE prohibited in third-generation machines *(also: Perc dry cleaners facing the 2027 and 2034 bans; No PCE in newly acquired dry-cleaning machines; PCE prohibited in all dry cleaning)* | Regulatory | generated | 373 | unpriced | 4 / 4 / 4 / 3 |
+| 21.3 | No PCE in newly acquired dry-cleaning machines *(also: Perc dry cleaners facing the 2027 and 2034 bans; PCE prohibited in third-generation machines; PCE prohibited in all dry cleaning)* | Regulatory | generated | 373 | unpriced | 4 / 4 / 4 / 3 |
 | 20.0 | Active entities with no renewal filed yet this year | Regulatory | hypothesis | 88 | unpriced | 3 / 5 / 4 / 3 |
 | 16.0 | Walk-in and rack owners who must now inspect and log leaks *(also: Ice-maker and supermarket-rack owners facing reclaimed-only servicing; HFC leak repair and records at >= 15 lb charge; Reclaimed-only HFC for servicing ice makers and supermarket systems)* | Regulatory | hypothesis | 15,535 | unpriced | 4 / 5 / 4 / 5 |
 | 16.0 | Pre- and post-consumer food waste: who discards it, who pays for it *(also: Hennepin Ordinance 13 food-waste recycling)* | Waste-stream | generated | 10,682 | unpriced | 2 / 4 / 4 / 2 |
@@ -152,7 +152,7 @@ Score = value term x obscurity x urgency x access / competition. Value term: $10
 
 - **Spent coffee grounds: who discards it, who pays for it.** urgency 4: spoils in 3 days: side A must move it every day. competition 3: 0 counted incumbents [Mushroom growers (count unknown)]; incumbents not enumerated, held neutral at 3. value: best buyer or substitute price x volume.
 - **Dental offices leaving refining returns on the bench.** urgency 1: no dated rule and no dated events on side A. competition 5: 1 counted incumbents [Precious-metal refiners (count unknown)]; incumbents not enumerated, held neutral at 3; oldest founded 1892; a national player. value: CEILING: $3,000/yr x every office; the share already selling is unknown.
-- **PCE prohibited in third-generation machines.** urgency 4: rule date 2027-12-20 is 446 days out. competition 3: 0 counted incumbents; incumbents not enumerated, held neutral at 3. value: compliance price x businesses reached.
+- **No PCE in newly acquired dry-cleaning machines.** urgency 4: rule date 2027-12-20 is 446 days out. competition 3: 0 counted incumbents; incumbents not enumerated, held neutral at 3. value: compliance price x businesses reached.
 - **Active entities with no renewal filed yet this year.** urgency 5: rule date 2026-12-31 is 92 days out. competition 3: 3 counted incumbents; a national player. value: unpriced: the renewal is free; the service is not missing it.
 - **Walk-in and rack owners who must now inspect and log leaks.** urgency 5: rule date 2027-01-01 is 93 days out. competition 5: 1,898 counted incumbents [Refrigeration and mechanical contractors (1898)]. value: compliance service price x businesses.
 - **Pre- and post-consumer food waste: who discards it, who pays for it.** urgency 4: spoils in 3 days: side A must move it every day. competition 2: 1 counted incumbents. value: best buyer or substitute price x volume.
@@ -181,9 +181,9 @@ Score = value term x obscurity x urgency x access / competition. Value term: $10
 | Restaurants giving away or paying to lose fryer oil that renderers buy at Gulf benchmark | Grease-trap (brown) grease: who discards it, who pays for it |
 | Old corrugated cardboard, loose: who discards it, who pays for it | Grease-trap (brown) grease: who discards it, who pays for it |
 | Used cooking oil (yellow grease): who discards it, who pays for it | Grease-trap (brown) grease: who discards it, who pays for it |
-| Perc dry cleaners facing the 2027 and 2034 bans | PCE prohibited in third-generation machines |
-| No PCE in newly acquired dry-cleaning machines | PCE prohibited in third-generation machines |
-| PCE prohibited in all dry cleaning | PCE prohibited in third-generation machines |
+| Perc dry cleaners facing the 2027 and 2034 bans | No PCE in newly acquired dry-cleaning machines |
+| PCE prohibited in third-generation machines | No PCE in newly acquired dry-cleaning machines |
+| PCE prohibited in all dry cleaning | No PCE in newly acquired dry-cleaning machines |
 | Hennepin Ordinance 13 food-waste recycling | Pre- and post-consumer food waste: who discards it, who pays for it |
 | Auto shops with four sellable waste streams and one hazwaste licence | Scrap tires: who discards it, who pays for it |
 | Used motor oil acceptance without fee | Scrap tires: who discards it, who pays for it |
@@ -265,12 +265,12 @@ A pair is one business that discards a material and one neighbour that can use i
 | Tyler Street Northeast | 10 | 4 | $328 |
 | Traffic Street Northeast | 10 | 10 | $821 |
 | France Avenue South | 9 | 9 | $739 |
-| Central Avenue Northeast | 8 | 7 | $575 |
 | 8th Street South | 8 | 8 | $657 |
-| 4th Street | 8 | 6 | $493 |
 | County Road B2 West | 8 | 2 | $164 |
-| Lake Street East | 7 | 6 | $493 |
+| 4th Street | 8 | 6 | $493 |
+| Central Avenue Northeast | 8 | 7 | $575 |
 | 3rd Avenue South | 7 | 7 | $575 |
+| Lake Street East | 7 | 6 | $493 |
 
 ### Closest priced pairs
 
@@ -345,10 +345,10 @@ The same shop can appear in Overture, on a county hazwaste licence, in the SBA f
 | Large food-waste generators without organics service | hennepin_hazwaste | 158 |
 | Large food-waste generators without organics service | mpca_wimn | 8 |
 | Large food-waste generators without organics service | echo_rcra | 2 |
-| PCE prohibited in third-generation machines | hennepin_hazwaste | 205 |
-| PCE prohibited in third-generation machines | bm_businesses | 144 |
-| PCE prohibited in third-generation machines | mpca_wimn | 28 |
-| PCE prohibited in third-generation machines | echo_rcra | 2 |
+| No PCE in newly acquired dry-cleaning machines | hennepin_hazwaste | 205 |
+| No PCE in newly acquired dry-cleaning machines | bm_businesses | 144 |
+| No PCE in newly acquired dry-cleaning machines | mpca_wimn | 28 |
+| No PCE in newly acquired dry-cleaning machines | echo_rcra | 2 |
 | PFAS banned in 11 product categories | bm_businesses | 25,198 |
 | PFAS banned in 11 product categories | bm_licences | 2,596 |
 | PFAS banned in 11 product categories | bm_sba | 1,707 |
@@ -399,7 +399,7 @@ The same shop can appear in Overture, on a county hazwaste licence, in the SBA f
 
 - **Spent coffee grounds: who discards it, who pays for it:** Minneapolis 239, Saint Paul 112, Bloomington 35, Minnetonka 25, Eden Prairie 23, Maple Grove 22
 - **Dental offices leaving refining returns on the bench:** Minneapolis 482, Saint Paul 266, Edina 153, Bloomington 105, Woodbury 98, Plymouth 93
-- **PCE prohibited in third-generation machines:** Minneapolis 87, Bloomington 26, Richfield 18, Saint Paul 18, St. Louis Park 17, Brooklyn Park 17
+- **No PCE in newly acquired dry-cleaning machines:** Minneapolis 87, Bloomington 26, Saint Paul 18, Richfield 18, Brooklyn Park 17, St. Louis Park 17
 - **Active entities with no renewal filed yet this year:** Minneapolis 57, Saint Paul 31
 - **Restaurants whose takeout packaging may make them producers:** ? 2,126, Minneapolis 2,074, Saint Paul 1,036, Bloomington 353, Eden Prairie 221, Eagan 219
 - **Pre- and post-consumer food waste: who discards it, who pays for it:** ? 2,465, Minneapolis 2,005, Saint Paul 1,016, Bloomington 386, Eden Prairie 221, Eagan 209
@@ -427,8 +427,8 @@ Members with a dated event in the last twelve months or the next (a WARN effecti
 | Spent coffee grounds: who discards it, who pays for it | 9 |
 | Aluminium printing plates: who discards it, who pays for it | 9 |
 | Hotel linens and towels, retired: who discards it, who pays for it | 3 |
+| No PCE in newly acquired dry-cleaning machines | 1 |
 | Taprooms with no farmer for their grain | 1 |
-| PCE prohibited in third-generation machines | 1 |
 
 ## The five questions, answered from the model
 
