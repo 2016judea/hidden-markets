@@ -422,3 +422,34 @@ describe("cost safety", () => {
     expect(isTransient(new Error("fetch failed"))).toBe(true);
   });
 });
+
+describe("mail parsing on real inputs", () => {
+  it("rolls a stated return date into next year when it has already passed this year", () => {
+    // "back on January 5", written on December 20: the year was assumed to be
+    // the current one, the date landed in the past, and the whole match was
+    // discarded — so the follow-up went out a week later, into an empty chair.
+    const december = new Date("2026-12-20T12:00:00Z");
+    const d = guessReturnDate("I am out of the office and will return on January 5.", december);
+    expect(d?.getFullYear()).toBe(2027);
+    expect(d?.getMonth()).toBe(0);
+    // A date still ahead this year is left alone.
+    expect(guessReturnDate("I'll be back on 12/28.", december)?.getFullYear()).toBe(2026);
+  });
+
+  it("reads the address out of a quoted display name that contains a comma", () => {
+    // The comma split ran before the angle-bracket match, so "Doe, Jane" <…>
+    // produced the string '"doe' as the address.
+    expect(extractAddress('"Doe, Jane" <Jane.Doe@City.gov>')).toBe("jane.doe@city.gov");
+    expect(extractAddress('"Doe, Jane" <a@b.gov>, "Roe, Rick" <c@d.gov>')).toBe("a@b.gov");
+    expect(extractAddress("plain@x.gov, other@x.gov")).toBe("plain@x.gov");
+  });
+
+  it("decodes numeric entities, so a verbatim quote can match the body it came from", () => {
+    // Outlook emits prices and apostrophes as &#36; and &#8217;. The text the
+    // model reads must be the text the person wrote, or the "verbatim must
+    // appear in the reply" validator rejects an honest quote.
+    expect(htmlToText("<p>It&#8217;s &#36;5,000 a year &#x2014; every year.</p>")).toBe(
+      "It’s $5,000 a year — every year.",
+    );
+  });
+});

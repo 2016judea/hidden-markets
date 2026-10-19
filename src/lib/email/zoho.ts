@@ -220,11 +220,16 @@ function normalizeHeaderKeys(h: Record<string, string>): Record<string, string> 
   return out;
 }
 
-/** Zoho returns "Name <a@b.com>" or a bare address, sometimes comma-joined. */
+/**
+ * Zoho returns "Name <a@b.com>" or a bare address, sometimes comma-joined. The
+ * angle brackets are read before anything is split on commas, because a
+ * display name is allowed to contain one: '"Doe, Jane" <jane@x.gov>' used to
+ * come back as '"doe'.
+ */
 export function extractAddress(value: string): string {
-  const first = value.split(",")[0] ?? "";
-  const angled = first.match(/<([^>]+)>/);
-  return (angled ? angled[1] : first).trim().toLowerCase();
+  const angled = value.match(/<([^<>]+)>/);
+  if (angled) return angled[1].trim().toLowerCase();
+  return (value.split(",")[0] ?? "").trim().toLowerCase();
 }
 
 export function htmlToText(html: string): string {
@@ -240,6 +245,11 @@ export function htmlToText(html: string): string {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    // Outlook writes prices and apostrophes as &#36; and &#8217;. The text the
+    // model reads must be the text the person wrote, or an honest verbatim
+    // quote fails the "must appear in the reply" check.
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec: string) => String.fromCodePoint(Number(dec)))
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
@@ -259,9 +269,18 @@ export function guessReturnDate(bodyText: string, now = new Date()): Date | unde
   for (const p of patterns) {
     const m = bodyText.match(p);
     if (!m) continue;
-    const withYear = /\d{4}/.test(m[1]) ? m[1] : `${m[1]} ${now.getFullYear()}`;
-    const d = new Date(withYear);
-    if (!Number.isNaN(d.getTime()) && d > now) return d;
+    if (/\d{4}/.test(m[1])) {
+      const d = new Date(m[1]);
+      if (!Number.isNaN(d.getTime()) && d > now) return d;
+      continue;
+    }
+    // No year stated. "Back on January 5", written on December 20, means next
+    // year — assuming the current one put the date in the past and threw the
+    // match away, so the follow-up went out a week later into an empty chair.
+    for (const year of [now.getFullYear(), now.getFullYear() + 1]) {
+      const d = new Date(`${m[1]} ${year}`);
+      if (!Number.isNaN(d.getTime()) && d > now) return d;
+    }
   }
   return undefined;
 }
