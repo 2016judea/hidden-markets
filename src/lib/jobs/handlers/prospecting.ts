@@ -3,7 +3,7 @@ import * as ai from "../../ai/functions";
 import { toBrief, type PersonalizationFact } from "../../ai/prompts/shared";
 import { computeQualificationScore } from "../../ai/prompts/qualifyProspect";
 import { candidateDedupeKey, normalizeDomain, normalizeOrgName } from "../../domain/dedupe";
-import { assertCandidateTransition } from "../../domain/stateMachine";
+import { assertCandidateTransition, canContact, hasAnswered } from "../../domain/stateMachine";
 import { logActivity } from "../../domain/activity";
 import { featuresOf } from "../../domain/targeting";
 import { getTargetingGuidance, getObservedPatterns } from "../../domain/targeting";
@@ -444,7 +444,10 @@ async function researchCandidateInner(
     return (rank[b.emailConfidence] ?? 0) - (rank[a.emailConfidence] ?? 0);
   })[0];
 
-  let email = best?.email ?? null;
+  // Stored in lower case from here on: the mailbox lowercases every sender, and
+  // an address kept as published ("KLee@Beaumontca.gov") never matched its own
+  // replies. Existing rows are matched case-insensitively on the inbound side.
+  let email = best?.email?.trim().toLowerCase() ?? null;
   let emailConfidence = best?.emailConfidence ?? "UNKNOWN";
   let emailBasis = best?.emailBasis ?? null;
   let phone = best?.phone ?? null;
@@ -465,7 +468,7 @@ async function researchCandidateInner(
         ctx,
       );
       if (contact.email && (rank[contact.emailConfidence] ?? 0) >= (rank[emailConfidence] ?? 0)) {
-        email = contact.email;
+        email = contact.email.trim().toLowerCase();
         emailConfidence = contact.emailConfidence;
         emailBasis = contact.emailBasis;
         phone = contact.phone ?? phone;
@@ -725,10 +728,24 @@ export async function draftOutreach(payload: Record<string, unknown>): Promise<u
     },
   });
 
-  if (prospect.status === "NOT_INTERESTED" || prospect.status === "UNSUBSCRIBED" ||
-      prospect.status === "DO_NOT_CONTACT" || prospect.status === "BOUNCED") {
-    return { skipped: prospect.status };
+  if (!canContact(prospect.status)) return { skipped: prospect.status };
+
+  // A follow-up is a chase, and someone who has answered is not chased — the
+  // reply cancels the scheduled jobs, but a job already claimed, or re-created
+  // by an out-of-office, reaches this point anyway.
+  if (kind === "FOLLOWUP" && hasAnswered(prospect)) return { skipped: "they already replied" };
+
+  // A paused experiment holds its follow-ups rather than drafting or dropping
+  // them. Pausing used to delete the scheduled jobs outright, and nothing
+  // re-creates them on resume — they are only ever scheduled at the first send
+  // — so an hour's pause silently lost every day-4 and day-10 email.
+  if (prospect.experiment.status === "PAUSED") {
+    throw Object.assign(new Error(`experiment is paused; ${kind.toLowerCase()} draft held`), {
+      deferrable: true,
+      retryAfterMs: 6 * 3_600_000,
+    });
   }
+  if (prospect.experiment.status === "TERMINATED") return { skipped: "experiment terminated" };
 
   const duplicate = await prisma.outboxDraft.findFirst({
     where: { prospectId, sequenceIndex, status: { in: ["PENDING_REVIEW", "APPROVED", "SENDING", "SENT"] } },

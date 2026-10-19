@@ -6,8 +6,8 @@ import { enqueue, registerHandlers } from "../jobs";
 import { mayAutoApprove } from "../jobs/handlers/outbound";
 import {
   assertOutboxTransition,
-  assertProspectTransition,
   assertReplyReviewTransition,
+  isLegalProspectTransition,
 } from "../domain/stateMachine";
 import { logActivity } from "../domain/activity";
 import { suppress } from "../domain/suppression";
@@ -201,8 +201,12 @@ export async function markNotInterested(reviewId: string, doNotContact = false):
   const prospect = review.thread.prospect;
   if (prospect) {
     const target = doNotContact ? "DO_NOT_CONTACT" : "NOT_INTERESTED";
-    assertProspectTransition(prospect.status as "REPLIED", target);
-    await prisma.prospect.update({ where: { id: prospect.id }, data: { status: target } });
+    // A prospect already past this point (DO_NOT_CONTACT, UNSUBSCRIBED) stays
+    // where they are; the button used to throw on the illegal transition and
+    // the review could never be dismissed.
+    if (isLegalProspectTransition(prospect.status, target)) {
+      await prisma.prospect.update({ where: { id: prospect.id }, data: { status: target } });
+    }
     if (doNotContact) {
       await suppress({ kind: "EMAIL", value: prospect.email, reason: "MANUAL", note: "Operator marked do-not-contact" });
     }
@@ -318,8 +322,13 @@ export async function startExperiment(id: string): Promise<void> {
 
 export async function pauseExperiment(id: string): Promise<void> {
   await prisma.marketExperiment.update({ where: { id }, data: { status: "PAUSED" } });
-  // Everything queued for this experiment stops now, not after it drains.
-  await prisma.jobRun.deleteMany({ where: { experimentId: id, status: "PENDING" } });
+  // Everything queued for this experiment stops now, not after it drains —
+  // except the scheduled follow-ups, which are held by draftOutreach while the
+  // experiment is paused. They are created once, at the first send, so deleting
+  // them here lost them for good.
+  await prisma.jobRun.deleteMany({
+    where: { experimentId: id, status: "PENDING", kind: { not: "DRAFT_OUTREACH" } },
+  });
   await logActivity({ experimentId: id, kind: "SYSTEM", actor: "HUMAN", message: "Experiment paused." });
   revalidatePath(`/experiments/${id}`);
 }

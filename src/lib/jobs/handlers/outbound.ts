@@ -1,6 +1,11 @@
 import { prisma, j } from "../../db";
 import { getEmailProvider } from "../../email";
-import { assertOutboxTransition, assertProspectTransition, canContact } from "../../domain/stateMachine";
+import {
+  assertOutboxTransition,
+  canContact,
+  hasAnswered,
+  isLegalProspectTransition,
+} from "../../domain/stateMachine";
 import { isSuppressed } from "../../domain/suppression";
 import { logActivity } from "../../domain/activity";
 import { recordOutcomeForProspect } from "../../domain/targeting";
@@ -72,6 +77,14 @@ export async function sendApprovedOutbox(): Promise<unknown> {
       blocked++;
       continue;
     }
+    // A follow-up is a chase. If they have answered since this one was drafted
+    // or approved — a FAILED follow-up re-approved after the reply landed is
+    // the common way — sending it tells them we did not read their reply.
+    if (draft.kind === "FOLLOWUP" && hasAnswered(draft.prospect)) {
+      await cancelDraft(draft.id, "they already replied");
+      blocked++;
+      continue;
+    }
     const supp = await isSuppressed(draft.prospect.email);
     if (supp.suppressed) {
       await cancelDraft(draft.id, `address suppressed (${supp.reason})`);
@@ -82,13 +95,33 @@ export async function sendApprovedOutbox(): Promise<unknown> {
     assertOutboxTransition("APPROVED", "SENDING");
     await prisma.outboxDraft.update({ where: { id: draft.id }, data: { status: "SENDING" } });
 
+    let result: Awaited<ReturnType<typeof provider.sendEmail>>;
     try {
-      const result = await provider.sendEmail({
+      result = await provider.sendEmail({
         to: draft.prospect.email,
         subject: draft.subject,
         bodyText: draft.body,
       });
+    } catch (err) {
+      assertOutboxTransition("SENDING", "FAILED");
+      await prisma.outboxDraft.update({
+        where: { id: draft.id },
+        data: { status: "FAILED", sendError: String((err as Error).message).slice(0, 1000) },
+      });
+      await logActivity({
+        experimentId: draft.experimentId,
+        kind: "ERROR",
+        message: `Send failed to ${draft.prospect.email}: ${String((err as Error).message).slice(0, 200)}`,
+      });
+      continue;
+    }
 
+    // From here the email has left the building. Whatever fails below, this row
+    // must end up SENT: the send and its bookkeeping used to share one catch, so
+    // a failure writing a stat row marked the draft FAILED over an email that
+    // had already been delivered — and FAILED is re-approvable, which is how one
+    // person gets the same cold email twice.
+    try {
       const thread =
         (draft.threadId ? await prisma.emailThread.findUnique({ where: { id: draft.threadId } }) : null) ??
         (await prisma.emailThread.create({
@@ -127,12 +160,15 @@ export async function sendApprovedOutbox(): Promise<unknown> {
         data: { lastMessageAt: result.sentAt, status: "AWAITING_REPLY" },
       });
 
+      // The status only moves where the machine allows it. A reply intro to
+      // someone already ENGAGED is a legitimate send that must not drag their
+      // status backwards to CONTACTED.
       const nextStatus: ProspectStatus = draft.kind === "FOLLOWUP" ? "FOLLOWED_UP" : "CONTACTED";
-      assertProspectTransition(draft.prospect.status as ProspectStatus, nextStatus);
+      const moves = isLegalProspectTransition(draft.prospect.status, nextStatus);
       await prisma.prospect.update({
         where: { id: draft.prospectId },
         data: {
-          status: nextStatus,
+          ...(moves ? { status: nextStatus } : {}),
           lastContactedAt: result.sentAt,
           firstContactedAt: draft.prospect.firstContactedAt ?? result.sentAt,
         },
@@ -153,16 +189,24 @@ export async function sendApprovedOutbox(): Promise<unknown> {
       });
       sent++;
     } catch (err) {
-      assertOutboxTransition("SENDING", "FAILED");
+      const message = String((err as Error).message ?? err);
+      // Still SENT. The status is only written on a row that is still SENDING,
+      // so one the happy path already finished keeps its message link; the
+      // failure goes on the row either way.
       await prisma.outboxDraft.update({
         where: { id: draft.id },
-        data: { status: "FAILED", sendError: String((err as Error).message).slice(0, 1000) },
+        data: { sendError: `sent, but bookkeeping failed: ${message}`.slice(0, 1000) },
+      });
+      await prisma.outboxDraft.updateMany({
+        where: { id: draft.id, status: "SENDING" },
+        data: { status: "SENT", sentAt: result.sentAt },
       });
       await logActivity({
         experimentId: draft.experimentId,
         kind: "ERROR",
-        message: `Send failed to ${draft.prospect.email}: ${String((err as Error).message).slice(0, 200)}`,
+        message: `Sent to ${draft.prospect.email}, but recording it failed: ${message.slice(0, 200)}`,
       });
+      sent++;
     }
   }
 
@@ -210,8 +254,11 @@ export async function cancelFollowups(prospectId: string, reason: string): Promi
       idempotencyKey: { in: FOLLOWUP_SCHEDULE_DAYS.map((_, i) => `draft:${prospectId}:${i + 1}`) },
     },
   });
+  // FAILED is included: a follow-up that failed on a network blip is one
+  // re-approval away from going out, and that re-approval can come after the
+  // reply it would be chasing.
   const pending = await prisma.outboxDraft.findMany({
-    where: { prospectId, kind: "FOLLOWUP", status: { in: ["PENDING_REVIEW", "APPROVED"] } },
+    where: { prospectId, kind: "FOLLOWUP", status: { in: ["PENDING_REVIEW", "APPROVED", "FAILED"] } },
   });
   for (const d of pending) {
     await prisma.outboxDraft.update({

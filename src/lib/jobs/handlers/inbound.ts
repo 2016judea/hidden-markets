@@ -5,7 +5,12 @@ import { toBrief } from "../../ai/prompts/shared";
 import { logActivity } from "../../domain/activity";
 import { suppress } from "../../domain/suppression";
 import { recordOutcomeForProspect } from "../../domain/targeting";
-import { assertProspectTransition } from "../../domain/stateMachine";
+import {
+  assertProspectTransition,
+  canContact,
+  hasAnswered,
+  isLegalProspectTransition,
+} from "../../domain/stateMachine";
 import { candidateDedupeKey } from "../../domain/dedupe";
 import { recordPainSignalInGraph } from "../../domain/graph";
 import { CAPABILITIES } from "../../domain/capabilities";
@@ -129,10 +134,7 @@ async function matchThread(m: {
   // unknown) were fetched and silently dropped. The recipient the DSN names is
   // the only usable key, and it is the one the body actually gives us.
   if (m.isBounce && m.bouncedAddress) {
-    const bounced = await prisma.prospect.findFirst({
-      where: { email: { equals: m.bouncedAddress } },
-      include: { threads: { orderBy: { lastMessageAt: "desc" }, take: 1 } },
-    });
+    const bounced = await findProspectByAddress(m.bouncedAddress);
     if (bounced?.threads[0]) return bounced.threads[0];
   }
 
@@ -148,11 +150,36 @@ async function matchThread(m: {
     const t = await prisma.emailThread.findFirst({ where: { providerThreadId: m.providerThreadId } });
     if (t) return t;
   }
-  const prospect = await prisma.prospect.findFirst({
-    where: { email: m.fromAddress, firstContactedAt: { not: null } },
+  const prospect = await findProspectByAddress(m.fromAddress, { contactedOnly: true });
+  return prospect?.threads[0] ?? null;
+}
+
+/**
+ * Address comparison is case-insensitive, because the mailbox's is and ours was
+ * not. Six of 64 live prospects carry a mixed-case address as published on
+ * their site (Brian.Antonian@Dunedin.gov); Zoho hands back the sender in lower
+ * case, and a case-sensitive equals matched none of them — so a reply whose
+ * client dropped In-Reply-To, or a DSN naming the address in lower case, was
+ * logged as "matched no experiment thread" and dropped. Raw SQL because Prisma
+ * has no insensitive mode on SQLite.
+ */
+async function findProspectByAddress(address: string, opts: { contactedOnly?: boolean } = {}) {
+  const wanted = address.trim().toLowerCase();
+  const rows = opts.contactedOnly
+    ? await prisma.$queryRaw<Array<{ id: string }>>`
+        SELECT id FROM Prospect
+        WHERE lower(email) = ${wanted} AND firstContactedAt IS NOT NULL
+        ORDER BY lastContactedAt DESC LIMIT 1`
+    : await prisma.$queryRaw<Array<{ id: string }>>`
+        SELECT id FROM Prospect
+        WHERE lower(email) = ${wanted}
+        ORDER BY lastContactedAt DESC LIMIT 1`;
+  const id = rows[0]?.id;
+  if (!id) return null;
+  return prisma.prospect.findUnique({
+    where: { id },
     include: { threads: { orderBy: { lastMessageAt: "desc" }, take: 1 } },
   });
-  return prospect?.threads[0] ?? null;
 }
 
 export async function processInbound(payload: Record<string, unknown>): Promise<unknown> {
@@ -204,18 +231,24 @@ export async function processInbound(payload: Record<string, unknown>): Promise<
 
   if (message.isAutoReply) {
     const back = message.autoReplyUntil ?? new Date(Date.now() + 7 * 86_400_000);
-    if (prospect) {
+    // Only a sequence that is still waiting on them gets moved. Their vacation
+    // responder answering OUR reply used to re-arm the whole chase — two fresh
+    // follow-ups, days later, to someone mid-conversation.
+    const chasing = Boolean(prospect) && canContact(prospect!.status) && !hasAnswered(prospect!);
+    if (prospect && chasing) {
       await cancelFollowups(prospect.id, "out of office");
       await scheduleFollowups(prospect.id, experimentId, back);
     }
     await logActivity({
       experimentId,
       kind: "REPLY",
-      message: `Out-of-office from ${message.fromAddress}. Follow-ups rescheduled${
-        message.autoReplyUntil ? ` to after ${back.toISOString().slice(0, 10)} (they stated a return date)` : " by a week (no return date given)"
-      }.`,
+      message: chasing
+        ? `Out-of-office from ${message.fromAddress}. Follow-ups rescheduled${
+            message.autoReplyUntil ? ` to after ${back.toISOString().slice(0, 10)} (they stated a return date)` : " by a week (no return date given)"
+          }.`
+        : `Out-of-office from ${message.fromAddress}. Nothing to reschedule — no follow-up sequence is running for them.`,
     });
-    return { handled: "auto-reply", rescheduledTo: back };
+    return { handled: "auto-reply", rescheduledTo: chasing ? back : null };
   }
 
   // ── A real human wrote back ──────────────────────────────────────────────
@@ -364,13 +397,16 @@ export async function processInbound(payload: Record<string, unknown>): Promise<
 
   // Prospect status, validated against the state machine rather than trusted.
   if (prospect) {
+    // The fallback used to write REPLIED unconditionally, which pulled a
+    // DO_NOT_CONTACT or UNSUBSCRIBED prospect back into a contactable state the
+    // moment they wrote again. A terminal status stays terminal.
     const proposed = classification.suggestedProspectStatus as ProspectStatus;
-    try {
-      assertProspectTransition(prospect.status as ProspectStatus, proposed);
-      await prisma.prospect.update({ where: { id: prospect.id }, data: { status: proposed } });
-    } catch {
-      await prisma.prospect.update({ where: { id: prospect.id }, data: { status: "REPLIED" } });
-    }
+    const next = isLegalProspectTransition(prospect.status, proposed)
+      ? proposed
+      : isLegalProspectTransition(prospect.status, "REPLIED")
+        ? "REPLIED"
+        : null;
+    if (next) await prisma.prospect.update({ where: { id: prospect.id }, data: { status: next } });
     if (classification.classifications.includes("NEGATIVE")) {
       await recordOutcomeForProspect(prospect, "negative");
     }
@@ -495,7 +531,7 @@ async function createReferralCandidate(
         organizationName: source.organizationName,
         contactName: referral.name,
         title: referral.title,
-        email: referral.email,
+        email: referral.email?.trim().toLowerCase() ?? null,
         emailConfidence: referral.email ? "VERIFIED" : "UNKNOWN",
         emailInferenceNote: referral.email ? "Given to us directly by a colleague at the same organization." : null,
         city: source.city,

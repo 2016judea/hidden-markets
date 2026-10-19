@@ -94,3 +94,27 @@ export const PROSPECT_TERMINAL: ProspectStatus[] = [
 export function canContact(status: string): boolean {
   return !PROSPECT_TERMINAL.includes(status as ProspectStatus);
 }
+
+/** Statuses that mean a person has written back. */
+export const PROSPECT_ANSWERED: ProspectStatus[] = ["REPLIED", "ENGAGED", "TRANSACTION"];
+
+/**
+ * Whether this prospect has answered us. A follow-up is a chase, and chasing
+ * someone mid-conversation reads as a mailing list — so every place that
+ * drafts, schedules or sends one asks this first, by status OR by the reply
+ * timestamp, because the two can disagree for a moment while a reply is being
+ * processed.
+ */
+export function hasAnswered(p: { status: string; repliedAt?: Date | null }): boolean {
+  return p.repliedAt != null || PROSPECT_ANSWERED.includes(p.status as ProspectStatus);
+}
+
+/** True when the state machine allows `from -> to`, without throwing. */
+export function isLegalProspectTransition(from: string, to: string): boolean {
+  try {
+    assertProspectTransition(from as ProspectStatus, to as ProspectStatus);
+    return true;
+  } catch {
+    return false;
+  }
+}
