@@ -1,0 +1,10699 @@
+{
+"Routine": {
+"steam": "606160",
+"devs": [
+"Lunar Software"
+],
+"pubs": [
+"Raw Fury"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 4, 2025"
+]
+},
+"Silent Hill 2": {
+"steam": "2124490",
+"devs": [
+"Bloober Team"
+],
+"pubs": [
+"Konami"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 8, 2024"
+]
+},
+"Dead by Daylight": {
+"steam": "381210",
+"devs": [
+"Behaviour Interactive"
+],
+"pubs": [
+"Starbreeze Studios",
+"Behaviour Interactive"
+],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"June 14, 2016"
+]
+},
+"Conan Exiles": {
+"steam": "440900",
+"devs": [
+"Funcom",
+"Inflexion Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"May 8, 2018"
+]
+},
+"Lifeless": {
+"steam": "419520",
+"devs": [
+"Rigid-Soft",
+"Desync Donkeys"
+],
+"pubs": [
+"Green Man Gaming Publishing",
+"Desync Donkeys"
+],
+"engines": [
+"Unity",
+"1= Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Squad": {
+"steam": "393380",
+"devs": [
+"Offworld Industries"
+],
+"pubs": [
+"Offworld Industries",
+"Tencent Games"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"September 23, 2020"
+]
+},
+"The Isle": {
+"steam": "376210",
+"devs": [
+"The Isle Development Team"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Fernbus Simulator": {
+"steam": "427100",
+"devs": [
+"TML-Studios"
+],
+"pubs": [
+"Aerosoft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 25, 2016"
+]
+},
+"Digimon Masters Online": {
+"steam": "537180",
+"devs": [
+"Digitalic",
+"MoveGames"
+],
+"pubs": [
+"MoveGames",
+"Joymax",
+"Aeria Games",
+"Bandai Namco Entertainment Korea",
+"Cayenne Tech",
+"VALOFE",
+"MoveGames"
+],
+"engines": [
+"Gamebryo",
+"Unreal Engine 5"
+],
+"date": [
+"October 30, 2009"
+]
+},
+"Pavlov VR": {
+"steam": "555160",
+"devs": [
+"Vankrupt Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Witch It": {
+"steam": "559650",
+"devs": [
+"Barrel Roll Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 22, 2020"
+]
+},
+"PUBG: Battlegrounds": {
+"steam": "578080",
+"devs": [
+"PUBG Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"December 20, 2017"
+]
+},
+"BattleCore Arena": {
+"steam": "2613870",
+"devs": [
+"Cosmic Ray Studio",
+"Ubisoft Bordeaux"
+],
+"pubs": [
+"Cosmic Ray Studio",
+"Ubisoft"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"February 4, 2025"
+]
+},
+"Fortnite": {
+"steam": "|steam appid side  =",
+"devs": [
+"Epic Games",
+"People Can Fly",
+"Psyonix",
+"Harmonix Music Systems",
+"Mediatonic"
+],
+"pubs": [
+"Epic Games",
+"Gearbox Software",
+"Warner Bros. Games"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5",
+"Unreal Engine 6"
+],
+"date": [
+"June 30, 2020"
+]
+},
+"March of Empires": {
+"steam": "702320",
+"devs": [
+"Gameloft Bulgaria"
+],
+"pubs": [
+"Gameloft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 13, 2015"
+]
+},
+"Proxima Royale": {
+"steam": "796530",
+"devs": [
+"Vulkan Society"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"No More Room in Hell 2": {
+"steam": "292000",
+"devs": [
+"Torn Banner Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 11, 2026"
+]
+},
+"Eximius: Seize the Frontline": {
+"steam": "505740",
+"devs": [
+"Ammobox Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"March 16, 2021"
+]
+},
+"Case 2: Animatronics Survival": {
+"steam": "722960",
+"devs": [
+"Walnut"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"February 28, 2019"
+]
+},
+"Satisfactory": {
+"steam": "526870",
+"devs": [
+"Coffee Stain Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 10, 2024"
+]
+},
+"Brimstone Brawlers": {
+"steam": "780270",
+"devs": [
+"Ategig"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"List of Direct3D 12 games": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Predecessor": {
+"steam": "961200",
+"devs": [
+"Omeda Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"12/01/2022"
+]
+},
+"TIRELESS: Prepare for the Adrenaline": {
+"steam": "959800",
+"devs": [
+"The Cyber Clan"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"List of Vulkan games": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"List of Metal games": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Vampire: The Masquerade - Bloodlines 2": {
+"steam": "532790",
+"devs": [
+"The Chinese Room"
+],
+"pubs": [
+"Paradox Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 21, 2025"
+]
+},
+"Primitive Builder Simulator": {
+"steam": "1059900",
+"devs": [
+"Space Boat Studios",
+"Polyslash",
+"Baked Games"
+],
+"pubs": [
+"PlayWay"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 12, 2023"
+]
+},
+"Ready or Not": {
+"steam": "1144200",
+"devs": [
+"VOID Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"December 13, 2023"
+]
+},
+"The Orville - Interactive Fan Experience": {
+"steam": "1096200",
+"devs": [
+"Messy Desk Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Everspace 2": {
+"steam": "1128920",
+"devs": [
+"ROCKFISH Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"April 6, 2023"
+]
+},
+"Forbidden Art": {
+"steam": "1166140",
+"devs": [
+"AIXLAB"
+],
+"pubs": [
+"AIXLAB"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 25, 2024"
+]
+},
+"Deadhaus Sonata": {
+"steam": "1142050",
+"devs": [
+"Apocalypse Studios"
+],
+"pubs": [],
+"engines": [
+"Unity",
+"Open 3D Engine",
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"IGI: Origins": {
+"steam": "1186430",
+"devs": [
+"Antimatter Games",
+"Toadman Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Qanga": {
+"steam": "1648190",
+"devs": [
+"iolaCorp"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Wolf Among Us 2": {
+"steam": "1884870",
+"devs": [
+"AdHoc Studio",
+"Telltale Games"
+],
+"pubs": [
+"Telltale Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Hellblade II: Senua's Saga": {
+"steam": "2461850",
+"devs": [
+"Ninja Theory"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 21, 2024"
+]
+},
+"S.T.A.L.K.E.R. 2: Heart of Chornobyl": {
+"steam": "1643320",
+"devs": [
+"GSC Game World"
+],
+"pubs": [
+"GSC Game World",
+"SEGA",
+"4Divinity",
+"Plaion"
+],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 5"
+],
+"date": [
+"November 20, 2024"
+]
+},
+"InFlux Redux": {
+"steam": "867150",
+"devs": [
+"Impromptu Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 16, 2024"
+]
+},
+"Cepheus Protocol": {
+"steam": "979640",
+"devs": [
+"Halcyon Winds"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"A.I.M.3: War Protocol": {
+"steam": "1171340",
+"devs": [
+"SkyRiver Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"I Am Jesus Christ": {
+"steam": "1198970",
+"devs": [
+"Space Boat Studios"
+],
+"pubs": [
+"PlayWay"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 2, 2026"
+]
+},
+"Valorant": {
+"steam": "|steam appid side =",
+"devs": [
+"Riot Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"June 2, 2020"
+]
+},
+"Brickadia": {
+"steam": "2199420",
+"devs": [
+"Brickadia, LLC"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 11, 2025"
+]
+},
+"State of Decay 3": {
+"steam": "1340720",
+"devs": [
+"Undead Labs"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Avowed": {
+"steam": "2457220",
+"devs": [
+"Obsidian Entertainment"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 18, 2025"
+]
+},
+"Black Myth: Wukong": {
+"steam": "2358720",
+"devs": [
+"Game Science"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 20, 2024"
+]
+},
+"Myst (2021)": {
+"steam": "1255560",
+"devs": [
+"Cyan Worlds"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"August 26, 2021"
+]
+},
+"Perfect Dark": {
+"steam": "2986410",
+"devs": [
+"The Initiative",
+"Crystal Dynamics",
+"The Coalition"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Cancelled"
+]
+},
+"ARK II": {
+"steam": "2050420",
+"devs": [
+"Studio Wildcard",
+"Grove Street Games LLC"
+],
+"pubs": [
+"Studio Wildcard"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"6 Seasons and a Game": {
+"steam": "1460830",
+"devs": [
+"The Human Beings"
+],
+"pubs": [
+"Moto Studios",
+"Dog Water Studios"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"January 9, 2021"
+]
+},
+"The Day Before": {
+"steam": "1372880",
+"devs": [
+"FNTASTIC"
+],
+"pubs": [
+"Mytona"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Cancelled"
+]
+},
+"Gothic 1 Remake": {
+"steam": "1297900",
+"devs": [
+"Alkimia Interactive"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 5, 2026"
+]
+},
+"Payday 3": {
+"steam": "1272080",
+"devs": [
+"Overkill Software"
+],
+"pubs": [
+"Starbreeze Studios",
+"Deep Silver"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"September 21 2023"
+]
+},
+"The Outer Worlds 2": {
+"steam": "1449110",
+"devs": [
+"Obsidian Entertainment"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 29, 2025"
+]
+},
+"RoboCop: Rogue City": {
+"steam": "1681430",
+"devs": [
+"Teyon"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 2, 2023"
+]
+},
+"Frostpunk 2": {
+"steam": "1601580",
+"devs": [
+"11 bit studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 20, 2024"
+]
+},
+"ExeKiller": {
+"steam": "1701840",
+"devs": [
+"Paradark Studio"
+],
+"pubs": [
+"505 Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Poppy Playtime": {
+"steam": "1721470",
+"devs": [
+"Mob Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"October 12, 2021"
+]
+},
+"Stray Souls": {
+"steam": "1807210",
+"devs": [
+"Jukai Studio"
+],
+"pubs": [
+"Versus Evil"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"25 October 2023"
+]
+},
+"ARC Raiders": {
+"steam": "1808500",
+"devs": [
+"Embark Studios",
+"Entrophy Games"
+],
+"pubs": [
+"Embark Studios",
+"Tencent Games",
+"Nexon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 30, 2025"
+]
+},
+"List of games that support high-fidelity upscaling": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"I Am Jesus Christ: Prologue": {
+"steam": "1509650",
+"devs": [
+"Space Boat Studios"
+],
+"pubs": [
+"PlayWay",
+"SimulaM"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"1 December 2022"
+]
+},
+"Sengoku Dynasty": {
+"steam": "1702010",
+"devs": [
+"Superkami"
+],
+"pubs": [
+"Toplitz Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 7, 2024"
+]
+},
+"Carnal Instinct": {
+"steam": "1495320",
+"devs": [
+"Team Carnal Instinct"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Kingdom Hearts IV": {
+"steam": "3216600",
+"devs": [
+"Square Enix"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"MythForce": {
+"steam": "363860",
+"devs": [
+"Beamdog"
+],
+"pubs": [
+"Aspyr Media"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 12, 2023"
+]
+},
+"American Arcadia": {
+"steam": "1249040",
+"devs": [
+"Out of the Blue"
+],
+"pubs": [
+"Raw Fury"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 15, 2023"
+]
+},
+"MultiVersus": {
+"steam": "1818750",
+"devs": [
+"Player First Games"
+],
+"pubs": [
+"Warner Bros. Games"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"May 28, 2024"
+]
+},
+"Stormgate": {
+"steam": "2012510",
+"devs": [
+"Frost Giant Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 5, 2025"
+]
+},
+"Layers of Fear (2023)": {
+"steam": "1946700",
+"devs": [
+"Bloober Team",
+"Anshar Studios"
+],
+"pubs": [
+"Bloober Team"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 15, 2023"
+]
+},
+"Post Trauma": {
+"steam": "1750030",
+"devs": [
+"Red Soul Games"
+],
+"pubs": [
+"Raw Fury"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 22, 2025"
+]
+},
+"The First Descendant": {
+"steam": "2074920",
+"devs": [
+"Nexon"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 2, 2024"
+]
+},
+"The Trials": {
+"steam": "1747030",
+"devs": [
+"BLUE LIFE"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2021-10-01"
+]
+},
+"Peepo Island": {
+"steam": "2069990",
+"devs": [
+"Anboni"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"18 July 2022"
+]
+},
+"Karagon": {
+"steam": "1818610",
+"devs": [
+"Tbjbu2"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Backroom - Lost and Found": {
+"steam": "2019830",
+"devs": [
+"Lollin' Pony"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"25 July 2022"
+]
+},
+"The Wrestling Code": {
+"steam": "|steam appid side =",
+"devs": [
+"Virtual Basement"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Tempest Rising": {
+"steam": "1486920",
+"devs": [
+"Slipgate Ironworks",
+"2B Games"
+],
+"pubs": [
+"Saber Interactive",
+"3D Realms",
+"Knights Peak"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 17, 2025"
+]
+},
+"3on3 FreeStyle: Rebound": {
+"steam": "1292630",
+"devs": [
+"Joycity"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"15 July 2020"
+]
+},
+"Lords of the Fallen (2023)": {
+"steam": "1501750",
+"devs": [
+"HexWorks"
+],
+"pubs": [
+"CI Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 13, 2023"
+]
+},
+"Tenebris Somnia": {
+"steam": "2121510",
+"devs": [
+"Andr\u00e9s Borghi",
+"Saibot Studios"
+],
+"pubs": [
+"New Blood Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 16, 2026"
+]
+},
+"The Finals": {
+"steam": "2073850",
+"devs": [
+"Embark Studios",
+"Entrophy Games"
+],
+"pubs": [
+"Embark Studios",
+"Tencent Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 8, 2023"
+]
+},
+"Tekken 8": {
+"steam": "1778820",
+"devs": [
+"Bandai Namco Studios",
+"Arika"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 26, 2024"
+]
+},
+"Nightingale": {
+"steam": "1928980",
+"devs": [
+"Inflexion Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Remnant II": {
+"steam": "1282100",
+"devs": [
+"Gunfire Games"
+],
+"pubs": [
+"Arc Games",
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 25, 2023"
+]
+},
+"Dune: Awakening": {
+"steam": "1172710",
+"devs": [
+"Funcom",
+"Abstraction",
+"Bacalhau Games",
+"Galli Games",
+"Games Farm",
+"Kraftraum Games",
+"Nukklear",
+"The Outsiders",
+"Virtuos",
+"Warp Digital",
+"Yager Development"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 10, 2025"
+]
+},
+"Abyss World: Apocalypse": {
+"steam": "2244780",
+"devs": [
+"Abyss Studio"
+],
+"pubs": [
+"Abyss Studio",
+"Metagame Industries"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"War Robots: Frontiers": {
+"steam": "1491000",
+"devs": [
+"Pixonic"
+],
+"pubs": [
+"MY.GAMES",
+"Astrum Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 4, 2025"
+]
+},
+"Supraworld": {
+"steam": "1869290",
+"devs": [
+"Supra Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Garten of Banban": {
+"steam": "2232840",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"6 January 2023"
+]
+},
+"Garten of Banban 2": {
+"steam": "2262770",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Mar 3, 2023"
+]
+},
+"Unreal Engine 5": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Empire of the Ants (2024)": {
+"steam": "2287330",
+"devs": [
+"Tower Five"
+],
+"pubs": [
+"Microids"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 7, 2024"
+]
+},
+"171": {
+"steam": "1269370",
+"devs": [
+"Betagames Group"
+],
+"pubs": [
+"QUByte Interactive"
+],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"EA"
+]
+},
+"Dark and Darker": {
+"steam": "2016590",
+"devs": [
+"Ironmace"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA "
+]
+},
+"Harmony: The Fall of Reverie": {
+"steam": "1966420",
+"devs": [
+"Don't Nod"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 8, 2023"
+]
+},
+"Farlight 84": {
+"steam": "1928420",
+"devs": [
+"Farlight Games"
+],
+"pubs": [
+"Farlight Games",
+"Lilith Games"
+],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"Sep 21, 2023"
+]
+},
+"Garten of Banban 3": {
+"steam": "2311190",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"5 May 2023"
+]
+},
+"Deceit 2": {
+"steam": "2064870",
+"devs": [
+"World Makers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"ALARA Prime": {
+"steam": "971700",
+"devs": [
+"Fall Damage"
+],
+"pubs": [
+"Level Infinite",
+"Hyperjump Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Poostall Royale": {
+"steam": "2362740",
+"devs": [
+"Running With Scissors"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 1, 2023"
+]
+},
+"Immortals of Aveum": {
+"steam": "2009100",
+"devs": [
+"Ascendant Studios"
+],
+"pubs": [
+"Electronic Arts"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 22, 2023"
+]
+},
+"Harry Potter: Quidditch Champions": {
+"steam": "2878600",
+"devs": [
+"Unbroken Studios"
+],
+"pubs": [
+"Warner Bros. Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 3, 2024"
+]
+},
+"Garten of Banban 4": {
+"steam": "2383120",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"11 August 2023"
+]
+},
+"Firmament": {
+"steam": "754890",
+"devs": [
+"Cyan Worlds"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"2023-05-18"
+]
+},
+"Starship Troopers: Extermination": {
+"steam": "1268750",
+"devs": [
+"Offworld Industries"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 10, 2024"
+]
+},
+"The Talos Principle 2": {
+"steam": "835960",
+"devs": [
+"Croteam"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 2, 2023"
+]
+},
+"Metal Gear Solid \u0394: Snake Eater": {
+"steam": "2417610",
+"devs": [
+"Konami",
+"Virtuos",
+"PlatinumGames"
+],
+"pubs": [
+"Konami"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 28, 2025"
+]
+},
+"Synduality: Echo of Ada": {
+"steam": "1245480",
+"devs": [
+"Game Studio"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 23, 2025"
+]
+},
+"Concord": {
+"steam": "2443720",
+"devs": [
+"Firewalk Studios"
+],
+"pubs": [
+"PlayStation Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 23, 2024"
+]
+},
+"The 7th Guest VR": {
+"steam": "2456960",
+"devs": [
+"Vertigo Games",
+"Exkee"
+],
+"pubs": [
+"Vertigo Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 19, 2023"
+]
+},
+"List of games that use Unreal Engine 5": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": []
+},
+"Palworld": {
+"steam": "1623730",
+"devs": [
+"Pocketpair"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 10, 2026"
+]
+},
+"Clockwork Revolution": {
+"steam": "2439280",
+"devs": [
+"inXile Entertainment",
+"Shapeshifter Games"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Desordre": {
+"steam": "2097490",
+"devs": [
+"SHK Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 1, 2023"
+]
+},
+"Fort Solis": {
+"steam": "1931730",
+"devs": [
+"Fallen Leaf",
+"Black Drakkar Games"
+],
+"pubs": [
+"Dear Villagers"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 22, 2023"
+]
+},
+"ARK: Survival Ascended": {
+"steam": "2399830",
+"devs": [
+"Studio Wildcard",
+"Grove Street Games LLC"
+],
+"pubs": [
+"Studio Wildcard",
+"Snail Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Pseudoregalia": {
+"steam": "2365810",
+"devs": [
+"rittzler"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 28, 2023"
+]
+},
+"Titan Quest II": {
+"steam": "1154030",
+"devs": [
+"Grimlore Games"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Gordian Rooms 2: A Curious Island": {
+"steam": "1528220",
+"devs": [
+"Crimsonite Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 19, 2024"
+]
+},
+"War Of Being": {
+"steam": "2475790",
+"devs": [
+"DMTesseracT"
+],
+"pubs": [
+"4D Music Ltd"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"F1 Manager 2023": {
+"steam": "2287220",
+"devs": [
+"Frontier Developments"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 31, 2023"
+]
+},
+"Garten of Banban 6": {
+"steam": "2499800",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"20 December 2023"
+]
+},
+"Jujutsu Kaisen: Cursed Clash": {
+"steam": "1877020",
+"devs": [
+"Gemdrops",
+"Byking"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 2, 2024"
+]
+},
+"Towerborne": {
+"steam": "2458830",
+"devs": [
+"Stoic"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 26, 2026"
+]
+},
+"Commandos: Origins": {
+"steam": "1479730",
+"devs": [
+"Claymore Game Studios",
+"Games Farm"
+],
+"pubs": [
+"Kalypso Media"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 9, 2025"
+]
+},
+"Sans Logique": {
+"steam": "1837620",
+"devs": [
+"Gamagora ICOM",
+"Team Sans Logique"
+],
+"pubs": [
+"Gamagora ICOM"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2023-09-07"
+]
+},
+"Jusant": {
+"steam": "1977170",
+"devs": [
+"Don't Nod"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 31, 2023"
+]
+},
+"Skull Island: Rise of Kong": {
+"steam": "2097890",
+"devs": [
+"IguanaBee"
+],
+"pubs": [
+"GameMill Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 17, 2023"
+]
+},
+"Forgive Me Father 2": {
+"steam": "2272250",
+"devs": [
+"Byte Barrel"
+],
+"pubs": [
+"Fulqrum Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 24, 2024"
+]
+},
+"Half Sword": {
+"steam": "2397300",
+"devs": [
+"Half Sword Games"
+],
+"pubs": [
+"Game Seer Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Sapphire Safari": {
+"steam": "1526900",
+"devs": [
+"Kinky Fridays"
+],
+"pubs": [
+"Critical Bliss"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Spirit of the North 2": {
+"steam": "1778840",
+"devs": [
+"Infuse Studio"
+],
+"pubs": [
+"Silver Lining Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 8, 2025"
+]
+},
+"Tormented Souls 2": {
+"steam": "2464280",
+"devs": [
+"Dual Effect"
+],
+"pubs": [
+"PQube Limited"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 23, 2025"
+]
+},
+"Wayfinder": {
+"steam": "1171690",
+"devs": [
+"Airship Syndicate"
+],
+"pubs": [
+"Digital Extremes",
+"Airship Syndicate"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 21, 2024"
+]
+},
+"The Seven Deadly Sins: Origin": {
+"steam": "3679080",
+"devs": [
+"Netmarble"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 16, 2026"
+]
+},
+"Desynced": {
+"steam": "1450900",
+"devs": [
+"Stage Games"
+],
+"pubs": [
+"Forklift Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 5, 2026"
+]
+},
+"Transformers: EarthSpark - Expedition": {
+"steam": "1955800",
+"devs": [
+"Tessera Studios"
+],
+"pubs": [
+"Outright Games"
+],
+"engines": [
+"Unreal Engine 5 "
+],
+"date": [
+" October 13, 2023"
+]
+},
+"List of Unreal Engine 4-5 games where HDR can be forced": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Brothers: A Tale of Two Sons Remake": {
+"steam": "2153350",
+"devs": [
+"Avantgarden"
+],
+"pubs": [
+"505 Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 28, 2024"
+]
+},
+"Dragon Ball: Sparking! Zero": {
+"steam": "1790600",
+"devs": [
+"Spike Chunsoft"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 11, 2024"
+]
+},
+"ReThink: Lite": {
+"steam": "2481710",
+"devs": [
+"Yaeko"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2023-10-16"
+]
+},
+"ReThink: Evolved 5": {
+"steam": "2340960",
+"devs": [
+"Yaeko"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2023-10-16"
+]
+},
+"The Exit 8": {
+"steam": "2653790",
+"devs": [
+"Kotake Create"
+],
+"pubs": [
+"Kotake Create",
+"Playism"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 29, 2023"
+]
+},
+"Garten of Banban 7": {
+"steam": "2693060",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 8, 2024"
+]
+},
+"Banishers: Ghosts of New Eden": {
+"steam": "1493640",
+"devs": [
+"Don't Nod"
+],
+"pubs": [
+"Focus Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 12, 2024"
+]
+},
+"The Crimson Maid": {
+"steam": "2695260",
+"devs": [
+"GrimTalin",
+"Darkania Works"
+],
+"pubs": [
+"Wales Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 14, 2026"
+]
+},
+"Smite 2": {
+"steam": "2437170",
+"devs": [
+"Titan Forge Games"
+],
+"pubs": [
+"Hi-Rez Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Soulslinger: Envoy of Death": {
+"steam": "2429240",
+"devs": [
+"Elder Games"
+],
+"pubs": [
+"Headup",
+"Beep Japan"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 17, 2025"
+]
+},
+"Rocket Racing": {
+"steam": "|steam appid side =",
+"devs": [
+"Psyonix",
+"Epic Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 8, 2023"
+]
+},
+"Estranged: Arctic Cold": {
+"steam": "1347230",
+"devs": [
+"Alan Edwardes"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Bodycam": {
+"steam": "2406770",
+"devs": [
+"Reissad Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Greedland": {
+"steam": "2218400",
+"devs": [
+"VaMP He"
+],
+"pubs": [
+"Gamersky Games",
+"2P Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Abiotic Factor": {
+"steam": "427410",
+"devs": [
+"Deep Field Games"
+],
+"pubs": [
+"Playstack"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 22, 2025"
+]
+},
+"Palia": {
+"steam": "2707930",
+"devs": [
+"Singularity 6"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 10, 2023"
+]
+},
+"Until Dawn": {
+"steam": "2172010",
+"devs": [
+"Ballistic Moon",
+"Supermassive Games"
+],
+"pubs": [
+"PlayStation Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 4, 2024"
+]
+},
+"Metro Awakening": {
+"steam": "2669410",
+"devs": [
+"Vertigo Studios Amsterdam"
+],
+"pubs": [
+"Vertigo Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 7, 2024"
+]
+},
+"Incursion Red River": {
+"steam": "2116120",
+"devs": [
+"Games Of Tomorrow GmbH"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Chasmal fear": {
+"steam": "2597570",
+"devs": [
+"MystiveDev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Apr 17, 2025"
+]
+},
+"Tribes 3: Rivals": {
+"steam": "2687970",
+"devs": [
+"Prophecy Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Dungeonborne": {
+"steam": "2448970",
+"devs": [
+"Mithril Interactive"
+],
+"pubs": [
+"Level Infinite"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Casting of Frank Stone": {
+"steam": "2223840",
+"devs": [
+"Supermassive Games"
+],
+"pubs": [
+"Behaviour Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 3, 2024"
+]
+},
+"Terminator: Survivors": {
+"steam": "2617340",
+"devs": [
+"Nacon Studio Milan"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"The Thaumaturge": {
+"steam": "1684350",
+"devs": [
+"Fool's Theory"
+],
+"pubs": [
+"11 bit studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-03-04"
+]
+},
+"The Sinking City 2": {
+"steam": "2825860",
+"devs": [
+"Frogwares"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 18, 2026"
+]
+},
+"Monster Jam Showdown": {
+"steam": "2350280",
+"devs": [
+"Milestone"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 29th, 2024"
+]
+},
+"Boti: Byteland Overclocked": {
+"steam": "2161050",
+"devs": [
+"Purple Ray Studio"
+],
+"pubs": [
+"Untold Tales",
+"CouchPlay Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 15, 2023"
+]
+},
+"Nobody Wants to Die": {
+"steam": "1939970",
+"devs": [
+"Critical Hit Games"
+],
+"pubs": [
+"Plaion"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 17, 2024"
+]
+},
+"Outpost: Infinity Siege": {
+"steam": "1566690",
+"devs": [
+"Lightning Games"
+],
+"pubs": [
+"Team Ranger"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 26, 2024"
+]
+},
+"Vindictus: Defying Fate": {
+"steam": "2814860",
+"devs": [
+"Nexon"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Marvel Rivals": {
+"steam": "2767030",
+"devs": [
+"NetEase Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 6, 2024"
+]
+},
+"Flint: Treasure of Oblivion": {
+"steam": "2366130",
+"devs": [
+"Savage Level"
+],
+"pubs": [
+"Microids"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 17, 2024"
+]
+},
+"Riven (2024)": {
+"steam": "1712350",
+"devs": [
+"Cyan Worlds"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 25, 2024"
+]
+},
+"Industria 2": {
+"steam": "2154070",
+"devs": [
+"Bleakmill"
+],
+"pubs": [
+"Headup",
+"Beep Japan"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 29, 2026"
+]
+},
+"The Trials 2": {
+"steam": "2938840",
+"devs": [
+"BLUE LIFE"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-06-23"
+]
+},
+"Gray Zone Warfare": {
+"steam": "2479810",
+"devs": [
+"MADFINGER Games"
+],
+"pubs": [
+"MADFINGER Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 30, 2024"
+]
+},
+"Rivals of Aether II": {
+"steam": "2217000",
+"devs": [
+"Aether Studios"
+],
+"pubs": [
+"Aether Studios",
+"Offbrand Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"23 October 2024"
+]
+},
+"GearGrit": {
+"steam": "2298250",
+"devs": [
+"Pandan Games",
+"Weston Mitchell"
+],
+"pubs": [
+"Weston Mitchell"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Garten of Banban 8": {
+"steam": "2917040",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 28, 2025"
+]
+},
+"Horror Tales: The Beggar": {
+"steam": "1343340",
+"devs": [
+"CarlosGameDev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-06-17"
+]
+},
+"Baldis Advanced 3D Math Class": {
+"steam": "2922960",
+"devs": [
+"Hwi"
+],
+"pubs": [
+"Hwidely Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"14 May 2024"
+]
+},
+"Skydance's Behemoth": {
+"steam": "1707990",
+"devs": [
+"Skydance Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 5, 2024"
+]
+},
+"Rennsport": {
+"steam": "2077750",
+"devs": [
+"Teyon",
+"Competition Company"
+],
+"pubs": [
+"Competition Company"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 10, 2025"
+]
+},
+"Slitterhead": {
+"steam": "2631250",
+"devs": [
+"Bokeh Game Studio"
+],
+"pubs": [
+"Spike Chunsoft",
+"Bokeh Game Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 8, 2024"
+]
+},
+"Delta Force (2024)": {
+"steam": "2507950",
+"devs": [
+"Team Jade"
+],
+"pubs": [
+"TiMi Studio Group",
+"Level Infinite",
+"Garena"
+],
+"engines": [
+"Unreal Engine 4",
+"Unreal Engine 5"
+],
+"date": [
+"2024-09-26"
+]
+},
+"Lego Horizon Adventures": {
+"steam": "2428810",
+"devs": [
+"Studio Gobo",
+"Guerrilla Games"
+],
+"pubs": [
+"PlayStation Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 14, 2024"
+]
+},
+"Gears of War: E-Day": {
+"steam": "3010850",
+"devs": [
+"The Coalition",
+"People Can Fly",
+"Virtuos"
+],
+"pubs": [
+"Xbox Games Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 6, 2026"
+]
+},
+"Clair Obscur: Expedition 33": {
+"steam": "1903340",
+"devs": [
+"Sandfall Interactive"
+],
+"pubs": [
+"Kepler Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 24, 2025"
+]
+},
+"Life Is Strange: Double Exposure": {
+"steam": "1874000",
+"devs": [
+"Deck Nine"
+],
+"pubs": [
+"Square Enix"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 29, 2024"
+]
+},
+"Sally": {
+"steam": "2165040",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Akimbot": {
+"steam": "1843540",
+"devs": [
+"Evil Raptor"
+],
+"pubs": [
+"Plaion"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 29, 2024"
+]
+},
+"The Alters": {
+"steam": "1601570",
+"devs": [
+"11 bit studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 13, 2025"
+]
+},
+"Lollipop Chainsaw RePOP": {
+"steam": "2658450",
+"devs": [
+"Grasshopper Manufacture",
+"Dragami Games"
+],
+"pubs": [
+"Dragami Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 12, 2024"
+]
+},
+"ChromaGun 2: Dye Hard": {
+"steam": "2982340",
+"devs": [
+"Pixel Maniacs"
+],
+"pubs": [
+"PM Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 12, 2026"
+]
+},
+"A Quiet Place: The Road Ahead": {
+"steam": "2233120",
+"devs": [
+"Stormind Games"
+],
+"pubs": [
+"Saber Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 17, 2024"
+]
+},
+"Still Wakes the Deep": {
+"steam": "1622910",
+"devs": [
+"The Chinese Room"
+],
+"pubs": [
+"Secret Mode"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 18, 2024"
+]
+},
+"Railbreak": {
+"steam": "2587170",
+"devs": [
+"Dead Drop Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 23, 2023"
+]
+},
+"While We Wait Here": {
+"steam": "2213120",
+"devs": [
+"Bad Vices Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 23, 2024"
+]
+},
+"Outbreak The Fedora Files: What Lydia Knows": {
+"steam": "2587130",
+"devs": [
+"Dead Drop Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 3, 2024"
+]
+},
+"Kiborg: Arena": {
+"steam": "2796130",
+"devs": [
+"Sobaka Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"13 August 2024"
+]
+},
+"Kiborg": {
+"steam": "2405060",
+"devs": [
+"Sobaka Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 30, 2025"
+]
+},
+"Wild Assault": {
+"steam": "2827230",
+"devs": [
+"Combat Cat Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 28, 2026"
+]
+},
+"Unplagued": {
+"steam": "3062930",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"10 October 2024"
+]
+},
+"Sumerian Six": {
+"steam": "1429850",
+"devs": [
+"Artificer"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 2, 2024"
+]
+},
+"Norse: Oath of Blood": {
+"steam": "3054690",
+"devs": [
+"Arctic Hazard"
+],
+"pubs": [
+"Tripwire Presents"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 17, 2026"
+]
+},
+"Chained Together": {
+"steam": "2567870",
+"devs": [
+"Anegar Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 19, 2024"
+]
+},
+"NBA 2K25": {
+"steam": "2878980",
+"devs": [
+"Visual Concepts"
+],
+"pubs": [
+"2K Sports"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 6, 2024"
+]
+},
+"Killing Floor 3": {
+"steam": "1430190",
+"devs": [
+"Tripwire Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-07-24"
+]
+},
+"F1 Manager 2024": {
+"steam": "2591280",
+"devs": [
+"Frontier Developments"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 23, 2024"
+]
+},
+"Into the Radius 2": {
+"steam": "2307350",
+"devs": [
+"CM Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 23, 2026"
+]
+},
+"Slender: The Arrival (2023)": {
+"steam": "252330",
+"devs": [
+"Blue Isle Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 18, 2023"
+]
+},
+"Creatures of Ava": {
+"steam": "2304440",
+"devs": [
+"Inverge Studios"
+],
+"pubs": [
+"11 bit studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 7, 2024"
+]
+},
+"I'm counting to 6...": {
+"steam": "2717260",
+"devs": [
+"EMIKA_GAMES"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-01-26"
+]
+},
+"The Occultist": {
+"steam": "2092840",
+"devs": [
+"DALOAR"
+],
+"pubs": [
+"Daedalic Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 8, 2026"
+]
+},
+"Mafia: The Old Country": {
+"steam": "1941540",
+"devs": [
+"Hangar 13"
+],
+"pubs": [
+"2K Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 7, 2025"
+]
+},
+"Borderlands 4": {
+"steam": "1285190",
+"devs": [
+"Gearbox Software"
+],
+"pubs": [
+"2K Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 11, 2025"
+]
+},
+"Reanimal": {
+"steam": "2129530",
+"devs": [
+"Tarsier Studios"
+],
+"pubs": [
+"THQ Nordic",
+"Amplifier Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 13, 2026"
+]
+},
+"InZOI": {
+"steam": "2456740",
+"devs": [
+"inZOI Studio"
+],
+"pubs": [
+"Krafton"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Directive 8020": {
+"steam": "2255370",
+"devs": [
+"Supermassive Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 12, 2026"
+]
+},
+"Nightmare House": {
+"steam": "2744430",
+"devs": [
+"We Create Stuff"
+],
+"pubs": [
+"Black Lantern Collective"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Tokyo Xtreme Racer": {
+"steam": "2634950",
+"devs": [
+"Genki"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 25, 2025"
+]
+},
+"Industry Giant 4.0": {
+"steam": "1129570",
+"devs": [
+"Don vs Dodo"
+],
+"pubs": [
+"Toplitz Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 17, 2025"
+]
+},
+"Squirrel with a Gun": {
+"steam": "2067050",
+"devs": [
+"Dee Dee Creations LLC"
+],
+"pubs": [
+"Maximum Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Aug 29, 2024"
+]
+},
+"Gori: Cuddly Carnage": {
+"steam": "1299690",
+"devs": [
+"Angry Demons Studio"
+],
+"pubs": [
+"Angry Demons Studio",
+"CouchPlay Interactice"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Aug 29, 2024"
+]
+},
+"Gimmick! 2": {
+"steam": "2994880",
+"devs": [
+"Bitwave Games"
+],
+"pubs": [
+"Clear River Games",
+"Sunsoft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 5, 2024"
+]
+},
+"Supermoves": {
+"steam": "1959580",
+"devs": [
+"Makea Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Aug 28 2024"
+]
+},
+"Funko Fusion": {
+"steam": "1843310",
+"devs": [
+"10:10 Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 13, 2024"
+]
+},
+"Caravan SandWitch": {
+"steam": "1582650",
+"devs": [
+"Studio Plane Toast"
+],
+"pubs": [
+"Dear Villagers"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 12, 2024"
+]
+},
+"DeathSprint 66": {
+"steam": "1273560",
+"devs": [
+"Sumo Digital"
+],
+"pubs": [
+"Secret Mode"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 12, 2024"
+]
+},
+"Fate Trigger": {
+"steam": "3092530",
+"devs": [
+"Saroasis Studios"
+],
+"pubs": [
+"Saroasis Studios",
+"Level Infinite"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Be My Horde": {
+"steam": "2499520",
+"devs": [
+"Polished Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Forever Winter": {
+"steam": "2828860",
+"devs": [
+"Fun Dog Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Beyond Hanwell": {
+"steam": "2565550",
+"devs": [
+"Steel Arts Software"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 26, 2024"
+]
+},
+"Hawked": {
+"steam": "1955960",
+"devs": [
+"Allods Team"
+],
+"pubs": [
+"MY.GAMES"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 15, 2024"
+]
+},
+"The Axis Unseen": {
+"steam": "1807810",
+"devs": [
+"Just Purkey Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 22, 2024"
+]
+},
+"MechWarrior 5: Clans": {
+"steam": "2000890",
+"devs": [
+"Piranha Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 16, 2024"
+]
+},
+"Subnautica 2": {
+"steam": "1962700",
+"devs": [
+"Unknown Worlds Entertainment"
+],
+"pubs": [
+"Krafton"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Cronos: The New Dawn": {
+"steam": "2101960",
+"devs": [
+"Bloober Team",
+"PixelAnt Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 5, 2025"
+]
+},
+"Wuchang: Fallen Feathers": {
+"steam": "2277560",
+"devs": [
+"Leenzee"
+],
+"pubs": [
+"505 Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 24, 2025"
+]
+},
+"Rusty Rabbit": {
+"steam": "2530560",
+"devs": [
+"Nitroplus",
+"Chime Corporation"
+],
+"pubs": [
+"NetEase Games",
+"SoFun"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 16, 2025"
+]
+},
+"The Smurfs: Dreams": {
+"steam": "2602020",
+"devs": [
+"Ocellus Studio"
+],
+"pubs": [
+"Micro\u00efds"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 24, 2024"
+]
+},
+"Carmen Sandiego": {
+"steam": "2475300",
+"devs": [
+"Gameloft Brisbane"
+],
+"pubs": [
+"Gameloft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 4, 2025"
+]
+},
+"Project Borealis: Prologue": {
+"steam": "2215490",
+"devs": [
+"Icebreaker Industries"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Nov 11, 2024"
+]
+},
+"Alien Weapon Test Grounds": {
+"steam": "3123080",
+"devs": [
+"emagnetic"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Hello Neighbor 3": {
+"steam": "2789680",
+"devs": [
+"Nikita Kolesnikov",
+"tinyBuild"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Critter Cafe": {
+"steam": "2367610",
+"devs": [
+"Sumo Digital"
+],
+"pubs": [
+"Secret Mode"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Nov 26 2024 "
+]
+},
+"Indigo Park: Chapter 1": {
+"steam": "2504480",
+"devs": [
+"UniqueGeese"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 18, 2024"
+]
+},
+"Trench Tales": {
+"steam": "2214220",
+"devs": [
+"Talking Drums"
+],
+"pubs": [
+"Crytivo"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Star Wars: Hunters": {
+"steam": "2842320",
+"devs": [
+"Zynga",
+"NaturalMotion"
+],
+"pubs": [
+"Zynga"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Cancelled"
+]
+},
+"Acts of Blood": {
+"steam": "3031890",
+"devs": [
+"Eksil Team"
+],
+"pubs": [
+"Big Fan"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 4, 2026"
+]
+},
+"Ayasa: Shadows of Silence": {
+"steam": "3146120",
+"devs": [
+"Aya Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 28, 2025"
+]
+},
+"Nuclear Nightmare": {
+"steam": "2909110",
+"devs": [
+"BG Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Infinity Nikki": {
+"steam": "3164330",
+"devs": [
+"Infold Games"
+],
+"pubs": [
+"Papergames",
+"Infold Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 5, 2024"
+]
+},
+"Granny: Escape Together": {
+"steam": "3070520",
+"devs": [
+"CreepyToad"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"6 December 2024"
+]
+},
+"Purpose 1951": {
+"steam": "2889800",
+"devs": [
+"Tongu\u00e7 Bodur"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-03-29"
+]
+},
+"Liminalcore": {
+"steam": "3107900",
+"devs": [
+"Shadow Owl Studios",
+"Ashen Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-10-28"
+]
+},
+"The Talos Principle: Reawakened": {
+"steam": "2806640",
+"devs": [
+"Croteam"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-04-10"
+]
+},
+"Industrial Annihilation": {
+"steam": "1796720",
+"devs": [
+"Galactic Annihilation"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Thick as Thieves": {
+"steam": "3341000",
+"devs": [
+"OtherSide Entertainment"
+],
+"pubs": [
+"Megabit Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 20, 2026"
+]
+},
+"Solasta II": {
+"steam": "2975950",
+"devs": [
+"Tactical Adventures"
+],
+"pubs": [
+"Kepler Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Witcher IV": {
+"steam": "|steam appid side =",
+"devs": [
+"CD Projekt Red"
+],
+"pubs": [
+"CD Projekt"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2028"
+]
+},
+"Rematch": {
+"steam": "2138720",
+"devs": [
+"Sloclap"
+],
+"pubs": [
+"Sloclap",
+"Kepler Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jun 19, 2025"
+]
+},
+"FragPunk": {
+"steam": "2943650",
+"devs": [
+"Bad Guitar Studio",
+"Highdive Games"
+],
+"pubs": [
+"Netease Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 6, 2025"
+]
+},
+"Steel Hunters": {
+"steam": "1691340",
+"devs": [
+"Wargaming Group Limited"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Splitgate: Arena Reloaded": {
+"steam": "2918300",
+"devs": [
+"1047 Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-06-06"
+]
+},
+"Double Dragon Revive": {
+"steam": "3012220",
+"devs": [
+"Yuke's"
+],
+"pubs": [
+"Arc System Works"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 22, 2025"
+]
+},
+"Split Fiction": {
+"steam": "2001120",
+"devs": [
+"Hazelight"
+],
+"pubs": [
+"Electronic Arts"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 6, 2025"
+]
+},
+"Alien: Rogue Incursion": {
+"steam": "1850050",
+"devs": [
+"Survios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 19, 2024"
+]
+},
+"Screamer (2026)": {
+"steam": "2814990",
+"devs": [
+"Milestone"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 26, 2026"
+]
+},
+"Dreamcore": {
+"steam": "2453060",
+"devs": [
+"Montraluz"
+],
+"pubs": [
+"Tl\u00f6n Industries"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 23, 2025"
+]
+},
+"Kitty May Cry": {
+"steam": "2123100",
+"devs": [
+"Kitty May Strike"
+],
+"pubs": [
+"Gamera Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 14, 2022"
+]
+},
+"Disorder (2025)": {
+"steam": "1332340",
+"devs": [
+"Grumpy"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 22, 2025"
+]
+},
+"Ender Magnolia: Bloom in the Mist": {
+"steam": "2725260",
+"devs": [
+"Adglobe",
+"Live Wire"
+],
+"pubs": [
+"Binary Haze Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 22, 2025"
+]
+},
+"Faaast Penguin": {
+"steam": "2590150",
+"devs": [
+"historia"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 20, 2024"
+]
+},
+"Conscience": {
+"steam": "3302650",
+"devs": [
+"Bowker Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"30 December 2024"
+]
+},
+"Limoria": {
+"steam": "3351140",
+"devs": [
+"Farkas Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"31 December 2024"
+]
+},
+"Lockdown Protocol": {
+"steam": "2780980",
+"devs": [
+"Mirage Creative Lab"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Fast Food Simulator": {
+"steam": "2916430",
+"devs": [
+"No Ceiling Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Amenti": {
+"steam": "3292260",
+"devs": [
+"Darkphobia Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 5, 2025"
+]
+},
+"Homeless": {
+"steam": "3018910",
+"devs": [
+"Darkphobia Games"
+],
+"pubs": [
+"Darkphobia Games",
+"Teaserplay"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 3, 2024"
+]
+},
+"The Permanent Residence : Souls Kept": {
+"steam": "3350030",
+"devs": [
+"Rizzvix"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2024-12-06"
+]
+},
+"World of Jade Dynasty": {
+"steam": "|steam appid side =",
+"devs": [
+"Perfect World Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 19, 2024"
+]
+},
+"The Blood of Dawnwalker": {
+"steam": "3751260",
+"devs": [
+"Rebel Wolves"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 2, 2026"
+]
+},
+"DeTechtive 2112": {
+"steam": "2808800",
+"devs": [
+"M11 Studio",
+"5Deniz"
+],
+"pubs": [
+"indie.io"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-01-29"
+]
+},
+"Eternal Strands": {
+"steam": "1491410",
+"devs": [
+"Yellow Brick Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"28th Jan 2025"
+]
+},
+"Ninja Gaiden 2 Black": {
+"steam": "3287520",
+"devs": [
+"Team Ninja"
+],
+"pubs": [
+"Koei Tecmo"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 23, 2025"
+]
+},
+"Professional Baseball Spirits 2024-2025": {
+"steam": "2051010",
+"devs": [
+"Konami"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 16, 2024"
+]
+},
+"Orcs Must Die! Deathtrap": {
+"steam": "2273980",
+"devs": [
+"Robot Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 28, 2025"
+]
+},
+"Karma: The Dark World": {
+"steam": "1376200",
+"devs": [
+"Pollard Studio"
+],
+"pubs": [
+"Wired Productions",
+"Gamirror Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 27, 2025"
+]
+},
+"Zombieville USA 3D": {
+"steam": "1801520",
+"devs": [
+"Mika Mobile"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"7 March 2025"
+]
+},
+"The Skyland Chronicles": {
+"steam": "2622460",
+"devs": [
+"MFA GAMES"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Lost Records: Bloom & Rage": {
+"steam": "1902960",
+"devs": [
+"Don't Nod"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 18, 2025"
+]
+},
+"Echoes of Yi : Samsara": {
+"steam": "2776940",
+"devs": [
+"Runmeng"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 18, 2025"
+]
+},
+"Liminal Point": {
+"steam": "3299920",
+"devs": [
+"HideWorks"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Sonic Racing: CrossWorlds": {
+"steam": "2486820",
+"devs": [
+"Sonic Team"
+],
+"pubs": [
+"Sega"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 25, 2025"
+]
+},
+"Tides of Annihilation": {
+"steam": "3292470",
+"devs": [
+"Eclipse Glow Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Hell is Us": {
+"steam": "1620730",
+"devs": [
+"Rogue Factor"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 4, 2025"
+]
+},
+"A Game About Digging A Hole": {
+"steam": "3244220",
+"devs": [
+"Cyberwave"
+],
+"pubs": [
+"rokaplay Bou\u00b7tique"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 7, 2025"
+]
+},
+"SlavicPunk: Oldtimer": {
+"steam": "1820140",
+"devs": [
+"Red Square Games"
+],
+"pubs": [
+"Gaming Factory"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 28, 2023"
+]
+},
+"Breathedge 2": {
+"steam": "2412960",
+"devs": [
+"RedRuins Softworks"
+],
+"pubs": [
+"HypeTrain Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Chernobylite 2: Exclusion Zone": {
+"steam": "2075100",
+"devs": [
+"The Farm 51"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Garten of Banban 0": {
+"steam": "3300410",
+"devs": [
+"Euphoric Brothers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Feb 21, 2025"
+]
+},
+"Jumping Jazz Cats": {
+"steam": "1951780",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Anvil Empires": {
+"steam": "1373910",
+"devs": [
+"Siege Camp"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Solarpunk": {
+"steam": "1805110",
+"devs": [
+"Cyberwave"
+],
+"pubs": [
+"rokaplay"
+],
+"engines": [],
+"date": [
+"June 8, 2026"
+]
+},
+"MotoGP 25": {
+"steam": "3077390",
+"devs": [
+"Milestone"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 30, 2025"
+]
+},
+"Hordes of Fate: A Hand of Fate Adventure": {
+"steam": "3075410",
+"devs": [
+"Spitfire Interactive"
+],
+"pubs": [
+"Defiant Development"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Secret Agent Wizard Boy and the International Crime Syndicate": {
+"steam": "3111080",
+"devs": [
+"John Szymanski",
+"Evan Szymanski"
+],
+"pubs": [
+"David Szymanski"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"RoboCop: Rogue City - Unfinished Business": {
+"steam": "3527760",
+"devs": [
+"Teyon"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 17, 2025"
+]
+},
+"Styx: Blades of Greed": {
+"steam": "3290690",
+"devs": [
+"Cyanide Studio"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 19, 2026"
+]
+},
+"Cthulhu: The Cosmic Abyss": {
+"steam": "2760560",
+"devs": [
+"Big Bad Wolf"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 16, 2026"
+]
+},
+"Will: Follow the Light": {
+"steam": "3144860",
+"devs": [
+"TomorrowHead Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 7, 2026"
+]
+},
+"Regeneration": {
+"steam": "1374320",
+"devs": [
+"Misterial Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Stygian: Outer Gods": {
+"steam": "2581410",
+"devs": [
+"Misterial Games"
+],
+"pubs": [
+"Fulqrum Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 26, 2026"
+]
+},
+"Backrooms: Escape Together": {
+"steam": "2141730",
+"devs": [
+"Triiodide Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Steel Seed": {
+"steam": "458430",
+"devs": [
+"Storm in a Teacup"
+],
+"pubs": [
+"ESDigital Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 22, 2025"
+]
+},
+"Silent Hill f": {
+"steam": "2947440",
+"devs": [
+"NeoBards"
+],
+"pubs": [
+"Konami"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 25, 2025"
+]
+},
+"Darwin's Paradox!": {
+"steam": "2989180",
+"devs": [
+"ZDT Studio"
+],
+"pubs": [
+"Konami"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 2, 2026"
+]
+},
+"Ban: The Prologue of Gucha Gucha": {
+"steam": "2987540",
+"devs": [
+"Checkerboard"
+],
+"pubs": [
+"Kodansha"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"23 October 2024"
+]
+},
+"Carry The Glass": {
+"steam": "3263320",
+"devs": [
+"\u00c7a\u011fatay Demir",
+"Enes Kaplan"
+],
+"pubs": [
+"SlugShot Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Oct 23 2024 "
+]
+},
+"Spirit City: Lofi Sessions": {
+"steam": "2113850",
+"devs": [
+"Mooncube Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 8, 2024"
+]
+},
+"The Headliners": {
+"steam": "3059070",
+"devs": [
+"KAFI"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Jan 30 2025 "
+]
+},
+"Murky Divers": {
+"steam": "2963880",
+"devs": [
+"Embers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 12, 2024 "
+]
+},
+"Somber Echoes": {
+"steam": "1299290",
+"devs": [
+"Rock Pocket Games",
+"Lav Games"
+],
+"pubs": [
+"Bonus Stage Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 21, 2025"
+]
+},
+"Settlements Rising": {
+"steam": "2378910",
+"devs": [
+"The Catalyst Crew"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Jan 20 2025 "
+]
+},
+"Game of Thrones: Kingsroad": {
+"steam": "3183280",
+"devs": [
+"Netmarble Neo"
+],
+"pubs": [
+"Netmarble"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-05-22"
+]
+},
+"Cloudheim": {
+"steam": "2070270",
+"devs": [
+"Noodle Cat Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Wildkeepers Rising": {
+"steam": "2995560",
+"devs": [
+"Lioncode Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Voin": {
+"steam": "2464530",
+"devs": [
+"Nikita Sozidar"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"DUCKSIDE": {
+"steam": "2682580",
+"devs": [
+"tinyBuild Riga"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Level Zero: Extraction": {
+"steam": "1456940",
+"devs": [
+"Doghowl Games"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Jan 29 2025 "
+]
+},
+"Kill It with Fire 2": {
+"steam": "2357000",
+"devs": [
+"Casey Donnellan Games"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 25, 2025"
+]
+},
+"Only Way is Down": {
+"steam": "2804680",
+"devs": [
+"Jilted Generation Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Mar 31 2025 "
+]
+},
+"Kristala": {
+"steam": "1206410",
+"devs": [
+"Astral Clocktower Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 23, 2026"
+]
+},
+"BIT.TRIP RERUNNER": {
+"steam": "2222540",
+"devs": [
+"Choice Provisions",
+"Gamecraft Studios"
+],
+"pubs": [
+"Choice Provisions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 19, 2023"
+]
+},
+"Commander Quest": {
+"steam": "2697930",
+"devs": [
+"Flyway Games, Inc."
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Apr 4 2025 "
+]
+},
+"Cinnabunny": {
+"steam": "2794830",
+"devs": [
+"Reky Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Feb 19 2025 "
+]
+},
+"Metal Eden": {
+"steam": "990380",
+"devs": [
+"Reikon Games"
+],
+"pubs": [
+"Deep Silver"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 2, 2025"
+]
+},
+"Orebound": {
+"steam": "2467810",
+"devs": [
+"Emberforge"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Driveloop: Survivors": {
+"steam": "3183730",
+"devs": [
+"Stunbyte"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Causal Loop": {
+"steam": "3374460",
+"devs": [
+"Mirebound Interactive"
+],
+"pubs": [
+"Headup"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 23, 2026"
+]
+},
+"The Mound: Omen of Cthulhu": {
+"steam": "2569760",
+"devs": [
+"ACE Team"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 15, 2026"
+]
+},
+"Legacy: Steel & Sorcery": {
+"steam": "2344320",
+"devs": [
+"Notorious Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 21, 2026"
+]
+},
+"Dark Mass": {
+"steam": "1879940",
+"devs": [
+"Path Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"JDM: Japanese Drift Master": {
+"steam": "1153410",
+"devs": [
+"Gaming Factory"
+],
+"pubs": [
+"Gaming Factory",
+"4Divinity"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 21, 2025"
+]
+},
+"Alien Grounds": {
+"steam": "3351550",
+"devs": [
+"emagnetic"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 10, 2026"
+]
+},
+"RuneScape: Dragonwilds": {
+"steam": "1374490",
+"devs": [
+"Jagex"
+],
+"pubs": [
+"Jagex",
+"Graph",
+"H2 Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 15, 2026"
+]
+},
+"The Elder Scrolls IV: Oblivion Remastered": {
+"steam": "2623190",
+"devs": [
+"Virtuos",
+"Bethesda Game Studios"
+],
+"pubs": [
+"Bethesda Softworks"
+],
+"engines": [
+"Unreal Engine 5",
+"Gamebryo (TES Engine)"
+],
+"date": [
+"2025-04-22"
+]
+},
+"Revenge of the Savage Planet": {
+"steam": "2787320",
+"devs": [
+"Raccoon Logic Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"8 May 2025"
+]
+},
+"Phantom Breaker: Battle Grounds Ultimate": {
+"steam": "2067350",
+"devs": [
+"Rocket Panda Games Japan"
+],
+"pubs": [
+"Rocket Panda Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 17, 2025"
+]
+},
+"MindsEye": {
+"steam": "3265250",
+"devs": [
+"Build a Rocket Boy"
+],
+"pubs": [
+"IO Interactive Partners",
+"Build a Rocket Boy"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 10, 2025"
+]
+},
+"Covenant": {
+"steam": "3333990",
+"devs": [
+"Legion Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Star Wars: Zero Company": {
+"steam": "2075800",
+"devs": [
+"Bit Reactor",
+"Respawn Entertainment"
+],
+"pubs": [
+"Electronic Arts"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 27, 2026"
+]
+},
+"The Bright Path": {
+"steam": "3554930",
+"devs": [
+"Silesian Society for Solidarity"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"9 April 2025"
+]
+},
+"Frostpunk: 1886": {
+"steam": "3645160",
+"devs": [
+"11 bit studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Flesh Made Fear": {
+"steam": "3316350",
+"devs": [
+"Tainted Pact"
+],
+"pubs": [
+"Assemble Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Oct 31, 2025"
+]
+},
+"The Third Pig": {
+"steam": "3316090",
+"devs": [
+"PopsArcade"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Mar 28, 2025"
+]
+},
+"The Midnight Walk": {
+"steam": "2863640",
+"devs": [
+"MoonHood"
+],
+"pubs": [
+"Fast Travel Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 8, 2025"
+]
+},
+"Out of Sight": {
+"steam": "2526310",
+"devs": [
+"The Gang"
+],
+"pubs": [
+"The Gang",
+"Starbreeze Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 22, 2025"
+]
+},
+"Alien: Rogue Incursion Evolved Edition": {
+"steam": "3655390",
+"devs": [
+"Survios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 30, 2025"
+]
+},
+"Cash Cleaner Simulator": {
+"steam": "2488370",
+"devs": [
+"Mind Control Games"
+],
+"pubs": [
+"Forklift Interactive",
+"Digital Pajamas"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 8, 2025"
+]
+},
+"The Sinking City Remastered": {
+"steam": "750130",
+"devs": [
+"Frogwares",
+"Mataboo"
+],
+"pubs": [
+"Frogwares"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 13, 2025"
+]
+},
+"Motorslice": {
+"steam": "2830030",
+"devs": [
+"Regular Studio"
+],
+"pubs": [
+"Top Hat Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 5, 2026"
+]
+},
+"DreadOut 3": {
+"steam": "3500810",
+"devs": [
+"Digital Happiness"
+],
+"pubs": [
+"Digital Happiness",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Fantasy Life i: The Girl Who Steals Time": {
+"steam": "2993780",
+"devs": [
+"Level5"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 21, 2025"
+]
+},
+"Warhammer 40,000: Boltgun II": {
+"steam": "3115160",
+"devs": [
+"Auroch Digital"
+],
+"pubs": [
+"Big Fan Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 14, 2026"
+]
+},
+"To a T": {
+"steam": "1875320",
+"devs": [
+"uvula"
+],
+"pubs": [
+"Annapurna Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 28, 2025"
+]
+},
+"Eriksholm: The Stolen Dream": {
+"steam": "2377280",
+"devs": [
+"River End Games"
+],
+"pubs": [
+"Nordcurrent Labs"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 15, 2025"
+]
+},
+"Oddsparks: An Automation Adventure": {
+"steam": "1817800",
+"devs": [
+"Massive Miniteam"
+],
+"pubs": [
+"HandyGames"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 27, 2025"
+]
+},
+"Warhammer 40,000: Speed Freeks": {
+"steam": "2078450",
+"devs": [
+"Caged Element"
+],
+"pubs": [
+"Plaion",
+"Wired Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 22, 2025"
+]
+},
+"Void/Breaker": {
+"steam": "2615540",
+"devs": [
+"Stubby Games"
+],
+"pubs": [
+"Playstack"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Rune Factory: Guardians of Azuma": {
+"steam": "2864560",
+"devs": [
+"Marvelous Inc."
+],
+"pubs": [
+"XSEED Games",
+"Marvelous USA, Inc.",
+"Marvelous Europe"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 5, 2025"
+]
+},
+"Hirogami": {
+"steam": "3135840",
+"devs": [
+"Bandai Namco Studios "
+],
+"pubs": [
+"Kakehashi Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 3, 2025"
+]
+},
+"Mortal Shell II": {
+"steam": "2584270",
+"devs": [
+"Cold Symmetry"
+],
+"pubs": [
+"Playstack"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 20, 2026"
+]
+},
+"Atomic Heart 2": {
+"steam": "3788800",
+"devs": [
+"Mundfish"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Chrono Odyssey": {
+"steam": "2873440",
+"devs": [
+"Chrono Studio"
+],
+"pubs": [
+"Kakao Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Ill": {
+"steam": "1757350",
+"devs": [
+"Team Clout"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Chronicles: Medieval": {
+"steam": "2231020",
+"devs": [
+"Raw Power Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Code Vein II": {
+"steam": "2362060",
+"devs": [
+"Shift",
+"Bandai Namco Studios"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 29, 2026"
+]
+},
+"End of Abyss": {
+"steam": "|steam appid side =",
+"devs": [
+"Section 9 Interactive"
+],
+"pubs": [
+"Epic Games Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 1, 2026"
+]
+},
+"Felt That: Boxing": {
+"steam": "3763840",
+"devs": [
+"Sans Strings Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"The Expanse: Osiris Reborn": {
+"steam": "3727390",
+"devs": [
+"Owlcat Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Echoes of the End": {
+"steam": "2821610",
+"devs": [
+"Myrkur Games"
+],
+"pubs": [
+"Deep Silver"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 12, 2025"
+]
+},
+"Ecumene Aztec": {
+"steam": "2383240",
+"devs": [
+"Ecumene Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Aphelion": {
+"steam": "1966410",
+"devs": [
+"Don't Nod"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 28, 2026"
+]
+},
+"Crisol: Theater of Idols": {
+"steam": "1790930",
+"devs": [
+"Vermila Studios"
+],
+"pubs": [
+"Blumhouse Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 10, 2026"
+]
+},
+"High on Life 2": {
+"steam": "2069250",
+"devs": [
+"Squanch Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 13, 2026"
+]
+},
+"Keeper": {
+"steam": "3043580",
+"devs": [
+"Double Fine Productions"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 17, 2025"
+]
+},
+"Nicktoons & The Dice of Destiny": {
+"steam": "3051490",
+"devs": [
+"Petit Fabrik",
+"Fair Play Labs"
+],
+"pubs": [
+"GameMill Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 30, 2025"
+]
+},
+"Call of the Elder Gods": {
+"steam": "2174380",
+"devs": [
+"Out of the Blue"
+],
+"pubs": [
+"Kwalee"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 12, 2026"
+]
+},
+"Grounded 2": {
+"steam": "2661300",
+"devs": [
+"Obsidian Entertainment",
+"Eidos-Montr\u00e9al"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Lunar Eclipse": {
+"steam": "2953480",
+"devs": [
+"Black Rabbit's Tales"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Drop Duchy": {
+"steam": "2525310",
+"devs": [
+"Sleepy Mill Studio"
+],
+"pubs": [
+"The Arcade Crew"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"5 May 2025"
+]
+},
+"Metro Gravity": {
+"steam": "2986450",
+"devs": [
+"mrkogamedev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jun 20, 2025"
+]
+},
+"Star Overdrive": {
+"steam": "2055590",
+"devs": [
+"Caracal Games"
+],
+"pubs": [
+"Dear Villagers"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jun 19, 2025"
+]
+},
+"Super Meat Boy 3D": {
+"steam": "3288210",
+"devs": [
+"Team Meat",
+"Sluggerfly"
+],
+"pubs": [
+"Headup"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 31, 2026"
+]
+},
+"Marvel T\u014dkon: Fighting Souls": {
+"steam": "3787240",
+"devs": [
+"Arc System Works"
+],
+"pubs": [
+"PlayStation Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 6, 2026"
+]
+},
+"Bleak Haven": {
+"steam": "3566840",
+"devs": [
+"Hitori de Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 24, 2025"
+]
+},
+"Mudang: Two Hearts": {
+"steam": "2889030",
+"devs": [
+"EVR Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Ground Zero": {
+"steam": "2340130",
+"devs": [
+"Malformation Games"
+],
+"pubs": [
+"Kwalee"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 16, 2026"
+]
+},
+"The Pirate Queen with Lucy Liu": {
+"steam": "2469330",
+"devs": [
+"Singer Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"7 Mar 2024"
+]
+},
+"Beast of Reincarnation": {
+"steam": "2001760",
+"devs": [
+"Game Freak"
+],
+"pubs": [
+"Fictions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 3, 2026"
+]
+},
+"The Age of Bhaarat": {
+"steam": "3323210",
+"devs": [
+"Tara Gaming Limited"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"I Am Ripper": {
+"steam": "3218100",
+"devs": [
+"White Paper Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Dead Take": {
+"steam": "3352690",
+"devs": [
+"Surgent Studios"
+],
+"pubs": [
+"Pocketpair Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 31, 2025"
+]
+},
+"Parcel Simulator": {
+"steam": "2424010",
+"devs": [
+"Dansan Digital"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 20, 2025"
+]
+},
+"Blight: Survival": {
+"steam": "1774880",
+"devs": [
+"Haenir Studio"
+],
+"pubs": [
+"Behaviour Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Death Relives": {
+"steam": "1987400",
+"devs": [
+"Nyctophile Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 25, 2025"
+]
+},
+"Upin & Ipin Universe": {
+"steam": "3401920",
+"devs": [
+"Streamline Studios"
+],
+"pubs": [
+"Streamline Media Group"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 17, 2025"
+]
+},
+"King of Silence": {
+"steam": "2434440",
+"devs": [
+"Onze 8 Degr\u00e9s"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-05-26"
+]
+},
+"Project Silverfish": {
+"steam": "2941710",
+"devs": [
+"Siris Pendrake"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Every Day We Fight": {
+"steam": "1546080",
+"devs": [
+"Signal Space Lab"
+],
+"pubs": [
+"Hooded Horse"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 10, 2025"
+]
+},
+"Forest Reigns": {
+"steam": "3325070",
+"devs": [
+"VG Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Chrono (2024)": {
+"steam": "3015650",
+"devs": [
+"David Simoes"
+],
+"pubs": [
+"David Simoes"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 23, 2024"
+]
+},
+"Crowned In Steel": {
+"steam": "2679830",
+"devs": [
+"Sverun"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Luto": {
+"steam": "1729740",
+"devs": [
+"Broken Bird Games"
+],
+"pubs": [
+"Selecta Play",
+"Astrolabe Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 21, 2025"
+]
+},
+"Shadows of the Lost": {
+"steam": "3107020",
+"devs": [
+"Bode Software"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Maximum Football": {
+"steam": "1691280",
+"devs": [
+"Maximum Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 17, 2025"
+]
+},
+"Necrophosis": {
+"steam": "2019760",
+"devs": [
+"Dragonis Games"
+],
+"pubs": [
+"PQube"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 25, 2025"
+]
+},
+"Sword of the Sea": {
+"steam": "2453160",
+"devs": [
+"Giant Squid Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 19, 2025"
+]
+},
+"Mixtape": {
+"steam": "2582320",
+"devs": [
+"Beethoven & Dinosaur"
+],
+"pubs": [
+"Annapurna Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 7, 2026"
+]
+},
+"Clive Barker's Hellraiser: Revival": {
+"steam": "1551980",
+"devs": [
+"Saber Serbia",
+"Saber Bosnia and Herzegovina",
+"Boss Team Games"
+],
+"pubs": [
+"Saber Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 8, 2026"
+]
+},
+"Wildgate": {
+"steam": "3504780",
+"devs": [
+"Moonshot Games"
+],
+"pubs": [
+"Dreamhaven"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"22 July 2025"
+]
+},
+"Quarantine Zone: The Last Check": {
+"steam": "3419520",
+"devs": [
+"Brigada Games"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 12, 2026"
+]
+},
+"Let Them Trade": {
+"steam": "1313290",
+"devs": [
+"Spaceflower"
+],
+"pubs": [
+"ByteRockers' Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 24, 2025"
+]
+},
+"Darksiders IV": {
+"steam": "1203170",
+"devs": [
+"Gunfire Games"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"The Guild 1 Remake: Europa 1410": {
+"steam": "2977260",
+"devs": [
+"Ashborne Games"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Fatekeeper": {
+"steam": "2186990",
+"devs": [
+"Paraglacial"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"SpongeBob SquarePants: Titans of the Tide": {
+"steam": "2479650",
+"devs": [
+"Purple Lamp"
+],
+"pubs": [
+"THQ Nordic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 18, 2025"
+]
+},
+"Tides of Tomorrow": {
+"steam": "2678080",
+"devs": [
+"Digixart "
+],
+"pubs": [
+"THQ Nordic "
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 22, 2026"
+]
+},
+"Platform 8": {
+"steam": "2903560",
+"devs": [
+"Kotake Create"
+],
+"pubs": [
+"Kotake Create",
+"Playism"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 31, 2024"
+]
+},
+"Ire: A Prologue": {
+"steam": "3547420",
+"devs": [
+"ProbablyMonsters"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 28, 2025"
+]
+},
+"Possessor(s)": {
+"steam": "2132890",
+"devs": [
+"Heart Machine"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 11, 2025"
+]
+},
+"Chicken Run: Eggstraction": {
+"steam": "3419690",
+"devs": [
+"Aardman Animations"
+],
+"pubs": [
+"Outright Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 24, 2025"
+]
+},
+"Metal Garden": {
+"steam": "3539440",
+"devs": [
+"Tinerasoft"
+],
+"pubs": [
+"Tinerasoft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 21, 2025"
+]
+},
+"Off The Grid": {
+"steam": "3659280",
+"devs": [
+"Gunzilla Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Concubine": {
+"steam": "2426120",
+"devs": [
+"Upgrade Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Kumarn: The Wandering Spirit": {
+"steam": "3888420",
+"devs": [
+"Werebuff Studio"
+],
+"pubs": [
+"Wired Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Exoborne": {
+"steam": "2705130",
+"devs": [
+"Sharkmob"
+],
+"pubs": [
+"Sharkmob",
+"Level Infinite"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Romeo Is a Dead Man": {
+"steam": "3050900",
+"devs": [
+"Grasshopper Manufacture"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5 "
+],
+"date": [
+"February 10, 2026"
+]
+},
+"Undefeated: Genesis": {
+"steam": "2088020",
+"devs": [
+"Indie-us Games"
+],
+"pubs": [
+"Chorus Worldwide Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Silkbulb test": {
+"steam": "2468250",
+"devs": [
+"Tim Oxton"
+],
+"pubs": [
+"oxblud"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Denshattack!": {
+"steam": "2524850",
+"devs": [
+"Undercoders"
+],
+"pubs": [
+"Fireshine Games",
+"Boltray Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 15, 2026"
+]
+},
+"Lords of the Fallen II": {
+"steam": "4767480",
+"devs": [
+"HexWorks"
+],
+"pubs": [
+"CI Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Lego Batman: Legacy of the Dark Knight": {
+"steam": "2215200",
+"devs": [
+"TT Games",
+"Rocksteady Studios"
+],
+"pubs": [
+"Warner Bros. Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 22, 2026"
+]
+},
+"Road Kings": {
+"steam": "2141130",
+"devs": [
+"Saber Interactive"
+],
+"pubs": [
+"Focus Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 11, 2027"
+]
+},
+"Valor Mortis": {
+"steam": "2828710",
+"devs": [
+"One More Level"
+],
+"pubs": [
+"Lyrical Games",
+"One More Level"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 13, 2026"
+]
+},
+"Enotria: The Last Song": {
+"steam": "2102450",
+"devs": [
+"Jyamma Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 16,  2024"
+]
+},
+"Invincible VS": {
+"steam": "2353060",
+"devs": [
+"Quarter Up"
+],
+"pubs": [
+"Skybound Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 30, 2026"
+]
+},
+"Halloween: The Game": {
+"steam": "3219630",
+"devs": [
+"IllFonic"
+],
+"pubs": [
+"IllFonic Publishing",
+"Gun Media"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 8, 2026"
+]
+},
+"1348 Ex Voto": {
+"steam": "1895900",
+"devs": [
+"Sedleo"
+],
+"pubs": [
+"Dear Villagers"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 12, 2026"
+]
+},
+"Daemon X Machina: Titanic Scion": {
+"steam": "1342490",
+"devs": [
+"Marvelous First Studio"
+],
+"pubs": [
+"Marvelous",
+"XSEED"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 5, 2025"
+]
+},
+"Kaidan": {
+"steam": "3744040",
+"devs": [
+"5th Column Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Duskfade": {
+"steam": "2542020",
+"devs": [
+"Weird Beluga"
+],
+"pubs": [
+"Fireshine Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 13, 2026"
+]
+},
+"My Hero Academia: All's Justice": {
+"steam": "2362050",
+"devs": [
+"Byking"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 5, 2026"
+]
+},
+"List of Direct3D 11 games/0-999": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"List of Direct3D 11 games/1000-1999": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"List of Direct3D 11 games/2000-2999": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"List of Direct3D 11 games/3000-3999": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"List of Direct3D 11 games/4000+": {
+"steam": "",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Gods, Death & Reapers": {
+"steam": "3086590",
+"devs": [
+"Wolcen Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"God Save Birmingham": {
+"steam": "3073940",
+"devs": [
+"Ocean Drive Studio"
+],
+"pubs": [
+"Kakao Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Dungeon Stalkers": {
+"steam": "2468730",
+"devs": [
+"ONEUNIVERSE Co., Ltd."
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 29, 2025"
+]
+},
+"Project Werewulf": {
+"steam": "2343900",
+"devs": [
+"FTRGameStudio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 6, 2025"
+]
+},
+"Knights Within": {
+"steam": "2406180",
+"devs": [
+"Indecision Labs"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Deep Space 7": {
+"steam": "3037180",
+"devs": [
+"JT Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 26, 2024"
+]
+},
+"Otherskin": {
+"steam": "1622630",
+"devs": [
+"Game Atelier"
+],
+"pubs": [
+"FDG Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 2, 2025"
+]
+},
+"Abiotic Factor Dedicated Server": {
+"steam": "2857200",
+"devs": [
+"Deep Field Games"
+],
+"pubs": [
+"Playstack"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 22, 2025"
+]
+},
+"Aviators (2024)": {
+"steam": "2626910",
+"devs": [
+"Chronospace"
+],
+"pubs": [
+"Instytut Pami\u0119ci Narodowej"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jan 24, 2024"
+]
+},
+"Bad Cheese": {
+"steam": "3094480",
+"devs": [
+"Simon Lukasik"
+],
+"pubs": [
+"Feardemic"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 1, 2025"
+]
+},
+"2XKO": {
+"steam": "|steam appid side =",
+"devs": [
+"Riot Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 20, 2026"
+]
+},
+"The Lightkeeper": {
+"steam": "3612850",
+"devs": [
+"Darkphobia Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 7, 2025"
+]
+},
+"The Relic: First Guardian": {
+"steam": "2827820",
+"devs": [
+"Project Cloud Games"
+],
+"pubs": [
+"Perp Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 30, 2026"
+]
+},
+"Riven Crown": {
+"steam": "2976250",
+"devs": [
+"Intima Leaf"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"CastleMiner Z: Resurrection": {
+"steam": "3631230",
+"devs": [
+"DigitalDNA Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Phantom Blade Zero": {
+"steam": "4115450",
+"devs": [
+"S-GAME"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 29, 2026"
+]
+},
+"Lost Ember: Rekindled Edition": {
+"steam": "3086580",
+"devs": [
+"Mooneye Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 27, 2025"
+]
+},
+"Godbreakers": {
+"steam": "2687400",
+"devs": [
+"To The Sky"
+],
+"pubs": [
+"Thunderful Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 23, 2025"
+]
+},
+"Octopath Traveler 0": {
+"steam": "3014320",
+"devs": [
+"DokiDoki Groove Works",
+"Square Enix"
+],
+"pubs": [
+"Square Enix"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 4, 2025"
+]
+},
+"EVE Vanguard": {
+"steam": "1872800",
+"devs": [
+"Fenris Creations"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Blood of Mehran": {
+"steam": "1714530",
+"devs": [
+"Permanent Way"
+],
+"pubs": [
+"Blowfish Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 7, 2025"
+]
+},
+"Dead as Disco": {
+"steam": "3404260",
+"devs": [
+"Brain Jar Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"CyberTaxi: Lunatic Nights": {
+"steam": "2927000",
+"devs": [
+"Hed Media Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Celestial Empire": {
+"steam": "1330430",
+"devs": [
+"President Studio"
+],
+"pubs": [
+"PlayWay S.A.",
+"President Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Dynasty Warriors 3: Complete Edition Remastered": {
+"steam": "3841510",
+"devs": [
+"Omega Force"
+],
+"pubs": [
+"Koei Tecmo"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 1, 2026"
+]
+},
+"PUBG: Blindspot": {
+"steam": "3143710",
+"devs": [
+"ARC Team",
+"PUBG Corporation"
+],
+"pubs": [
+"Krafton"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Cancelled"
+]
+},
+"Project Retrograde: The Becoming": {
+"steam": "3734010",
+"devs": [
+"Invercity Game Works"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Pax Dei": {
+"steam": "1995520",
+"devs": [
+"Mainframe Industries"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 16, 2025"
+]
+},
+"Deconstruction Simulator": {
+"steam": "2487150",
+"devs": [
+"Games Incubator",
+"Hypnotic Ants"
+],
+"pubs": [
+"PlayWay",
+"Games Incubator"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 23, 2025"
+]
+},
+"Out of Sight VR": {
+"steam": "3558720",
+"devs": [
+"Flat2VR Studios",
+"The Gang"
+],
+"pubs": [
+"Flat2VR Studios",
+"Starbreeze Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 22, 2025"
+]
+},
+"The Last Caretaker": {
+"steam": "1783560",
+"devs": [
+"Channel37"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Last Sip": {
+"steam": "3781520",
+"devs": [
+"ghost08165"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jun 20, 2025"
+]
+},
+"Asurajang": {
+"steam": "2549130",
+"devs": [
+"D-Zard"
+],
+"pubs": [
+"BY4M Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Mar 27, 2025"
+]
+},
+"Underward": {
+"steam": "3025290",
+"devs": [
+"INTENSE"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2025-02-05"
+]
+},
+"Star Trek: Voyager - Across the Unknown": {
+"steam": "2643390",
+"devs": [
+"Gamexcite"
+],
+"pubs": [
+"Daedalic Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 18, 2026"
+]
+},
+"Eclipse Breaker": {
+"steam": "2815060",
+"devs": [
+"Lunar Workshop",
+"Jorge Rodriguez"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 7, 2025"
+]
+},
+"Exodus (2027)": {
+"steam": "3230960",
+"devs": [
+"Archetype Entertainment"
+],
+"pubs": [
+"Wizards of the Coast"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 7, 2027"
+]
+},
+"Assetto Corsa Rally": {
+"steam": "3917090",
+"devs": [
+"Supernova Games Studios",
+"Kunos Simulazioni"
+],
+"pubs": [
+"505 Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Monterey Jack": {
+"steam": "3512950",
+"devs": [
+"DangerousBob Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Feb 9, 2026"
+]
+},
+"Bip and Bop": {
+"steam": "4048740",
+"devs": [
+"Quadberos"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Oct 13, 2025"
+]
+},
+"God of Yoga": {
+"steam": "3150170",
+"devs": [
+"WorkNite Games"
+],
+"pubs": [
+"Alice Publication",
+"Eternal Alice Media"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 28, 2025"
+]
+},
+"NASCAR 25": {
+"steam": "3873970",
+"devs": [
+"iRacing Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 11, 2025"
+]
+},
+"Fellowship": {
+"steam": "2352620",
+"devs": [
+"Chief Rebel"
+],
+"pubs": [
+"Arc Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Halo: Campaign Evolved": {
+"steam": "2806050",
+"devs": [
+"Halo Studios"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5",
+"Halo Engine"
+],
+"date": [
+"July 28, 2026"
+]
+},
+"Bylina": {
+"steam": "2461440",
+"devs": [
+"Far Far Games"
+],
+"pubs": [
+"Digital Vortex Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 20, 2026"
+]
+},
+"Darkblade Ascent": {
+"steam": "2406370",
+"devs": [
+"PST Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Oct 23 2025 "
+]
+},
+"Voyagers of Nera": {
+"steam": "2686630",
+"devs": [
+"Treehouse Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Good Night Pan Pan": {
+"steam": "3109270",
+"devs": [
+"SUZAKU Games"
+],
+"pubs": [
+"SUZAKU Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 6, 2024"
+]
+},
+"Kagura Survivors: Endless Night": {
+"steam": "2348120",
+"devs": [
+"Big Bang Studio",
+"Swaps4 Productions"
+],
+"pubs": [
+"Kagura Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"BrokenLore: Don't Lie": {
+"steam": "3886200",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [
+"Wired Productions",
+"Serafini Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 10, 2026"
+]
+},
+"Outbreak Island": {
+"steam": "1442530",
+"devs": [
+"Tiny Magicians"
+],
+"pubs": [
+"Tiny Magicians",
+"HypeTrain Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Hotel Architect": {
+"steam": "1602000",
+"devs": [
+"Pathos Interactive"
+],
+"pubs": [
+"Wired Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"SurrounDead": {
+"steam": "1645820",
+"devs": [
+"Zurvivor"
+],
+"pubs": [
+"PlaySurrounDead"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Deadzone: Rogue": {
+"steam": "3228590",
+"devs": [
+"Prophecy Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 11, 2025"
+]
+},
+"Seed of Heroes": {
+"steam": "2942700",
+"devs": [
+"Vermillion Digital"
+],
+"pubs": [
+"Sekai Project"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" Sep 17 2024 "
+]
+},
+"Deadly Days: Roadtrip": {
+"steam": "3026450",
+"devs": [
+"Pixelsplit"
+],
+"pubs": [
+"Sidekick Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Dread Flats": {
+"steam": "3114900",
+"devs": [
+"Ghostcase"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jul 10, 2025"
+]
+},
+"The Black Ice": {
+"steam": "3254050",
+"devs": [
+"RedCrab Games",
+"Antelus Games"
+],
+"pubs": [
+"Antelus Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Spies VS Mercs: Bold: Networked Newt Action": {
+"steam": "4153760",
+"devs": [
+"soft rodvt",
+"Vivian, The Enby Witch"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 2026"
+]
+},
+"Dinoblade": {
+"steam": "3440070",
+"devs": [
+"Team Spino"
+],
+"pubs": [
+"Team Spino",
+"Boltray Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 23, 2026"
+]
+},
+"The Time I Have Left": {
+"steam": "1918830",
+"devs": [
+"Ground"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Who's at the door?": {
+"steam": "3690010",
+"devs": [
+"SKONEC Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 18, 2025"
+]
+},
+"Whiskerwood": {
+"steam": "2489330",
+"devs": [
+"Minakata Dynamics"
+],
+"pubs": [
+"Hooded Horse"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Beer Machine": {
+"steam": "4016300",
+"devs": [
+"Crack Creations"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 15, 2025"
+]
+},
+"Mizeria": {
+"steam": "2527360",
+"devs": [
+"Konrad Pawlikowski"
+],
+"pubs": [
+"Cloudless Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 26, 2024"
+]
+},
+"Terroro": {
+"steam": "2880460",
+"devs": [
+"Melt"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 10, 2024"
+]
+},
+"Pigeon Simulator": {
+"steam": "1496260",
+"devs": [
+"tinyBuild Riga"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 11, 2025"
+]
+},
+"Red Machina": {
+"steam": "1379880",
+"devs": [
+"Dante Esposato"
+],
+"pubs": [
+"MACRONOMA"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Conquer the Tower": {
+"steam": "3896860",
+"devs": [
+"iZoy_"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Oct 13, 2025"
+]
+},
+"Storebound": {
+"steam": "3417410",
+"devs": [
+"Embers"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 16, 2026"
+]
+},
+"Barkour": {
+"steam": "1920290",
+"devs": [
+"Varsav Game Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Dead Space Demake": {
+"steam": "|steam appid side =",
+"devs": [
+"Fraser Brumley"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 10, 2023"
+]
+},
+"Bloodville": {
+"steam": "3802770",
+"devs": [
+"Horia Andrei"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 21, 2026"
+]
+},
+"Tired of Being the Hero": {
+"steam": "3849030",
+"devs": [
+"Tired Hero Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Armatus": {
+"steam": "3660710",
+"devs": [
+"Counterplay Games"
+],
+"pubs": [
+"Fictions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 7, 2027"
+]
+},
+"Raji: Kaliyuga": {
+"steam": "4096880",
+"devs": [
+"Nodding Heads Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"A.I.L.A": {
+"steam": "2695430",
+"devs": [
+"Pulsatrix Studios"
+],
+"pubs": [
+"Fireshine Games",
+"The Iterative Collective"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 25, 2025"
+]
+},
+"The Last Case of John Morley": {
+"steam": "3636620",
+"devs": [
+"Indigo Studios"
+],
+"pubs": [
+"JanduSoft"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 27, 2025"
+]
+},
+"Formula Legends": {
+"steam": "3194360",
+"devs": [
+"3DClouds"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 18, 2025"
+]
+},
+"Chiyo": {
+"steam": "2220660",
+"devs": [
+"Nimbus Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"18 January 2024"
+]
+},
+"Alessia's Dollhouse": {
+"steam": "3037780",
+"devs": [
+"Wasper Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 10, 2024"
+]
+},
+"The Office Rooms": {
+"steam": "1925940",
+"devs": [
+"Lowkey GameDev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 26, 2025"
+]
+},
+"Jetrunner": {
+"steam": "2865670",
+"devs": [
+"Riddlebit Software"
+],
+"pubs": [
+"Curveball Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 4, 2025"
+]
+},
+"She's Leaving": {
+"steam": "3062610",
+"devs": [
+"Blue Hat Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 2, 2025"
+]
+},
+"Dead Format": {
+"steam": "3399290",
+"devs": [
+"Katanalevy"
+],
+"pubs": [
+"Oro Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 10, 2025"
+]
+},
+"Where the Forest Ends": {
+"steam": "3583670",
+"devs": [
+"MonkeyBassGames"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"31 May 2026"
+]
+},
+"The God Slayer": {
+"steam": "2536510",
+"devs": [
+"Pathea Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Carmageddon: Rogue Shift": {
+"steam": "1712100",
+"devs": [
+"34BigThings"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 6, 2026"
+]
+},
+"Samson": {
+"steam": "3634520",
+"devs": [
+"Liquid Swords"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 8, 2026"
+]
+},
+"When Sirens Fall Silent": {
+"steam": "2600920",
+"devs": [
+"LKA"
+],
+"pubs": [
+"Wired Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Rift Fishing": {
+"steam": "4061090",
+"devs": [
+"Glimmerloft"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Red Recon: 1944": {
+"steam": "3170130",
+"devs": [
+"Varangs"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"What The Fog": {
+"steam": "2139020",
+"devs": [
+"Behaviour Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"14 May 2024"
+]
+},
+"Cat Named Mojave": {
+"steam": "3597880",
+"devs": [
+"Stargazers Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 8, 2025"
+]
+},
+"ReThink 3.5": {
+"steam": "2838460",
+"devs": [
+"Yaeko"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 4, 2024"
+]
+},
+"No Law": {
+"steam": "2161710",
+"devs": [
+"Neon Giant"
+],
+"pubs": [
+"Krafton"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Out of Words": {
+"steam": "|steam appid side =",
+"devs": [
+"Kong Orange",
+"WiredFly"
+],
+"pubs": [
+"Epic Games Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Star Wars: Galactic Racer": {
+"steam": "4078430",
+"devs": [
+"Fuse Games"
+],
+"pubs": [
+"Secret Mode"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 6, 2026"
+]
+},
+"Tomb Raider: Legacy of Atlantis": {
+"steam": "3558670",
+"devs": [
+"Crystal Dynamics",
+"Flying Wild Hog"
+],
+"pubs": [
+"Amazon Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 12, 2027"
+]
+},
+"Ace Combat 8: Wings of Theve": {
+"steam": "2288340",
+"devs": [
+"Bandai Namco Aces"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 2, 2026"
+]
+},
+"Highguard": {
+"steam": "4128260",
+"devs": [
+"Wildlight Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 26, 2026"
+]
+},
+"BrokenLore: Low": {
+"steam": "3014520",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 20, 2025"
+]
+},
+"BrokenLore: Don't Watch": {
+"steam": "2351330",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [
+"Serafini Productions",
+"Shochiku"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 25, 2025"
+]
+},
+"BrokenLore: Unfollow": {
+"steam": "2133830",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [
+"Serafini Productions",
+"Shochiku"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 16, 2026"
+]
+},
+"BrokenLore: Follow": {
+"steam": "2846530",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [
+"Serafini Productions",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 1, 2026"
+]
+},
+"BrokenLore: Ascend": {
+"steam": "4051470",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [
+"Serafini Productions",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 7, 2027"
+]
+},
+"Haunted Memories: The Return": {
+"steam": "2441310",
+"devs": [
+"MegaPixel Studio"
+],
+"pubs": [
+"Forever Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Better Than Dead": {
+"steam": "2599690",
+"devs": [
+"Monte Gallo"
+],
+"pubs": [
+"MicroProse (Australia)"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Abyssus": {
+"steam": "1721110",
+"devs": [
+"DoubleMoose Games"
+],
+"pubs": [
+"The Arcade Crew"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 12, 2025"
+]
+},
+"Leaf Blower Co.": {
+"steam": "3571710",
+"devs": [
+"LifT Games"
+],
+"pubs": [
+"Forklift Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 17, 2025"
+]
+},
+"Shashingo: Learn Japanese With Photography": {
+"steam": "1632490",
+"devs": [
+"Autumn Pioneer"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"27. February 2024"
+]
+},
+"Belonging": {
+"steam": "2081580",
+"devs": [
+"Farbspiel Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Jan 18, 2024"
+]
+},
+"The Alley": {
+"steam": "4181410",
+"devs": [
+"AIXLAB"
+],
+"pubs": [
+"Smilegate",
+"Thermite Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 24, 2026"
+]
+},
+"Relooted": {
+"steam": "3255890",
+"devs": [
+"Nyamakop"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 10, 2026"
+]
+},
+"Life Is Strange: Reunion": {
+"steam": "2624870",
+"devs": [
+"Deck Nine"
+],
+"pubs": [
+"Square Enix"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 26, 2026"
+]
+},
+"Fearwoods": {
+"steam": "3296990",
+"devs": [
+"Fearwoods"
+],
+"pubs": [
+"GrabTheGames"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 26, 2026"
+]
+},
+"Attrax": {
+"steam": "3103420",
+"devs": [
+"FluffyGameDev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 19, 2026"
+]
+},
+"Knight's Path: The Tournament": {
+"steam": "2653240",
+"devs": [
+"Jan Tichota",
+"Aamn Chahrour"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Dec 12, 2023"
+]
+},
+"I Have No Change": {
+"steam": "3426150",
+"devs": [
+"Studio Rassvet"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Golfing in Aether": {
+"steam": "1914980",
+"devs": [
+"Vetron"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 23, 2022"
+]
+},
+"Vanran": {
+"steam": "3449370",
+"devs": [
+"BECUZUS"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"A Whisper of Fall: Jinyiwei": {
+"steam": "4295810",
+"devs": [
+"CangMo Game Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Genigods: Nezha": {
+"steam": "4346690",
+"devs": [
+"Genigods Lab"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Fear the Timeloop": {
+"steam": "2918090",
+"devs": [
+"TacoEaters"
+],
+"pubs": [
+"PlayWay",
+"TacoEaters"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 30, 2026"
+]
+},
+"Don't Stop, Girlypop!": {
+"steam": "2610650",
+"devs": [
+"Funny Fintan Softworks"
+],
+"pubs": [
+"Kwalee"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 29, 2026"
+]
+},
+"The Adventures of Elliot: The Millennium Tales": {
+"steam": "3483510",
+"devs": [
+"Claytechworks",
+"Square Enix"
+],
+"pubs": [
+"Square Enix"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 18, 2026"
+]
+},
+"Vampires: Bloodlord Rising": {
+"steam": "2191500",
+"devs": [
+"Mehuman Games"
+],
+"pubs": [
+"Toplitz Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Silent Hill: Townfall": {
+"steam": "1636440",
+"devs": [
+"Screen Burn"
+],
+"pubs": [
+"Konami",
+"Annapurna Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 24, 2026"
+]
+},
+"Metal Gear Solid 4: Guns of the Patriots - Master Collection Version": {
+"steam": "2492670",
+"devs": [
+"Kojima Productions",
+"Virtuos",
+"M2",
+"Logicalbeat"
+],
+"pubs": [
+"Konami"
+],
+"engines": [
+"Unity",
+"Unreal Engine 5"
+],
+"date": [
+"August 27, 2026"
+]
+},
+"Speedball (2026)": {
+"steam": "1795190",
+"devs": [
+"Rebellion Developments"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 27, 2026"
+]
+},
+"Seafarer: The Ship Sim": {
+"steam": "2582140",
+"devs": [
+"Astragon Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Lushfoil Photography Sim": {
+"steam": "1749860",
+"devs": [
+"Matt Newell"
+],
+"pubs": [
+"Annapurna Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 15, 2025"
+]
+},
+"Edge of Memories": {
+"steam": "2738170",
+"devs": [
+"Midgar Studio"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 5, 2026"
+]
+},
+"Hozy": {
+"steam": "3326230",
+"devs": [
+"Come On Studio"
+],
+"pubs": [
+"tinyBuild"
+],
+"engines": [
+"Unreal Engine 5 "
+],
+"date": [
+"30 March 2026"
+]
+},
+"Windrose": {
+"steam": "3041230",
+"devs": [
+"Kraken Express"
+],
+"pubs": [
+"Kraken Express",
+"Pocketpair Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Flesh & Wire": {
+"steam": "3592940",
+"devs": [
+"Running With Scissors"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Dark Pals: The 1st Floor": {
+"steam": "4157130",
+"devs": [
+"Skunx Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 1, 2026"
+]
+},
+"Outward 2": {
+"steam": "2849490",
+"devs": [
+"Nine Dots Studio"
+],
+"pubs": [
+"Nine Dots Publishing",
+"Gamersky Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 8, 2027"
+]
+},
+"Hela: Of Mice & Magic": {
+"steam": "3161310",
+"devs": [
+"Windup"
+],
+"pubs": [
+"Knights Peak"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 1, 2026"
+]
+},
+"Graveyard Shift (2023)": {
+"steam": "2636420",
+"devs": [
+"Darkphobia Games"
+],
+"pubs": [
+"Darkphobia Games",
+"Teaserplay"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 2, 2023"
+]
+},
+"Ruiner 2": {
+"steam": "2936810",
+"devs": [
+"Reikon Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Echoes of Aincrad": {
+"steam": "2244210",
+"devs": [
+"Game Studio Inc."
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 9, 2026"
+]
+},
+"Peregrino": {
+"steam": "3268150",
+"devs": [
+"Inverge Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 6, 2026"
+]
+},
+"Ebaseball: Pro Spirit": {
+"steam": "4128400",
+"devs": [
+"Konami"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"March 4, 2026"
+]
+},
+"Psycho Dead": {
+"steam": "3018390",
+"devs": [
+"Moon Catalyst"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Wardogs": {
+"steam": "1867240",
+"devs": [
+"Bulkhead"
+],
+"pubs": [
+"Team17"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Vernyhorn": {
+"steam": "3707530",
+"devs": [
+"InterStudio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Goals": {
+"steam": "2753000",
+"devs": [
+"Goals"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Remothered: Red Nun's Legacy": {
+"steam": "3335310",
+"devs": [
+"Stormind Games"
+],
+"pubs": [
+"Stormind Games",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 27, 2026"
+]
+},
+"The 7th Guest Remake": {
+"steam": "4491360",
+"devs": [
+"Vertigo Studios Amsterdam",
+"Exkee"
+],
+"pubs": [
+"Vertigo Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 4, 2026"
+]
+},
+"Tiny Chills - Not From Ear": {
+"steam": "3878740",
+"devs": [
+"Ducktopus Games"
+],
+"pubs": [
+"Critical Reflex"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Reytrieve Odyssey": {
+"steam": "3798840",
+"devs": [
+"EgorPosk"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Laundering Simulator": {
+"steam": "3432750",
+"devs": [
+"Ritual Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"4 November 2025"
+]
+},
+"Retro Rewind": {
+"steam": "3552140",
+"devs": [
+"Blood Pact Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"17 March 2026"
+]
+},
+"DrainSim": {
+"steam": "2963800",
+"devs": [
+"CodePeas"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Everwind": {
+"steam": "2253100",
+"devs": [
+"Enjoy Studio S.A."
+],
+"pubs": [
+"Bohemia Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+" EA "
+]
+},
+"Supreme Experiment": {
+"steam": "4212050",
+"devs": [
+"Argunov Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Payday: Aces High": {
+"steam": "3456660",
+"devs": [
+"Fast Travel Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 5, 2026"
+]
+},
+"Hunter: The Reckoning - Deathwish": {
+"steam": "4434610",
+"devs": [
+"Teyon"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Serious Sam: Shatterverse": {
+"steam": "2067210",
+"devs": [
+"Behaviour Interactive"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 31, 2026"
+]
+},
+"Artificial Detective": {
+"steam": "2962320",
+"devs": [
+"Vivix"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Truck World: Australia": {
+"steam": "1327040",
+"devs": [
+"Truck World Studio"
+],
+"pubs": [
+"HypeTrain Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Captain Tsubasa 2: World Fighters": {
+"steam": "2172910",
+"devs": [
+"Tamsoft"
+],
+"pubs": [
+"Bandai Namco Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 27, 2026"
+]
+},
+"Project Ethos": {
+"steam": "2139090",
+"devs": [
+"31st Union"
+],
+"pubs": [
+"2K"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Comatose": {
+"steam": "3301370",
+"devs": [
+"Lucky Dart"
+],
+"pubs": [
+"The Bueno Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Lay of the Land": {
+"steam": "2776090",
+"devs": [
+"Southern Cross Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Backseat Drivers": {
+"steam": "3558400",
+"devs": [
+"GhostJam Games",
+"Deadcat Studios"
+],
+"pubs": [
+"TUSKION"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 9, 2025"
+]
+},
+"Reach": {
+"steam": "3273480",
+"devs": [
+"nDreams Elevation"
+],
+"pubs": [
+"nDreams"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 16, 2025"
+]
+},
+"City Masterplan": {
+"steam": "4536610",
+"devs": [
+"1:1 Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"The Pines": {
+"steam": "4271520",
+"devs": [
+"Studio Abattoir"
+],
+"pubs": [
+"Silver Lining Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Asket": {
+"steam": "3079170",
+"devs": [
+"Arhaika"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Asterfel": {
+"steam": "3892510",
+"devs": [
+"Mysteria Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Rivage": {
+"steam": "4094660",
+"devs": [
+"Exnilo Studio"
+],
+"pubs": [
+"Raw Fury"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 22, 2026"
+]
+},
+"2nd Eve": {
+"steam": "3516780",
+"devs": [
+"Gamer Cloud"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"The Exit 8 VR": {
+"steam": "3193770",
+"devs": [
+"MyDearest",
+"Kotake Create"
+],
+"pubs": [
+"MyDearest"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 19, 2024"
+]
+},
+"Corsair Cove": {
+"steam": "1368140",
+"devs": [
+"Limbic Entertainment"
+],
+"pubs": [
+"Hooded Horse"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 31, 2026"
+]
+},
+"The Lantern of the Laughless Saint": {
+"steam": "3849000",
+"devs": [
+"NerveLabs"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Deep Rock Galactic: Rogue Core": {
+"steam": "2605790",
+"devs": [
+"Ghost Ship Games"
+],
+"pubs": [
+"Ghost Ship Games",
+"Coffee Stain Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"8AM": {
+"steam": "2835590",
+"devs": [
+"David Gallardo"
+],
+"pubs": [
+"HeadArrow"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Mar 28, 2024"
+]
+},
+"BrokenLore: Don't Play": {
+"steam": "4549480",
+"devs": [
+"Serafini Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Sprawl Zero": {
+"steam": "3748520",
+"devs": [
+"MAETH"
+],
+"pubs": [
+"Kwalee"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 8, 2026"
+]
+},
+"Magical Bakery": {
+"steam": "2595940",
+"devs": [
+"SUPERLUMEN"
+],
+"pubs": [
+"SOEDESCO"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 7, 2024"
+]
+},
+"Rumbral": {
+"steam": "3565040",
+"devs": [
+"OSEA Innovations"
+],
+"pubs": [
+"Out of Mana",
+"Dojo System"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 22, 2026"
+]
+},
+"Neverness to Everness": {
+"steam": "4508340",
+"devs": [
+"Hotta Studio"
+],
+"pubs": [
+"Perfect World",
+"Iwplay World"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 29, 2026"
+]
+},
+"Mole": {
+"steam": "4064510",
+"devs": [
+"Off Black Creations"
+],
+"pubs": [
+"Oro Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 15, 2026"
+]
+},
+"Click to Continue": {
+"steam": "3636440",
+"devs": [
+"Basolute"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"15.05.2025"
+]
+},
+"Yasuke: A Lost Descendant": {
+"steam": "2446760",
+"devs": [
+"Dallience Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Inner Voice": {
+"steam": "4139880",
+"devs": [
+"X Interactive"
+],
+"pubs": [
+"Dionous Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 30, 2026"
+]
+},
+"Far Far West": {
+"steam": "3124540",
+"devs": [
+"Evil Raptor"
+],
+"pubs": [
+"Fireshine Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"United Heist": {
+"steam": "2119740",
+"devs": [
+"No More Sleep"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 12, 2023"
+]
+},
+"Blindfire": {
+"steam": "2854480",
+"devs": [
+"Double Eleven"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Eilean Mor: The Lost Keepers": {
+"steam": "3871570",
+"devs": [
+"Dead Witness"
+],
+"pubs": [
+"Serafini Productions"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Luminary": {
+"steam": "1648360",
+"devs": [
+"Refractive Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Aug 11, 2026"
+]
+},
+"Hypnos": {
+"steam": "2861210",
+"devs": [
+"Redlock Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Instants": {
+"steam": "2948560",
+"devs": [
+"Endflame Studios"
+],
+"pubs": [
+"Nexting",
+"SpaceJazz Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 7, 2025"
+]
+},
+"Blackshard": {
+"steam": "3223390",
+"devs": [
+"Redlock Studio",
+"Enclave"
+],
+"pubs": [
+"Redlock Studio",
+"Plug In Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"April 2, 2025"
+]
+},
+"Glitchspankr": {
+"steam": "2727660",
+"devs": [
+"Mahelyk",
+"TheClassifiedX"
+],
+"pubs": [
+"Black Lantern Collective"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 15, 2025"
+]
+},
+"Deadzone: Rogue 2": {
+"steam": "4465790",
+"devs": [
+"Prophecy Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Hell Let Loose: Vietnam": {
+"steam": "3079210",
+"devs": [
+"Expression Games"
+],
+"pubs": [
+"Team17"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 13, 2026"
+]
+},
+"Nitro Gen Omega": {
+"steam": "2525510",
+"devs": [
+"DESTINYbit"
+],
+"pubs": [
+"DESTINYbit",
+"Beep Japan"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 12, 2026"
+]
+},
+"It Reaches": {
+"steam": "4119360",
+"devs": [
+"Emberflight Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 18, 2026"
+]
+},
+"A Bumpy Ride": {
+"steam": "3056840",
+"devs": [
+"Cosmoporium Games"
+],
+"pubs": [
+"Cosmoporium Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 1, 2026"
+]
+},
+"Hollow Stories: Lockdown": {
+"steam": "3968040",
+"devs": [
+"Hollow Sense"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"The Twilight Project": {
+"steam": "3838790",
+"devs": [
+"Teapot Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Ritual Tides": {
+"steam": "3548810",
+"devs": [
+"Vertpaint"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+},
+"Species: Unknown": {
+"steam": "2747330",
+"devs": [
+"WanadevStudio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Butcherman": {
+"steam": "3979350",
+"devs": [
+"Mounpeak Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"May 22, 2026"
+]
+},
+"The Witcher Remake": {
+"steam": "|steam appid side =",
+"devs": [
+"Fool's Theory",
+"CD Projekt Red"
+],
+"pubs": [
+"CD Projekt"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Crimson Moon": {
+"steam": "4317690",
+"devs": [
+"ProbablyMonsters"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 1, 2026"
+]
+},
+"The Skin Stapler": {
+"steam": "4310610",
+"devs": [
+"Tainted Pact"
+],
+"pubs": [
+"Assemble Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 6, 2026"
+]
+},
+"Vholume": {
+"steam": "4131730",
+"devs": [
+"Nathan Grange",
+"L\u00e9onard Lemaitre",
+"Niels Tiercelin"
+],
+"pubs": [
+"IronEqual"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 21, 2026"
+]
+},
+"Foreverthorn": {
+"steam": "3918930",
+"devs": [
+"FoxthornDev"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Fright Train": {
+"steam": "4132890",
+"devs": [
+"WildArts Games"
+],
+"pubs": [
+"Black Lantern Collective"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 15, 2026"
+]
+},
+"NZ78": {
+"steam": "4125810",
+"devs": [
+"emagnetic"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 12, 2026"
+]
+},
+"Smersh: Wolfhound": {
+"steam": "4431400",
+"devs": [
+"Haggard Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Militsioner": {
+"steam": "1373530",
+"devs": [
+"Tallboys"
+],
+"pubs": [
+"Critical Reflex"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"The Lost Wild": {
+"steam": "1952620",
+"devs": [
+"Great Ape Games"
+],
+"pubs": [
+"Annapurna Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Rogue Light Deck Builder": {
+"steam": "3149370",
+"devs": [],
+"pubs": [],
+"engines": [],
+"date": []
+},
+"Stuntman: Hollywood": {
+"steam": "2487330",
+"devs": [
+"Saber Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Once Alive": {
+"steam": "2336440",
+"devs": [
+"Cem Boray Y\u0131ld\u0131r\u0131m"
+],
+"pubs": [
+"GameDev.ist"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 18, 2024"
+]
+},
+"The Dark West": {
+"steam": "3574750",
+"devs": [
+"Black Hand"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Saw: Genesis": {
+"steam": "2865960",
+"devs": [
+"Broken Mirror Games",
+"Anshar Studios"
+],
+"pubs": [
+"Bloober Team"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Crossfire (That's No Moon)": {
+"steam": "4687500",
+"devs": [
+"That's No Moon"
+],
+"pubs": [
+"Team K1"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"1666: Amsterdam": {
+"steam": "3949550",
+"devs": [
+"Panache Digital Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Alien: Isolation 2": {
+"steam": "4665290",
+"devs": [
+"Creative Assembly"
+],
+"pubs": [
+"Sega"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Swords of Legends": {
+"steam": "4729320",
+"devs": [
+"Aurogon Shanghai"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Godzilla: Destroy All Monsters Melee Remastered": {
+"steam": "4251460",
+"devs": [
+"Pipeworks Studios "
+],
+"pubs": [
+"Atari"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 3, 2026 "
+]
+},
+"Graft": {
+"steam": "3141390",
+"devs": [
+"Harebrained"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Senua": {
+"steam": "3676410",
+"devs": [
+"Ninja Theory"
+],
+"pubs": [
+"Xbox Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Stronghold 4": {
+"steam": "2153760",
+"devs": [
+"Firefly Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 7, 2026"
+]
+},
+"DragonSword: Awakening": {
+"steam": "4570720",
+"devs": [
+"Hound13"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 23, 2026"
+]
+},
+"Virtue and a Sledgehammer": {
+"steam": "3743260",
+"devs": [
+"Deconstructeam",
+"Selkie Harbour"
+],
+"pubs": [
+"Devolver Digital"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 27, 2026"
+]
+},
+"Final Fantasy Resonance": {
+"steam": "3259780",
+"devs": [
+"Lancarse",
+"Square Enix"
+],
+"pubs": [
+"Square Enix"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 22, 2026"
+]
+},
+"Insomnia: Chapter One": {
+"steam": "3939100",
+"devs": [
+"Melon Polygons"
+],
+"pubs": [
+"MonkeyFactory Media"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 8, 2026"
+]
+},
+"The Alighieri Circle: Dante's Bloodline": {
+"steam": "4262620",
+"devs": [
+"One-O-One Games"
+],
+"pubs": [
+"Entalto Publishing",
+"C&R Creative Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 10, 2026"
+]
+},
+"The Green Light": {
+"steam": "1962950",
+"devs": [
+"waleedzo"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"January 29, 2026"
+]
+},
+"Staged: Open House": {
+"steam": "4441710",
+"devs": [
+"Leeding Apps"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Empulse": {
+"steam": "4323990",
+"devs": [
+"1047 Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Shiver (Team Nocebo)": {
+"steam": "3330890",
+"devs": [
+"Team Nocebo"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Black Tides Draga's Wake": {
+"steam": "4810650",
+"devs": [
+"Strange Creature Factory"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Baionlenja": {
+"steam": "3509160",
+"devs": [
+"BAION"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Negative Atmosphere": {
+"steam": "1116390",
+"devs": [
+"Sunscorched Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Veil of Mist": {
+"steam": "4171670",
+"devs": [
+"Ember Wing Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 22, 2026"
+]
+},
+"Wasabi": {
+"steam": "4148910",
+"devs": [
+"Phoenix Game Productions"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Sword Sage: Awakening": {
+"steam": "3846900",
+"devs": [
+"Sword Panda Limited"
+],
+"pubs": [
+"4Divinity"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Naomi\u2019s End": {
+"steam": "4863030",
+"devs": [
+"emagnetic"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 15, 2026"
+]
+},
+"Remothered: Tormented Fathers Remastered": {
+"steam": "4457050",
+"devs": [
+"Stormind Games"
+],
+"pubs": [
+"Stormind Games",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Remothered: Broken Porcelain Remastered": {
+"steam": "4461560",
+"devs": [
+"Stormind Games"
+],
+"pubs": [
+"Stormind Games",
+"Soft Source"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"RV There Yet?": {
+"steam": "3949040",
+"devs": [
+"Nuggets Entertainment"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 21, 2025"
+]
+},
+"Meccha Chameleon": {
+"steam": "4704690",
+"devs": [
+"lemorion_1224"
+],
+"pubs": [
+"lemorion_1224"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 10, 2026"
+]
+},
+"Brigandine Abyss": {
+"steam": "3211430",
+"devs": [
+"Adglobe"
+],
+"pubs": [
+"NIS America",
+"Happinet"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"August 26, 2026"
+]
+},
+"Nature of Dread": {
+"steam": "4022950",
+"devs": [
+"Eira Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Ratshaker": {
+"steam": "3290710",
+"devs": [
+"Sunscorched Studios"
+],
+"pubs": [
+"Sunscorched Studios",
+"Dark Product"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"November 1, 2024"
+]
+},
+"Grimlord": {
+"steam": "1910860",
+"devs": [
+"Metalcat Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"December 19, 2024"
+]
+},
+"Tour de France 2026": {
+"steam": "3936520",
+"devs": [
+"Cyanide Studio"
+],
+"pubs": [
+"Nacon"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 4, 2026"
+]
+},
+"Rehaunted": {
+"steam": "4538140",
+"devs": [
+"Cauchemar Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 14, 2026"
+]
+},
+"The Thing That Happened": {
+"steam": "2906500",
+"devs": [
+"Mario Murkl",
+"Zolt\u00e1n \u00c1rva"
+],
+"pubs": [
+"Jericho Game Development"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 20, 2026"
+]
+},
+"Tomb Raider: Catalyst": {
+"steam": "|steam appid side =",
+"devs": [
+"Crystal Dynamics"
+],
+"pubs": [
+"Amazon Game Studios"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2028"
+]
+},
+"Mistfall Hunter": {
+"steam": "3282300",
+"devs": [
+"Bellring Games"
+],
+"pubs": [
+"Skystone Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"July 30, 2026"
+]
+},
+"The Eventide": {
+"steam": "4038610",
+"devs": [
+"Studio Reset"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Elysium": {
+"steam": "5219090",
+"devs": [
+"Mercenary Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Grobnopolis Last Days": {
+"steam": "3851090",
+"devs": [
+"BananaDevJeff"
+],
+"pubs": [
+"Critical Reflex"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Opaldune": {
+"steam": "2776540",
+"devs": [
+"Breathless Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Neo Berlin 2087": {
+"steam": "2326200",
+"devs": [
+"Elysium Game Studio"
+],
+"pubs": [
+"ByteRockers' Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2028"
+]
+},
+"WheelMates": {
+"steam": "3905450",
+"devs": [
+"Firevolt"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 1, 2026"
+]
+},
+"Lumina Veil": {
+"steam": "2840000",
+"devs": [
+"Hamster Cafe"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 22, 2026"
+]
+},
+"Castlevania: Symphony of Horrors": {
+"steam": "",
+"devs": [
+"Relic1882"
+],
+"pubs": [
+"First Serve Gaming"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Dire Echo": {
+"steam": "3743180",
+"devs": [
+"True Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"June 5, 2026"
+]
+},
+"Thank You Bus Driver": {
+"steam": "5067360",
+"devs": [
+"Double Fine Productions"
+],
+"pubs": [
+"Double Fine Action Labs"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 14, 2026"
+]
+},
+"Mournight": {
+"steam": "3436970",
+"devs": [
+"Fround Interactive"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 7, 2026"
+]
+},
+"Soulstonia": {
+"steam": "4432150",
+"devs": [
+"Gabriel's Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"EA"
+]
+},
+"Daba Land of Water Scar": {
+"steam": "4810160",
+"devs": [
+"Dark Star"
+],
+"pubs": [
+"PlayStation Publishing"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Alkimya: House of Wisdom": {
+"steam": "4829820",
+"devs": [
+"Iksyr"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"ALIS": {
+"steam": "",
+"devs": [
+"Fall Into Dusk"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 5"
+],
+"date": [
+"June 30, 2026"
+]
+},
+"Kernel Hearts": {
+"steam": "2902170",
+"devs": [
+"Ephemera Games"
+],
+"pubs": [
+"Whitethorn Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 17, 2026"
+]
+},
+"Aion 2": {
+"steam": "3393110",
+"devs": [
+"NCSOFT"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 5, 2026"
+]
+},
+"Qliphah in Providence's Shadow": {
+"steam": "3882410",
+"devs": [
+"Arc System Works",
+"UnitePlus"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"Sep 23, 2026"
+]
+},
+"Luminous Nights": {
+"steam": "1949610",
+"devs": [
+"Yahya Danboos"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Police Chief Simulator": {
+"steam": "2938460",
+"devs": [
+"Perfect Circle Team S.A."
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"September 17, 2026"
+]
+},
+"Elta: Defy All Gods": {
+"steam": "2659410",
+"devs": [
+"Afterburner Studios"
+],
+"pubs": [
+"Focus Entertainment"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 2, 2027"
+]
+},
+"Last Half of Darkness (2025)": {
+"steam": "3096000",
+"devs": [
+"WRF Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 7, 2025"
+]
+},
+"Odd Town": {
+"steam": "2688780",
+"devs": [
+"The Flying Baguette"
+],
+"pubs": [
+"Hyperstrange"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 15, 2026"
+]
+},
+"Black Lake": {
+"steam": "4928600",
+"devs": [
+"Polydin Studio"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"The Unfinished Horror Game": {
+"steam": "5396900",
+"devs": [
+"Tri Fear Studio"
+],
+"pubs": [
+"Tri Fear Studio"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"TBA"
+]
+},
+"Sker: The Bleeding Veil": {
+"steam": "4119440",
+"devs": [
+"Stormind Games",
+"Wales Interactive"
+],
+"pubs": [
+"Wales Interactive"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Encryption": {
+"steam": "3348610",
+"devs": [
+"Digital Lighthouse Games"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2027"
+]
+},
+"Fire and Ashes": {
+"steam": "1751730",
+"devs": [
+"ASDstudio"
+],
+"pubs": [
+"Antelus Games"
+],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"October 14, 2026"
+]
+},
+"Case Records: Fear of Abduction": {
+"steam": "2826400",
+"devs": [
+"Walnut"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5",
+"Unreal Engine 4"
+],
+"date": [
+"December 6, 2024"
+]
+},
+"Case Records: Lost Night": {
+"steam": "3520330",
+"devs": [
+"Walnut"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"February 13, 2026"
+]
+},
+"Retrieval": {
+"steam": "2999120",
+"devs": [
+"333 Studios"
+],
+"pubs": [],
+"engines": [
+"Unreal Engine 5"
+],
+"date": [
+"2026"
+]
+}
+}

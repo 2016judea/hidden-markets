@@ -1,0 +1,739 @@
+{
+"2276980": {
+"name": "FACEMINER",
+"developers": [
+"Wristwork"
+],
+"publishers": [
+"Wristwork Ltd"
+],
+"website": "https://www.wristwork.com/faceminer",
+"support_info": {
+"url": "http://www.wristwork.com",
+"email": "contact@wristwork.com"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Feb 27, 2025"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 799,
+"final": 319,
+"discount_percent": 60,
+"initial_formatted": "$7.99",
+"final_formatted": "$3.19"
+},
+"is_free": false,
+"short_description": "Build a biometric data harvesting empire from scratch in FACEMINER, the hardcore thriller clicker set in 1999. Classify data, upgrade mining infrastructure, and scale up your A.I. surveillance empire to obscene ends in this creepy narrative-driven incremental management sim with a dystopian twist.",
+"recommendations": {
+"total": 1552
+},
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Full controller support",
+"Steam Trading Cards",
+"Adjustable Text Size",
+"Custom Volume Controls",
+"Adjustable Difficulty",
+"Save Anytime",
+"Steam Input API Support",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+},
+"3876710": {
+"name": "Pigeon: A Love Story",
+"developers": [
+"Wristwork"
+],
+"publishers": [
+"Wristwork Ltd",
+"Tiny Dragon"
+],
+"website": "https://www.wristwork.com/pigeon",
+"support_info": {
+"url": "https://www.wristwork.com",
+"email": "contact@wristwork.com"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Aug 6, 2026"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 799,
+"final": 559,
+"discount_percent": 30,
+"initial_formatted": "$7.99",
+"final_formatted": "$5.59"
+},
+"is_free": false,
+"short_description": "Soar over life-size, to-scale cities in this needle-in-a-haystack simulation. Find one specific pigeon among millions of autonomous birds, team up in multiplayer 'Coo-op', or just relax and enjoy the flight in a game about nothing and everything.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Multi-player",
+"PvP",
+"Online PvP",
+"Co-op",
+"Online Co-op",
+"Steam Achievements",
+"Full controller support",
+"Steam Input API Support",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+},
+"4094120": {
+"name": "Microlandia",
+"developers": [
+"Information Superhighway Games"
+],
+"publishers": [
+"Information Superhighway Games"
+],
+"website": "https://microlandia.city",
+"support_info": {
+"url": "https://microlandia.city",
+"email": "support@microlandia.city"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Dec 3, 2025"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 999,
+"final": 999,
+"discount_percent": 0,
+"initial_formatted": "",
+"final_formatted": "$9.99"
+},
+"is_free": false,
+"short_description": "Build a cozy little city on top of a brutally honest economy. Every citizen is simulated, one by one: they work, pay rent, get sick, go broke and turn to crime. Set taxes and policy, win elections, and survive a newspaper that blames you for everything.",
+"recommendations": {
+"total": 214
+},
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Full controller support",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+},
+"4819620": {
+"name": "Path Defenders: RPG Siege Defense",
+"developers": [
+"Benjamin Adams"
+],
+"publishers": [
+"Benjamin Adams"
+],
+"website": "https://pathdefenders.app",
+"support_info": {
+"url": "https://pathdefenders.app",
+"email": "support@pathdefenders.app"
+},
+"release_date": {
+"coming_soon": true,
+"date": "Nov 10, 2026"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "A single-player MMORPG fused with tower defense. Recruit heroes, Build bizarre but devastating towers, and fight beside them in real-time 3D combat against waves of enemies.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Full controller support",
+"Camera Comfort",
+"Color Alternatives",
+"#category_contrast_controls",
+"Custom Volume Controls",
+"Adjustable Difficulty",
+"Keyboard Only Option",
+"Mouse Only Option",
+"Playable without Timed Input",
+"Save Anytime",
+"Stereo Sound",
+"Surround Sound",
+"Touch Only Option",
+"Family Sharing"
+],
+"ok": true
+},
+"3888070": {
+"name": "Dystopia RPG",
+"developers": [
+"Samuel Harrison",
+"Semasa Ajose"
+],
+"publishers": [
+"Inhumanity Studios"
+],
+"website": "https://dystopia-app.site",
+"support_info": {
+"url": "https://inhumanity-arts.itch.io/dystopia-app",
+"email": "samuel@dystopia-app.site"
+},
+"release_date": {
+"coming_soon": true,
+"date": "2026"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "Dystopia RPG is an 8 bit style fantasy RPG where You lost a duel to a government's shaman and ended up trapped and sealed in a Cell Phone application. Explore the Dungeons, Combat monsters, Collect and Trade Items, Glitch the game &amp; break free.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Multi-player",
+"Co-op",
+"Online Co-op",
+"LAN Co-op",
+"Shared/Split Screen Co-op",
+"Shared/Split Screen",
+"Cross-Platform Multiplayer",
+"Steam Achievements",
+"In-App Purchases",
+"Adjustable Text Size",
+"Color Alternatives",
+"Custom Volume Controls",
+"Keyboard Only Option",
+"Mouse Only Option",
+"Save Anytime",
+"Stereo Sound",
+"Subtitle Options",
+"Touch Only Option",
+"Steam Cloud",
+"Stats",
+"Steam Leaderboards",
+"Remote Play Together",
+"Family Sharing"
+],
+"ok": true
+},
+"5023550": {
+"name": "Velocity - Midnight Run",
+"developers": [
+"Shoogar Games"
+],
+"publishers": [
+"Shoogar Games"
+],
+"website": "https://shoogarsoft.com/apps/velocity/",
+"support_info": {
+"url": "",
+"email": "support@shoogarsoft.com"
+},
+"release_date": {
+"coming_soon": true,
+"date": "Q4 2026"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "Hold speed through an endless night city. Climb a 100-car field in Midnight Run, slip past traffic, shake the cops, and cash every near miss into style. Then take it to Solo, private Crew rooms, or Online matchmaking. An arcade night-driving racer built for one more run.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Multi-player",
+"PvP",
+"Online PvP",
+"Shared/Split Screen PvP",
+"Co-op",
+"Online Co-op",
+"Shared/Split Screen Co-op",
+"Shared/Split Screen",
+"Cross-Platform Multiplayer",
+"Steam Achievements",
+"Full controller support",
+"Gamepad Recommended",
+"DualShock Controller Support",
+"DualShock Controller Support",
+"DualSense Controller Support",
+"DualSense Controller Support",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+},
+"3038250": {
+"name": "Savanna Sam",
+"developers": [
+"Max Did It"
+],
+"publishers": [
+"Max Did It"
+],
+"website": "https://savannasam.com/",
+"support_info": {
+"url": "",
+"email": "info@max-did-it.com"
+},
+"release_date": {
+"coming_soon": false,
+"date": "May 1, 2025"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 399,
+"final": 399,
+"discount_percent": 0,
+"initial_formatted": "",
+"final_formatted": "$3.99"
+},
+"is_free": false,
+"short_description": "Savanna Sam is a 3D action game where you take over the controls of Sam\u2019s trusty biplane and help him on his dangerous journey. Make sure Sam reaches his destination and can make his delivery!",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Partial Controller Support",
+"Family Sharing"
+],
+"ok": true
+},
+"5464230": {
+"name": "Doomsday: M.A.D.",
+"developers": [
+"Doomsday Studio"
+],
+"publishers": [
+"Doomsday Studio"
+],
+"website": "https://doomsdaystudio.app",
+"support_info": {
+"url": "https://doomsdaystudio.app",
+"email": "contact@andygarcia.pro"
+},
+"release_date": {
+"coming_soon": true,
+"date": "Q4 2026"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "Nuclear strategy on a living planet. Nations are born, build their towns, economies and railways, trade, rebel and go to war, century after century, all the way to nuclear fire. Watch the world live, or take control of one nation.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Family Sharing"
+],
+"ok": true
+},
+"5292670": {
+"name": "Bitiverse",
+"developers": [
+"Fortisq Studio"
+],
+"publishers": [
+"Fortisq Studio"
+],
+"website": null,
+"support_info": {
+"url": "https://bitiverse.online/",
+"email": ""
+},
+"release_date": {
+"coming_soon": true,
+"date": "To be announced"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "A persistent world that keeps its own records. Mine, craft, fight and fish then read about it in a newspaper other players wrote. Three civic houses, guilds with real councils, and a front page that closes forever when the issue does.",
+"recommendations": null,
+"categories": [
+"Partial Controller Support",
+"Family Sharing"
+],
+"ok": true
+},
+"5043260": {
+"name": "PartyScape Chronicles",
+"developers": [
+"Xonzer!"
+],
+"publishers": [
+"PartyScape Development Inc."
+],
+"website": "https://partyscape.club",
+"support_info": {
+"url": "",
+"email": "support@partyscape.club"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Sep 1, 2026"
+},
+"price_overview": null,
+"is_free": true,
+"short_description": "Free idle Multiplayer RPG. Train 20 skills, fight bosses, trade in a living player world.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Multi-player",
+"Co-op",
+"Online Co-op",
+"Cross-Platform Multiplayer",
+"Steam Achievements",
+"In-App Purchases",
+"Color Alternatives",
+"Custom Volume Controls",
+"#category_playable_at_your_own_pace",
+"Playable without Timed Input",
+"Stereo Sound",
+"Family Sharing"
+],
+"ok": true
+},
+"5253460": {
+"name": "SALVOR ADRIFT",
+"developers": [
+"Undock"
+],
+"publishers": [
+"Undock"
+],
+"website": "https://salvoradrift.neocities.org",
+"support_info": {
+"url": "https://salvoradrift.neocities.org",
+"email": "salvoradrift@gmail.com"
+},
+"release_date": {
+"coming_soon": true,
+"date": "Coming soon"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "A lo fi space salvage game. Strip dead warships for parts, fuel and gear. Fit your ship, manage your heat, and fight the machines that still hunt out here. Two hundred star systems, thousands of rolled drops, stations to build up. Made by one person. Trust nothing. Stay adrift.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Partial Controller Support",
+"Family Sharing"
+],
+"ok": true
+},
+"4416970": {
+"name": "Zombies Per Minute",
+"developers": [
+"Enzed Studio"
+],
+"publishers": [
+"Enzed Studio"
+],
+"website": "https://www.ZombiesPerMinute.com",
+"support_info": {
+"url": "https://enzed-studio.com/",
+"email": "nicolas@enzed-studio.com"
+},
+"release_date": {
+"coming_soon": true,
+"date": "2027"
+},
+"price_overview": null,
+"is_free": false,
+"short_description": "Zombies Per Minute is a factory-building roguelite where everything you build is measured by one thing: how many zombies you can kill per minute. Yes, really. Use your imagination to grow your factory, make decisive choices each wave and progress from one outpost to the other. Until Earth is saved.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Steam Cloud",
+"Steam Leaderboards",
+"Family Sharing"
+],
+"ok": true
+},
+"2824230": {
+"name": "last seen online",
+"developers": [
+"Sochin Studio"
+],
+"publishers": [
+"Sochin Studio"
+],
+"website": "https://lastseenonline.com/",
+"support_info": {
+"url": "https://sochinstudio.com/",
+"email": ""
+},
+"release_date": {
+"coming_soon": false,
+"date": "Mar 14, 2024"
+},
+"price_overview": null,
+"is_free": true,
+"short_description": "Look through someone else\u2019s computer. Inspired by early \u201cescape room\u201d flash games.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+},
+"4688240": {
+"name": "SHULERO \u2013 Dice Roguelike",
+"developers": [
+"Airem"
+],
+"publishers": [
+"Airem"
+],
+"website": "http://airem.pl",
+"support_info": {
+"url": "http://airem.pl",
+"email": "info@airem.pl"
+},
+"release_date": {
+"coming_soon": false,
+"date": "May 29, 2026"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 499,
+"final": 224,
+"discount_percent": 55,
+"initial_formatted": "$4.99",
+"final_formatted": "$2.24"
+},
+"is_free": false,
+"short_description": "Yacht-inspired roguelike (Poker Dice). Roll dice. Build combos. Beat bosses. Cheat to win.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Adjustable Text Size",
+"Color Alternatives",
+"Custom Volume Controls",
+"Keyboard Only Option",
+"Mouse Only Option",
+"#category_playable_at_your_own_pace",
+"Playable without Timed Input",
+"Save Anytime",
+"Stereo Sound",
+"Touch Only Option",
+"Steam Cloud",
+"Steam Leaderboards",
+"Remote Play on Phone",
+"Remote Play on Tablet",
+"Remote Play Together",
+"Family Sharing"
+],
+"ok": true
+},
+"3788170": {
+"name": "Narrow One",
+"developers": [
+"Pelican Party Studios"
+],
+"publishers": [
+"Pelican Party Studios"
+],
+"website": "https://narrow.one",
+"support_info": {
+"url": "http://pelicanparty.games/support",
+"email": ""
+},
+"release_date": {
+"coming_soon": false,
+"date": "Aug 26, 2025"
+},
+"price_overview": null,
+"is_free": true,
+"short_description": "Join fast-paced archery battles where you and your teammates fight to capture the enemy flag medieval style. Master your bow, and outplay the enemy in tactical 5v5 matches",
+"recommendations": null,
+"categories": [
+"Multi-player",
+"PvP",
+"Online PvP",
+"Co-op",
+"Online Co-op",
+"Cross-Platform Multiplayer",
+"Steam Achievements",
+"Family Sharing"
+],
+"ok": true
+},
+"1049660": {
+"name": "stein.world",
+"developers": [
+"pg5-Studio"
+],
+"publishers": [
+"pg5-Studio"
+],
+"website": "https://stein.world/",
+"support_info": {
+"url": "https://www.reddit.com/r/stein_world/",
+"email": "contact@stein.world"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Apr 23, 2019"
+},
+"price_overview": null,
+"is_free": true,
+"short_description": "Stein.world is a real-time MMORPG in a beautiful fantasy world with many common game features from the MMO genre: A big and persistent fantasy world with a lot of variety filled with hundreds of quests and items, dungeons, professions and much more to come.",
+"recommendations": null,
+"categories": [
+"Multi-player",
+"MMO",
+"PvP",
+"Online PvP",
+"Co-op",
+"Online Co-op",
+"Cross-Platform Multiplayer",
+"Family Sharing"
+],
+"ok": true
+},
+"3997920": {
+"name": "Hollow Ground",
+"developers": [
+"Ledendal Games"
+],
+"publishers": [
+"Ledendal Games"
+],
+"website": "https://www.ledendalgames.se/",
+"support_info": {
+"url": "https://www.ledendalgames.se",
+"email": "support@ledendalgames.se"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Jul 2, 2026"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 1199,
+"final": 1199,
+"discount_percent": 0,
+"initial_formatted": "",
+"final_formatted": "$11.99"
+},
+"is_free": false,
+"short_description": "Top-down shooter inspired by 90s arcade games. You and up to three friends play as four mercenaries as they descend into the Epsilon 9 bunker. Navigate 70+ handcrafted labyrinthine levels, purchase upgrades, and destroy chaos manifest: The Machine.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Multi-player",
+"Co-op",
+"Online Co-op",
+"Shared/Split Screen Co-op",
+"Shared/Split Screen",
+"Steam Achievements",
+"Steam Workshop",
+"Camera Comfort",
+"Custom Volume Controls",
+"Adjustable Difficulty",
+"Keyboard Only Option",
+"Playable without Timed Input",
+"Stereo Sound",
+"Partial Controller Support",
+"Steam Cloud",
+"Includes level editor",
+"Family Sharing"
+],
+"ok": true
+},
+"3431300": {
+"name": "Slow Roads",
+"developers": [
+"Topograph Interactive"
+],
+"publishers": [
+"Topograph Interactive"
+],
+"website": "https://slowroads.io",
+"support_info": {
+"url": "",
+"email": "support@slowroads.io"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Sep 23, 2026"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 799,
+"final": 799,
+"discount_percent": 0,
+"initial_formatted": "",
+"final_formatted": "$7.99"
+},
+"is_free": false,
+"short_description": "Zone out on an endless drive through infinite scenic landscapes. Generate a unique world, set the scene to suit your mood, and just drive...",
+"recommendations": {
+"total": 970
+},
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Full controller support",
+"Camera Comfort",
+"Custom Volume Controls",
+"Adjustable Difficulty",
+"Keyboard Only Option",
+"Mouse Only Option",
+"#category_playable_at_your_own_pace",
+"Playable without Timed Input",
+"DualShock Controller Support",
+"DualShock Controller Support",
+"DualSense Controller Support",
+"DualSense Controller Support",
+"Save Anytime",
+"Stereo Sound",
+"Steam Cloud",
+"Stats",
+"Family Sharing"
+],
+"ok": true
+},
+"4864000": {
+"name": "Terraforming Titans",
+"developers": [
+"terraforming.titans"
+],
+"publishers": [
+"terraforming.titans"
+],
+"website": null,
+"support_info": {
+"url": "",
+"email": "terraforming.titans@gmail.com"
+},
+"release_date": {
+"coming_soon": false,
+"date": "Jul 17, 2026"
+},
+"price_overview": {
+"currency": "USD",
+"initial": 500,
+"final": 500,
+"discount_percent": 0,
+"initial_formatted": "",
+"final_formatted": "$5.00"
+},
+"is_free": false,
+"short_description": "Terraforming Titans is an incremental colony builder with a moderate focus on realism and scale. Terraform increasingly challenging and large worlds and guide humanity to complete control over the Milky Way.",
+"recommendations": null,
+"categories": [
+"Single-player",
+"Steam Achievements",
+"Steam Workshop",
+"Color Alternatives",
+"Adjustable Difficulty",
+"Playable without Timed Input",
+"Save Anytime",
+"Steam Cloud",
+"Family Sharing"
+],
+"ok": true
+}
+}

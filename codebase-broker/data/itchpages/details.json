@@ -1,0 +1,969 @@
+{
+ "https://kodub.itch.io/polytrack": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows , macOS , Linux , Android",
+   "Rating": "Rated 4.7 out of 5 stars (691 total ratings )",
+   "Author": "Kodub",
+   "Genre": "Racing",
+   "Made with": "Blender , GIMP , Inkscape , Three.js , Bullet (Physics Engine) , Audacity",
+   "Tags": "3D , Arcade , Difficult , Driving , High Score , Level Editor , Low-poly , Multiplayer , Speedrun",
+   "Average session": "A few seconds",
+   "Languages": "Arabic , German , English , Spanish; Castilian , French , Italian , Japanese , Korean , Polish , Portuguese (Portugal) , Portuguese (Brazil) , Russian , Turkish , Ukrainian , Chinese (Simplified) , Chinese (Traditional)",
+   "Inputs": "Keyboard , Touchscreen , Smartphone",
+   "Accessibility": "Configurable controls",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Links": "Discord , Reddit"
+  },
+  "links": [
+   "https://bsky.app/profile/kodub.com",
+   "https://opengameart.org/content/sci-fi-theme-1",
+   "https://play.google.com/store/apps/details?id=com.kodub.polytrack",
+   "https://www.kodub.com/discord/polytrack",
+   "https://www.reddit.com/r/PolyTrack",
+   "https://www.reddit.com/r/PolyTrack/"
+  ],
+  "emails": [],
+  "desc": " PolyTrack is a low-poly racing game with loops, jumps and high speeds, where every millisecond counts. The game is heavily inspired by TrackMania, where you race against the clock to improve your time on different tracks. The game includes a level editor where you can create tracks, which you can then export and share with others. Game instructions: WASD or the arrow keys to drive. R or enter to restart the track. Editor instructions: Left mouse button to build. Middle mouse button to rotate th"
+ },
+ "https://pelicanparty.itch.io/narrow-one": {
+  "info": {
+   "Updated": "1 day ago",
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Publisher": "Pelican Party Studios",
+   "Rating": "Rated 4.6 out of 5 stars (848 total ratings )",
+   "Author": "Pelican Party",
+   "Genre": "Shooter , Action",
+   "Made with": "Blender , Adobe Photoshop , Three.js , Adobe Illustrator",
+   "Tags": "3D , Archery , Fantasy , First-Person , Medieval , Multiplayer , Team-Based , Versus",
+   "Average session": "About a half-hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Gamepad (any) , Touchscreen",
+   "Accessibility": "High-contrast , Textless",
+   "Multiplayer": "Server-based networked multiplayer"
+  },
+  "links": [
+   "http://www.pelicanparty.co/",
+   "https://discord.gg/PhwWYkzfEw",
+   "https://play.google.com/store/apps/details?id=co.pelicanparty.narrowone",
+   "https://www.narrow.one/"
+  ],
+  "emails": [],
+  "desc": " Battle players around the world with your bow and arrow. Defend your castle against invading foes. Steal the flag with the help of your teammates and win the battle. Narrow One is a multiplayer medieval-style bow and arrow shooter, 5v5. Explore the different maps and find the hidden shortcuts. 6 different bows. with customisable skins 50+ different melee weapons 17 unique maps Over 200 different unlockable clothing items Seasonal content Touchscreen & gamepad support Team up with your friends, "
+ },
+ "https://pelicanparty.itch.io/raccoon-retail": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Release date": "Apr 27, 2023",
+   "Rating": "Rated 4.8 out of 5 stars (27 total ratings )",
+   "Author": "Pelican Party",
+   "Genre": "Simulation",
+   "Made with": "Three.js",
+   "Tags": "3D , Casual , clean , Driving , Funny , raccoon , shop , supermarket , upgrades"
+  },
+  "links": [
+   "http://www.pelicanparty.co/",
+   "https://discord.gg/PhwWYkzfEw",
+   "https://fonts.googleapis.com/css?family=Fredoka%3A400%2C400italic%2C700%2C700italic",
+   "https://raccoonretail.com",
+   "https://www.patreon.com/pelicanpartystudios"
+  ],
+  "emails": [],
+  "desc": " Clumsy customers are making a big mess and it's your job to keep the supermarket clean. Drive around, collect trash and empty it in the dumpster. The faster you clean to more money you earn. Upgrade your retail store to increase your revenue. WSAD or Arrow Keys to Move We'd be thrilled if you could support us on Patreon ! By doing so, you'll be the first to know all the latest information about our games project For best experience play here: raccoonretail.com/ Feel free to join our Discord to "
+ },
+ "https://wristwork.itch.io/faceminer": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "Windows , macOS , Linux",
+   "Publisher": "Wristwork Ltd",
+   "Rating": "Rated 4.8 out of 5 stars (17 total ratings )",
+   "Author": "Wristwork",
+   "Genre": "Simulation , Action , Strategy",
+   "Made with": "Three.js",
+   "Tags": "artgame , Clicker , Dystopian , Experimental , Management , Retro , Singleplayer , Surreal",
+   "Average session": "A few hours",
+   "Languages": "English",
+   "Inputs": "Mouse",
+   "Links": "Steam , Steam",
+   "AI Disclosure": "AI Assisted , Graphics , Text"
+  },
+  "links": [
+   "https://discord.com/invite/kVXvC9RMMC",
+   "https://fonts.googleapis.com/css?family=Anonymous%20Pro%3A400%2C400italic%2C700%2C700italic",
+   "https://madwreck.bandcamp.com/album/faceminer-original-soundtrack",
+   "https://store.steampowered.com/app/2276980/FACEMINER/"
+  ],
+  "emails": [],
+  "desc": " FULL GAME IS OUT NOW! Join us on Discord . Welcome to FACEMINER , where Every Face Has Value. Your job? Harvest biometric data, upgrade infrastructure, and expand your data processing empire as hard as Planet Earth can take it. Set against a backdrop of pre-Y2K techno-optimism, FACEMINER is a narrative-driven incremental management 'click-em-up' that tasks the player with building a planetary-scale biometric processing empire from scratch. WORKLOAD Manage data-streams, software upgrades, and ha"
+ },
+ "https://wristwork.itch.io/pigeon-a-love-story": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows , macOS , Linux",
+   "Rating": "Rated 4.6 out of 5 stars (10 total ratings )",
+   "Author": "Wristwork",
+   "Genre": "Simulation , Adventure",
+   "Made with": "Three.js",
+   "Tags": "3D , Animals , artgame , Cozy , Idle , No AI , Relaxing , Romance , Singleplayer",
+   "Average session": "About a half-hour",
+   "Languages": "English",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Links": "Steam",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://store.steampowered.com/app/3876710/Pigeon_A_Love_Story/"
+  ],
+  "emails": [],
+  "desc": " FULL GAME OUT NOW! Pigeon: A Love Story is a game where you soar across to-scale replicas of iconic cities in search of your pigeon-shaped soulmate. It's a slow game for fast times. LIFE-SIZE MAPS Explore full-scale maps of London, New York, Tokyo and other international pigeon hubs: every building, every street, and every pigeon (we did the math). PIGEON-SIM\u2122 TECH Hundreds of thousands of autonomous pigeon NPCs flying and interacting in a real-time, city-wide simulation. One of them is waiting"
+ },
+ "https://explodi.itch.io/microlandia": {
+  "info": {
+   "Updated": "7 hours ago",
+   "Status": "Released",
+   "Platforms": "Windows , macOS , Linux",
+   "Rating": "Rated 4.5 out of 5 stars (11 total ratings )",
+   "Authors": "explodi , importerexporter",
+   "Genre": "Simulation",
+   "Made with": "Three.js",
+   "Tags": "City Builder , Endless , Life Simulation , Management , Singleplayer , Voxel",
+   "Average session": "Days or more",
+   "Languages": "German , English , Spanish; Castilian , Spanish; Latin America , French , Polish , Turkish",
+   "Inputs": "Keyboard , Mouse , Xbox controller",
+   "Links": "Steam , Discord , Blog , Bluesky"
+  },
+  "links": [
+   "https://bsky.app/profile/infosuperhighway.bsky.social",
+   "https://discord.gg/g7Ena8tdFN",
+   "https://explodi.tubatuba.net",
+   "https://fonts.googleapis.com/css?family=Anonymous%20Pro%3A400%2C400italic%2C700%2C700italic",
+   "https://microlandia.city/simulation_parameters",
+   "https://store.steampowered.com/app/4094120/Microlandia/"
+  ],
+  "emails": [],
+  "desc": " Microlandia is a city builder with a classic look & feel, and a brutally detailed simulation under the hood. Every single citizen, family and company is individually simulated \ud83d\udc80 Citizens get sick and if there's no hospital capacity, they die waiting for healthcare. \ud83d\udcbc If they show up late for work they could get fired. \ud83e\udd2c Some of them will strongly oppose controversial construction projects in their neighborhood, leading to public backlash and moving away. \ud83d\udcc9 When companies don't make ends meet, t"
+ },
+ "https://tripshred.itch.io/crazeoh": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "Windows",
+   "Publisher": "TripShred",
+   "Rating": "Rated 5.0 out of 5 stars (3 total ratings )",
+   "Author": "TripShred",
+   "Genre": "Puzzle",
+   "Made with": "Three.js",
+   "Tags": "anomaly , Atmospheric , caseoh , Dark , Horror , PSX (PlayStation)",
+   "Average session": "About an hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Xbox controller , Playstation controller , Joy-Con",
+   "Links": "Homepage , Patreon , Discord , Steam , Bluesky , Instagram , YouTube",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://bsky.app/profile/tripshred.bsky.social",
+   "https://discord.gg/suhggkeZef",
+   "https://fonts.googleapis.com/css?family=Atkinson%20Hyperlegible%3A400%2C400italic%2C700%2C700italic",
+   "https://patreon.com/TripShred",
+   "https://store.steampowered.com/curator/45603971-TripShred/",
+   "https://tripshred.com/",
+   "https://www.instagram.com/tripshred",
+   "https://www.youtube.com/@TripShred"
+  ],
+  "emails": [],
+  "desc": " CrazeOh is a short, surreal anomaly horror game that plunges you into the corrupted remains of a viral streamer's world. Spot and photograph over 30 anomalies - from subtle distortions to insanity. Navigate through a twisted recreation of his streaming setup and personal space. Uncover hidden layers and discover bizarre new areas as the game spirals deeper into the absurd. Will you uncover the truth behind CrazeOh's disappearance? Or will you become part of the stream? "
+ },
+ "https://otrhvn.itch.io/iron-abyss": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5 , Windows , macOS , Linux",
+   "Release date": "Jun 04, 2026",
+   "Rating": "Rated 5.0 out of 5 stars (3 total ratings )",
+   "Author": "OTR HVN",
+   "Genre": "Role Playing",
+   "Made with": "Three.js",
+   "Tags": "Dungeon Crawler , Horror , Mechs , Psychological Horror , Sci-fi , Turn-Based Combat",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse",
+   "Links": "Game Studio",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "http://otrhvn.com",
+   "https://fonts.googleapis.com/css?family=Anonymous%20Pro%3A400%2C400italic%2C700%2C700italic",
+   "https://otrhvn.studio"
+  ],
+  "emails": [],
+  "desc": " PLAY THE FREE DEMO AND BUY THE FULL DESCENT ON WINDOWS, MAC OS, AND LINUX! The world is ended. You have your orders, Commander. Descend into the I RON ABYSS . A SCI-FI HORROR MECHA DUNGEON CRAWLER You are the commander of the IRON ARK. Lead your three crew into the depths of what once was. The world has changed. But you have your orders. FULL GAME IS OUT NOW. Play the demo above and download for Windows, Mac, or Linux below for the full game. > COMMAND THE IRON ARK "
+ },
+ "https://pg5-studio.itch.io/steinworld": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5 , Windows",
+   "Rating": "Rated 4.2 out of 5 stars (160 total ratings )",
+   "Author": "pg5-Studio",
+   "Genre": "Role Playing , Action , Adventure",
+   "Made with": "Tiled , Three.js",
+   "Tags": "16-bit , 2D , Fantasy , MMORPG , Multiplayer , Open World , Pixel Art",
+   "Average session": "Days or more",
+   "Languages": "English , Spanish; Castilian , French , Polish , Portuguese (Brazil) , Chinese",
+   "Inputs": "Keyboard , Mouse , Touchscreen",
+   "Accessibility": "Configurable controls , Interactive tutorial",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Links": "Homepage"
+  },
+  "links": [
+   "https://asia.stein.world/game",
+   "https://fonts.googleapis.com/css?family=Passion%20One%3A400%2C400italic%2C700%2C700italic",
+   "https://stein.world"
+  ],
+  "emails": [],
+  "desc": " STEIN.WORLD About: Players are able to embark on numerous adventures and can fight a variety of different enemies and monsters. They are able to learn various professions like mining, herbalism or tailoring in order to craft epic pieces of equipment and consumables. They can trade with each other or unite in a group of up to five people to face the numerous threats of the dungeons & wave dungeons together. Stein.world offers a wide range of different types of items, so players can customize the"
+ },
+ "https://benjaminadams.itch.io/path-defenders": {
+  "info": {
+   "Updated": "10 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5 , Windows , Linux , Android",
+   "Release date": "May 29, 2026",
+   "Rating": "Rated 3.9 out of 5 stars (7 total ratings )",
+   "Author": "benjaminadams",
+   "Genre": "Role Playing",
+   "Made with": "Three.js",
+   "Tags": "3D , Action RPG , castle-defense , Difficult , First-Person , Real time strategy , Roguelike , Strategy RPG , Survivor-like , Tower Defense",
+   "Average session": "About a half-hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Touchscreen",
+   "Accessibility": "Configurable controls , Interactive tutorial",
+   "Links": "Steam , Homepage , Steam , YouTube",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "http://pathdefenders.app",
+   "https://play.google.com/store/apps/details?id=com.pathdefenders.game",
+   "https://store.steampowered.com/app/4819620/Path_Defenders/",
+   "https://www.youtube.com/@PathDefenders"
+  ],
+  "emails": [],
+  "desc": " Ever wanted to run the whole raid yourself? Path Defenders is a single-player MMORPG in tower defense form. You're the raid leader and the front line: recruit a party of heroes, place them for the fight, then jump into real-time 3D combat and bring down waves of enemies and bosses. Steam Deck compatibility: Fully compatible with Steam Deck, with full controller support. <source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4819620/extras/1471ab39ca1dac8a1ca811755978255"
+ },
+ "https://saiss.itch.io/komachi": {
+  "info": {
+   "Updated": "12 days ago",
+   "Published": "21 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5 , Windows , Linux",
+   "Rating": "Rated 1.0 out of 5 stars (1 total ratings )",
+   "Author": "Saiss",
+   "Genre": "Simulation",
+   "Made with": "Three.js",
+   "Tags": "3D , City Builder , Cozy , Isometric , japan , Low-poly , Relaxing , Sandbox , Top-Down",
+   "Average session": "About a half-hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Touchscreen",
+   "AI Disclosure": "AI Assisted , Graphics , Sounds"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Nunito%3A400%2C400italic%2C700%2C700italic"
+  ],
+  "emails": [],
+  "desc": " Komachi \u2014 A small town of your own Draw a street. Watch a neighbourhood take shape. Stay until the lights come on. Komachi (\u5c0f\u753a, \u201csmall town\u201d) is a cosy town builder set on a small island. You lay out the streets and choose what grows beside them. Builders arrive by train, families move into their homes, and the first shops open their doors. As you build, everyday life finds its way around your town. Residents head to work, run errands and stop for a chat at a bench. Commuters catch the morning "
+ },
+ "https://inhumanity-arts.itch.io/dystopia-app": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows , macOS , Linux , Android",
+   "Author": "Inhumanity Studios",
+   "Genre": "Fighting , Role Playing",
+   "Made with": "Blender , Aseprite , Godot , Three.js , Box2D , Krita",
+   "Tags": "2D , 3D , 3D Platformer , Action RPG , Comics , Multiplayer , Noir , Open World , Top-Down",
+   "Average session": "About a half-hour",
+   "Languages": "Arabic , English , French , Japanese , Portuguese (Brazil) , Russian , Yoruba , Chinese (Simplified)",
+   "Inputs": "Keyboard , Gamepad (any) , Touchscreen , Smartphone",
+   "Accessibility": "Color-blind friendly , High-contrast",
+   "Multiplayer": "Local multiplayer , Server-based networked multiplayer",
+   "Player count": "1 - 5",
+   "Links": "Steam , Support , Kickstarter , Steam , YouTube , Twitter/X , Comics , Shop",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "http://samuel@dystopia-app.site",
+   "https://dystopia-app.site",
+   "https://dystopia-app.site/shop",
+   "https://store.steampowered.com/app/3888070/Dystopia_RPG",
+   "https://store.steampowered.com/app/3888070/Dystopia_RPG/",
+   "https://www.kickstarter.com/projects/inhumanitystudios/dystopia-rpg",
+   "https://www.twitter.com/DystopiaO",
+   "https://www.youtube.com/@inhumanitystudios"
+  ],
+  "emails": [
+   "inhumanityarts@gmail.com",
+   "samuel@dystopia-app.site"
+  ],
+  "desc": " Dystopia RPG is an 8 bit style fantasy RPG where You lost a duel to a government's shaman and ended up trapped and sealed in a Cell Phone application. Explore the Dungeons, Combat monsters, Collect and Trade Items, Glitch the game & break free. An 8-bit style Web and Mobile Action, Adventure Role Playing Game inspired by Zelda 1, Monster Boy in Monster world & Legend Of Zelda: the Windwaker. Your goals? break out of the application by glitching the game Explore the world map and dungeons Collec"
+ },
+ "https://shoogar.itch.io/velocity-midnight-run": {
+  "info": {
+   "Updated": "11 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (4 total ratings )",
+   "Author": "Shoogar",
+   "Genre": "Racing",
+   "Made with": "Three.js",
+   "Tags": "3D , Arcade , Atmospheric , Driving , Indie , Multiplayer , Roguelike , Roguelite , Singleplayer",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Gamepad (any) , Touchscreen , Racing wheel",
+   "Accessibility": "Configurable controls",
+   "Multiplayer": "Local multiplayer , Ad-hoc networked multiplayer",
+   "Player count": "1 - 4",
+   "Links": "Steam , Steam , Discord , TikTok , Instagram",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Sounds , Text"
+  },
+  "links": [
+   "https://discord.com/invite/PYUYpVtqnP",
+   "https://discord.gg/PYUYpVtqnP",
+   "https://store.steampowered.com/app/5023550",
+   "https://store.steampowered.com/app/5023550/",
+   "https://store.steampowered.com/app/5023550/Velocity__Midnight_Run/",
+   "https://www.instagram.com/velocitymrun/",
+   "https://www.tiktok.com/@velocitymidnightrun2026"
+  ],
+  "emails": [],
+  "desc": " Hold speed through an endless night city. Slip past traffic, shake the cops, and cash every near miss into style. An arcade night-driving racer built for one more run. This is the demo. You start with your first car and can drive City Ring and Uptown. Paid cars and the districts past Uptown are in the full game. Wishlist Velocity - Midnight Run on Steam | Join our Discord What you can do in the demo Run the endless streets of Velocity. Race through a field of 100 cars into escalating traffic, c"
+ },
+ "https://mxapps.itch.io/midnight-outrun": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Release date": "Mar 27, 2026",
+   "Rating": "Rated 4.0 out of 5 stars (1 total ratings )",
+   "Author": "MxApps",
+   "Genre": "Action , Racing",
+   "Made with": "Three.js",
+   "Tags": "3D , Arcade , Driving , Endless Runner , First-Person , Low-poly , Singleplayer , Third Person",
+   "Average session": "A few hours",
+   "Languages": "English",
+   "Inputs": "Keyboard , Touchscreen",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=JetBrains%20Mono%3A400%2C400italic%2C700%2C700italic",
+   "https://play.google.com/store/apps/details?id=dev.mxapps.midnightoutrun&amp;pcampaignid=itch.io"
+  ],
+  "emails": [],
+  "desc": " Midnight Outrun The storm is coming. Drive. Drive an 80s rally legend through dark forests and hills. A storm is right behind you. If you crash or slow down, the night catches you. Upgrade your car, take the corners fast, and don't look back. Stay ahead of the clouds to survive. Controls WASD / Arrows : Drive & Steer SPACEBAR : Handbrake SHIFT : Use NOS C : Change Camera V : Look back ESC / P : Pause Menu "
+ },
+ "https://terraformingtitans.itch.io/terraforming-titans": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 4.5 out of 5 stars (51 total ratings )",
+   "Author": "terraforming.titans",
+   "Genre": "Simulation",
+   "Made with": "Phaser , Three.js",
+   "Tags": "City Builder , Incremental , Management , Sci-fi , Space , terraforming",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Touchscreen , Smartphone",
+   "Accessibility": "Subtitles",
+   "Links": "Discord",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Text"
+  },
+  "links": [
+   "https://discord.gg/tXFxzT844n"
+  ],
+  "emails": [],
+  "desc": " This is the classic version of Terraforming Titans. Development has moved over to Steam. This version is no longer receiving any major updates. "
+ },
+ "https://martygamestudios.itch.io/golden-goose-defenders": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "Windows",
+   "Release date": "85 days ago",
+   "Author": "Nordic Wolf Studios",
+   "Made with": "Phaser , Three.js",
+   "AI Disclosure": "AI Assisted , Code , Sounds"
+  },
+  "links": [],
+  "emails": [],
+  "desc": " Hold the marsh. Guard the gold. Golden Goose: Defenders is a cinematic fantasy lane-defense game. Pick a guardian, fortify the boardwalks, and survive twelve escalating waves \u2014 including thunderous boss sieges \u2014 across haunted biomes. What You Do Enemies march lane by lane toward your nest. Place turrets, spend Supplies, and jump into the fight yourself with hero skills \u2014 sword sweep, sword throw, and rain of fire. Lose the nest, lose the gold. Lane defense \u2014 five boardwalks / corridors under p"
+ },
+ "https://maxdidit.itch.io/savanna-sam": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "Max Did It",
+   "Genre": "Action",
+   "Made with": "Blender , Inkscape , Three.js , Audacity , LMMS , Krita",
+   "Tags": "3D , Cartoon , Flying , Singleplayer",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Gamepad (any) , Touchscreen",
+   "Links": "Homepage , Steam , Patreon",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Fredoka%3A400%2C400italic%2C700%2C700italic",
+   "https://patreon.com/MaxDidIt",
+   "https://play.google.com/store/apps/details?id=com.savannasam.full",
+   "https://savannasam.com/",
+   "https://store.steampowered.com/app/3038250/Savanna_Sam/"
+  ],
+  "emails": [],
+  "desc": " Controls This game supports: Keyboard controls Gamepad controls Touch controls Where to get the Full Version If you enjoyed the demo, then there are several places where you can get the (early access) full version: Steam The Steam version of the game can be played on Windows PCs and the Steam Deck. Patreon Patreon supporters get access to the browser version of the full game. Google Play Store There is also an Android version of Savanna Sam available! You can also find more information on the g"
+ },
+ "https://stark52.itch.io/mad": {
+  "info": {
+   "Updated": "22 minutes ago",
+   "Published": "19 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 4.3 out of 5 stars (6 total ratings )",
+   "Author": "Stark Edition",
+   "Genre": "Strategy , Simulation",
+   "Made with": "Three.js",
+   "Tags": "Destruction , Economy , Explosions , god-game , nuclear , Procedural Generation , Real time strategy , Sandbox , War",
+   "Average session": "About a half-hour",
+   "Languages": "English , French",
+   "Inputs": "Keyboard , Mouse , Touchscreen , Smartphone",
+   "Links": "Homepage , YouTube , TikTok , Twitch",
+   "AI Disclosure": "AI Assisted , Code , Text"
+  },
+  "links": [
+   "https://andygarcia.pro",
+   "https://apps.apple.com/app/id6818293316",
+   "https://discord.gg/wcJ8QUK8dt",
+   "https://doomsdaystudio.app/play/",
+   "https://fonts.googleapis.com/css?family=Black%20Ops%20One%3A400%2C400italic%2C700%2C700italic",
+   "https://store.steampowered.com/app/5464230/",
+   "https://www.patreon.com/cw/u79473905",
+   "https://www.tiktok.com/@thestarkedition",
+   "https://www.twitch.tv/mrstark747",
+   "https://www.youtube.com/@thestarkedition"
+  ],
+  "emails": [],
+  "desc": " Now on Steam: wishlist Doomsday: M.A.D. on Steam, release in Q4 2026 on Windows and Mac: store.steampowered.com/app/5464230 . Ajoutez-le \u00e0 votre liste de souhaits sur Steam. Doomsday: M.A.D. (Mutually Assured Destruction) is a nuclear strategy game on a living planet, right in your browser. Nations are born on untouched land and write their own history: their towns grow, their economy and railways take shape, their rulers come and go, they trade, fall out and go to war, sometimes all the way to"
+ },
+ "https://stark52.itch.io/nomad": {
+  "info": {
+   "Updated": "10 days ago",
+   "Published": "19 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows , macOS",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "Stark Edition",
+   "Genre": "Simulation , Survival",
+   "Made with": "Unity , Blender , Three.js",
+   "Tags": "3D , Atmospheric , base-building , City Builder , colony-sim , Post-apocalyptic , Procedural Generation , Singleplayer , Steampunk",
+   "Average session": "About a half-hour",
+   "Languages": "English , French",
+   "Inputs": "Keyboard , Mouse , Touchscreen",
+   "Links": "Homepage , YouTube , TikTok , Twitch",
+   "AI Disclosure": "AI Assisted , Code , Text"
+  },
+  "links": [
+   "https://andygarcia.pro",
+   "https://discord.gg/d2dj4q2dtp",
+   "https://fonts.googleapis.com/css?family=Barlow%20Condensed%3A400%2C400italic%2C700%2C700italic",
+   "https://fonts.googleapis.com/css?family=Barlow%3A400%2C400italic%2C700%2C700italic",
+   "https://freesound.org",
+   "https://polyhaven.com",
+   "https://quaternius.com",
+   "https://www.tiktok.com/@thestarkedition",
+   "https://www.twitch.tv/mrstark747",
+   "https://www.youtube.com/@thestarkedition"
+  ],
+  "emails": [],
+  "desc": " A town on six legs flees the Swarm. Your colony lives on the deck of a great walking machine, part iron, part brass, part timber. Build on its back, send people down to search the ruins, keep the boiler fed, and keep walking east toward the pass, one step ahead of the dark wall that eats the land behind you. Version fran\u00e7aise plus bas. What you can play here The game in your browser is the prototype , the first playable sketch of the idea. A short run: set the walker's route, grow its deck, kee"
+ },
+ "https://fortisq.itch.io/bitiverse": {
+  "info": {
+   "Updated": "6 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows , Linux , Android",
+   "Release date": "97 days ago",
+   "Rating": "Rated 4.5 out of 5 stars (10 total ratings )",
+   "Author": "Fortisq Studio",
+   "Genre": "Role Playing",
+   "Made with": "Three.js",
+   "Tags": "1-bit , 2D , Indie , MMORPG , Multiplayer , Open World , Pixel Art , Retro , Top-Down",
+   "Average session": "Days or more",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Xbox controller , Joystick , Touchscreen , Smartphone",
+   "Accessibility": "Subtitles",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Links": "Homepage",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://bitiverse.vercel.app/",
+   "https://bitiverse.vercel.app/press/",
+   "https://bsky.app/profile/bitiverse.bsky.social",
+   "https://discord.gg/zSxNhUb8Ka",
+   "https://kick.com/bitiverse",
+   "https://mastodon.social/@bitiverse",
+   "https://play.google.com/store/apps/details?id=com.fortisq.bitiverse",
+   "https://store.steampowered.com/app/5292670/Bitiverse/",
+   "https://www.facebook.com/profile.php?id=61593864287304",
+   "https://www.instagram.com/thebitiverse/",
+   "https://www.patreon.com/bitiverse",
+   "https://www.reddit.com/r/Bitiverse/",
+   "https://www.threads.com/@thebitiverse",
+   "https://www.tiktok.com/@thebitiverse",
+   "https://www.tumblr.com/bitiverse"
+  ],
+  "emails": [
+   "bitiverse@mastodon.social"
+  ],
+  "desc": " A tiny persistent browser MMORPG with a suspicious amount of stuff to do. Free to play directly in your browser. No download and no account required to try it. If your adventurer survives long enough to become important, you can create an account later and keep them. Welcome to Bitiverse : a world where the pixels are tiny, everyone is underqualified, and the goblins have formed a thriving upper-management class. Explore one shared world alongside other tiny adventurers. Fight monsters by aggre"
+ },
+ "https://gamebuegar.itch.io/colonyadventure": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "Windows , macOS , Linux , Android",
+   "Release date": "Feb 27, 2026",
+   "Rating": "Rated 5.0 out of 5 stars (5 total ratings )",
+   "Author": "GameBuegar",
+   "Genre": "Simulation , Adventure , Survival",
+   "Made with": "Three.js , Adobe Illustrator",
+   "Tags": "2D , Farming Simulator , Isometric , Life Simulation , Pixel Art , Slice Of Life , Survivor-like",
+   "Average session": "Days or more",
+   "Languages": "Arabic , German , English , Spanish; Castilian , Spanish; Latin America , French , Italian , Polish , Portuguese (Portugal) , Portuguese (Brazil) , Russian , Turkish",
+   "Inputs": "Keyboard , Mouse",
+   "Accessibility": "One button , Textless",
+   "AI Disclosure": "AI Assisted , Code , Graphics"
+  },
+  "links": [],
+  "emails": [],
+  "desc": " ColonyAdventure: A Village Life Mini-Game Welcome to ColonyAdventure , a deeply interactive and charming village simulation game where every decision shapes the future of your settlement! Start with a humble campfire in the wilderness and guide your colonists to build a thriving, self-sustaining village. Will your people flourish and build a peaceful community, or will the harsh elements take over? \ud83c\udf1f Key Features Smart Autonomous Colonists: Your villagers aren't just mindless workers. They have"
+ },
+ "https://seanvella.itch.io/partyscape-chronicles": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Release date": "96 days ago",
+   "Rating": "Rated 4.3 out of 5 stars (11 total ratings )",
+   "Author": "partyscape.dev",
+   "Genre": "Role Playing",
+   "Made with": "Three.js",
+   "Tags": "browser , Crafting , Economy , Fantasy , Idle , Incremental , Loot , MMORPG , Multiplayer , Pixel Art",
+   "Average session": "Days or more",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Touchscreen , Smartphone",
+   "Accessibility": "High-contrast , Interactive tutorial",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Links": "Steam , Discord , Steam , Homepage",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Sounds , Text"
+  },
+  "links": [
+   "https://discord.gg/CcsDp7eDb",
+   "https://discord.gg/raUuBvwEKY",
+   "https://fonts.googleapis.com/css?family=Nunito%3A400%2C400italic%2C700%2C700italic",
+   "https://partyscape.club",
+   "https://play.google.com/store/apps/details?id=club.partyscape.twa&amp;pcampaignid=web_share",
+   "https://store.steampowered.com/app/5043260/"
+  ],
+  "emails": [],
+  "desc": " PartyScape Chronicles is a free online idle RPG you play in your browser - no download, no account needed to start. 20 skills to level, from Woodcutting and Fishing to Runecrafting, Slayer and Herblore A fully animated monster bestiary and world bosses the whole server fights together A real player-driven Grand Exchange - crafters sell to fighters, prices move Weekly events: Double XP, Boss Rush weekends, server-wide buff drops True idle progress: your character keeps working while you're offli"
+ },
+ "https://salvoradrift.itch.io/salvor-adrift": {
+  "info": {
+   "Updated": "15 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "SalvorAdrift",
+   "Genre": "Survival",
+   "Made with": "Three.js",
+   "Tags": "Atmospheric , Exploration , Retro , salvage , Sandbox , Sci-fi , Singleplayer , Space , Top-Down",
+   "Average session": "A few hours",
+   "Inputs": "Keyboard , Mouse , Xbox controller",
+   "AI Disclosure": "AI Assisted , Code , Sounds"
+  },
+  "links": [
+   "https://discord.gg/WMGMsbue4y",
+   "https://salvoradrift.neocities.org",
+   "https://salvoradrift.neocities.org/",
+   "https://salvoradrift.neocities.org/playtest.html",
+   "https://store.steampowered.com/app/5253460/SALVOR_ADRIFT/",
+   "https://www.facebook.com/SalvorAdrift",
+   "https://www.instagram.com/salvoradrift/"
+  ],
+  "emails": [],
+  "desc": " THE WAR ENDED. NOBODY WON. SALVOR ADRIFT is a lo fi space salvage game made by one person. You wake adrift in a salvage frame. Two hundred star systems, and every road between them is sealed. Machines hold what is left. Strip the dead. Claim the wells. Trust nothing. NOW ON STEAM The Steam page is live and the demo is on it. A wishlist helps this game more than anything else: https://store.steampowered.com/app/5253460/SALVOR_ADRIFT/ Windows. Release date: coming soon. PLAY ACT ONE FREE Act One "
+ },
+ "https://kingnorik.itch.io/legends-loot-tower-defense": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5 , Windows",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "Kingnorik",
+   "Genre": "Strategy , Role Playing",
+   "Made with": "Three.js",
+   "Tags": "extraction , Fantasy , Loot , Tower Defense",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Sounds"
+  },
+  "links": [
+   "https://play.google.com/store/apps/details?id=com.kingnorik.legendsloot"
+  ],
+  "emails": [],
+  "desc": " A loot-driven RPG Tower Defense adventure with permanent Legends, powerful equipment, strategic choices, and real difficulty. Full Android release coming soon. Demo Includes 10 Legends Total - 5 Unlocked Through Achievements Challenge Mode Endless Dungeon Extraction, with a Chaos modifier for even more challenge and better loot. 1000s of item combinations, including powerful Legendary and Set Items. A 10 Legend raid called Siege, and an endgame activity called Horde. Want To Play On Android? Th"
+ },
+ "https://robkodev.itch.io/retro-league": {
+  "info": {
+   "Updated": "4 days ago",
+   "Published": "23 days ago",
+   "Status": "Prototype",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (6 total ratings )",
+   "Author": "robkodev",
+   "Genre": "Sports",
+   "Made with": "Three.js",
+   "Tags": "Arcade , Football , Multiplayer , Physics , Retro , rocket-league , Singleplayer , Soccer , Touch-Friendly",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Gamepad (any) , Touchscreen",
+   "Accessibility": "Configurable controls",
+   "Multiplayer": "Ad-hoc networked multiplayer",
+   "Links": "Twitter/X",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://x.com/robko_rl"
+  ],
+  "emails": [],
+  "desc": " If Rocket League and a 16-bit arcade soccer game had a baby, it would be Retro League. Fast car soccer with a 2.5D view that actually helps you read the play. Switch between 3D and isometric views whenever you want! I\u2019d love to hear what feels fun or frustrating so feel free to leave a comment! Updates: https://x.com/robko_rl "
+ },
+ "https://recknlabs.itch.io/hoardbound": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 3.0 out of 5 stars (1 total ratings )",
+   "Author": "RecknLabs",
+   "Genre": "Adventure",
+   "Made with": "Three.js",
+   "Tags": "Pirates , Sailing , Singleplayer",
+   "Average session": "About a half-hour",
+   "Inputs": "Keyboard",
+   "AI Disclosure": "AI Assisted , Code , Graphics"
+  },
+  "links": [],
+  "emails": [],
+  "desc": " Hoardbound is a casual open-world pirate adventure. Every voyage is a hunt for the Legendary Hoard . Its map was torn into four pieces and scattered among the pirates who roam these waters. Sink their ships, recover the fragments, and complete the map to reveal where the Hoard lies. Sail to the island, go ashore, and dig it up \u2014 then set out after a bigger one. Endless procedural sea \u2014 every voyage is a new world Real sailing \u2014 work the wind, avoid being caught in irons, and trim your sails for"
+ },
+ "https://dmconsulting.itch.io/blackstart": {
+  "info": {
+   "Updated": "8 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 2.5 out of 5 stars (2 total ratings )",
+   "Author": "Dmconsulting",
+   "Genre": "Simulation , Strategy",
+   "Made with": "Three.js",
+   "Tags": "Difficult , Economy , Isometric , Management , Real-Time , Singleplayer , Tycoon",
+   "Average session": "A few hours",
+   "Languages": "English , French",
+   "Inputs": "Keyboard , Mouse",
+   "Links": "Homepage , Privacy",
+   "AI Disclosure": "AI Assisted , Code"
+  },
+  "links": [
+   "https://www.blackstartgame.com,",
+   "https://www.blackstartgame.com/privacy/"
+  ],
+  "emails": [],
+  "desc": " Electricity is the one resource you cannot store. You run a power utility. You buy the fuel, build the plants, sign the contracts, sell the electricity \u2014 and you hold your grid at 50.00 Hz, second after second, because nobody else will. In most management games, power is a satisfaction ratio: overproduce and nothing happens. Here, overproduction costs you as much as a shortage. Every decision in the game comes from that tension. It's 7:02 PM on a winter evening. The frequency is falling. You ha"
+ },
+ "https://enzed.itch.io/zombies-per-minute": {
+  "info": {
+   "Updated": "19 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "Enzed",
+   "Genre": "Strategy , Simulation , Survival",
+   "Made with": "Three.js",
+   "Tags": "3D , Automation , tower , Zombies",
+   "Average session": "About an hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse",
+   "Links": "Steam",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Sounds , Text"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Exo%202%3A400%2C400italic%2C700%2C700italic",
+   "https://store.steampowered.com/app/4416970/Zombies_Per_Minute/?utm_source=itchio&amp;utm_medium=referral&amp;utm_campaign=wishlist_cta&amp;utm_content=game_page"
+  ],
+  "emails": [],
+  "desc": " Build your own zombie-shredding factory. Zombies Per Minute is a factory-building roguelite where everything you build is measured by one thing: how many zombies you can kill per minute. Yes, really. All runs are different, depending on the maps, buildings, upgrades and operators you unlock when you succeed building high-ZPM outposts. Your mission: build, survive, automate, and push your ZPM as high as it'll go. And it can go... VERY high. - BUILD - Every game starts from scratch. Scout the are"
+ },
+ "https://xiphasoftworks.itch.io/night-inspector": {
+  "info": {
+   "Updated": "1 day ago",
+   "Published": "5 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (1 total ratings )",
+   "Author": "Xipha Softworks",
+   "Genre": "Interactive Fiction",
+   "Made with": "Three.js",
+   "Tags": "AI Generated , Atmospheric , First-Person , Horror , Low-poly , Mystery , Narrative , PSX (PlayStation) , Psychological Horror , Short",
+   "Average session": "About a half-hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse",
+   "Accessibility": "Subtitles",
+   "AI Disclosure": "AI Assisted , Code , Graphics"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=IM%20Fell%20English%3A400%2C400italic%2C700%2C700italic"
+  ],
+  "emails": [],
+  "desc": " The date is October 11th, 2006 . You are a Conductor on the Vesper Line sleeper train. It only runs once a year. You only have one job. Check every ticket. Count every head. Never count yourself. Controls WASD : walk \u00b7 Shift : walk faster Mouse : look E / left click : interact, talk, read Space / E / click : skip a line Tab : clipboard P : pause "
+ },
+ "https://getpixel.itch.io/laputa": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Release date": "Jan 21, 2022",
+   "Rating": "Rated 4.4 out of 5 stars (17 total ratings )",
+   "Author": "Xavier Burrow",
+   "Genre": "Puzzle , Adventure",
+   "Made with": "Three.js",
+   "Tags": "3D , artgame , Atmospheric , Escape Game , Exploration , Minimalist",
+   "Average session": "About an hour"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Playfair%20Display%3A400%2C400italic%2C700%2C700italic"
+  ],
+  "emails": [],
+  "desc": " Laputa: Riddles In The Sky Laputa is a single-player puzzle game set amongst the clouds. Think your way through a series of brain-bending challenges and unlock the mystery of Laputa! Controls Use the WSAD keys or the ARROW keys to move. Use the MOUSE to interact with the world. Note On Saved Games Laputa uses LocalStorage to save your game. Please whitelist cookies for getpixel.itch.io in your adblocker. "
+ },
+ "https://lexenson.itch.io/dungeon-cartographer": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 4.0 out of 5 stars (4 total ratings )",
+   "Author": "lexenson",
+   "Genre": "Adventure",
+   "Made with": "Three.js",
+   "Tags": "Ludum Dare 57 , threejs",
+   "Average session": "A few minutes",
+   "Inputs": "Keyboard , Mouse",
+   "Links": "Ludum Dare",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Text"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=MedievalSharp%3A400%2C400italic%2C700%2C700italic",
+   "https://ldjam.com/events/ludum-dare/57/dungeon-cartographer"
+  ],
+  "emails": [],
+  "desc": " Greetings, brave cartographer. The Guild has received reports of an ancient dungeon that requires mapping. Your task is to explore and document its depths.Use your map wisely - press M to view it, and document your findings as you discover new areas. The Guild has provided you with a torch to light your way. Controls: WASD - Move through the dungeon M - Toggle map view Mouse - Look around Entry for Ludum Dare 57: https://ldjam.com/events/ludum-dare/57/dungeon-cartographer Made with Three.js. As"
+ },
+ "https://prospera-games.itch.io/nebula-clash": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Author": "Prospera Games",
+   "Genre": "Strategy",
+   "Made with": "Three.js",
+   "Tags": "Auto Battler , Roguelike , Space , Team-Based , Turn-based",
+   "Average session": "A few minutes",
+   "Inputs": "Mouse",
+   "Accessibility": "One button",
+   "AI Disclosure": "AI Assisted , Sounds"
+  },
+  "links": [],
+  "emails": [],
+  "desc": " A auto battle space game inspired off of asteroids graphics and auto battle roguelike gameplay. This game is in active development and will be updated weekly until 1.0 release! Current Release Ver 1.0! "
+ },
+ "https://taptouchclick.itch.io/shadow-games": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "Windows",
+   "Author": "TapTouchClick",
+   "Genre": "Shooter",
+   "Made with": "Blender , Three.js",
+   "Tags": "Dungeon Crawler , spells , threejs",
+   "Average session": "A few minutes",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse",
+   "Accessibility": "Configurable controls , Interactive tutorial",
+   "Multiplayer": "Server-based networked multiplayer",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Anonymous%20Pro%3A400%2C400italic%2C700%2C700italic"
+  ],
+  "emails": [],
+  "desc": " The Shadow Games: A Tale of Crafting, Betrayal, and Survival The Story Crafting The Shadow Games The Shadow Games began as a passion project inspired by my love for dungeon crawlers and collectible card games like Magic: The Gathering . I wanted to merge the immersive exploration of dungeons with the intricate strategy of card games. The result is a dynamic and unpredictable world where you, as a spellcaster, must craft your spellbook, survive in a shifting dungeon, and decide who to trust\u2014and "
+ },
+ "https://xshredd.itch.io/dark-bloodlines": {
+  "info": {
+   "Updated": "10 days ago",
+   "Published": "26 days ago",
+   "Status": "Released",
+   "Release date": "26 days ago",
+   "Author": "xSHREDD",
+   "Genre": "Strategy , Action , Adventure",
+   "Made with": "Blender , Three.js , Lightweight Java Game Library",
+   "Tags": "Dark , Fantasy , Horror , Monsters , Multiplayer , Real-Time , Retro , Top-Down",
+   "Average session": "About an hour",
+   "Languages": "English",
+   "Inputs": "Keyboard , Mouse , Touchscreen",
+   "Accessibility": "Subtitles , Configurable controls",
+   "Multiplayer": "Server-based networked multiplayer",
+   "AI Disclosure": "AI Assisted , Code , Graphics , Sounds , Text"
+  },
+  "links": [],
+  "emails": [
+   "lukasdion88@gmail.com"
+  ],
+  "desc": " Control Armies of the Night in this classic themed RTS game. Play as Vampires, Werewolves and Humans with their own unique Solo Scenarios where you can control Dracula, Van Helsing and The Lycan King!! Join a Clan and participate in 2v2, 5v5 and 10v10 ranked Clan Wars! How will you climb the ranks? Game is compatible for PC and Mobile. (Current Version = v1.0.29) My partner and I are new game developers and have been teaching ourselves UE5 since the beginning of 2026 but due to limitations of m"
+ },
+ "https://danbolt.itch.io/spectres-of-the-cold": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "Windows , macOS , Linux",
+   "Release date": "Apr 28, 2018",
+   "Rating": "Rated 3.5 out of 5 stars (17 total ratings )",
+   "Author": "Daniel Savage",
+   "Genre": "Survival",
+   "Made with": "Tiled , GIMP , Phaser , Three.js , Sublime Text , Audacity",
+   "Tags": "Dark , Fantasy , Low-poly , personal , Retro , Spooky , Stealth , Third Person",
+   "Average session": "About a half-hour",
+   "Languages": "English , Spanish; Latin America , Korean",
+   "Inputs": "Keyboard , Xbox controller , Gamepad (any)",
+   "Accessibility": "Subtitles"
+  },
+  "links": [
+   "http://lee90493050.wixsite.com/sangholee",
+   "https://fonts.googleapis.com/css?family=Lora%3A400%2C400italic%2C700%2C700italic"
+  ],
+  "emails": [],
+  "desc": " Here I felt my flesh become the food of my fears. Aqu\u00ed sent\u00ed a mi carne convertirse en el alimento de mis miedos. \uc5ec\uae30\uc5d0\uc11c \ub098\ub294 \ub0b4 \uc721\uccb4\uac00 \uacf5\ud3ec\uc758 \uc74c\uc2dd\uc774 \ub418\ub294\uac83\uc744 \ub290\uaf08\ub2e4. You can get this game for free in a bundle here ! Jesse Taylor gave me a 256x256 image containing various sprites. My goal was to make a game using that image in two months over evenings and weekends. This is my first 3D work, so I'd love to hear any feedback you may have! Spanish localization by Alination Korean localization by Sang Ho Lee . "
+ },
+ "https://0x0fa.itch.io/hollow-ground": {
+  "info": {
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Rating": "Rated 4.6 out of 5 stars (7 total ratings )",
+   "Author": "0x0FA",
+   "Genre": "Strategy",
+   "Made with": "Three.js",
+   "Tags": "3D , Fast-Paced , Hex Based , Low-poly , Multiplayer , Real-Time , Real time strategy , threejs , War",
+   "Average session": "A few minutes",
+   "Languages": "English , Russian",
+   "Inputs": "Keyboard , Mouse , Touchscreen",
+   "Multiplayer": "Ad-hoc networked multiplayer",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Share%20Tech%20Mono%3A400%2C400italic%2C700%2C700italic",
+   "https://freesound.org/people/qubodup/",
+   "https://www.zandernoriega.com/"
+  ],
+  "emails": [],
+  "desc": " Real-time strategy game set in a desert theater. Deploy grunts, scouts, tanks, and artillery across a hex-grid battlefield - capture territory, seize oil, and dismantle the enemy HQ before they take over yours. The game is inspired by the all time classics: C&C, Cannon Fodder, Dune 2 and Z . Like the game? Rate it! \u2694\ufe0f Now micro is all macro - you don't control units directly. Place hex orders and your army moves to fulfill them. Focus on the big picture: where to push, when to reinforce, what t"
+ },
+ "https://lacane.itch.io/stairwell-demo": {
+  "info": {
+   "Updated": "18 days ago",
+   "Published": "23 days ago",
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (5 total ratings )",
+   "Author": "Lacane",
+   "Genre": "Survival",
+   "Made with": "Three.js",
+   "Tags": "3D , Atmospheric , Endless , First-Person , Horror , Low-poly , Pixel Art , PSX (PlayStation) , Roguelike , Survival Horror",
+   "Average session": "About a half-hour",
+   "Languages": "English , Russian",
+   "Inputs": "Keyboard , Mouse",
+   "Content": "No generative AI was used"
+  },
+  "links": [],
+  "emails": [],
+  "desc": " STAIRWELL Demo. Headphones help a lot. Roguelike \u2014 Survival-Horror \u2014 Resource Management It's night. You live on the top floor of an old nine-story building, and the elevator is dead again. Someone taped a note to the roof ladder: the machine room is locked, the key is with the concierge on the first floor. So you walk down. The stairs keep going. The floor numbers stop making sense after a while. Every landing has the same green paint, the same brown doors, the same notices about water shutoff"
+ },
+ "https://sillywunkus.itch.io/nirop-05": {
+  "info": {
+   "Status": "In development",
+   "Platforms": "HTML5",
+   "Rating": "Rated 5.0 out of 5 stars (7 total ratings )",
+   "Author": "sillyWunkus",
+   "Made with": "Phaser , Three.js",
+   "Tags": "Dreams , Horror , Low-poly , Spooky , Walking simulator",
+   "Average session": "A few minutes",
+   "Languages": "English , Russian",
+   "Inputs": "Keyboard , Mouse",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://fonts.googleapis.com/css?family=Almendra%3A400%2C400italic%2C700%2C700italic",
+   "https://fonts.googleapis.com/css?family=Anek%20Bangla%3A400%2C400italic%2C700%2C700italic",
+   "https://wunkus.online/"
+  ],
+  "emails": [],
+  "desc": " \u042d\u0442\u0430 \u0438\u0433\u0440\u0430 \u0441\u043e\u0437\u0434\u0430\u0451\u0442\u0441\u044f \u0434\u043b\u044f Soup Jam, \u0438 \u044f \u043f\u043b\u0430\u043d\u0438\u0440\u0443\u044e \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0442\u044c \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0442\u044c \u0435\u0451 \u0434\u043e \u043a\u043e\u043d\u0446\u0430 \u0434\u0436\u0435\u043c\u0430, \u0430 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c, \u0438 \u0434\u043e\u043b\u044c\u0448\u0435. https://wunkus.online/ \u041d\u0430 \u0434\u0430\u043d\u043d\u044b\u0439 \u043c\u043e\u043c\u0435\u043d\u0442 \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0433\u043e\u0442\u043e\u0432\u044b \u043b\u0438\u0448\u044c \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u043a\u043e\u043c\u043d\u0430\u0442, \u043d\u043e \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043c \u044f \u0445\u043e\u0447\u0443 \u043f\u043e\u0441\u0442\u0435\u043f\u0435\u043d\u043d\u043e \u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u044c \u0438\u0433\u0440\u0443 \u043a\u0430\u043a \u043c\u0438\u043d\u0438\u043c\u0443\u043c \u0434\u043e 25 \u043a\u043e\u043c\u043d\u0430\u0442 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u043c\u0438 \u0442\u0435\u043c\u0430\u043c\u0438. \u041d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u0435\u0449\u0438 \u044f \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u0435\u0440\u0435\u0440\u0430\u0431\u043e\u0442\u0430\u044e, \u0430 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e, \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0443\u0434\u0430\u043b\u044e, \u0435\u0441\u043b\u0438 \u043e\u043d\u0438 \u043f\u043e\u043a\u0430\u0436\u0443\u0442\u0441\u044f \u043c\u043d\u0435 \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e \u043f\u0440\u043e\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u043c\u0438. W / A / S / D - \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u041c\u044b\u0448\u044c - \u043a\u0430\u043c\u0435\u0440\u0430 \u0421\u043c\u0435\u043d\u0430 - \u0431\u0435\u0433 \u041f\u0440\u043e\u0431\u0435\u043b - \u043f\u0440\u044b\u0436\u043e\u043a \u0412 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043a\u043e\u043c\u043d"
+ },
+ "https://qwook.itch.io/last-seen-online": {
+  "info": {
+   "Updated": "19 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5",
+   "Release date": "Dec 23, 2023",
+   "Rating": "Rated 4.8 out of 5 stars (4,249 total ratings )",
+   "Authors": "qwook , sochinstudio",
+   "Genre": "Puzzle",
+   "Made with": "Blender , Adobe Photoshop , Three.js",
+   "Tags": "2D , 3D , Creepy , Detective , Escape Game , Horror , Point & Click , Psychological Horror , Retro",
+   "Average session": "About an hour",
+   "Languages": "Czech , German , Greek Modern , English , Esperanto , Spanish; Latin America , French , Indonesian , Italian , Japanese , Malay , Polish , Portuguese (Brazil) , Russian , Turkish , Ukrainian , Vietnamese , Chinese (Simplified)",
+   "Inputs": "Keyboard , Mouse , Touchscreen , Smartphone",
+   "Links": "Steam , Homepage , Discord , Instagram",
+   "Content": "No generative AI was used"
+  },
+  "links": [
+   "https://discord.gg/4HtZG2uR6J",
+   "https://lastseenonline.com/",
+   "https://store.steampowered.com/app/2824230/last_seen_online/",
+   "https://www.instagram.com/entropicsonics",
+   "https://www.instagram.com/nohurryhen/"
+  ],
+  "emails": [],
+  "desc": " You were always a snoop, weren\u2019t you? That\u2019s why you bought an old computer you saw lying among piles of junk at a garage sale. You didn\u2019t even bother to format the computer before you turned it on. You were curious. After all, a personal computer is an extension of another person\u2019s soul, all their secrets, projects, interactions. \u201clast seen online\u201d is a psychological horror escape room , based on early flash games. Look through someone's computer files. Solve puzzles and discover the secrets t"
+ },
+ "https://airem.itch.io/shulero-dice-roguelike": {
+  "info": {
+   "Updated": "19 days ago",
+   "Status": "Released",
+   "Platforms": "HTML5 , Windows , macOS , Linux",
+   "Rating": "Rated 3.8 out of 5 stars (4 total ratings )",
+   "Author": "Airem",
+   "Genre": "Card Game , Strategy",
+   "Made with": "Three.js , GDevelop",
+   "Tags": "Board Game , Boss battle , Dice , Dicey Dungeons , Endless , Roguelike , Roguelite , Tabletop , Turn-based",
+   "Average session": "A few minutes",
+   "Languages": "Arabic , Belarusian , Bulgarian , Catalan; Valencian , Danish , German , English , Finnish , French , Italian , Japanese , Kazakh , Korean , Polish , Portuguese (Portugal) , Portuguese (Brazil) , Russian , Ukrainian , Vietnamese , Chinese , Chinese (Simplified) , Chinese (Traditional)",
+   "Inputs": "Mouse , Gamepad (any) , Smartphone",
+   "Links": "Steam",
+   "AI Disclosure": "AI Assisted"
+  },
+  "links": [
+   "https://aijungl.com/",
+   "https://steamcommunity.com/app/4688240/discussions/0/666114913574436590/",
+   "https://store.steampowered.com/app/4688240/SHULERO__Dice_Roguelike/",
+   "https://www.appbank.net/2026/06/01/game/3010846.php",
+   "https://www.fixgamingchannel.com/shulero-dice-roguelike/"
+  ],
+  "emails": [
+   "info@airem.pl"
+  ],
+  "desc": " Roll. Pick. Damage\u2026 Buy wild dice. Play unfair. Win big. "
+ }
+}
