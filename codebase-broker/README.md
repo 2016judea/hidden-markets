@@ -1,5 +1,7 @@
 # Codebase broker
 
+> **2026-10-21:** Aidan approved sending. 57 first touches scheduled in Zoho, 10/24 09:21 to 10/31 11:06 CT, public range line only; 9 skipped. Per-row status, time and message id: `SENDS.csv` (built by `build_sends.py`).
+
 Indie devs and small studios sit on finished or shelved games whose private source code
 AI labs will now license. We find the owners and get them a deal through DataVendor (HUD),
 where Brick and Mortar AI LLC is a Tier 2 vendor. Started 2026-10-20.

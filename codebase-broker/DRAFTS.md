@@ -1,5 +1,7 @@
 # Drafts — none sent
 
+> **2026-10-21:** Aidan approved sending. 57 first touches scheduled in Zoho, 10/24 09:21 to 10/31 11:06 CT, public range line only; 9 skipped. Per-row status, time and message id: `SENDS.csv` (built by `build_sends.py`).
+
 Drafted 2026-10-20 for Aidan to read. Channel: one-to-one from the Zoho mailbox (25 a
 day cap), each opening on the reader's own game. Addresses are in `PIPELINE.csv`.
 
