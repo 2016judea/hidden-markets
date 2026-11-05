@@ -29,7 +29,7 @@ import duckdb
 from arbitrage import vocabulary as V
 
 HERE = Path(__file__).resolve()
-DEFAULT_ROOT = Path(os.environ.get("BRICKS_ROOT", "~/Desktop/bricks")).expanduser()   # the slices and caches live in the bricks repo
+DEFAULT_ROOT = Path(os.environ.get("BRICKS_ROOT", "~/Desktop/workspace/bricks")).expanduser()   # the slices and caches live in the bricks repo
 SCHEMA = HERE.with_name("schema.sql")
 
 COUNTY_SLUG = {

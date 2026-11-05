@@ -14,7 +14,7 @@ where Brick and Mortar AI LLC is a Tier 2 vendor. Started 2026-10-20.
 
 ## Can we broker? Yes, two ways. One is clean today
 
-Read off the PAA (`~/Desktop/public-records-gym/datavendor/PAA-unsigned-2026-10-20.pdf`)
+Read off the PAA (`~/Desktop/workspace/public-records-gym/datavendor/PAA-unsigned-2026-10-20.pdf`)
 and docs.datavendor.ai on 2026-10-20.
 
 | Route | Rule | Our cut | Verdict |

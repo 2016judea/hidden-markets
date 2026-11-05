@@ -27,7 +27,7 @@ model's own account of itself and every bias found and fixed along the way.
 ## Running it
 
 The loader reads the shipped slices and caches from the bricks repo. Set `BRICKS_ROOT` if it is
-not at `~/Desktop/bricks`.
+not at `~/Desktop/workspace/bricks`.
 
 ```
 python -m venv .venv && .venv/bin/pip install -e ".[dev]"

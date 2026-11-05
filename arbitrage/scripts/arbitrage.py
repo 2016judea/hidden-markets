@@ -6,7 +6,7 @@
     .venv/bin/python scripts/arbitrage.py all
     .venv/bin/python scripts/arbitrage.py block --corridor "Grand Avenue"   # every pair on one corridor
 
-Reads the slices and caches from the bricks repo (~/Desktop/bricks, or $BRICKS_ROOT);
+Reads the slices and caches from the bricks repo (~/Desktop/workspace/bricks, or $BRICKS_ROOT);
 pass --root to point elsewhere. The model itself is written here under data/.
 """
 
@@ -33,7 +33,7 @@ def main() -> int:
     ap.add_argument("--db", default=None, help="model path (default: <root>/data/arbitrage.duckdb)")
     ap.add_argument("--out", default=None, help="report path (default: docs/ARBITRAGE-msp-<today>.md)")
     a = ap.parse_args()
-    root = Path(a.root) if a.root else Path(os.environ.get("BRICKS_ROOT", "~/Desktop/bricks")).expanduser()
+    root = Path(a.root) if a.root else Path(os.environ.get("BRICKS_ROOT", "~/Desktop/workspace/bricks")).expanduser()
     db = Path(a.db) if a.db else HERE / "data" / "arbitrage.duckdb"
     if a.cmd in ("build", "all"):
         counts = build(db, root)

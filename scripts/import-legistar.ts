@@ -12,7 +12,7 @@ import { prisma } from "../src/lib/db";
 
 const DEFAULT_PATH = path.join(
   os.homedir(),
-  "Desktop/the-google-of-obsolete-infrastructure-parts/data/records.jsonl",
+  "Desktop/workspace/the-google-of-obsolete-infrastructure-parts/data/records.jsonl",
 );
 
 async function main() {

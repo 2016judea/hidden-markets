@@ -294,7 +294,7 @@ def report(rows: list[dict], today: date) -> str:
 
 if __name__ == "__main__":
     import sys
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(os.environ.get("BRICKS_ROOT", "~/Desktop/bricks")).expanduser()
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(os.environ.get("BRICKS_ROOT", "~/Desktop/workspace/bricks")).expanduser()
     today = date.today()
     rows = score(root, today)
     md = report(rows, today)

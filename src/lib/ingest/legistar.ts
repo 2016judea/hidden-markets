@@ -7,7 +7,7 @@ import { enqueue } from "../jobs/queue";
 /**
  * Import sole-source procurement records as prospect candidates.
  *
- * Source: ~/Desktop/the-google-of-obsolete-infrastructure-parts — 1,128 records
+ * Source: ~/Desktop/workspace/the-google-of-obsolete-infrastructure-parts — 1,128 records
  * off the Legistar public API across 18 agencies, each carrying the agency, the
  * manufacturer and model, what they paid, and the agency's own verbatim
  * justification for why nobody else could sell it to them.
@@ -226,7 +226,7 @@ export async function importLegistarRecords(args: {
         sourceUrls: j(
           [...new Set(ranked.slice(0, 10).map((r) => r.source_url ?? r.legistar_url).filter(Boolean))],
         ),
-        researchNotes: `Imported from the Legistar sole-source extraction (~/Desktop/the-google-of-obsolete-infrastructure-parts). ${rows.length} sole-source records, ${physical.length} for physical equipment, ${obsolete.length} citing obsolescence. Manufacturers on record: ${[
+        researchNotes: `Imported from the Legistar sole-source extraction (~/Desktop/workspace/the-google-of-obsolete-infrastructure-parts). ${rows.length} sole-source records, ${physical.length} for physical equipment, ${obsolete.length} citing obsolescence. Manufacturers on record: ${[
           ...new Set(physical.map((r) => r.manufacturer).filter(Boolean)),
         ]
           .slice(0, 8)
