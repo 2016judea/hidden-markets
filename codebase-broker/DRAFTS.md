@@ -144,6 +144,8 @@ Lushfoil's address may route to Annapurna, and the publisher deal may own the co
 
 ## Reply draft, Nate Purkeypile (The Axis Unseen), 2026-11-07
 
+> **CANCELLED 2026-11-07 by Aidan: "send no replies. cancel all those workstreams." Do not send.**
+
 Re: The Axis Unseen's source code. He asked 11/06: "Are the marketplace packs a deal breaker for this? That game uses a few of them." Note: DataVendor's UE5 request closed 2026-11-03 21:00 UTC, before his reply.
 
 > Hi Nate,
