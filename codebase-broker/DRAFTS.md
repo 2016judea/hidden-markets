@@ -141,3 +141,18 @@ pulled 2026-10-20.
 
 Before any of these go: Narrow One has no email, so it's a Discord DM or nothing.
 Lushfoil's address may route to Annapurna, and the publisher deal may own the code.
+
+## Reply draft, Nate Purkeypile (The Axis Unseen), 2026-11-07
+
+Re: The Axis Unseen's source code. He asked 11/06: "Are the marketplace packs a deal breaker for this? That game uses a few of them." Note: DataVendor's UE5 request closed 2026-11-03 21:00 UTC, before his reply.
+
+> Hi Nate,
+>
+> Not by itself. It depends on how much the game leans on them.
+>
+> Marketplace packs are licensed to ship inside a game, not to hand over as source files. So they come out of what gets licensed. If a few packs are props and textures, the project usually survives without them. If they're the character, the animation set or the world, it doesn't.
+>
+> The open request I wrote about closed on November 3. But they buy in rounds, and the asset question is the same every time. Could you send me the list of packs and what each one does in the game? I'll tell you straight whether it's worth a listing.
+>
+> Best,
+> Aidan

@@ -1,4 +1,4 @@
-rank,game,studio,email,kind,subject,status,channel,scheduled_ct,message_id,their_record,reason,body
+rank,game,studio,email,kind,subject,status,channel,scheduled_ct,message_id,their_record,reason,body,reply_kind,reply_on,reply_line
 1,Pseudoregalia,rittzler,sup.rittzler@gmail.com,unreal,Pseudoregalia's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 09:21,1792599684647155300,"Pseudoregalia has about 15,000 Steam reviews, 97% positive, for a movement game you put out yourself in July 2023.",,"Hi there,
 
 Pseudoregalia has about 15,000 Steam reviews, 97% positive, for a movement game you put out yourself in July 2023.
@@ -14,7 +14,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 2,The Axis Unseen,Just Purkey Games,justpurkeygamesllc@gmail.com,unreal,The Axis Unseen's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 09:28,1792599690471155300,The Axis Unseen is an open world built by one person and published under your own name in October 2024.,,"Hi Nate,
 
 The Axis Unseen is an open world built by one person and published under your own name in October 2024.
@@ -30,7 +30,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",question,2026-11-06,Are the marketplace packs a deal breaker for this? That game uses a few of them.
 3,The Forever Winter,Fun Dog Studios,havefun@fundogstudios.com,unreal,The Forever Winter's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 09:35,1792599694144155000,"The Forever Winter has been in early access since September 2024, with about 19,000 Steam reviews and no publisher between you and it.",,"Hi there,
 
 The Forever Winter has been in early access since September 2024, with about 19,000 Steam reviews and no publisher between you and it.
@@ -46,7 +46,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 4,Backrooms: Escape Together,Triiodide Studios,support@triiodide.dev,unreal,Backrooms: Escape Together's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 09:42,1792599697865155100,"Backrooms: Escape Together has run since October 2022. Eleven procedurally generated levels, co-op for six, about 23,000 Steam reviews.",,"Hi there,
 
 Backrooms: Escape Together has run since October 2022. Eleven procedurally generated levels, co-op for six, about 23,000 Steam reviews.
@@ -62,7 +62,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 5,Nuclear Nightmare,BG Productions,info@bgproductions.com,unreal,Nuclear Nightmare's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 09:56,1792599701359155000,"Nuclear Nightmare launched in October 2024 and has about 11,500 Steam reviews, self-published.",,"Hi there,
 
 Nuclear Nightmare launched in October 2024 and has about 11,500 Steam reviews, self-published.
@@ -78,7 +78,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 6,Deadzone: Rogue,Prophecy Games,community@prophecygames.com,unreal,Deadzone: Rogue's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:03,1792599704951155100,"Deadzone: Rogue released in August 2025, solo or co-op, and sits at 83% positive on about 4,200 reviews.",,"Hi there,
 
 Deadzone: Rogue released in August 2025, solo or co-op, and sits at 83% positive on about 4,200 reviews.
@@ -94,7 +94,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 7,Murky Divers,Embers,support@embers.games,unreal,Murky Divers' source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:10,1792599710940155000,"Murky Divers takes up to eight players into abandoned underwater labs, and you publish its mod kit on GitHub yourselves.",,"Hi there,
 
 Murky Divers takes up to eight players into abandoned underwater labs, and you publish its mod kit on GitHub yourselves.
@@ -110,7 +110,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 8,Fast Food Simulator,No Ceiling Games,contact@noceilinggames.com,unreal,Fast Food Simulator's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:17,1792599714536155100,"Fast Food Simulator has about 5,800 Steam reviews since December 2024, 94% positive.",,"Hi there,
 
 Fast Food Simulator has about 5,800 Steam reviews since December 2024, 94% positive.
@@ -126,7 +126,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 9,The Headliners,KAFI,lucas_sceaux@hotmail.com,unreal,The Headliners' source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:24,1792599718113138400,"The Headliners shipped in January 2025 and has about 6,000 Steam reviews, 85% positive.",,"Hi Lucas,
 
 The Headliners shipped in January 2025 and has about 6,000 Steam reviews, 85% positive.
@@ -142,7 +142,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 10,FACEMINER,Wristwork,contact@wristwork.com,three,FACEMINER's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:31,1792599721611155000,"FACEMINER is a Three.js game on Steam with about 1,500 reviews. That's rare.",,"Hi there,
 
 FACEMINER is a Three.js game on Steam with about 1,500 reviews. That's rare.
@@ -158,7 +158,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 11,PolyTrack,Kodub,info@kodub.com,three,PolyTrack's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:38,1792599725201155300,"PolyTrack has 691 ratings on itch at 4.7 stars, and it's Three.js with Bullet physics underneath.",,"Hi there,
 
 PolyTrack has 691 ratings on itch at 4.7 stars, and it's Three.js with Bullet physics underneath.
@@ -174,7 +174,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 13,Slow Roads,Topograph Interactive,support@slowroads.io,three,Slow Roads' source code,replied: declined,zoho one-to-one (scheduled),2026-10-24 10:52,1792599728548138400,"Slow Roads went to Steam in September 2026 at $7.99 and has about 970 reviews. An endless drive, generated in Three.js.","Reply 2026-10-24 from support@slowroads.io, verbatim: ""fuck no"". Dead; never re-contact.","Hi there,
 
 Slow Roads went to Steam in September 2026 at $7.99 and has about 970 reviews. An endless drive, generated in Three.js.
@@ -190,7 +190,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 14,stein.world,pg5-Studio,contact@stein.world,three,stein.world's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 10:59,1792599737716138400,stein.world has run as a browser MMORPG on Three.js since 2019.,,"Hi there,
 
 stein.world has run as a browser MMORPG on Three.js since 2019.
@@ -206,7 +206,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 15,Cepheus Protocol,Halcyon Winds,support@halcyonwinds.com,unreal,Cepheus Protocol's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:06,1792599741349138300,"Cepheus Protocol has been in early access since May 2020. An open-world RTS, self-published, about 3,000 reviews.",,"Hi there,
 
 Cepheus Protocol has been in early access since May 2020. An open-world RTS, self-published, about 3,000 reviews.
@@ -222,7 +222,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 16,Rivals of Aether II,Aether Studios,contact@rivalsofaether.com,unreal,Rivals of Aether II's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:13,1792599744933155300,"Rivals of Aether II launched in October 2024 with about 7,300 Steam reviews.",,"Hi there,
 
 Rivals of Aether II launched in October 2024 with about 7,300 Steam reviews.
@@ -238,7 +238,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 17,Microlandia,Information Superhighway Games,support@microlandia.city,three,Microlandia's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:20,1792599748422155000,"Microlandia is a city-builder on Three.js, $9.99 on Steam since December 2025.",,"Hi there,
 
 Microlandia is a city-builder on Three.js, $9.99 on Steam since December 2025.
@@ -254,7 +254,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 18,Be My Horde,Polished Games,support@polishedgames.com,unreal,Be My Horde's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:27,1792599751973138300,"Be My Horde shipped in June 2024, self-published, 88% positive on about 1,200 reviews.",,"Hi there,
 
 Be My Horde shipped in June 2024, self-published, 88% positive on about 1,200 reviews.
@@ -270,7 +270,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 19,While We Wait Here,Bad Vices Games,badvicesgames@gmail.com,unreal,While We Wait Here's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:34,1792599755376138400,"While We Wait Here has about 1,600 Steam reviews, 90% positive, for a game about serving your last customers before the world ends.",,"Hi there,
 
 While We Wait Here has about 1,600 Steam reviews, 90% positive, for a game about serving your last customers before the world ends.
@@ -286,7 +286,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",no,2026-11-04,"the projects are not for sale in any way, shape or form."
 ,LOCKDOWN Protocol,Mirage Creative Lab,miragecreativelab@gmail.com,unreal,LOCKDOWN Protocol's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:48,1792599763324138300,"LOCKDOWN Protocol came out in November 2025 and has about 14,900 Steam reviews, a social deduction game for up to 16 players.",,"Hi there,
 
 LOCKDOWN Protocol came out in November 2025 and has about 14,900 Steam reviews, a social deduction game for up to 16 players.
@@ -302,7 +302,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Spirit City: Lofi Sessions,Mooncube Games,support@mooncubegames.com,unreal,Spirit City: Lofi Sessions' source code,scheduled,zoho one-to-one (scheduled),2026-10-24 11:55,1792599767010138400,"Spirit City: Lofi Sessions has about 12,000 Steam reviews since April 2024, 98% positive.",,"Hi there,
 
 Spirit City: Lofi Sessions has about 12,000 Steam reviews since April 2024, 98% positive.
@@ -318,7 +318,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,RATSHAKER™,Sunscorched Studios,storesupport@sunscorchedstudios.co.uk,unreal,RATSHAKER's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 12:02,1792599770617155100,"RATSHAKER has about 2,800 Steam reviews since it came out in October 2024.",,"Hi there,
 
 RATSHAKER has about 2,800 Steam reviews since it came out in October 2024.
@@ -334,7 +334,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Zombieville USA 3D,"Mika Mobile, Inc.",supportform@mikamobile.com,unreal,Zombieville USA 3D's source code,scheduled,zoho one-to-one (scheduled),2026-10-24 12:09,1792599774191155100,"Zombieville USA 3D came to Steam in March 2025 and sits at 95% positive on about 1,800 reviews.",,"Hi there,
 
 Zombieville USA 3D came to Steam in March 2025 and sits at 95% positive on about 1,800 reviews.
@@ -350,7 +350,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Grimlord,"Metalcat Interactive Co.,Ltd",aofeij34@gmail.com,unreal,Grimlord's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:02,1792599777711155000,"Grimlord has about 1,000 Steam reviews since December 2024, self-published.",,"Hi there,
 
 Grimlord has about 1,000 Steam reviews since December 2024, self-published.
@@ -366,7 +366,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Eternal Strands,Yellow Brick Games,info@yellowbrickgames.ca,unreal,Eternal Strands' source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:09,1792599781004155000,"Eternal Strands shipped in January 2025, self-published, with about 930 Steam reviews.",,"Hi there,
 
 Eternal Strands shipped in January 2025, self-published, with about 930 Steam reviews.
@@ -382,7 +382,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,KIBORG,Sobaka Studio,welcome@sobakastudio.com,unreal,KIBORG's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:16,1792599788833138300,"KIBORG came out in April 2025, self-published, with about 660 Steam reviews.",,"Hi there,
 
 KIBORG came out in April 2025, self-published, with about 660 Steam reviews.
@@ -398,7 +398,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Shashingo: Learn Japanese with Photography,Autumn Pioneer,support@autumnpioneer.com,unreal,Shashingo's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:23,1792599792421155300,"Shashingo has been teaching Japanese through photography since February 2024, with about 650 Steam reviews.",,"Hi there,
 
 Shashingo has been teaching Japanese through photography since February 2024, with about 650 Steam reviews.
@@ -414,7 +414,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,ROGUE LIGHT DECK BUILDER,Gil Lawson,goblinamericagame@gmail.com,unreal,ROGUE LIGHT DECK BUILDER's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:30,1792599796229155000,"ROGUE LIGHT DECK BUILDER has 549 Steam reviews, 96% positive, for a game you published yourself in March 2025.",,"Hi Gil,
 
 ROGUE LIGHT DECK BUILDER has 549 Steam reviews, 96% positive, for a game you published yourself in March 2025.
@@ -430,7 +430,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Metal Garden,Tinerasoft,studio@tinerasoft.net,unreal,Metal Garden's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:37,1792599799709155300,Metal Garden came out in March 2025 and sits at 98% positive on 528 Steam reviews.,,"Hi there,
 
 Metal Garden came out in March 2025 and sits at 98% positive on 528 Steam reviews.
@@ -446,7 +446,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Orebound,Emberforge,orebound@emberforgegames.com,unreal,Orebound's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:44,1792599803232155100,"Orebound, your co-op mining and crafting game, has been on Steam since October 2024 with 435 reviews.",,"Hi there,
 
 Orebound, your co-op mining and crafting game, has been on Steam since October 2024 with 435 reviews.
@@ -462,7 +462,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Cinnabunny,Reky Studios,rekystudios@gmail.com,unreal,Cinnabunny's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 09:58,1792599806559138300,"Cinnabunny has 368 Steam reviews since February 2025, 97% positive.",,"Hi there,
 
 Cinnabunny has 368 Steam reviews since February 2025, 97% positive.
@@ -478,7 +478,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Out of Sight,The Gang Studio,contact@thegangstudio.com,unreal,Out of Sight's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:05,1792599814790155000,Out of Sight came out in May 2025 and sits at 97% positive on 354 Steam reviews.,,"Hi there,
 
 Out of Sight came out in May 2025 and sits at 97% positive on 354 Steam reviews.
@@ -494,7 +494,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Settlements Rising,The Catalyst Crew,info@catalystcrew.net,unreal,Settlements Rising's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:12,1792599818354138400,"Settlements Rising has been on Steam since January 2025, a city builder with 335 reviews.",,"Hi there,
 
 Settlements Rising has been on Steam since January 2025, a city builder with 335 reviews.
@@ -510,7 +510,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Kristala,Astral Clocktower Studios,hello@astralclocktowerstudios.com,unreal,Kristala's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:19,1792599822042138300,Kristala came out in April 2026 and already has 228 Steam reviews.,,"Hi there,
 
 Kristala came out in April 2026 and already has 228 Steam reviews.
@@ -526,7 +526,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Knights Within,Indecision Labs,indecisionlabs@gmail.com,unreal,Knights Within's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:26,1792599825759138300,Knights Within sits at 98% positive on 226 Steam reviews since May 2024.,,"Hi there,
 
 Knights Within sits at 98% positive on 226 Steam reviews since May 2024.
@@ -542,7 +542,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Darkblade Ascent,PST Games,darkbladeascent@gmail.com,unreal,Darkblade Ascent's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:33,1792599829282155100,Darkblade Ascent came out in October 2025 and has 105 Steam reviews.,,"Hi there,
 
 Darkblade Ascent came out in October 2025 and has 105 Steam reviews.
@@ -558,7 +558,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,InFlux Redux,Impromptu Games,joewa@impromptugames.com,unreal,InFlux Redux's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:40,1792599832716155100,"InFlux Redux has 79 Steam reviews since November 2024, and every one of them is positive.",,"Hi there,
 
 InFlux Redux has 79 Steam reviews since November 2024, and every one of them is positive.
@@ -574,7 +574,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Wild Assault,Combat Cat Studio,combatcatofficial@foxmail.com,unreal,Wild Assault's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 10:54,1792599841015155100,"Wild Assault came out in May 2026 and has about 2,300 Steam reviews.",,"Hi there,
 
 Wild Assault came out in May 2026 and has about 2,300 Steam reviews.
@@ -590,7 +590,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Incursion Red River,Games Of Tomorrow GmbH,moritz.naser@gamesoftomorrow.online,unreal,Incursion Red River's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 11:01,1792599844704138400,"Incursion Red River has about 5,200 Steam reviews since April 2024, self-published.",,"Hi Moritz,
 
 Incursion Red River has about 5,200 Steam reviews since April 2024, self-published.
@@ -606,7 +606,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Into the Radius 2,CM IMMERSIVE,support@cm-immersive.com,unreal,Into the Radius 2's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 11:08,1792599848275155100,"Into the Radius 2 came out in April 2026 and has about 3,100 Steam reviews.",,"Hi there,
 
 Into the Radius 2 came out in April 2026 and has about 3,100 Steam reviews.
@@ -622,7 +622,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,QANGA,iolaCorp Studio,Support@iolacorp.com,unreal,QANGA's source code,scheduled,zoho one-to-one (scheduled),2026-10-25 11:15,1792599851963155000,"QANGA has been on Steam since September 2024, self-published, with 417 reviews.",,"Hi there,
 
 QANGA has been on Steam since September 2024, self-published, with 417 reviews.
@@ -638,7 +638,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Beyond Hanwell,Steel Arts Software Ltd,public@steelartssoftware.com,unreal,Beyond Hanwell's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 13:04,1792599855737155300,Beyond Hanwell came out in September 2024 and has 538 Steam reviews.,,"Hi there,
 
 Beyond Hanwell came out in September 2024 and has 538 Steam reviews.
@@ -654,7 +654,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,UNDERWARD,INTENSE,info2@intense.jp,unreal,UNDERWARD's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 13:18,1792599859090138300,"UNDERWARD came out in February 2025, a co-op horror game with 558 Steam reviews.",,"Hi there,
 
 UNDERWARD came out in February 2025, a co-op horror game with 558 Steam reviews.
@@ -670,7 +670,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Limoria,Farkas Interactive,farkas@farkasinteractive.com,unreal,Limoria's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 13:39,1792599867506155300,Limoria came out on the last day of 2024 and has 143 Steam reviews.,,"Hi there,
 
 Limoria came out on the last day of 2024 and has 143 Steam reviews.
@@ -686,7 +686,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,KILL IT WITH FIRE! 2,Casey Donnellan Games LLC,contact@caseydonnellangames.com,unreal,KILL IT WITH FIRE! 2's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 13:53,1792599871335138400,"KILL IT WITH FIRE! 2 came out in November 2025 and has about 1,100 Steam reviews.",,"Hi there,
 
 KILL IT WITH FIRE! 2 came out in November 2025 and has about 1,100 Steam reviews.
@@ -702,7 +702,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Secret Agent Wizard Boy,"John Szymanski, Evan Szymanski",john.aaron.szymanski@gmail.com,unreal,Secret Agent Wizard Boy's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 14:14,1792599875135138400,Secret Agent Wizard Boy sits at 97% positive on 551 Steam reviews since March 2025.,,"Hi John and Evan,
 
 Secret Agent Wizard Boy sits at 97% positive on 551 Steam reviews since March 2025.
@@ -718,7 +718,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Carry The Glass,"Çağatay Demir, Enes Kaplan",slugshot.games@gmail.com,unreal,Carry The Glass' source code,scheduled,zoho one-to-one (scheduled),2026-10-27 14:28,1792599878990155100,"Carry The Glass has about 1,900 Steam reviews since October 2024, a co-op game the two of you published yourselves.",,"Hi Çağatay and Enes,
 
 Carry The Glass has about 1,900 Steam reviews since October 2024, a co-op game the two of you published yourselves.
@@ -734,7 +734,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Once Alive,Cem Boray Yıldırım,oncealivegame@gmail.com,unreal,Once Alive's source code,scheduled,zoho one-to-one (scheduled),2026-10-27 14:42,1792599882715155300,Once Alive came out in November 2024 and has 342 Steam reviews.,,"Hi Cem,
 
 Once Alive came out in November 2024 and has 342 Steam reviews.
@@ -750,7 +750,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,BLACKSHARD,"Redlock Studio, Enclave",support@redlock-studio.com,unreal,BLACKSHARD's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:00,1792599886227155100,"BLACKSHARD came out in April 2025, a dungeon crawler with 216 Steam reviews.",,"Hi there,
 
 BLACKSHARD came out in April 2025, a dungeon crawler with 216 Steam reviews.
@@ -766,7 +766,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Savanna Sam,Max Did It,info@max-did-it.com,three,Savanna Sam's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:07,1792599894565138300,"Savanna Sam has been on Steam since May 2025, after more than a year of solo work in Three.js.",,"Hi there,
 
 Savanna Sam has been on Steam since May 2025, after more than a year of solo work in Three.js.
@@ -782,7 +782,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Path Defenders: RPG Siege Defense,Benjamin Adams,support@pathdefenders.app,three,Path Defenders' source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:14,1792599898330155300,"Path Defenders comes to Steam on November 10, an RPG siege defense game you built on your own.",,"Hi Benjamin,
 
 Path Defenders comes to Steam on November 10, an RPG siege defense game you built on your own.
@@ -798,7 +798,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Velocity - Midnight Run,Shoogar Games,support@shoogarsoft.com,three,Velocity - Midnight Run's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:21,1792599901962155000,Velocity - Midnight Run is a racer due on Steam this quarter.,,"Hi there,
 
 Velocity - Midnight Run is a racer due on Steam this quarter.
@@ -814,7 +814,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Doomsday: M.A.D.,Doomsday Studio,contact@andygarcia.pro,three,Doomsday: M.A.D.'s source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:42,1792599905723155100,Doomsday: M.A.D. is a nuclear strategy sim due on Steam this quarter.,,"Hi there,
 
 Doomsday: M.A.D. is a nuclear strategy sim due on Steam this quarter.
@@ -830,7 +830,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,PartyScape Chronicles,Xonzer!,support@partyscape.club,three,PartyScape Chronicles' source code,scheduled,zoho one-to-one (scheduled),2026-10-31 09:56,1792599909068138400,"PartyScape Chronicles went to Steam in September 2026, an idle MMORPG running on Three.js.",,"Hi there,
 
 PartyScape Chronicles went to Steam in September 2026, an idle MMORPG running on Three.js.
@@ -846,7 +846,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,SALVOR ADRIFT,Undock,salvoradrift@gmail.com,three,SALVOR ADRIFT's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 10:17,1792599914608138400,SALVOR ADRIFT has its Act One demo out ahead of the Steam release.,,"Hi there,
 
 SALVOR ADRIFT has its Act One demo out ahead of the Steam release.
@@ -862,7 +862,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Zombies Per Minute,Enzed Studio,nicolas@enzed-studio.com,three,Zombies Per Minute's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 10:31,1792599918236155000,Zombies Per Minute is a zombie strategy sim headed for Steam in 2027.,,"Hi Nicolas,
 
 Zombies Per Minute is a zombie strategy sim headed for Steam in 2027.
@@ -878,7 +878,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,SHULERO – Dice Roguelike,Airem,info@airem.pl,three,SHULERO's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 10:52,1792599921863138300,"SHULERO came out on Steam in May 2026, a dice roguelike.",,"Hi there,
 
 SHULERO came out on Steam in May 2026, a dice roguelike.
@@ -894,7 +894,7 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
+Aidan Jude, Brick and Mortar AI LLC",,,
 ,Dystopia RPG,"Samuel Harrison, Semasa Ajose",samuel@dystopia-app.site,three,Dystopia RPG's source code,scheduled,zoho one-to-one (scheduled),2026-10-31 11:06,1792599925288155300,Dystopia RPG is a fighting RPG headed for Steam in 2026.,,"Hi Samuel,
 
 Dystopia RPG is a fighting RPG headed for Steam in 2026.
@@ -910,13 +910,13 @@ Worth fifteen minutes?
 Best,
 Aidan
 
-Aidan Jude, Brick and Mortar AI LLC"
-20,Lushfoil Photography Sim,Matt2,support@lushfoil.com,,,skipped,,,,,"publisher Annapurna likely owns the code (Aidan, 10/21)",
-,Supermoves: World of Parkour,Makea Games,support@makea.games,,,skipped,,,,,makea.games has no MX record (dig 10/21): undeliverable,
-,Gori: Cuddly Carnage,Angry Demon Studio,support@wiredproductions.com,,,skipped,,,,,contact is publisher Wired Productions' generic support address,
-,The Midnight Walk,MoonHood,support@fasttravelgames.com,,,skipped,,,,,contact is publisher Fast Travel Games' support address,
-,Drop Duchy,Sleepy Mill Studio,support@thearcadecrew.com,,,skipped,,,,,contact is publisher The Arcade Crew's support address,
-,Dreamcore,Montraluz,dreamcore@tlon.vg,,,skipped,,,,,contact is at publisher Tlon Industries' domain,
-,KARMA: The Dark World,POLLARD STUDIO LLC,support@wiredproductions.com,,,skipped,,,,,contact is publisher Wired Productions' generic support address,
-,Stygian: Outer Gods,Misterial Games,support@fulqrumpublishing.com,,,skipped,,,,,contact is publisher Fulqrum Publishing's support address,
-,Pigeon: A Love Story,Wristwork,contact@wristwork.com,,,skipped,,,,,same studio and address as FACEMINER; one email per studio,
+Aidan Jude, Brick and Mortar AI LLC",,,
+20,Lushfoil Photography Sim,Matt2,support@lushfoil.com,,,skipped,,,,,"publisher Annapurna likely owns the code (Aidan, 10/21)",,,,
+,Supermoves: World of Parkour,Makea Games,support@makea.games,,,skipped,,,,,makea.games has no MX record (dig 10/21): undeliverable,,,,
+,Gori: Cuddly Carnage,Angry Demon Studio,support@wiredproductions.com,,,skipped,,,,,contact is publisher Wired Productions' generic support address,,,,
+,The Midnight Walk,MoonHood,support@fasttravelgames.com,,,skipped,,,,,contact is publisher Fast Travel Games' support address,,,,
+,Drop Duchy,Sleepy Mill Studio,support@thearcadecrew.com,,,skipped,,,,,contact is publisher The Arcade Crew's support address,,,,
+,Dreamcore,Montraluz,dreamcore@tlon.vg,,,skipped,,,,,contact is at publisher Tlon Industries' domain,,,,
+,KARMA: The Dark World,POLLARD STUDIO LLC,support@wiredproductions.com,,,skipped,,,,,contact is publisher Wired Productions' generic support address,,,,
+,Stygian: Outer Gods,Misterial Games,support@fulqrumpublishing.com,,,skipped,,,,,contact is publisher Fulqrum Publishing's support address,,,,
+,Pigeon: A Love Story,Wristwork,contact@wristwork.com,,,skipped,,,,,same studio and address as FACEMINER; one email per studio,,,,
